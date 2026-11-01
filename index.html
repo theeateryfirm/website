@@ -92,6 +92,8 @@ body{padding-bottom:72px}
 #scr-Main .q-btn small{font-size:13px;font-weight:500;color:#56635D}
 #scr-Main .q-btn:hover{border-color:#2A5243}
 #scr-Main .q-btn:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
+#scr-Main .q-btn.q-off{opacity:.55;cursor:not-allowed;background:#F8F3EA;border-style:dashed}
+#scr-Main .q-btn.q-off:hover{border-color:#D8D0C0}
 #scr-Main .q-btn.on{border-color:#2A5243;background:#EEF4EF;box-shadow:inset 0 0 0 1px #2A5243}
 #scr-Main .q-btn.on small{color:#2E6B4F}
 #scr-Main .q-btn.diy.on{border-color:#B5703A;background:#FBF3E6;box-shadow:inset 0 0 0 1px #B5703A}
@@ -156,6 +158,30 @@ body{padding-bottom:72px}
 #scr-Login .l-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
 #scr-Login .l-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,38,31,.2),rgba(20,38,31,.92))}
 @media (max-width:860px){#scr-Login .l-photo{display:none}}
+#scr-Dashboard .ai-panel{background:#1F3A30;color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.25),transparent 70%)}
+#scr-Dashboard .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#scr-Dashboard .ai-form{display:flex;gap:8px}
+#scr-Dashboard .ai-form input{flex:1;min-width:0;min-height:48px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:15px;padding:0 14px}
+#scr-Dashboard .ai-form input::placeholder{color:#A5B3AC}
+#scr-Dashboard .ai-form input:focus-visible,#scr-Dashboard .ai-chip:focus-visible,#scr-Dashboard .ai-send:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
+#scr-Dashboard .ai-send{min-height:48px;padding:0 20px;border-radius:12px;border:0;background:#B5703A;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+#scr-Dashboard .ai-send:hover{background:#9A5D2E}
+#scr-Dashboard .ai-chips{display:flex;flex-wrap:wrap;gap:8px}
+#scr-Dashboard .ai-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#E3E8E4;font:inherit;font-size:14px;font-weight:500;cursor:pointer;text-align:left}
+#scr-Dashboard .ai-chip:hover{background:rgba(255,255,255,.12);color:#fff}
+#scr-Dashboard .ai-chip.on{background:#E2A962;border-color:#E2A962;color:#1F3A30;font-weight:600}
+#scr-Dashboard .ai-answer{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px}
+#scr-Dashboard .ai-q-bubble{align-self:flex-end;max-width:85%;background:#E2A962;color:#1F3A30;font-weight:600;font-size:14px;padding:8px 12px;border-radius:12px 12px 4px 12px}
+#scr-Dashboard .ai-thinking{display:flex;align-items:center;gap:6px;font-size:13px;color:#C6D1CB}
+#scr-Dashboard .ai-thinking span{width:6px;height:6px;border-radius:50%;background:#E2A962;animation:aiDot 1s infinite ease-in-out}
+#scr-Dashboard .ai-thinking span:nth-child(2){animation-delay:.15s}#scr-Dashboard .ai-thinking span:nth-child(3){animation-delay:.3s}
+@keyframes aiDot{0%,80%,100%{opacity:.3}40%{opacity:1}}
+@media (prefers-reduced-motion:reduce){#scr-Dashboard .ai-thinking span{animation:none}}
+#scr-Dashboard .ai-cta{background:#E2A962;color:#1F3A30;min-height:40px;padding:0 14px;font-size:14px}
+#scr-Dashboard .ai-cta:hover{background:#EBC48A;color:#1F3A30}
+#scr-Dashboard .ai-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);min-height:40px;padding:0 14px;font-size:14px}
+#scr-Dashboard .ai-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
+@media (max-width:560px){#scr-Dashboard .ai-chip{flex:1 1 100%}}
 #scr-Dashboard .todo{background:#fff;border:2px solid #A4472A;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(164,71,42,0.12)}
 #scr-Dashboard .todo-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;background:#A4472A;color:#fff;padding:12px 18px}
 #scr-Dashboard .todo-count{display:grid;place-items:center;min-width:28px;height:28px;border-radius:999px;background:#fff;color:#A4472A;font-weight:800;font-size:15px}
@@ -329,15 +355,12 @@ Switching accountants? First month free + we handle the handover from your old f
 <div style="background: radial-gradient(520px 320px at 78% -60px, rgba(240,176,96,.30), transparent 70%), radial-gradient(420px 260px at 30% -80px, rgba(240,176,96,.18), transparent 70%), linear-gradient(180deg,#1C342B,#14261F); color: #F4EEE2">
 <section id="top" style="max-width: 1240px; margin: 0 auto; padding: 80px 24px 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
 <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<span style="align-self: flex-start; background: rgba(232,170,92,.14); border: 1px solid rgba(232,170,92,.45); color: #EBC48A; font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px">Accounting built only for cafés, restaurants &amp; bars</span>
-<h1 class="h" style="margin: 0; font-size: clamp(40px, 5.4vw, 68px); line-height: 1.02; font-weight: 700">Your venue's numbers, done. <span style="color: #E2A962; font-style: italic">One flat monthly fee.</span></h1>
-<p style="margin: 0; font-size: 19px; line-height: 1.55; max-width: 560px; color: #CBD3CC">Bookkeeping, BAS, tax returns and a monthly performance report that shows your wage %, food cost and prime cost — not just a P&amp;L once a year. Connect Xero or MYOB in five minutes.</p>
+<span style="align-self: flex-start; background: rgba(232,170,92,.14); border: 1px solid rgba(232,170,92,.45); color: #EBC48A; font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px">Professional service technology built for hospitality.</span>
+<h1 class="h" style="margin: 0; font-size: clamp(40px, 5.4vw, 68px); line-height: 1.02; font-weight: 700">Your venue's numbers, expertly done. <span style="color: #E2A962; font-style: italic">One flat monthly fee.</span></h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.55; max-width: 560px; color: #CBD3CC">Technology driven business partnering to deliver on accessible performance analysis, benchmarking and taxation compliance to the hospitality industry.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <a class="btn btn-copper" href="#Signup" style="min-height: 54px; font-size: 17px; padding: 0 28px">Get my first month free</a>
 <a class="btn btn-outline-light" href="#pricing" style="min-height: 54px; font-size: 17px">See pricing</a>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; font-weight: 500; color: #DCE2DC">
-<span>✓ No lock-in contract</span><span>✓ Xero &amp; MYOB</span><span>✓ Registered tax agent [TAN]</span><span>✓ Reply within 1 business day</span>
 </div>
 </div>
 <div style="flex: 1 1 440px; min-width: 0; position: relative; color: #1F3A30">
@@ -407,7 +430,7 @@ Switching accountants? First month free + we handle the handover from your old f
 <div class="q-head"><h3 class="h" style="margin: 0; font-size: 20px">{{ v.title }}</h3><span style="font-size: 13px; font-weight: 600; color: #8A5A2E">{{ v.rate }}</span></div>
 <p class="muted" style="margin: 0; font-size: 14px; line-height: 1.55">{{ v.desc }}</p>
 <div class="q-choices" role="group" aria-label="{{ v.title }}">
-<template data-for="v.opts" data-as="o"><button type="button" class="{{ o.cls }}" aria-pressed="{{ o.on }}" onClick="{{ o.go }}">{{ o.label }}<small>{{ o.sub }}</small></button></template>
+<template data-for="v.opts" data-as="o"><button type="button" class="{{ o.cls }}" aria-pressed="{{ o.on }}" aria-disabled="{{ o.dis }}" title="{{ o.tip }}" onClick="{{ o.go }}">{{ o.label }}<small>{{ o.sub }}</small></button></template>
 </div>
 </div>
 </template>
@@ -416,8 +439,8 @@ Switching accountants? First month free + we handle the handover from your old f
 
 <aside class="q-panel glow" aria-live="polite">
 <span class="q-step" style="color: #E2A962">Your quote</span>
-<div><div style="display: flex; align-items: baseline; gap: 8px"><span class="h" style="font-size: 56px; font-weight: 700; line-height: 1">${{ qTotal }}</span><span style="font-size: 16px; color: #C6D1CB">/month + GST</span></div>
-<div style="font-size: 13px; color: #A5B3AC; margin-top: 6px">{{ qTierLabel }} turnover · ${{ qAnnual }} a year · first month free</div></div>
+<div><div style="display: flex; align-items: baseline; gap: 8px"><span class="h" style="font-size: 56px; font-weight: 700; line-height: 1">${{ qTotal }}</span><span style="font-size: 16px; color: #C6D1CB">/month inc. GST</span></div>
+<div style="font-size: 13px; color: #A5B3AC; margin-top: 6px">{{ qTierLabel }} turnover · ${{ qAnnual }} a year · includes ${{ qGst }} GST a month · first month free</div></div>
 <div>
 <template data-for="qLines" data-as="l"><div class="q-line"><span>{{ l.name }}</span><strong>{{ l.amt }}</strong></div></template>
 <template data-if="qMinApplied"><div class="q-line"><span style="color: #EBC48A">Minimum monthly fee applied</span><strong style="color: #EBC48A">+${{ qTopUp }}</strong></div></template>
@@ -431,10 +454,10 @@ Switching accountants? First month free + we handle the handover from your old f
 <span>✓ Replies from your accountant within 1 business day</span>
 </div>
 <a class="btn btn-copper" href="#Signup" onClick="{{ qStart }}" style="min-height: 52px; font-size: 16px">Start with this quote</a>
-<span style="font-size: 12px; color: #A5B3AC">Prices ex GST. Month to month, cancel with 30 days' notice.</span>
+<span style="font-size: 12px; color: #A5B3AC">All prices include GST. Month to month, cancel with 30 days' notice.</span>
 </aside>
 </div>
-<div class="q-mbar"><div><div style="font-size: 12px; color: #C6D1CB">Your quote</div><strong class="h" style="font-size: 22px">${{ qTotal }}<span style="font-size: 13px; font-weight: 500; color: #C6D1CB"> /month + GST</span></strong></div><a class="btn btn-copper" href="#Signup" onClick="{{ qStart }}">Start</a></div>
+<div class="q-mbar"><div><div style="font-size: 12px; color: #C6D1CB">Your quote</div><strong class="h" style="font-size: 22px">${{ qTotal }}<span style="font-size: 13px; font-weight: 500; color: #C6D1CB"> /month inc. GST</span></strong></div><a class="btn btn-copper" href="#Signup" onClick="{{ qStart }}">Start</a></div>
 <p class="muted" style="margin: 0; font-size: 14px">Catch-up work for prior years, ATO debt negotiation, new-venue setup and turnover over $3m are quoted separately.</p>
 </section>
 
@@ -638,7 +661,7 @@ Switching accountants? First month free + we handle the handover from your old f
 <div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">Engagement &amp; agreements</h1><p class="muted" style="margin: 0">Please read and sign. A PDF copy is saved to your Documents.</p></div>
 <div style="border: 1px solid #E5DED0; border-radius: 12px; padding: 18px 20px; max-height: 220px; overflow: auto; font-size: 14px; line-height: 1.6; background: #F3ECE0" tabindex="0" aria-label="Engagement letter">
 <strong>Letter of engagement</strong><br>
-Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month ex GST, billed monthly in advance; first month free. Out-of-scope work is quoted before it starts. Your responsibilities: provide complete records, respond to queries within 10 business days, keep your accounting file access active. Term: month to month, 30 days' notice. Professional standards: APES 305 Terms of Engagement; Tax Agent Services Act 2009 Code of Professional Conduct. [Full legal text to be supplied by Trebly]
+Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month including GST, billed monthly in advance; first month free. Out-of-scope work is quoted before it starts. Your responsibilities: provide complete records, respond to queries within 10 business days, keep your accounting file access active. Term: month to month, 30 days' notice. Professional standards: APES 305 Terms of Engagement; Tax Agent Services Act 2009 Code of Professional Conduct. [Full legal text to be supplied by Trebly]
 </div>
 <label class="chk"><input type="checkbox"><span>I have read and accept the <a href="#e">letter of engagement</a> and <a href="#e">terms of service</a>.</span></label>
 <label class="chk"><input type="checkbox"><span>I consent to the collection and use of my information under the <a href="#e">privacy policy</a>, including my TFN for tax-agent services.</span></label>
@@ -759,10 +782,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month e
 <a href="#Assistant--partners">More services</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
-<div style="margin-top: auto; padding: 14px; border-radius: 12px; background: #284539; font-size: 13px; line-height: 1.5; color: #C6D1CB">
-<strong style="color: #fff; display: block; margin-bottom: 4px">Your accountant</strong>[Accountant name]<br>Replies within 1 business day
-<a href="#Schedule" style="min-height: 36px; padding: 0; color: #E2A962">Book a call →</a>
-</div>
 </aside>
 
 <main style="flex: 999 1 640px; min-width: 0; padding: 28px clamp(16px, 3vw, 40px) 48px; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box">
@@ -774,6 +793,35 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month e
 <a class="btn btn-primary" href="#Assistant">✦ Ask AI</a>
 </div>
 </div>
+<section id="ask" class="ai-panel" aria-labelledby="ai-h">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px">
+<h2 id="ai-h" style="margin: 0; font-size: 17px; font-weight: 700; font-family: Inter, system-ui, sans-serif; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="color: #E2A962; font-size: 20px">✦</span>Ask AI about your business</h2>
+<span style="font-size: 12px; color: #A5B3AC">Answers from your books, reports and benchmarks</span>
+</div>
+<form class="ai-form" novalidate onSubmit="{{ aiSubmit }}">
+<label for="ai-q" class="sr-only">Your question</label>
+<input id="ai-q" type="text" autocomplete="off" placeholder="Ask anything about your numbers, tax or what's due…" value="{{ aiTyped }}" onInput="{{ aiOnInput }}">
+<button type="submit" class="ai-send">Ask</button>
+</form>
+<div class="ai-chips" role="group" aria-label="Suggested questions">
+<template data-for="aiChips" data-as="c"><button type="button" class="{{ c.cls }}" onClick="{{ c.go }}">{{ c.label }}</button></template>
+</div>
+<template data-if="aiShow">
+<div class="ai-answer" aria-live="polite">
+<div class="ai-q-bubble">{{ aiAsked }}</div>
+<template data-if="aiThinking"><div class="ai-thinking"><span></span><span></span><span></span> Checking your books…</div></template>
+<template data-if="aiReady">
+<strong style="font-size: 16px; line-height: 1.4; color: #fff">{{ aiAns.title }}</strong>
+<template data-for="aiAns.paras" data-as="t"><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #E3E8E4">{{ t }}</p></template>
+<template data-if="aiAns.items"><ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.55; color: #E3E8E4"><template data-for="aiAns.items" data-as="it"><li><strong style="color: #fff">{{ it.b }}</strong> {{ it.t }}</li></template></ul></template>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-top: 4px">
+<span style="font-size: 12px; color: #A5B3AC">{{ aiAns.src }}</span>
+<span style="display: flex; gap: 8px; flex-wrap: wrap"><template data-if="aiAns.cta"><a class="btn ai-cta" href="{{ aiAns.ctaHref }}">{{ aiAns.cta }}</a></template><a class="btn ai-ghost" href="#Assistant">Open full chat</a></span>
+</div>
+</template>
+</div>
+</template>
+</section>
 <nav class="jump" aria-label="Jump to section"><a href="#Dashboard--todo" style="background: #A4472A; color: #fff; border-color: #A4472A">To do (3)</a><a href="#Dashboard--summary">Summary</a><a href="#Dashboard--priorities">Action plan</a><a href="#Dashboard--benchmarks">Benchmarks</a><a href="#Dashboard--quarters">Quarters</a><a href="#Dashboard--forecast">Forecast</a><a href="#Dashboard--queries">Questions</a></nav>
 
 <section id="todo" aria-labelledby="todo-h" class="todo">
@@ -1222,7 +1270,7 @@ class DCLogic{constructor(p){this.props=p||{};this.state={};}setState(p){Object.
 const SCREENS={};
 
 SCREENS["Main"]=(function(){
-// Pricing model (from Pricing.xlsx). All prices ex GST.
+// Pricing model. All prices include GST.
 const PRICING = {
   tiers: [
     { key: 't1', label: 'Up to $1m', bk: 70, ap: 50, tax: 550, taxM: 50, basM: 90, basQ: 120 },
@@ -1239,7 +1287,7 @@ function quote(q) {
   const basQ = up(t.basQ * 4 / 12), basM = up(t.basM), tax = t.taxM;  // fixed monthly price
   const lines = [];
   if (q.bk) lines.push({ name: 'Bookkeeping', amt: bk, scope: 'bookkeeping' });
-  if (q.ap) lines.push({ name: 'Outsourced accounts payable', amt: ap, scope: 'outsourced accounts payable' });
+  if (q.ap && q.bk) lines.push({ name: 'Outsourced accounts payable', amt: ap, scope: 'outsourced accounts payable' });
   if (q.bas === 'q') lines.push({ name: 'GST activity statements (quarterly)', amt: basQ, scope: 'quarterly GST activity statements' });
   if (q.bas === 'm') lines.push({ name: 'GST activity statements (monthly)', amt: basM, scope: 'monthly GST activity statements' });
   if (q.tax) lines.push({ name: 'Financial statements & tax return', amt: tax, scope: 'annual financial statements and income tax return' });
@@ -1251,7 +1299,7 @@ function quote(q) {
 window.EF_QUOTE = window.EF_QUOTE || { tier: 't1', bk: true, ap: false, bas: 'q', tax: true };
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = Object.assign({}, window.EF_QUOTE); }
-  set(patch) { this.setState(patch); window.EF_QUOTE = Object.assign({}, this.state); if (window.inst && inst.Signup) inst.Signup._r(); }
+  set(patch) { if (patch.bk === false) patch.ap = false; this.setState(patch); window.EF_QUOTE = Object.assign({}, this.state); if (window.inst && inst.Signup) inst.Signup._r(); }
   renderVals() {
     const q = this.state, r = quote(q);
     const btn = (on, diy) => 'q-btn' + (diy ? ' diy' : '') + (on ? ' on' : '');
@@ -1261,9 +1309,10 @@ class Component extends DCLogic {
         desc: 'Weekly reconciliations, POS and delivery-app takings matched to the bank, and supplier bills coded by food, beverage and packaging.',
         opts: [ { label: 'We do it', sub: '$' + r.bk + ' a month', on: String(q.bk), cls: btn(q.bk), go: () => this.set({ bk: true }) },
                 { label: "I'll do my own", sub: 'You keep Xero or MYOB up to date', on: String(!q.bk), cls: btn(!q.bk, true), go: () => this.set({ bk: false }) } ] },
-      { step: '3 · Accounts payable', title: 'Outsourced accounts payable', rate: 'Priced by turnover',
+      { step: '3 · Accounts payable', title: 'Outsourced accounts payable', rate: q.bk ? 'Priced by turnover' : 'Needs our bookkeeping',
         desc: 'We process your supplier invoices, prepare payment runs for you to approve, and reconcile supplier statements, so suppliers are paid on time and nothing is paid twice. Or opt out if you prefer not to run accounts payable, and your expenses will be reconciled when your bank reconciliations are performed.',
-        opts: [ { label: 'Add it', sub: '$' + r.ap + ' a month', on: String(!!q.ap), cls: btn(!!q.ap), go: () => this.set({ ap: true }) },
+        opts: [ q.bk ? { label: 'Add it', sub: '$' + r.ap + ' a month', on: String(!!q.ap), cls: btn(!!q.ap), dis: 'false', tip: '', go: () => this.set({ ap: true }) }
+                     : { label: 'Add it', sub: 'Choose “We do it” for bookkeeping first', on: 'false', cls: 'q-btn q-off', dis: 'true', tip: 'Outsourced accounts payable is only available with our bookkeeping', go: () => {} },
                 { label: 'Not needed', sub: 'You pay your own suppliers', on: String(!q.ap), cls: btn(!q.ap, true), go: () => this.set({ ap: false }) } ] },
       { step: '4 · GST', title: 'GST activity statements', rate: '$' + r.t.basQ + ' per quarterly BAS or $' + r.t.basM + ' per monthly BAS',
         desc: 'We prepare your BAS from the books, you approve it in the portal, and we lodge it on time through our agent lodgement program.',
@@ -1277,7 +1326,7 @@ class Component extends DCLogic {
     ];
     const qLines = r.lines.length ? r.lines.map(l => ({ name: l.name, amt: '$' + l.amt })) : [{ name: 'Portal, reporting & accountant access', amt: '$' + PRICING.minimum }];
     return {
-      qTiers, qSvc, qLines, qTotal: r.total, qAnnual: (r.total * 12).toLocaleString('en-AU'), qTierLabel: r.t.label,
+      qTiers, qSvc, qLines, qTotal: r.total, qGst: (r.total / 11).toFixed(2), qAnnual: (r.total * 12).toLocaleString('en-AU'), qTierLabel: r.t.label,
       qMinApplied: r.topUp > 0, qTopUp: r.topUp, qHasDiy: r.diy,
       qStart: () => { window.EF_QUOTE = Object.assign({}, this.state); if (window.inst && inst.Signup) inst.Signup._r(); }
     };
@@ -1352,7 +1401,7 @@ class Component extends DCLogic {
     const soft = this.state.soft, pay = this.state.pay;
     const nextLabels = ['Continue', 'Continue', 'Sign and continue', 'Continue', 'Start my free month', ''];
     return {
-      planLine: 'Your quote · $' + qq.total + '/month + GST', quoteTotal: qq.total,
+      planLine: 'Your quote · $' + qq.total + '/month inc. GST', quoteTotal: qq.total,
       scopeText: (qq.lines.map(l => l.scope).concat(['client portal', 'monthly performance dashboard'])).join(', ').replace(/, ([^,]*)$/, ' and $1'),
       steps, stepNo: st + 1, stepLabel: labels[st], stepPct: Math.round((st + 1) / 6 * 100),
       s0: st === 0, s1: st === 1, s2: st === 2, s3: st === 3, s4: st === 4, s5: st === 5,
@@ -1372,7 +1421,7 @@ class Component extends DCLogic {
 return Component;})();
 SCREENS["Dashboard"]=(function(){
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { period: 'm', bench: 'i' }; }
+  constructor(props) { super(props); this.state = { period: 'm', bench: 'i', aiKey: null, aiAsked: '', aiTyped: '', aiThinking: false }; }
   renderVals() {
     const p = this.state.period;
     const G = '#2E6B4F', R = '#1F3E33', M = '#56635D';
@@ -1426,6 +1475,40 @@ class Component extends DCLogic {
       { label: "Days' stock on hand", v: '9.5 days', b: 'Industry 13.9 days' },
       { label: 'Current ratio', v: '1.1', b: 'Industry 0.9' }
     ];
+
+    // ---- Ask AI panel (demo answers drawn from this dashboard's figures)
+    const AI = {
+      track: { label: 'How well am I tracking?', ans: {
+        title: 'Well overall: profit is well ahead of the industry, but costs need watching.',
+        paras: ['September sales were $186.4k, up 6.2% on August, while IBISWorld expects restaurant sales to grow just 0.8% this year. Net profit was 9.1% of sales, about 3 times the 2.9% restaurant average.'],
+        items: [ { b: 'Wages 31.8%', t: 'against your 30% target and the 31.3% average.' }, { b: 'Rent 8.2%', t: 'against a 6.7% average, your biggest gap.' }, { b: 'Cash $64.3k,', t: 'about 5 weeks of costs.' } ],
+        src: 'Based on your September books and IBISWorld benchmarks', cta: 'See benchmarks', ctaHref: '#Dashboard--benchmarks' } },
+      waiting: { label: 'Is there anything you are waiting from me?', ans: {
+        title: 'Yes, 3 things. One is urgent.',
+        paras: [],
+        items: [ { b: 'Urgent, by Fri 30 Oct:', t: 'sign your FY26 financial statements and company tax return. We can’t lodge until you do.' }, { b: 'By Fri 6 Nov:', t: 'answer 2 questions from your accountant, including the $4,200 transfer to J. Nguyen on 14 Sep.' }, { b: 'By Fri 6 Nov:', t: 'upload the September statement from [Supplier] so we can match 6 unpaid bills.' } ],
+        src: 'From your open tasks', cta: 'Review & sign now', ctaHref: '#Reports--drafts' } },
+      tax: { label: 'What are my upcoming tax lodgements?', ans: {
+        title: 'Two lodgements are coming up.',
+        paras: ['Setting aside about $3,800 this month keeps you on track for the estimated FY27 company tax.'],
+        items: [ { b: 'FY26 company tax return:', t: 'ready now. Sign by Fri 30 Oct and we lodge it straight away.' }, { b: 'September quarter BAS, due 25 Nov:', t: 'we’ll send it for your approval first. GST payable is estimated at $21.7k.' } ],
+        src: 'From your work schedule and Reports', cta: 'See schedule', ctaHref: '#Schedule' } },
+      improve: { label: 'What can I do to improve performance?', ans: {
+        title: 'Four changes would make the biggest difference.',
+        paras: [],
+        items: [ { b: 'Fix Sunday rosters.', t: 'Moving two Sunday shifts to Saturday saves about $1,150 a month.' }, { b: 'Re-quote dairy.', t: 'Prices from [Supplier] are up 12% since July.' }, { b: 'Lift core menu prices about 1.5%.', t: 'That covers the $29.6k award wage rise.' }, { b: 'Reprice delivery.', t: 'App fees are 31% of delivery sales. A separate menu priced about 15% higher protects margin.' } ],
+        src: 'From your action plan', cta: 'See action plan', ctaHref: '#Dashboard--priorities' } }
+    };
+    const aiMatch = (t) => { t = t.toLowerCase();
+      if (/wait|from me|need.*me|outstanding|sign|to do|todo/.test(t)) return 'waiting';
+      if (/tax|lodg|bas|gst|due date|deadline/.test(t)) return 'tax';
+      if (/improve|better|increase|save|saving|cut|grow|boost|lift|profit|margin|cost/.test(t)) return 'improve';
+      if (/track|going|doing|perform|how am i|overall|result/.test(t)) return 'track';
+      return null; };
+    const aiAsk = (key, text) => { this.setState({ aiKey: key || 'other', aiAsked: text, aiThinking: true, aiTyped: '' }); setTimeout(() => this.setState({ aiThinking: false }), 700); };
+    const OTHER = { title: 'I can’t answer that one from this preview.', paras: ['In the live portal, Ask AI answers from your own books and reports, and passes anything that needs advice to your accountant.'], items: null, src: 'Demo answers cover the suggested questions', cta: '', ctaHref: '' };
+    const aiChips = Object.keys(AI).map(k => ({ label: AI[k].label, cls: 'ai-chip' + (this.state.aiKey === k ? ' on' : ''), go: () => aiAsk(k, AI[k].label) }));
+    const aiAns = this.state.aiKey ? (AI[this.state.aiKey] ? AI[this.state.aiKey].ans : OTHER) : OTHER;
     const periodLabel = { m: 'September', q: 'The September quarter', y: 'FY27 to date' }[p];
     // ---- Executive summary (built from the period's numbers + chosen benchmark)
     const D = data[p], val = (i) => D[i][1];
@@ -1530,6 +1613,9 @@ class Component extends DCLogic {
     const bars = sales.map((s, i) => ({ sales: Math.round(s * 4.4), wages: Math.round(s * 4.4 * wpct[i]) }));
     const seg = (k) => 'seg' + (p === k ? ' seg-on' : '');
     return {
+      aiChips, aiAns: Object.assign({}, aiAns, { items: aiAns.items && aiAns.items.length ? aiAns.items : null }), aiShow: !!this.state.aiKey, aiThinking: this.state.aiThinking, aiReady: !!this.state.aiKey && !this.state.aiThinking, aiAsked: this.state.aiAsked, aiTyped: this.state.aiTyped,
+      aiOnInput: (e) => { this.state.aiTyped = e.target.value; },
+      aiSubmit: (e) => { e.preventDefault(); const t = (this.state.aiTyped || '').trim(); if (!t) return; aiAsk(aiMatch(t), t); },
       kpis, bars, bm, notes, minis, periodLabel, sum, qbars, mPts, mLbl, mGrid, mLine, mSvg, fSvg, pl, fGrid, fOut, fFlat, fPts, fLbl, fYears, fRows, prios, benchName: b.name,
       biCls: bseg('i'), bsCls: bseg('s'), setBI: () => this.setState({ bench: 'i' }), setBS: () => this.setState({ bench: 's' }),
       mCls: seg('m'), qCls: seg('q'), yCls: seg('y'),
@@ -1588,10 +1674,10 @@ class Component extends DCLogic {
   renderVals() {
     const C = { Ready: ['#E4EFE6', '#2E6B4F'], 'In progress': ['#F8EEDC', '#7A5626'], Scheduled: ['#EFE9DD', '#46524C'], 'Waiting on you': ['#F5E3D8', '#A4472A'] };
     const raw = [
+      ['OCT', '30', 'FY26 financials & tax return — your sign-off', 'Sign in Reports so we can lodge your company tax return.', 'Waiting on you'],
       ['NOV', '7', 'October bookkeeping close', 'Bank, POS and delivery-app takings reconciled; bills coded.', 'In progress'],
       ['NOV', '12', 'October performance report', 'Published to your dashboard and Reports.', 'Scheduled'],
-      ['NOV', '14', 'FY26 financials & tax return — your sign-off', '2 questions open from your accountant. Sign in Reports once answered.', 'Waiting on you'],
-      ['NOV', '25', 'BAS — September quarter lodged', 'We prepare, you approve, we lodge. GST payable estimated at $21.7k.', 'In progress'],
+            ['NOV', '25', 'BAS — September quarter lodged', 'We prepare, you approve, we lodge. GST payable estimated at $21.7k.', 'In progress'],
       ['DEC', '7', 'November bookkeeping close', 'Includes Christmas casual onboarding check.', 'Scheduled'],
       ['DEC', '12', 'November performance report', 'Plus December trading forecast.', 'Scheduled']
     ];
