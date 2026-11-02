@@ -1046,6 +1046,34 @@ body.g-more-open #more-sheet a.sub-more,body.g-legal-open #more-sheet a.sub-lega
 #scr-WhatIf .wi-otbl{border-radius:10px;overflow:hidden}
 #scr-WhatIf .wi-otbl tr:last-child th,#scr-WhatIf .wi-otbl tr:last-child td{background:#fff !important;font-weight:700}
 #scr-WhatIf .wi-otbl tr:first-child th,#scr-WhatIf .wi-otbl tr:first-child td{border-top:0}
+#scr-Legal .la{background:#1F3A30;color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.22),transparent 70%)}
+#scr-Legal .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#scr-Legal .la-tag{font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:999px;background:rgba(226,169,98,.16);border:1px solid rgba(226,169,98,.5);color:#EBC48A}
+#scr-Legal .la-form{display:flex;gap:8px;align-items:stretch}
+#scr-Legal .la-form textarea{flex:1;min-width:0;font:inherit;font-size:15px;line-height:1.5;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;resize:vertical;min-height:52px}
+#scr-Legal .la-form textarea::placeholder{color:#A5B3AC}
+#scr-Legal .la-go,#scr-Legal .la-stop{min-width:84px;border-radius:12px;border:0;font:inherit;font-weight:700;cursor:pointer;padding:0 18px}
+#scr-Legal .la-go{background:#B5703A;color:#fff}
+#scr-Legal .la-go:hover{background:#9A5D2E}
+#scr-Legal .la-stop{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+#scr-Legal .la-eg{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#scr-Legal .la-chip{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#E3E8E4;font:inherit;font-size:13px;cursor:pointer;text-align:left}
+#scr-Legal .la-chip:hover{background:rgba(255,255,255,.12);color:#fff}
+#scr-Legal .la-form textarea:focus-visible,#scr-Legal .la-go:focus-visible,#scr-Legal .la-chip:focus-visible,#scr-Legal .la-live:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
+#scr-Legal .la-ans{display:flex;flex-direction:column;gap:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px}
+#scr-Legal .la-warn{background:#FBF3E6;color:#7A5626;border-radius:10px;padding:10px 12px;font-size:13.5px;line-height:1.5}
+#scr-Legal .la-warn a{color:#7A5626;font-weight:700}
+#scr-Legal .la-h4{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#E2A962;margin-bottom:6px}
+#scr-Legal .la-ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;font-size:14px;line-height:1.55;color:#E3E8E4}
+#scr-Legal .la-cta{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid rgba(255,255,255,.15);padding-top:12px}
+#scr-Legal .la-btn{background:#E2A962;color:#1F3A30;min-height:42px;padding:0 16px;font-size:14px}
+#scr-Legal .la-btn:hover{background:#EBC48A;color:#1F3A30}
+#scr-Legal .la-live{background:none;border:0;padding:0;font:inherit;color:#EBC48A;text-decoration:underline;cursor:pointer}
+#scr-Legal .wi-dots{display:flex;gap:5px}
+#scr-Legal .wi-dots span{width:8px;height:8px;border-radius:50%;background:#E2A962;animation:aiDot 1s infinite ease-in-out}
+#scr-Legal .wi-dots span:nth-child(2){animation-delay:.15s}#scr-Legal .wi-dots span:nth-child(3){animation-delay:.3s}
+@media (max-width:560px){#scr-Legal .la-form{flex-direction:column}#scr-Legal .la-go,#scr-Legal .la-stop{min-height:46px}#scr-Legal .la-chip{flex:1 1 100%}}
+@media (max-width:720px){#scr-Legal #ask-legal{scroll-margin-top:76px !important}}
 </style>
 </head>
 <body>
@@ -1061,6 +1089,7 @@ body.g-more-open #more-sheet a.sub-more,body.g-legal-open #more-sheet a.sub-lega
 <a href="#WhatIf">What if</a>
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -1535,6 +1564,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -1680,6 +1710,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -1898,6 +1929,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
 <a href="#Legal" class="on grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -1945,6 +1977,29 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </li>
 </template>
 </ul>
+</section>
+
+<section id="ask-legal" class="la" aria-labelledby="la-h" style="scroll-margin-top: 24px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px"><h2 id="la-h" style="margin: 0; font-size: 17px; font-weight: 700; font-family: Inter, system-ui, sans-serif; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="color: #E2A962; font-size: 20px">✦</span>Ask a legal question</h2><span class="la-tag">General information only · not legal advice</span></div>
+<label for="la-q" class="sr-only">Your legal question</label>
+<div class="la-form"><textarea id="la-q" rows="2" placeholder="e.g. What happens if I miss the deadline to exercise my lease option?" onInput="{{ laOnQ }}">{{ laQ }}</textarea>
+<template data-if="laIdle"><button type="button" class="la-go" onClick="{{ laAsk }}">Ask</button></template><template data-if="laBusy"><button type="button" class="la-stop" onClick="{{ laStop }}">Stop</button></template></div>
+<div class="la-eg"><span style="font-size: 12px; color: #A5B3AC">Try:</span><template data-for="laEg" data-as="e"><button type="button" class="la-chip" onClick="{{ e.go }}">{{ e.q }}</button></template></div>
+<template data-if="laBusy"><div class="la-ans" role="status" style="flex-direction: row; align-items: center; gap: 12px"><span class="wi-dots"><span></span><span></span><span></span></span><span style="font-size: 14px; color: #D9E0DB">Reading your documents and preparing general information. This can take up to a minute.</span></div></template>
+<template data-if="laErr"><div class="la-ans" role="alert"><span style="font-size: 14px; color: #EBC48A">{{ laErr }}</span></div></template>
+<template data-if="laHas">
+<div class="la-ans">
+<div class="la-warn" role="note"><strong>This is general legal information, not legal advice.</strong> It doesn't take into account all of your circumstances and you shouldn't rely on it to make a decision. For advice on your situation, speak to a legal practitioner through <a href="#Assistant--svc-legal">Legal advisory</a>.</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px"><strong style="font-size: 16px; color: #fff">{{ la.topic }}</strong><template data-if="laMock"><span class="lg-pill" style="background: #F3E6CF; color: #7A5626">Example answer</span></template></div>
+<template data-for="la.info" data-as="t"><p style="margin: 0; font-size: 14px; line-height: 1.65; color: #E3E8E4">{{ t }}</p></template>
+<template data-if="la.ptsOn"><div><strong class="la-h4">Key points of the law</strong><ul class="la-ul"><template data-for="la.pts" data-as="t"><li>{{ t }}</li></template></ul></div></template>
+<template data-if="la.docsOn"><div><strong class="la-h4">Where this touches your documents</strong><ul class="la-ul"><template data-for="la.docs" data-as="d"><li><strong style="color: #fff">{{ d.doc }}:</strong> {{ d.note }}</li></template></ul></div></template>
+<template data-if="la.qsOn"><div><strong class="la-h4">Questions you could ask a lawyer</strong><ul class="la-ul"><template data-for="la.qs" data-as="t"><li>{{ t }}</li></template></ul></div></template>
+<div class="la-cta"><span style="font-size: 13.5px; line-height: 1.5; color: #fff">{{ la.when }}</span><a class="btn la-btn" href="#Assistant--svc-legal">Get advice from Legal advisory</a></div>
+<template data-if="laMock"><span style="font-size: 12px; color: #A5B3AC">Prepared example using the demo venue’s documents. <button type="button" class="la-live" onClick="{{ laLive }}">Ask AI live instead</button></span></template>
+</div>
+</template>
+<span style="font-size: 11.5px; line-height: 1.5; color: #A5B3AC">AI-generated general information about Australian law, using the documents in your portal. It is not legal advice, does not create a lawyer–client relationship, and may not reflect the law in your state or recent changes.</span>
 </section>
 
 <section id="docs" style="display: flex; flex-direction: column; gap: 14px">
@@ -2073,6 +2128,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -2215,6 +2271,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -2311,6 +2368,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -2387,6 +2445,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -2461,6 +2520,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -3036,9 +3096,72 @@ class Component extends DCLogic {
 
 return Component;})();
 SCREENS["Analysis"]=(function(){ return class extends SCREENS["Dashboard"] {}; })();
+
+// ---- Legal Q&A (general information only)
+const LA_EG = ['What happens if I miss the deadline to exercise my lease option?', 'Can a casual employee ask to become permanent?', 'What does a personal guarantee on my equipment loan mean?'];
+const LA_MOCK = [
+ { topic: 'Missing a lease option deadline', info: ['An option to renew is a right to extend the lease on the terms the lease sets out. Courts generally treat option conditions strictly: the notice usually has to be given in the form, to the person and within the time the lease specifies. If the window passes without valid notice, the option generally lapses and the tenant has no automatic right to stay on after the lease ends.', 'Some states’ retail leases laws give tenants extra protection, for example by requiring the landlord to remind the tenant before the option deadline, or allowing late exercise in limited cases. Whether that applies depends on the state and the type of lease.'],
+   points: ['Options often require the tenant not to be in breach of the lease when the notice is given or when the new term starts.', 'Notice is usually required in writing and served as the lease’s notices clause says.', 'If the option lapses, any new lease is a matter for negotiation with the landlord, often on different terms.', 'Staying on after expiry without a new agreement usually creates a periodic (month-to-month) tenancy.'],
+   docs: [ { doc: 'Retail lease, Shop 3', note: 'The summary on file shows one 5-year option with notice due by 31 Jan 2027, and the lease ending 30 Apr 2027.' }, { doc: 'Standard legal templates', note: 'There is a “Notice to exercise a lease option” template, which should be reviewed before it is sent.' } ],
+   qs: ['Exactly how and to whom must notice be given under my lease?', 'Are there any breaches that could stop me exercising the option?', 'Does my state’s retail leases law require the landlord to remind me?', 'What rent applies in the option term, and how is it reviewed?'],
+   when: 'With the notice due 31 Jan 2027, consider getting advice well before the deadline.' },
+ { topic: 'Casual employees asking to become permanent', info: ['Under the Fair Work Act, an eligible casual employee can notify their employer in writing that they want to change to permanent full-time or part-time employment. This is known as the “employee choice” pathway. It generally becomes available after 6 months of employment, or 12 months for a small business employer (fewer than 15 employees).', 'The employer must respond in writing within a set time. It can refuse only on limited grounds, for example where the employee is still genuinely casual, or where accepting would require a significant change to their hours or would not comply with a recruitment process required by law. Disputes can be taken to the Fair Work Commission.'],
+   points: ['Whether someone is casual depends on the real nature of the job, including whether there is a firm advance commitment to ongoing work.', 'Employers must give casual employees the Casual Employment Information Statement at the start and at set times after that.', 'The award sets out casual loading and minimum engagement periods.'],
+   docs: [ { doc: 'Casual employment agreements (4)', note: 'These are on file for front-of-house staff. The venue data shows 14 casuals in total.' }, { doc: 'Standard legal templates', note: 'Casual and full-time or part-time contract templates are available.' } ],
+   qs: ['Which of my casuals are eligible to give notice?', 'Do I count as a small business employer?', 'What grounds would apply if I needed to refuse a request?', 'How would conversion affect rosters and hours under the Restaurant Industry Award?'],
+   when: 'If a staff member has asked to convert, or you’re unsure how the rules apply, get advice before responding.' },
+ { topic: 'Personal guarantees on business loans', info: ['A personal guarantee is a promise by an individual, often a company director, to pay the lender if the business doesn’t. If the company defaults, the lender can usually pursue the guarantor personally, which can include their personal assets, depending on the terms and any security given.', 'Guarantees are often written broadly. An “all monies” guarantee may cover more than the original loan, such as later facilities or costs. A guarantee usually continues until the debt is repaid and the lender formally releases it; resigning as a director doesn’t end it on its own.'],
+   points: ['Where several directors guarantee, each may be liable for the full amount (joint and several liability).', 'Selling the business or refinancing doesn’t automatically release a guarantee.', 'Lenders often require guarantors to receive independent legal advice before signing.'],
+   docs: [ { doc: 'Equipment loan and director guarantees', note: 'The summary on file shows a $180,000 balance, repayments of $3,900 a month, maturing 15 Mar 2029, with directors as guarantors and an annual bank review.' }, { doc: 'Document setup checklist', note: 'The bank facility letter and covenants are not yet on file. These often set out what counts as a default.' } ],
+   qs: ['Is my guarantee limited to this loan, or is it an “all monies” guarantee?', 'What would trigger a default under the facility?', 'How can I be released if I sell the business or refinance?', 'Is my home or other property offered as security?'],
+   when: 'Get advice before signing a new guarantee, refinancing, or selling the business.' }
+];
+function laPrompt(q) {
+  const L = window.EF_LEGAL;
+  const docs = L.docs.map(d => { const v = L.view(d); return '- ' + d.name + ' [' + L.CATS[d.cat] + ']: ' + v.status + '; ' + v.dateLabel + (d.terms ? '. ' + d.terms : ''); }).join('\n');
+  return `You provide GENERAL LEGAL INFORMATION about Australian law inside an accounting firm's client portal for a hospitality business. You are not a lawyer and must never give legal advice.
+
+STRICT RULES:
+- Give only legal commentary, academic analysis, or statements of general legal information: explain how the law generally works, what concepts mean, and what factors usually matter.
+- Do NOT tell the user what they should do, whether they should sign, exercise, terminate, sue, refuse or accept anything, or what outcome they will get. Do not use "you should", "I recommend" or "my advice is". Frame everything as how the law generally operates.
+- You may point out where their documents touch the topic, as facts from the summaries below, without interpreting what they must do.
+- Note when the answer depends on the state, the exact wording of a document, or recent changes in the law.
+- If the question asks for advice, still give general information only and say a legal practitioner through Legal advisory can advise on their situation.
+- Plain Australian English, short sentences.
+
+QUESTION: ${q}
+
+BUSINESS: Little Saigon Kitchen, a restaurant company in a suburban shopping strip, about 18 staff (4 permanent, 14 casual), Restaurant Industry Award 2020 (demo data).
+DOCUMENTS ON FILE (summaries):
+${docs}
+
+Reply with only one JSON object:
+{"topic":"short title, max 8 words","info":["2-3 paragraphs of general legal information"],"points":["3-5 key points of the law"],"docs":[{"doc":"document name","note":"factual note about how this document relates, from the summary"}],"questions":["3-4 questions the user could ask a lawyer"],"when":"one sentence on situations where getting legal advice is worth considering"}`;
+}
+let laSamplePromise = null;
+function laSample() { if (!laSamplePromise) laSamplePromise = (window.claude && window.claude.use) ? window.claude.use('sample').catch(() => null) : Promise.resolve(null); return laSamplePromise; }
+function laShape(d, mock) {
+  d = d || {}; const A = (x, n) => (Array.isArray(x) ? x : []).slice(0, n);
+  const info = A(d.info, 4).map(String), pts = A(d.points, 6).map(String), qs = A(d.questions || d.qs, 5).map(String);
+  const docs = A(d.docs, 5).map(x => ({ doc: String(x.doc || ''), note: String(x.note || '') }));
+  return { topic: String(d.topic || 'General legal information'), info, pts, ptsOn: pts.length > 0, docs, docsOn: docs.length > 0, qs, qsOn: qs.length > 0,
+    when: String(d.when || 'For advice on your situation, speak to a legal practitioner.'), mock };
+}
 SCREENS["Legal"]=(function(){
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { f: 'all', flash: '', open: null, dflash: '', derr: '', tpflash: '' }; this.form = { remind: '90' }; }
+  constructor(props) { super(props); this.state = { f: 'all', flash: '', open: null, dflash: '', derr: '', tpflash: '', laBusy: false, laErr: '', la: null }; this.laQ = ''; this.laCtl = null; laSample(); this.form = { remind: '90' }; }
+  async laAsk() {
+    const q = (this.laQ || '').trim();
+    if (!q) { this.setState({ laErr: 'Type a question first, for example “What is a make-good clause?”', la: null }); return; }
+    const sample = await laSample();
+    if (!sample) { this.setState({ laErr: 'AI answers only work inside the Claude-hosted portal. This copy of the page can’t reach it. The suggested questions show example answers.', la: null }); return; }
+    this.laCtl = new AbortController();
+    this.setState({ laBusy: true, laErr: '', la: null });
+    try { const d = await sample.json(laPrompt(q), { signal: this.laCtl.signal, modelTier: 'default' }); this.setState({ laBusy: false, la: laShape(d, false) }); }
+    catch (e) { const c = e && e.code; if (c === 'cancelled') { this.setState({ laBusy: false }); return; }
+      const M = { not_granted: 'AI answers are switched off for this page. Allow Claude from the page’s permissions menu to use this.', rate_limited: 'Too many questions in a short time. Wait a minute, then try again.', refused: 'AI couldn’t answer that. Try asking about how the law generally works, or speak to Legal advisory.', invalid_json: 'The answer came back in the wrong format. Select Ask to try again.' };
+      this.setState({ laBusy: false, laErr: M[c] || 'Something went wrong reaching AI. Select Ask to try again.' }); }
+  }
   renderVals() {
     const L = window.EF_LEGAL, st = this.state, all = L.all();
     const att = all.filter(v => v.kind !== 'ok' && v.kind !== 'done').sort((a, b) => a.rank - b.rank || a.days - b.days)
@@ -3061,6 +3184,11 @@ class Component extends DCLogic {
       lgCount: all.length, lgBad: all.filter(v => v.kind === 'expired' || v.kind === 'action').length,
       lgSoon: all.filter(v => v.kind === 'soon').length,
       lgNext: nxt ? nxt.dateLabel : 'None', lgNextWhat: nxt ? nxt.name + ' · ' + nxt.daysText : '',
+      laQ: this.laQ, laOnQ: (e) => { this.laQ = e.target.value; },
+      laIdle: !st.laBusy, laBusy: st.laBusy, laErr: st.laErr, laHas: !!st.la && !st.laBusy, la: st.la || {}, laMock: !!(st.la && st.la.mock),
+      laStop: () => { if (this.laCtl) this.laCtl.abort(); },
+      laEg: LA_EG.map((q, i) => ({ q, go: () => { this.laQ = q; if (this.laCtl) this.laCtl.abort(); this.setState({ laBusy: false, laErr: '', la: laShape(LA_MOCK[i], true) }); } })),
+      laLive: () => this.laAsk(), laAsk: () => this.laAsk(),
       lgDFlash: st.dflash, lgDErr: st.derr, tpFlash: st.tpflash,
       tpRows: [
         ['tp-emp-ft', 'Employment contract (full-time or part-time)', 'For permanent staff covered by the hospitality award, with hours, pay and notice terms.', 'Employment contracts', 'Word', 'Jul 2026'],
@@ -3440,7 +3568,7 @@ function route(){const h=decodeURIComponent(location.hash.slice(1));const [scr,a
   if(scr==='Login'&&EF_AUTH.ok){location.replace('#Dashboard');return;}
   if(SCREENS[scr]){if(scr!==current){document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!=='scr-'+scr);current=scr;document.body.classList.remove('g-more-open','g-legal-open','g-comp-open');document.querySelectorAll('.grp-toggle').forEach(x=>x.setAttribute('aria-expanded',String(document.body.classList.contains('g-'+x.dataset.group+'-open'))));document.body.dataset.app=['Dashboard','Analysis','WhatIf','Compliance','Legal','Reports','Schedule','Assistant'].includes(scr)?'1':'0';document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===scr));}
     if(anchor&&inst[scr]&&inst[scr].onAnchor)inst[scr].onAnchor(anchor);
-    const t=anchor&&document.querySelector('#scr-'+scr+' #'+CSS.escape(anchor));if(anchor==='top'){window.scrollTo(0,0);return;}if(t&&anchor!=='ask'){t.scrollIntoView();if(/^svc-|^doc-/.test(anchor)){t.classList.add('hl');setTimeout(()=>t.classList.remove('hl'),1800);}}else window.scrollTo(0,0);if(anchor==='ask'){const q=document.getElementById('ai-q');if(q)setTimeout(()=>q.focus({preventScroll:true}),60);}return;}
+    const t=anchor&&document.querySelector('#scr-'+scr+' #'+CSS.escape(anchor));if(anchor==='top'){window.scrollTo(0,0);return;}if(t&&anchor!=='ask'){t.scrollIntoView();if(/^svc-|^doc-/.test(anchor)){t.classList.add('hl');setTimeout(()=>t.classList.remove('hl'),1800);}}else window.scrollTo(0,0);if(anchor==='ask-legal'){const lq=document.getElementById('la-q');if(lq)setTimeout(()=>lq.focus({preventScroll:true}),60);}if(anchor==='ask'){const q=document.getElementById('ai-q');if(q)setTimeout(()=>q.focus({preventScroll:true}),60);}return;}
   if(!current){location.replace('#Main');return;}
   const t=h&&document.querySelector('#scr-'+current+' #'+CSS.escape(h));if(t)t.scrollIntoView({behavior:'smooth'});}
 Object.keys(SCREENS).forEach(mount);
