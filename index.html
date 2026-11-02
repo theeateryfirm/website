@@ -19,6 +19,12 @@ body{padding-bottom:72px}
 #demo-nav a:hover{background:#2C4D41;color:#fff}
 #demo-nav a.on{background:#C1904A;color:#1F3A30}
 #tabbar{display:none}
+.side a.ai-nav{border:1px solid rgba(226,169,98,.5);background:rgba(226,169,98,.08);margin-bottom:6px;font-weight:600 !important;color:#fff !important}
+.side a.ai-nav svg{color:#E2A962}
+.side a.ai-nav.on{background:#C1904A;color:#1F3A30 !important}
+.side a.ai-nav.on svg{color:#1F3A30}
+#tabbar a.ai-tab svg{color:#E2A962}
+
 .m-only{display:none}
 @media (max-width:720px){
   body{padding-top:44px}
@@ -158,105 +164,283 @@ body{padding-bottom:72px}
 #scr-Login .l-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
 #scr-Login .l-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,38,31,.2),rgba(20,38,31,.92))}
 @media (max-width:860px){#scr-Login .l-photo{display:none}}
-#scr-Dashboard .ai-panel{background:#1F3A30;color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.25),transparent 70%)}
-#scr-Dashboard .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-#scr-Dashboard .ai-form{display:flex;gap:8px}
-#scr-Dashboard .ai-form input{flex:1;min-width:0;min-height:48px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:15px;padding:0 14px}
-#scr-Dashboard .ai-form input::placeholder{color:#A5B3AC}
-#scr-Dashboard .ai-form input:focus-visible,#scr-Dashboard .ai-chip:focus-visible,#scr-Dashboard .ai-send:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
-#scr-Dashboard .ai-send{min-height:48px;padding:0 20px;border-radius:12px;border:0;background:#B5703A;color:#fff;font:inherit;font-weight:700;cursor:pointer}
-#scr-Dashboard .ai-send:hover{background:#9A5D2E}
-#scr-Dashboard .ai-chips{display:flex;flex-wrap:wrap;gap:8px}
-#scr-Dashboard .ai-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#E3E8E4;font:inherit;font-size:14px;font-weight:500;cursor:pointer;text-align:left}
-#scr-Dashboard .ai-chip:hover{background:rgba(255,255,255,.12);color:#fff}
-#scr-Dashboard .ai-chip.on{background:#E2A962;border-color:#E2A962;color:#1F3A30;font-weight:600}
-#scr-Dashboard .ai-answer{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px}
-#scr-Dashboard .ai-q-bubble{align-self:flex-end;max-width:85%;background:#E2A962;color:#1F3A30;font-weight:600;font-size:14px;padding:8px 12px;border-radius:12px 12px 4px 12px}
-#scr-Dashboard .ai-thinking{display:flex;align-items:center;gap:6px;font-size:13px;color:#C6D1CB}
-#scr-Dashboard .ai-thinking span{width:6px;height:6px;border-radius:50%;background:#E2A962;animation:aiDot 1s infinite ease-in-out}
-#scr-Dashboard .ai-thinking span:nth-child(2){animation-delay:.15s}#scr-Dashboard .ai-thinking span:nth-child(3){animation-delay:.3s}
+#scr-Dashboard .ai-panel,
+#scr-Legal .ai-panel,
+#scr-Analysis .ai-panel{background:#1F3A30;color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.25),transparent 70%)}
+#scr-Dashboard .sr-only,
+#scr-Legal .sr-only,
+#scr-Analysis .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#scr-Dashboard .ai-form,
+#scr-Legal .ai-form,
+#scr-Analysis .ai-form{display:flex;gap:8px}
+#scr-Dashboard .ai-form input,
+#scr-Legal .ai-form input,
+#scr-Analysis .ai-form input{flex:1;min-width:0;min-height:48px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:15px;padding:0 14px}
+#scr-Dashboard .ai-form input::placeholder,
+#scr-Legal .ai-form input::placeholder,
+#scr-Analysis .ai-form input::placeholder{color:#A5B3AC}
+#scr-Dashboard .ai-form input:focus-visible,
+#scr-Legal .ai-form input:focus-visible,
+#scr-Analysis .ai-form input:focus-visible,#scr-Dashboard .ai-chip:focus-visible,#scr-Legal .ai-chip:focus-visible,#scr-Analysis .ai-chip:focus-visible,#scr-Dashboard .ai-send:focus-visible,#scr-Legal .ai-send:focus-visible,#scr-Analysis .ai-send:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
+#scr-Dashboard .ai-send,
+#scr-Legal .ai-send,
+#scr-Analysis .ai-send{min-height:48px;padding:0 20px;border-radius:12px;border:0;background:#B5703A;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+#scr-Dashboard .ai-send:hover,
+#scr-Legal .ai-send:hover,
+#scr-Analysis .ai-send:hover{background:#9A5D2E}
+#scr-Dashboard .ai-chips,
+#scr-Legal .ai-chips,
+#scr-Analysis .ai-chips{display:flex;flex-wrap:wrap;gap:8px}
+#scr-Dashboard .ai-chip,
+#scr-Legal .ai-chip,
+#scr-Analysis .ai-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#E3E8E4;font:inherit;font-size:14px;font-weight:500;cursor:pointer;text-align:left}
+#scr-Dashboard .ai-chip:hover,
+#scr-Legal .ai-chip:hover,
+#scr-Analysis .ai-chip:hover{background:rgba(255,255,255,.12);color:#fff}
+#scr-Dashboard .ai-chip.on,
+#scr-Legal .ai-chip.on,
+#scr-Analysis .ai-chip.on{background:#E2A962;border-color:#E2A962;color:#1F3A30;font-weight:600}
+#scr-Dashboard .ai-answer,
+#scr-Legal .ai-answer,
+#scr-Analysis .ai-answer{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px}
+#scr-Dashboard .ai-q-bubble,
+#scr-Legal .ai-q-bubble,
+#scr-Analysis .ai-q-bubble{align-self:flex-end;max-width:85%;background:#E2A962;color:#1F3A30;font-weight:600;font-size:14px;padding:8px 12px;border-radius:12px 12px 4px 12px}
+#scr-Dashboard .ai-thinking,
+#scr-Legal .ai-thinking,
+#scr-Analysis .ai-thinking{display:flex;align-items:center;gap:6px;font-size:13px;color:#C6D1CB}
+#scr-Dashboard .ai-thinking span,
+#scr-Legal .ai-thinking span,
+#scr-Analysis .ai-thinking span{width:6px;height:6px;border-radius:50%;background:#E2A962;animation:aiDot 1s infinite ease-in-out}
+#scr-Dashboard .ai-thinking span:nth-child(2),
+#scr-Legal .ai-thinking span:nth-child(2),
+#scr-Analysis .ai-thinking span:nth-child(2){animation-delay:.15s}#scr-Dashboard .ai-thinking span:nth-child(3),#scr-Legal .ai-thinking span:nth-child(3),#scr-Analysis .ai-thinking span:nth-child(3){animation-delay:.3s}
 @keyframes aiDot{0%,80%,100%{opacity:.3}40%{opacity:1}}
-@media (prefers-reduced-motion:reduce){#scr-Dashboard .ai-thinking span{animation:none}}
-#scr-Dashboard .ai-cta{background:#E2A962;color:#1F3A30;min-height:40px;padding:0 14px;font-size:14px}
-#scr-Dashboard .ai-cta:hover{background:#EBC48A;color:#1F3A30}
-#scr-Dashboard .ai-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);min-height:40px;padding:0 14px;font-size:14px}
-#scr-Dashboard .ai-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
-@media (max-width:560px){#scr-Dashboard .ai-chip{flex:1 1 100%}}
-#scr-Dashboard .todo{background:#fff;border:2px solid #A4472A;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(164,71,42,0.12)}
-#scr-Dashboard .todo-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;background:#A4472A;color:#fff;padding:12px 18px}
-#scr-Dashboard .todo-count{display:grid;place-items:center;min-width:28px;height:28px;border-radius:999px;background:#fff;color:#A4472A;font-weight:800;font-size:15px}
-#scr-Dashboard .todo-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 18px;border-top:1px solid #EEE8DC}
-#scr-Dashboard .todo-row:first-child{border-top:0}
-#scr-Dashboard .todo-urgent{background:#FDF6F2}
-#scr-Dashboard .todo-ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center}
-#scr-Dashboard .todo-pill{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
-#scr-Dashboard .todo-btn-urgent{background:#A4472A;color:#fff;min-height:48px;padding:0 22px;font-size:15px}
-#scr-Dashboard .todo-btn-urgent:hover{background:#8A3A22;color:#fff}
-#scr-Dashboard .todo .btn{white-space:nowrap}
-@media (max-width:640px){#scr-Dashboard .todo-row{grid-template-columns:44px minmax(0,1fr)}#scr-Dashboard .todo-row .btn{grid-column:1 / -1;width:100%}}
+@media (prefers-reduced-motion:reduce){#scr-Dashboard .ai-thinking span,#scr-Legal .ai-thinking span,#scr-Analysis .ai-thinking span{animation:none}}
+#scr-Dashboard .ai-cta,
+#scr-Legal .ai-cta,
+#scr-Analysis .ai-cta{background:#E2A962;color:#1F3A30;min-height:40px;padding:0 14px;font-size:14px}
+#scr-Dashboard .ai-cta:hover,
+#scr-Legal .ai-cta:hover,
+#scr-Analysis .ai-cta:hover{background:#EBC48A;color:#1F3A30}
+#scr-Dashboard .ai-ghost,
+#scr-Legal .ai-ghost,
+#scr-Analysis .ai-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);min-height:40px;padding:0 14px;font-size:14px}
+#scr-Dashboard .ai-ghost:hover,
+#scr-Legal .ai-ghost:hover,
+#scr-Analysis .ai-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
+@media (max-width:560px){#scr-Dashboard .ai-chip,#scr-Legal .ai-chip,#scr-Analysis .ai-chip{flex:1 1 100%}}
+#scr-Dashboard .todo,
+#scr-Legal .todo,
+#scr-Analysis .todo{background:#fff;border:2px solid #A4472A;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(164,71,42,0.12)}
+#scr-Dashboard .todo-head,
+#scr-Legal .todo-head,
+#scr-Analysis .todo-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;background:#A4472A;color:#fff;padding:12px 18px}
+#scr-Dashboard .todo-count,
+#scr-Legal .todo-count,
+#scr-Analysis .todo-count{display:grid;place-items:center;min-width:28px;height:28px;border-radius:999px;background:#fff;color:#A4472A;font-weight:800;font-size:15px}
+#scr-Dashboard .todo-row,
+#scr-Legal .todo-row,
+#scr-Analysis .todo-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 18px;border-top:1px solid #EEE8DC}
+#scr-Dashboard .todo-row:first-child,
+#scr-Legal .todo-row:first-child,
+#scr-Analysis .todo-row:first-child{border-top:0}
+#scr-Dashboard .todo-urgent,
+#scr-Legal .todo-urgent,
+#scr-Analysis .todo-urgent{background:#FDF6F2}
+#scr-Dashboard .todo-ic,
+#scr-Legal .todo-ic,
+#scr-Analysis .todo-ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center}
+#scr-Dashboard .todo-pill,
+#scr-Legal .todo-pill,
+#scr-Analysis .todo-pill{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
+#scr-Dashboard .todo-btn-urgent,
+#scr-Legal .todo-btn-urgent,
+#scr-Analysis .todo-btn-urgent{background:#A4472A;color:#fff;min-height:48px;padding:0 22px;font-size:15px}
+#scr-Dashboard .todo-btn-urgent:hover,
+#scr-Legal .todo-btn-urgent:hover,
+#scr-Analysis .todo-btn-urgent:hover{background:#8A3A22;color:#fff}
+#scr-Dashboard .todo .btn,
+#scr-Legal .todo .btn,
+#scr-Analysis .todo .btn{white-space:nowrap}
+@media (max-width:640px){#scr-Dashboard .todo-row,#scr-Legal .todo-row,#scr-Analysis .todo-row{grid-template-columns:44px minmax(0,1fr)}#scr-Dashboard .todo-row .btn,#scr-Legal .todo-row .btn,#scr-Analysis .todo-row .btn{grid-column:1 / -1;width:100%}}
 .nbadge{margin-left:auto;background:#A4472A;color:#fff;border-radius:999px;font-size:12px;font-weight:700;padding:1px 8px;line-height:18px}
 #tabbar a{position:relative}
 #tabbar .tbadge{position:absolute;top:2px;left:calc(50% + 6px);background:#A4472A;color:#fff;border-radius:999px;font-size:10px;font-weight:800;min-width:16px;height:16px;display:grid;place-items:center;padding:0 4px;box-sizing:border-box;border:2px solid #1F3A30}
-#scr-Dashboard{margin:0;background:#F3ECE0;color:#1F3A30;font-family:Inter,system-ui,sans-serif}
-#scr-Dashboard a{color:#2A5243}
-#scr-Dashboard a:hover{color:#1A332B}
-#scr-Dashboard .h{font-family:'Playfair Display',Georgia,serif;letter-spacing:-0.005em}
-#scr-Dashboard .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;box-sizing:border-box}
-#scr-Dashboard .btn-primary{background:#2A5243;color:#fff}
-#scr-Dashboard .btn-primary:hover{background:#1F3E33;color:#fff}
-#scr-Dashboard .btn-ghost{background:#fff;color:#1F3A30;border-color:#D8D0C0}
-#scr-Dashboard .btn-ghost:hover{background:#EFE9DD;color:#1F3A30}
-#scr-Dashboard .card{background:#fff;border:1px solid #E5DED0;border-radius:16px;box-sizing:border-box}
-#scr-Dashboard .muted{color:#56635D}
-#scr-Dashboard .side a{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border-radius:10px;color:#D9E0DB;text-decoration:none;font-weight:500;font-size:15px}
-#scr-Dashboard .side a:hover{background:#2C4D41;color:#fff}
-#scr-Dashboard .side a.on{background:#C1904A;color:#1F3A30}
-#scr-Dashboard .pill{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap}
-#scr-Dashboard .seg{min-height:36px;padding:0 14px;border:0;border-radius:8px;font:inherit;font-weight:600;font-size:13px;cursor:pointer;background:transparent;color:#46524C}
-#scr-Dashboard .bm-row{display:grid;grid-template-columns:minmax(120px,1.1fr) minmax(140px,2fr) 128px;gap:8px 18px;align-items:center;padding:12px 0;border-top:1px solid #EEE8DC}
-#scr-Dashboard .bm-track{position:relative;height:12px;background:#F1EBDF;border-radius:999px}
-#scr-Dashboard .bm-bar{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:#2A5243}
-#scr-Dashboard .bm-tick{position:absolute;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#B5703A;border-radius:2px;box-shadow:0 0 0 2px #fff}
-#scr-Dashboard .bm-st{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;justify-self:end}
-#scr-Dashboard .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;align-self:flex-start}
-#scr-Dashboard .mini{background:#F8F3EA;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
-@media (max-width:560px){#scr-Dashboard .bm-row{grid-template-columns:1fr auto}#scr-Dashboard .bm-row .bm-track{grid-column:1 / -1;grid-row:2}}
-#scr-Dashboard .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B5703A}
-#scr-Dashboard .tbl-wrap{overflow-x:auto;border:1px solid #EEE8DC;border-radius:12px}
-#scr-Dashboard table.pl{border-collapse:collapse;width:100%;min-width:860px;font-size:14px;font-variant-numeric:tabular-nums}
-#scr-Dashboard table.pl th{font-size:12px;font-weight:600;color:#56635D;text-align:right;padding:10px 12px;background:#F8F3EA;white-space:nowrap}
-#scr-Dashboard table.pl th:first-child,#scr-Dashboard table.pl td:first-child{text-align:left;position:sticky;left:0;background:inherit}
-#scr-Dashboard table.pl td{padding:10px 12px;text-align:right;border-top:1px solid #EEE8DC;white-space:nowrap;background:#fff}
-#scr-Dashboard table.fc td:first-child,#scr-Dashboard table.fc th:first-child{white-space:normal;min-width:120px}
-#scr-Dashboard table.fc td,#scr-Dashboard table.fc th{padding:10px 10px}
-#scr-Dashboard table.pl tr.tot td{font-weight:700;background:#F8F3EA}
-#scr-Dashboard table.pl tr.cur td{background:#FBF3E6}
-#scr-Dashboard .qbar{flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;height:100%;min-width:0}
-#scr-Dashboard .qbar:hover .qb{filter:brightness(1.15)}
-#scr-Dashboard .prio{display:flex;gap:14px;padding:16px;border:1px solid #EEE8DC;border-radius:14px;background:#fff}
-#scr-Dashboard .prio .num{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#1F3A30;color:#E2A962;font-weight:700;font-family:'Playfair Display',Georgia,serif}
-#scr-Dashboard details.how summary{cursor:pointer;font-weight:600;font-size:14px;min-height:32px;display:flex;align-items:center}
-#scr-Dashboard svg .pt:hover{r:7}
-#scr-Dashboard .jump{display:none}
+#scr-Dashboard,
+#scr-Legal,
+#scr-Analysis{margin:0;background:#F3ECE0;color:#1F3A30;font-family:Inter,system-ui,sans-serif}
+#scr-Dashboard a,
+#scr-Legal a,
+#scr-Analysis a{color:#2A5243}
+#scr-Dashboard a:hover,
+#scr-Legal a:hover,
+#scr-Analysis a:hover{color:#1A332B}
+#scr-Dashboard .h,
+#scr-Legal .h,
+#scr-Analysis .h{font-family:'Playfair Display',Georgia,serif;letter-spacing:-0.005em}
+#scr-Dashboard .btn,
+#scr-Legal .btn,
+#scr-Analysis .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;box-sizing:border-box}
+#scr-Dashboard .btn-primary,
+#scr-Legal .btn-primary,
+#scr-Analysis .btn-primary{background:#2A5243;color:#fff}
+#scr-Dashboard .btn-primary:hover,
+#scr-Legal .btn-primary:hover,
+#scr-Analysis .btn-primary:hover{background:#1F3E33;color:#fff}
+#scr-Dashboard .btn-ghost,
+#scr-Legal .btn-ghost,
+#scr-Analysis .btn-ghost{background:#fff;color:#1F3A30;border-color:#D8D0C0}
+#scr-Dashboard .btn-ghost:hover,
+#scr-Legal .btn-ghost:hover,
+#scr-Analysis .btn-ghost:hover{background:#EFE9DD;color:#1F3A30}
+#scr-Dashboard .card,
+#scr-Legal .card,
+#scr-Analysis .card{background:#fff;border:1px solid #E5DED0;border-radius:16px;box-sizing:border-box}
+#scr-Dashboard .muted,
+#scr-Legal .muted,
+#scr-Analysis .muted{color:#56635D}
+#scr-Dashboard .side a,
+#scr-Legal .side a,
+#scr-Analysis .side a{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border-radius:10px;color:#D9E0DB;text-decoration:none;font-weight:500;font-size:15px}
+#scr-Dashboard .side a:hover,
+#scr-Legal .side a:hover,
+#scr-Analysis .side a:hover{background:#2C4D41;color:#fff}
+#scr-Dashboard .side a.on,
+#scr-Legal .side a.on,
+#scr-Analysis .side a.on{background:#C1904A;color:#1F3A30}
+#scr-Dashboard .pill,
+#scr-Legal .pill,
+#scr-Analysis .pill{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap}
+#scr-Dashboard .seg,
+#scr-Legal .seg,
+#scr-Analysis .seg{min-height:36px;padding:0 14px;border:0;border-radius:8px;font:inherit;font-weight:600;font-size:13px;cursor:pointer;background:transparent;color:#46524C}
+#scr-Dashboard .bm-row,
+#scr-Legal .bm-row,
+#scr-Analysis .bm-row{display:grid;grid-template-columns:minmax(120px,1.1fr) minmax(140px,2fr) 128px;gap:8px 18px;align-items:center;padding:12px 0;border-top:1px solid #EEE8DC}
+#scr-Dashboard .bm-track,
+#scr-Legal .bm-track,
+#scr-Analysis .bm-track{position:relative;height:12px;background:#F1EBDF;border-radius:999px}
+#scr-Dashboard .bm-bar,
+#scr-Legal .bm-bar,
+#scr-Analysis .bm-bar{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:#2A5243}
+#scr-Dashboard .bm-tick,
+#scr-Legal .bm-tick,
+#scr-Analysis .bm-tick{position:absolute;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#B5703A;border-radius:2px;box-shadow:0 0 0 2px #fff}
+#scr-Dashboard .bm-st,
+#scr-Legal .bm-st,
+#scr-Analysis .bm-st{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;justify-self:end}
+#scr-Dashboard .tag,
+#scr-Legal .tag,
+#scr-Analysis .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;align-self:flex-start}
+#scr-Dashboard .mini,
+#scr-Legal .mini,
+#scr-Analysis .mini{background:#F8F3EA;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+@media (max-width:560px){#scr-Dashboard .bm-row,#scr-Legal .bm-row,#scr-Analysis .bm-row{grid-template-columns:1fr auto}#scr-Dashboard .bm-row .bm-track,#scr-Legal .bm-row .bm-track,#scr-Analysis .bm-row .bm-track{grid-column:1 / -1;grid-row:2}}
+#scr-Dashboard .eyebrow,
+#scr-Legal .eyebrow,
+#scr-Analysis .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B5703A}
+#scr-Dashboard .tbl-wrap,
+#scr-Legal .tbl-wrap,
+#scr-Analysis .tbl-wrap{overflow-x:auto;border:1px solid #EEE8DC;border-radius:12px}
+#scr-Dashboard table.pl,
+#scr-Legal table.pl,
+#scr-Analysis table.pl{border-collapse:collapse;width:100%;min-width:860px;font-size:14px;font-variant-numeric:tabular-nums}
+#scr-Dashboard table.pl th,
+#scr-Legal table.pl th,
+#scr-Analysis table.pl th{font-size:12px;font-weight:600;color:#56635D;text-align:right;padding:10px 12px;background:#F8F3EA;white-space:nowrap}
+#scr-Dashboard table.pl th:first-child,
+#scr-Legal table.pl th:first-child,
+#scr-Analysis table.pl th:first-child,#scr-Dashboard table.pl td:first-child,#scr-Legal table.pl td:first-child,#scr-Analysis table.pl td:first-child{text-align:left;position:sticky;left:0;background:inherit}
+#scr-Dashboard table.pl td,
+#scr-Legal table.pl td,
+#scr-Analysis table.pl td{padding:10px 12px;text-align:right;border-top:1px solid #EEE8DC;white-space:nowrap;background:#fff}
+#scr-Dashboard table.fc td:first-child,
+#scr-Legal table.fc td:first-child,
+#scr-Analysis table.fc td:first-child,#scr-Dashboard table.fc th:first-child,#scr-Legal table.fc th:first-child,#scr-Analysis table.fc th:first-child{white-space:normal;min-width:120px}
+#scr-Dashboard table.fc td,
+#scr-Legal table.fc td,
+#scr-Analysis table.fc td,#scr-Dashboard table.fc th,#scr-Legal table.fc th,#scr-Analysis table.fc th{padding:10px 10px}
+#scr-Dashboard table.pl tr.tot td,
+#scr-Legal table.pl tr.tot td,
+#scr-Analysis table.pl tr.tot td{font-weight:700;background:#F8F3EA}
+#scr-Dashboard table.pl tr.cur td,
+#scr-Legal table.pl tr.cur td,
+#scr-Analysis table.pl tr.cur td{background:#FBF3E6}
+#scr-Dashboard .qbar,
+#scr-Legal .qbar,
+#scr-Analysis .qbar{flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;height:100%;min-width:0}
+#scr-Dashboard .qbar:hover .qb,
+#scr-Legal .qbar:hover .qb,
+#scr-Analysis .qbar:hover .qb{filter:brightness(1.15)}
+#scr-Dashboard .prio,
+#scr-Legal .prio,
+#scr-Analysis .prio{display:flex;gap:14px;padding:16px;border:1px solid #EEE8DC;border-radius:14px;background:#fff}
+#scr-Dashboard .prio .num,
+#scr-Legal .prio .num,
+#scr-Analysis .prio .num{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#1F3A30;color:#E2A962;font-weight:700;font-family:'Playfair Display',Georgia,serif}
+#scr-Dashboard details.how summary,
+#scr-Legal details.how summary,
+#scr-Analysis details.how summary{cursor:pointer;font-weight:600;font-size:14px;min-height:32px;display:flex;align-items:center}
+#scr-Dashboard svg .pt:hover,
+#scr-Legal svg .pt:hover,
+#scr-Analysis svg .pt:hover{r:7}
+#scr-Dashboard .jump,
+#scr-Legal .jump,
+#scr-Analysis .jump{display:none}
 @media (max-width:720px){
-  #scr-Dashboard .jump{display:flex;position:sticky;top:96px;z-index:15;margin:0 -16px;padding:8px 16px;gap:8px;overflow-x:auto;background:rgba(243,236,224,0.96);backdrop-filter:blur(6px);scrollbar-width:none;border-bottom:1px solid #E5DED0}
-  #scr-Dashboard .jump::-webkit-scrollbar{display:none}
-  #scr-Dashboard .jump a{flex:none;min-height:36px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #E5DED0;color:#1F3A30;font-size:13px;font-weight:600;text-decoration:none}
-  #scr-Dashboard section[id]{scroll-margin-top:156px}
-  #scr-Dashboard h1.h{font-size:28px !important}
-  #scr-Dashboard h2.h{font-size:21px !important}
-  #scr-Dashboard section.card,#scr-Dashboard section.glow{padding:18px 16px !important}
-  #scr-Dashboard .kpis{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important}
-  #scr-Dashboard .kpis .card{padding:12px 14px !important}
-  #scr-Dashboard .kpis .h{font-size:23px !important}
-  #scr-Dashboard .dhead > div:last-child{width:100%}
-  #scr-Dashboard .dhead select{flex:1 1 auto;min-width:0}
-  #scr-Dashboard .dhead label{flex:1 1 auto}
-  #scr-Dashboard [role="group"][aria-label="Period"],#scr-Dashboard [role="group"][aria-label="Compare against"]{width:100%;display:flex !important}
-  #scr-Dashboard [role="group"] .seg{flex:1 1 0;padding:0 6px}
-  #scr-Dashboard details.note-more summary{list-style:none}
+  #scr-Dashboard .jump,
+  #scr-Legal .jump,
+  #scr-Analysis .jump{display:flex;position:sticky;top:96px;z-index:15;margin:0 -16px;padding:8px 16px;gap:8px;overflow-x:auto;background:rgba(243,236,224,0.96);backdrop-filter:blur(6px);scrollbar-width:none;border-bottom:1px solid #E5DED0}
+  #scr-Dashboard .jump::-webkit-scrollbar,
+  #scr-Legal .jump::-webkit-scrollbar,
+  #scr-Analysis .jump::-webkit-scrollbar{display:none}
+  #scr-Dashboard .jump a,
+  #scr-Legal .jump a,
+  #scr-Analysis .jump a{flex:none;min-height:36px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #E5DED0;color:#1F3A30;font-size:13px;font-weight:600;text-decoration:none}
+  #scr-Dashboard section[id],
+  #scr-Legal section[id],
+  #scr-Analysis section[id]{scroll-margin-top:156px}
+  #scr-Dashboard h1.h,
+  #scr-Legal h1.h,
+  #scr-Analysis h1.h{font-size:28px !important}
+  #scr-Dashboard h2.h,
+  #scr-Legal h2.h,
+  #scr-Analysis h2.h{font-size:21px !important}
+  #scr-Dashboard section.card,
+  #scr-Legal section.card,
+  #scr-Analysis section.card,#scr-Dashboard section.glow,#scr-Legal section.glow,#scr-Analysis section.glow{padding:18px 16px !important}
+  #scr-Dashboard .kpis,
+  #scr-Legal .kpis,
+  #scr-Analysis .kpis{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important}
+  #scr-Dashboard .kpis .card,
+  #scr-Legal .kpis .card,
+  #scr-Analysis .kpis .card{padding:12px 14px !important}
+  #scr-Dashboard .kpis .h,
+  #scr-Legal .kpis .h,
+  #scr-Analysis .kpis .h{font-size:23px !important}
+  #scr-Dashboard .dhead > div:last-child,
+  #scr-Legal .dhead > div:last-child,
+  #scr-Analysis .dhead > div:last-child{width:100%}
+  #scr-Dashboard .dhead select,
+  #scr-Legal .dhead select,
+  #scr-Analysis .dhead select{flex:1 1 auto;min-width:0}
+  #scr-Dashboard .dhead label,
+  #scr-Legal .dhead label,
+  #scr-Analysis .dhead label{flex:1 1 auto}
+  #scr-Dashboard [role="group"][aria-label="Period"],
+  #scr-Legal [role="group"][aria-label="Period"],
+  #scr-Analysis [role="group"][aria-label="Period"],#scr-Dashboard [role="group"][aria-label="Compare against"],#scr-Legal [role="group"][aria-label="Compare against"],#scr-Analysis [role="group"][aria-label="Compare against"]{width:100%;display:flex !important}
+  #scr-Dashboard [role="group"] .seg,
+  #scr-Legal [role="group"] .seg,
+  #scr-Analysis [role="group"] .seg{flex:1 1 0;padding:0 6px}
+  #scr-Dashboard details.note-more summary,
+  #scr-Legal details.note-more summary,
+  #scr-Analysis details.note-more summary{list-style:none}
 }
-#scr-Dashboard .seg-on{background:#fff;color:#1F3A30;box-shadow:0 1px 3px rgba(0,0,0,0.12)}
+#scr-Dashboard .seg-on,
+#scr-Legal .seg-on,
+#scr-Analysis .seg-on{background:#fff;color:#1F3A30;box-shadow:0 1px 3px rgba(0,0,0,0.12)}
 #scr-Reports{margin:0;background:#F3ECE0;color:#1F3A30;font-family:Inter,system-ui,sans-serif}
 #scr-Reports a{color:#2A5243}
 #scr-Reports a:hover{color:#1A332B}
@@ -311,16 +495,38 @@ body{padding-bottom:72px}
 #scr-Assistant .side a.on{background:#C1904A;color:#1F3A30}
 #scr-Assistant .sug{min-height:44px;padding:8px 14px;border-radius:12px;border:1px solid #D8D0C0;background:#fff;font:inherit;font-size:14px;color:#1F3A30;cursor:pointer;text-align:left}
 #scr-Assistant .sug-on{border-color:#2A5243;background:#F5EFE3}
+#scr-Legal .lg-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+#scr-Legal .lg-tile{background:#fff;border:1px solid #E5DED0;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+#scr-Legal .lg-alert{border:1px solid #EEE8DC;border-left:4px solid #A4472A;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;background:#fff}
+#scr-Legal .lg-pill{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+#scr-Legal .lg-chips{display:flex;flex-wrap:wrap;gap:8px}
+#scr-Legal .lg-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #D8D0C0;background:#fff;font:inherit;font-size:14px;font-weight:600;color:#1F3A30;cursor:pointer}
+#scr-Legal .lg-chip.on{background:#1F3A30;color:#fff;border-color:#1F3A30}
+#scr-Legal .lg-row{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1.2fr) minmax(0,1.6fr) auto;gap:8px 16px;align-items:center;padding:12px 0;border-top:1px solid #EEE8DC;scroll-margin-top:110px}
+#scr-Legal .lg-row:target,#scr-Legal .lg-row:focus-within{background:#FBF3E6}
+#scr-Legal .lg-form{display:flex;flex-direction:column;gap:14px}
+#scr-Legal .lg-drop{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:110px;border:2px dashed #D8D0C0;border-radius:14px;background:#F8F3EA;cursor:pointer;text-align:center;padding:12px;position:relative}
+#scr-Legal .lg-drop:hover{border-color:#2A5243}
+#scr-Legal .lg-drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+#scr-Legal .lg-drop:focus-within{outline:3px solid #E2A962;outline-offset:2px}
+#scr-Legal .lg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+#scr-Legal .lg-f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+#scr-Legal .lg-f input,#scr-Legal .lg-f select{font:inherit;font-weight:400;font-size:15px;min-height:46px;padding:0 12px;border:1px solid #BFB6A4;border-radius:10px;background:#fff;color:#1F3A30;box-sizing:border-box;width:100%}
+#scr-Legal .lg-err{font-size:14px;font-weight:600;color:#A4472A;min-height:1px}
+#scr-Legal section[id]{scroll-margin-top:110px}
+@media (max-width:720px){#scr-Legal .lg-row{grid-template-columns:minmax(0,1fr) auto}#scr-Legal .lg-row > span.muted{display:none}}
 </style>
 </head>
 <body>
-<div class="screen" id="scr-Main" hidden></div><div class="screen" id="scr-Signup" hidden></div><div class="screen" id="scr-Login" hidden></div><div class="screen" id="scr-Dashboard" hidden></div><div class="screen" id="scr-Reports" hidden></div><div class="screen" id="scr-Schedule" hidden></div><div class="screen" id="scr-Assistant" hidden></div>
-<nav id="demo-nav" aria-label="Mockup pages"><span>Mockup · sample data</span><a href="#Main" data-nav="Main">Home</a><a href="#Signup" data-nav="Signup">Sign up</a><a href="#Login" data-nav="Login">Log in</a><a href="#Dashboard" data-nav="Dashboard">Dashboard</a><a href="#Reports" data-nav="Reports">Reports</a><a href="#Schedule" data-nav="Schedule">Schedule</a><a href="#Assistant" data-nav="Assistant">Ask AI</a></nav>
+<div class="screen" id="scr-Main" hidden></div><div class="screen" id="scr-Signup" hidden></div><div class="screen" id="scr-Login" hidden></div><div class="screen" id="scr-Dashboard" hidden></div><div class="screen" id="scr-Analysis" hidden></div><div class="screen" id="scr-Legal" hidden></div><div class="screen" id="scr-Reports" hidden></div><div class="screen" id="scr-Schedule" hidden></div><div class="screen" id="scr-Assistant" hidden></div>
+<nav id="demo-nav" aria-label="Mockup pages"><span>Mockup · sample data</span><a href="#Main" data-nav="Main">Home</a><a href="#Signup" data-nav="Signup">Sign up</a><a href="#Login" data-nav="Login">Log in</a><a href="#Dashboard" data-nav="Dashboard">Dashboard</a><a href="#Analysis" data-nav="Analysis">Analysis</a><a href="#Legal" data-nav="Legal">Legal</a><a href="#Reports" data-nav="Reports">Reports</a><a href="#Schedule" data-nav="Schedule">Schedule</a><a href="#Assistant" data-nav="Assistant">Ask AI</a></nav>
 <nav id="tabbar" aria-label="Client portal">
+<a href="#Dashboard--ask" class="ai-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg><span>Ask AI</span></a>
 <a href="#Dashboard" data-nav="Dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+<a href="#Analysis" data-nav="Analysis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Analysis</span></a>
+<a href="#Legal" data-nav="Legal"><span class="tbadge lbadge" aria-label="Legal items needing attention">4</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v18M5 21h14M4 8h16"/><path d="M4 8l-2.5 6a3 3 0 0 0 5 0zM20 8l-2.5 6a3 3 0 0 0 5 0z"/></svg><span>Legal</span></a>
 <a href="#Reports" data-nav="Reports"><span class="tbadge" aria-label="2 documents to sign">2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg><span>Reports</span></a>
 <a href="#Schedule" data-nav="Schedule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span>Schedule</span></a>
-<a href="#Assistant" data-nav="Assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg><span>Ask AI</span></a>
 <a href="#Assistant--partners"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg><span>More</span></a>
 </nav>
 
@@ -775,10 +981,12 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 
 <aside class="side" style="flex: 1 1 240px; max-width: 100%; background: #1F3A30; color: #fff; padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
 <a href="#Main" style="gap: 10px; margin-bottom: 14px; color: #fff"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 40 48" style="flex:none"><rect x="4" y="12" width="5" height="18" rx="2.5" fill="#F4EEE2"/><rect x="12.5" y="6" width="5" height="24" rx="2.5" fill="#F4EEE2"/><rect x="21" y="2" width="5" height="28" rx="2.5" fill="#F4EEE2"/><rect x="29.5" y="0" width="5" height="30" fill="#C1904A"/><path d="M4 24h30.5v4c0 6-5 9.5-10.5 12H15C9 37.5 4 34 4 28z" fill="#F4EEE2"/><rect x="17" y="34" width="6" height="14" rx="3" fill="#F4EEE2"/></svg><span class="h" style="font-weight: 700; font-size: 18px">The Eatery Firm</span></a>
+<a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a class="on" href="#Dashboard">Dashboard</a>
+<a href="#Analysis">Benchmarking and Performance Analysis</a>
+<a href="#Legal">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span></a>
 <a href="#Reports">Reports &amp; documents<span class="nbadge" aria-label="2 documents to sign">2</span></a>
 <a href="#Schedule">Work schedule</a>
-<a href="#Assistant">Ask AI</a>
 <a href="#Assistant--partners">More services</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -822,46 +1030,128 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </div>
 </template>
 </section>
-<nav class="jump" aria-label="Jump to section"><a href="#Dashboard--todo" style="background: #A4472A; color: #fff; border-color: #A4472A">To do (3)</a><a href="#Dashboard--summary">Summary</a><a href="#Dashboard--priorities">Action plan</a><a href="#Dashboard--benchmarks">Benchmarks</a><a href="#Dashboard--quarters">Quarters</a><a href="#Dashboard--forecast">Forecast</a><a href="#Dashboard--queries">Questions</a></nav>
+<nav class="jump" aria-label="Jump to section"><a href="#Dashboard--todo" style="background: #A4472A; color: #fff; border-color: #A4472A">To do ({{ todoCount }})</a><a href="#Dashboard--priorities">Action plan</a><a href="#Analysis">Benchmarks &amp; analysis →</a><a href="#Dashboard--queries">Questions</a></nav>
 
 <section id="todo" aria-labelledby="todo-h" class="todo">
 <div class="todo-head">
-<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" class="todo-count">3</span><h2 id="todo-h" style="margin: 0; font-size: 18px; font-weight: 700; font-family: Inter, system-ui, sans-serif">Action needed from you</h2></div>
-<span style="font-size: 13px; font-weight: 600">1 urgent · 2 due soon</span>
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" class="todo-count">{{ todoCount }}</span><h2 id="todo-h" style="margin: 0; font-size: 18px; font-weight: 700; font-family: Inter, system-ui, sans-serif">Action needed from you</h2></div>
+<span style="font-size: 13px; font-weight: 600">{{ todoSummary }}</span>
 </div>
 <ul style="margin: 0; padding: 0; list-style: none">
-<li class="todo-row todo-urgent">
-<span class="todo-ic" style="background: #F5E3D8; color: #A4472A"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M14 6l4 4"/></svg></span>
+<template data-for="todos" data-as="t">
+<li class="{{ t.cls }}">
+<span class="todo-ic" style="background: {{ t.bg }}; color: {{ t.c }}"><span data-html="t.icon" style="display: grid"></span></span>
 <div style="min-width: 0; display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center"><span class="todo-pill" style="background: #A4472A; color: #fff">Urgent</span><span style="font-size: 13px; font-weight: 600; color: #A4472A">Sign by Fri 30 Oct · 3 days left</span></div>
-<strong style="font-size: 16px; line-height: 1.35">Sign your FY26 financial statements and company tax return</strong>
-<span class="muted" style="font-size: 14px; line-height: 1.5">We can’t lodge your tax return until you sign. It takes about 5 minutes in the portal.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center"><span class="todo-pill" style="background: {{ t.c }}; color: #fff">{{ t.lab }}</span><template data-if="t.src"><span class="todo-pill" style="background: #1F3A30; color: #E2A962">{{ t.src }}</span></template><span style="font-size: 13px; font-weight: 600; color: {{ t.c }}">{{ t.due }}</span></div>
+<strong style="font-size: 16px; line-height: 1.35">{{ t.title }}</strong>
+<span class="muted" style="font-size: 14px; line-height: 1.5">{{ t.desc }}</span>
 </div>
-<a class="btn todo-btn-urgent" href="#Reports--drafts">Review &amp; sign</a>
+<a class="{{ t.btnCls }}" href="{{ t.href }}">{{ t.btn }}</a>
 </li>
-<li class="todo-row">
-<span class="todo-ic" style="background: #F8EEDC; color: #8A5A2E"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 9h6M9 12h4"/></svg></span>
-<div style="min-width: 0; display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center"><span class="todo-pill" style="background: #8A5A2E; color: #fff">Due soon</span><span style="font-size: 13px; font-weight: 600; color: #8A5A2E">Due Fri 6 Nov</span></div>
-<strong style="font-size: 16px; line-height: 1.35">Answer 2 questions from your accountant</strong>
-<span class="muted" style="font-size: 14px; line-height: 1.5">We need these to finish your FY26 accounts, for example the $4,200 transfer to J. Nguyen on 14 Sep.</span>
-</div>
-<a class="btn btn-ghost" href="#Dashboard--queries">Answer now</a>
-</li>
-<li class="todo-row">
-<span class="todo-ic" style="background: #F8EEDC; color: #8A5A2E"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg></span>
-<div style="min-width: 0; display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center"><span class="todo-pill" style="background: #8A5A2E; color: #fff">Due soon</span><span style="font-size: 13px; font-weight: 600; color: #8A5A2E">Due Fri 6 Nov</span></div>
-<strong style="font-size: 16px; line-height: 1.35">Upload the September statement from [Supplier]</strong>
-<span class="muted" style="font-size: 14px; line-height: 1.5">So we can match 6 unpaid bills before your October close.</span>
-</div>
-<a class="btn btn-ghost" href="#Dashboard--queries">Upload</a>
-</li>
+</template>
 </ul>
 </section>
 
+
+<section id="priorities" class="card" style="padding: 22px 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 10px"><div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow">Action plan</span><h2 class="h" style="margin: 0; font-size: 24px">Priorities for the next 12 months</h2></div><a class="btn btn-ghost" href="#Schedule">Book a planning call</a></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px">
+<template data-for="prios" data-as="pr">
+<div class="prio"><span class="num" aria-hidden="true">{{ pr.n }}</span><div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><strong style="font-size: 15px">{{ pr.t }}</strong><span class="muted" style="font-size: 14px; line-height: 1.55">{{ pr.d }}</span><span style="font-size: 12px; font-weight: 600; color: #8A5A2E">{{ pr.k }}</span><template data-if="pr.href"><a href="{{ pr.href }}" style="font-size: 13px; font-weight: 600">Open in Legal →</a></template></div></div>
+</template>
+</div>
+<details class="how"><summary>How to read these numbers</summary>
+<ul style="margin: 6px 0 0; padding-left: 20px; font-size: 13px; line-height: 1.6" class="muted">
+<li>Financial years run July to June, so your FY2025-26 lines up with IBISWorld's 2025-26.</li>
+<li>Sales are total trading income: dine-in, takeaway, delivery, functions and other income. Net profit is before income tax.</li>
+<li>Industry wages share and profit margin are stated by IBISWorld; purchases, rent, utilities, depreciation and other costs are read from its cost-structure chart and are approximate.</li>
+<li>IBISWorld's restaurant figures exclude cafés. If coffee is a big part of your trade, the Cafés &amp; Coffee Shops report is a useful second benchmark.</li>
+<li>All venue figures on this page are demo data.</li>
+</ul></details>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 18px">
+<section class="card" style="flex: 2 1 460px; min-width: 0; padding: 20px 22px; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px"><h3 class="h" style="margin: 0; font-size: 18px">Hospitality news</h3><span class="pill" style="background: #EFE9DD; color: #46524C">Sample feed</span></div>
+<template data-for="news" data-as="n">
+<a href="#news" style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEE8DC; text-decoration: none; color: #1F3A30"><span style="font-weight: 600; line-height: 1.4">{{ n.title }}</span><span class="muted" style="font-size: 13px">{{ n.meta }}</span></a>
+</template>
+</section>
+
+<section class="glow" style="flex: 1 1 300px; min-width: 0; background: #1F3A30; color: #fff; border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<h3 class="h" style="margin: 0; font-size: 18px; color: #E2A962">✦ This month's 3 fixes</h3>
+<ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; line-height: 1.5; font-size: 15px; color: #E3E8E4">
+<li><strong style="color: #fff">Sunday rosters.</strong> Penalty rates were 38% of the wage overspend. Moving 2 shifts saves ~$1,150/month.</li>
+<li><strong style="color: #fff">Dairy prices up 12%</strong> from [Supplier] since July. Worth a re-quote.</li>
+<li><strong style="color: #fff">Uber Eats fees</strong> hit 31% of delivery sales. Review menu pricing on the app.</li>
+</ol>
+<span style="font-size: 12px; color: #A5B3AC">Drafted by AI from your books, reviewed by [Accountant name] on 12 Oct.</span>
+</section>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 18px">
+<section class="card" style="flex: 1 1 380px; min-width: 0; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center"><h3 class="h" style="margin: 0; font-size: 18px">Work in progress</h3><a href="#Schedule" style="font-size: 14px; font-weight: 600">Full schedule</a></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+<template data-for="work" data-as="w">
+<li style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid #EEE8DC">
+<div style="min-width: 0"><div style="font-weight: 600">{{ w.name }}</div><div class="muted" style="font-size: 13px">{{ w.due }}</div></div>
+<span class="pill" style="background: {{ w.bg }}; color: {{ w.fg }}">{{ w.status }}</span>
+</li>
+</template>
+</ul>
+</section>
+
+<section id="queries" class="card" style="flex: 1 1 380px; min-width: 0; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<h3 class="h" style="margin: 0; font-size: 18px">Questions from your accountant</h3>
+<div style="border: 1px solid #EEE8DC; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; line-height: 1.5">What was the <strong>$4,200 transfer to J. Nguyen</strong> on 14 Sep? Wages, loan repayment, or personal?</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" class="btn btn-ghost">Wages</button><button type="button" class="btn btn-ghost">Loan</button><button type="button" class="btn btn-ghost">Personal</button><button type="button" class="btn btn-ghost">Reply…</button></div>
+</div>
+<div style="border: 1px solid #EEE8DC; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; line-height: 1.5">Please upload the <strong>September statement from [Supplier]</strong> so we can match 6 unpaid bills.</span>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Upload statement<input type="file" style="font: inherit; font-size: 14px"></label>
+</div>
+</section>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 18px">
+<section style="flex: 1 1 280px; min-width: 0; background: #2E6B4F; color: #fff; border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">
+<span class="pill" style="align-self: flex-start; background: rgba(255,255,255,0.15); color: #fff">Partner offer</span>
+<h3 class="h" style="margin: 0; font-size: 20px">Your fit-out loan could be cheaper</h3>
+<p style="margin: 0; color: #D6E6DA; line-height: 1.5; font-size: 15px">Our finance partner can review your equipment loan using the financials we already hold — no forms.</p>
+<a class="btn" href="#Assistant--partners" style="background: #fff; color: #2E6B4F; align-self: flex-start">Get a free review</a>
+</section>
+</div>
+</main>
+</div>
+</template><template id="tpl-Analysis">
+
+<div style="min-height: 100%; display: flex; flex-wrap: wrap; align-items: stretch">
+
+<aside class="side" style="flex: 1 1 240px; max-width: 100%; background: #1F3A30; color: #fff; padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+<a href="#Main" style="gap: 10px; margin-bottom: 14px; color: #fff"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 40 48" style="flex:none"><rect x="4" y="12" width="5" height="18" rx="2.5" fill="#F4EEE2"/><rect x="12.5" y="6" width="5" height="24" rx="2.5" fill="#F4EEE2"/><rect x="21" y="2" width="5" height="28" rx="2.5" fill="#F4EEE2"/><rect x="29.5" y="0" width="5" height="30" fill="#C1904A"/><path d="M4 24h30.5v4c0 6-5 9.5-10.5 12H15C9 37.5 4 34 4 28z" fill="#F4EEE2"/><rect x="17" y="34" width="6" height="14" rx="3" fill="#F4EEE2"/></svg><span class="h" style="font-weight: 700; font-size: 18px">The Eatery Firm</span></a>
+<a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
+<a href="#Dashboard">Dashboard</a>
+<a class="on" href="#Analysis">Benchmarking and Performance Analysis</a>
+<a href="#Legal">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span></a>
+<a href="#Reports">Reports &amp; documents<span class="nbadge" aria-label="2 documents to sign">2</span></a>
+<a href="#Schedule">Work schedule</a>
+<a href="#Assistant--partners">More services</a>
+<a href="#billing">Settings &amp; billing</a>
+<a href="#Logout">Log out</a>
+</aside>
+
+<main style="flex: 999 1 640px; min-width: 0; padding: 28px clamp(16px, 3vw, 40px) 48px; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box">
+
+<div class="dhead" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px; max-width: 720px"><span class="eyebrow">Little Saigon Kitchen (demo)</span><h1 class="h" style="margin: 0; font-size: 34px; line-height: 1.15">Benchmarking and Performance Analysis</h1><span class="muted" style="font-size: 15px; line-height: 1.5">Your results at a glance, how you compare with the industry, how you have trended over the last eight quarters, and where profit is heading.</span></div>
+
+</div>
+<nav class="jump" aria-label="Jump to section"><a href="#Analysis--snapshot">Snapshot</a><a href="#Analysis--summary">Summary</a><a href="#Analysis--benchmarks">Industry benchmarking</a><a href="#Analysis--quarters">Trends</a><a href="#Analysis--forecast">Outlook</a></nav>
+
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px">
-<h2 class="h" style="margin: 0; font-size: 22px">Performance snapshot</h2>
+<h2 id="snapshot" class="h" style="margin: 0; font-size: 22px">Performance snapshot</h2>
 <div role="group" aria-label="Period" style="display: inline-flex; background: #ECE5D8; border-radius: 10px; padding: 3px; gap: 3px">
 <button type="button" class="{{ mCls }}" onClick="{{ setM }}">September</button>
 <button type="button" class="{{ qCls }}" onClick="{{ setQ }}">Sep quarter</button>
@@ -897,45 +1187,10 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <p style="margin: 0; font-size: 14px; line-height: 1.6; padding: 12px 16px; border-radius: 12px; background: #1F3A30; color: #E3E8E4" class="glow"><strong style="color: #E2A962">Honest view:</strong> {{ sum.honest }}</p>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 13px">
 <span class="muted">Prepared from your books and the IBISWorld restaurants benchmarks · reviewed by [Accountant name]</span>
-<span style="display: inline-flex; gap: 16px; flex-wrap: wrap"><a href="#Dashboard--benchmarks" style="font-weight: 600">Benchmarks ↓</a><a href="#Dashboard--quarters" style="font-weight: 600">Quarterly P&amp;L ↓</a><a href="#Dashboard--forecast" style="font-weight: 600">Forecast ↓</a><a href="#Dashboard--priorities" style="font-weight: 600">Action plan ↓</a></span>
+<span style="display: inline-flex; gap: 16px; flex-wrap: wrap"><a href="#Analysis--benchmarks" style="font-weight: 600">Benchmarks ↓</a><a href="#Analysis--quarters" style="font-weight: 600">Quarterly P&amp;L ↓</a><a href="#Analysis--forecast" style="font-weight: 600">Forecast ↓</a><a href="#Dashboard--priorities" style="font-weight: 600">Action plan →</a></span>
 </div>
 </section>
 
-<section id="priorities" class="card" style="padding: 22px 24px; display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 10px"><div style="display: flex; flex-direction: column; gap: 4px"><span class="eyebrow">Action plan</span><h2 class="h" style="margin: 0; font-size: 24px">Priorities for the next 12 months</h2></div><a class="btn btn-ghost" href="#Schedule">Book a planning call</a></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px">
-<template data-for="prios" data-as="pr">
-<div class="prio"><span class="num" aria-hidden="true">{{ pr.n }}</span><div style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><strong style="font-size: 15px">{{ pr.t }}</strong><span class="muted" style="font-size: 14px; line-height: 1.55">{{ pr.d }}</span><span style="font-size: 12px; font-weight: 600; color: #8A5A2E">{{ pr.k }}</span></div></div>
-</template>
-</div>
-<details class="how"><summary>How to read these numbers</summary>
-<ul style="margin: 6px 0 0; padding-left: 20px; font-size: 13px; line-height: 1.6" class="muted">
-<li>Financial years run July to June, so your FY2025-26 lines up with IBISWorld's 2025-26.</li>
-<li>Sales are total trading income: dine-in, takeaway, delivery, functions and other income. Net profit is before income tax.</li>
-<li>Industry wages share and profit margin are stated by IBISWorld; purchases, rent, utilities, depreciation and other costs are read from its cost-structure chart and are approximate.</li>
-<li>IBISWorld's restaurant figures exclude cafés. If coffee is a big part of your trade, the Cafés &amp; Coffee Shops report is a useful second benchmark.</li>
-<li>All venue figures on this page are demo data.</li>
-</ul></details>
-</section>
-
-<div style="display: flex; flex-wrap: wrap; gap: 18px">
-<section class="card" style="flex: 2 1 460px; min-width: 0; padding: 20px 22px; display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px"><h3 class="h" style="margin: 0; font-size: 18px">Hospitality news</h3><span class="pill" style="background: #EFE9DD; color: #46524C">Sample feed</span></div>
-<template data-for="news" data-as="n">
-<a href="#news" style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEE8DC; text-decoration: none; color: #1F3A30"><span style="font-weight: 600; line-height: 1.4">{{ n.title }}</span><span class="muted" style="font-size: 13px">{{ n.meta }}</span></a>
-</template>
-</section>
-
-<section class="glow" style="flex: 1 1 300px; min-width: 0; background: #1F3A30; color: #fff; border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
-<h3 class="h" style="margin: 0; font-size: 18px; color: #E2A962">✦ This month's 3 fixes</h3>
-<ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; line-height: 1.5; font-size: 15px; color: #E3E8E4">
-<li><strong style="color: #fff">Sunday rosters.</strong> Penalty rates were 38% of the wage overspend. Moving 2 shifts saves ~$1,150/month.</li>
-<li><strong style="color: #fff">Dairy prices up 12%</strong> from [Supplier] since July. Worth a re-quote.</li>
-<li><strong style="color: #fff">Uber Eats fees</strong> hit 31% of delivery sales. Review menu pricing on the app.</li>
-</ol>
-<span style="font-size: 12px; color: #A5B3AC">Drafted by AI from your books, reviewed by [Accountant name] on 12 Oct.</span>
-</section>
-</div>
 
 <section id="benchmarks" class="card" style="padding: 22px 24px; display: flex; flex-direction: column; gap: 18px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 14px">
@@ -1059,40 +1314,86 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </div>
 
 
-<div style="display: flex; flex-wrap: wrap; gap: 18px">
-<section class="card" style="flex: 1 1 380px; min-width: 0; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
-<div style="display: flex; justify-content: space-between; align-items: center"><h3 class="h" style="margin: 0; font-size: 18px">Work in progress</h3><a href="#Schedule" style="font-size: 14px; font-weight: 600">Full schedule</a></div>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
-<template data-for="work" data-as="w">
-<li style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid #EEE8DC">
-<div style="min-width: 0"><div style="font-weight: 600">{{ w.name }}</div><div class="muted" style="font-size: 13px">{{ w.due }}</div></div>
-<span class="pill" style="background: {{ w.bg }}; color: {{ w.fg }}">{{ w.status }}</span>
+</main>
+</div>
+</template><template id="tpl-Legal">
+
+<div style="min-height: 100%; display: flex; flex-wrap: wrap; align-items: stretch">
+
+<aside class="side" style="flex: 1 1 240px; max-width: 100%; background: #1F3A30; color: #fff; padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+<a href="#Main" style="gap: 10px; margin-bottom: 14px; color: #fff"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 40 48" style="flex:none"><rect x="4" y="12" width="5" height="18" rx="2.5" fill="#F4EEE2"/><rect x="12.5" y="6" width="5" height="24" rx="2.5" fill="#F4EEE2"/><rect x="21" y="2" width="5" height="28" rx="2.5" fill="#F4EEE2"/><rect x="29.5" y="0" width="5" height="30" fill="#C1904A"/><path d="M4 24h30.5v4c0 6-5 9.5-10.5 12H15C9 37.5 4 34 4 28z" fill="#F4EEE2"/><rect x="17" y="34" width="6" height="14" rx="3" fill="#F4EEE2"/></svg><span class="h" style="font-weight: 700; font-size: 18px">The Eatery Firm</span></a>
+<a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
+<a href="#Dashboard">Dashboard</a>
+<a href="#Analysis">Benchmarking and Performance Analysis</a>
+<a class="on" href="#Legal">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span></a>
+<a href="#Reports">Reports &amp; documents<span class="nbadge" aria-label="2 documents to sign">2</span></a>
+<a href="#Schedule">Work schedule</a>
+<a href="#Assistant--partners">More services</a>
+<a href="#billing">Settings &amp; billing</a>
+<a href="#Logout">Log out</a>
+</aside>
+
+<main style="flex: 999 1 640px; min-width: 0; padding: 28px clamp(16px, 3vw, 40px) 48px; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box">
+
+<div class="dhead" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px; max-width: 720px"><span class="eyebrow">Little Saigon Kitchen (demo)</span><h1 class="h" style="margin: 0; font-size: 34px; line-height: 1.15">Legal</h1><span class="muted" style="font-size: 15px; line-height: 1.5">Your key agreements, licences and permits in one place. We watch the dates that matter and alert you before anything expires or a notice deadline passes.</span></div>
+<a class="btn btn-primary" href="#Legal--upload">Upload a document</a>
+</div>
+
+<div class="lg-tiles">
+<div class="lg-tile"><span class="muted" style="font-size: 13px">Documents on file</span><span class="h" style="font-size: 28px; font-weight: 700">{{ lgCount }}</span></div>
+<div class="lg-tile" style="border-color: #A4472A"><span style="font-size: 13px; color: #A4472A; font-weight: 600">Expired or overdue</span><span class="h" style="font-size: 28px; font-weight: 700; color: #A4472A">{{ lgBad }}</span></div>
+<div class="lg-tile" style="border-color: #E2C48F"><span style="font-size: 13px; color: #7A5626; font-weight: 600">Due in the next 4 months</span><span class="h" style="font-size: 28px; font-weight: 700; color: #7A5626">{{ lgSoon }}</span></div>
+<div class="lg-tile"><span class="muted" style="font-size: 13px">Next key date</span><strong style="font-size: 15px; line-height: 1.35">{{ lgNext }}</strong><span class="muted" style="font-size: 13px">{{ lgNextWhat }}</span></div>
+</div>
+
+<section id="attention" class="card" style="padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap"><h2 class="h" style="margin: 0; font-size: 22px">Needs your attention</h2><span class="muted" style="font-size: 13px">Alerts also appear in Action needed and your action plan</span></div>
+<template data-if="lgNone"><p class="muted" style="margin: 0">Nothing needs attention right now. We'll alert you before anything expires.</p></template>
+<template data-for="lgAtt" data-as="v">
+<div class="lg-alert" style="border-left-color: {{ v.fg }}">
+<div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center"><span class="lg-pill" style="background: {{ v.bg }}; color: {{ v.fg }}">{{ v.status }}</span><span style="font-size: 13px; font-weight: 600; color: {{ v.fg }}">{{ v.dateLabel }} · {{ v.daysText }}</span></div>
+<strong style="font-size: 16px">{{ v.name }}</strong>
+<span class="muted" style="font-size: 14px; line-height: 1.55">{{ v.next }}</span>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px"><span style="font-size: 12px; font-weight: 600; color: #8A5A2E">{{ v.routeText }}</span><button type="button" class="btn btn-ghost" onClick="{{ v.done }}">Mark as dealt with</button></div>
+</div>
+</template>
+</section>
+
+<section id="docs" class="card" style="padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+<h2 class="h" style="margin: 0; font-size: 22px">All documents</h2>
+<div class="lg-chips" role="group" aria-label="Filter by type"><template data-for="lgChips" data-as="c"><button type="button" class="{{ c.cls }}" onClick="{{ c.go }}">{{ c.label }}</button></template></div>
+<ul style="margin: 0; padding: 0; list-style: none">
+<template data-for="lgShown" data-as="v">
+<li class="lg-row" id="doc-{{ v.id }}">
+<div style="min-width: 0; display: flex; flex-direction: column; gap: 2px"><strong style="font-size: 15px">{{ v.name }}</strong><span class="muted" style="font-size: 13px">{{ v.party }} · {{ v.file }}</span></div>
+<span class="muted" style="font-size: 13px">{{ v.catLabel }}</span>
+<div style="display: flex; flex-direction: column; gap: 2px; font-size: 13px"><span>{{ v.dateLabel }}</span><span class="muted">{{ v.daysText }}</span></div>
+<span class="lg-pill" style="background: {{ v.bg }}; color: {{ v.fg }}; justify-self: end">{{ v.status }}</span>
 </li>
 </template>
 </ul>
 </section>
 
-<section id="queries" class="card" style="flex: 1 1 380px; min-width: 0; padding: 20px 22px; display: flex; flex-direction: column; gap: 12px">
-<h3 class="h" style="margin: 0; font-size: 18px">Questions from your accountant</h3>
-<div style="border: 1px solid #EEE8DC; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 15px; line-height: 1.5">What was the <strong>$4,200 transfer to J. Nguyen</strong> on 14 Sep? Wages, loan repayment, or personal?</span>
-<div style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" class="btn btn-ghost">Wages</button><button type="button" class="btn btn-ghost">Loan</button><button type="button" class="btn btn-ghost">Personal</button><button type="button" class="btn btn-ghost">Reply…</button></div>
+<section id="upload" class="card" style="padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 class="h" style="margin: 0; font-size: 22px">Upload a document</h2><span class="muted" style="font-size: 14px; line-height: 1.5">Add the key dates and we'll remind you before they arrive. In the live portal, we read the dates from your document and ask you to confirm them.</span></div>
+<template data-if="lgFlash"><div role="status" style="background: #E4EFE6; color: #2E6B4F; border-radius: 10px; padding: 10px 12px; font-size: 14px; font-weight: 600">{{ lgFlash }}</div></template>
+<form class="lg-form" novalidate onSubmit="{{ lgSubmit }}">
+<label class="lg-drop" for="lg-file"><input id="lg-file" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onChange="{{ lgOnFile }}"><strong id="lg-file-name">Choose a file</strong><span class="muted" style="font-size: 13px">PDF, Word or a photo of the document</span></label>
+<div class="lg-grid">
+<label class="lg-f" for="lg-name">Document name<input id="lg-name" type="text" autocomplete="off" placeholder="e.g. Cool room lease" onInput="{{ lgOn }}"></label>
+<label class="lg-f" for="lg-cat">Type<select id="lg-cat" onChange="{{ lgOn }}"><option value="">Choose a type</option><template data-for="lgCatOpts" data-as="o"><option value="{{ o.k }}">{{ o.l }}</option></template></select></label>
+<label class="lg-f" for="lg-party">Other party<input id="lg-party" type="text" autocomplete="off" placeholder="e.g. landlord, supplier, bank" onInput="{{ lgOn }}"></label>
+<label class="lg-f" for="lg-end">Expiry or end date<input id="lg-end" type="date" onInput="{{ lgOn }}"></label>
+<label class="lg-f" for="lg-key">Other key date (optional)<input id="lg-key" type="date" onInput="{{ lgOn }}"></label>
+<label class="lg-f" for="lg-keylabel">What happens on that date<input id="lg-keylabel" type="text" autocomplete="off" placeholder="e.g. Renewal notice due" onInput="{{ lgOn }}"></label>
+<label class="lg-f" for="lg-remind">Remind me<select id="lg-remind" onChange="{{ lgOn }}"><option value="30">30 days before</option><option value="60">60 days before</option><option value="90" selected>90 days before</option><option value="120">120 days before</option></select></label>
 </div>
-<div style="border: 1px solid #EEE8DC; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 15px; line-height: 1.5">Please upload the <strong>September statement from [Supplier]</strong> so we can match 6 unpaid bills.</span>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Upload statement<input type="file" style="font: inherit; font-size: 14px"></label>
-</div>
+<span id="lg-err" class="lg-err" role="alert"></span>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between"><span class="muted" style="font-size: 12px">Demo: uploaded files stay in this browser tab and aren't saved.</span><button type="submit" class="btn btn-primary">Add to Legal</button></div>
+</form>
 </section>
-</div>
 
-<div style="display: flex; flex-wrap: wrap; gap: 18px">
-<section style="flex: 1 1 280px; min-width: 0; background: #2E6B4F; color: #fff; border-radius: 16px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">
-<span class="pill" style="align-self: flex-start; background: rgba(255,255,255,0.15); color: #fff">Partner offer</span>
-<h3 class="h" style="margin: 0; font-size: 20px">Your fit-out loan could be cheaper</h3>
-<p style="margin: 0; color: #D6E6DA; line-height: 1.5; font-size: 15px">Our finance partner can review your equipment loan using the financials we already hold — no forms.</p>
-<a class="btn" href="#Assistant--partners" style="background: #fff; color: #2E6B4F; align-self: flex-start">Get a free review</a>
-</section>
-</div>
 </main>
 </div>
 </template><template id="tpl-Reports">
@@ -1101,10 +1402,12 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 
 <aside class="side" style="flex: 1 1 240px; max-width: 100%; background: #1F3A30; color: #fff; padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
 <a href="#Main" style="margin-bottom: 14px; color: #fff"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 40 48" style="flex:none"><rect x="4" y="12" width="5" height="18" rx="2.5" fill="#F4EEE2"/><rect x="12.5" y="6" width="5" height="24" rx="2.5" fill="#F4EEE2"/><rect x="21" y="2" width="5" height="28" rx="2.5" fill="#F4EEE2"/><rect x="29.5" y="0" width="5" height="30" fill="#C1904A"/><path d="M4 24h30.5v4c0 6-5 9.5-10.5 12H15C9 37.5 4 34 4 28z" fill="#F4EEE2"/><rect x="17" y="34" width="6" height="14" rx="3" fill="#F4EEE2"/></svg><span class="h" style="font-weight: 700; font-size: 18px">The Eatery Firm</span></a>
+<a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
+<a href="#Analysis">Benchmarking and Performance Analysis</a>
+<a href="#Legal">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span></a>
 <a class="on" href="#Reports">Reports &amp; documents<span class="nbadge" aria-label="2 documents to sign">2</span></a>
 <a href="#Schedule">Work schedule</a>
-<a href="#Assistant">Ask AI</a>
 <a href="#Assistant--partners">More services</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -1154,10 +1457,12 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 
 <aside class="side" style="flex: 1 1 240px; max-width: 100%; background: #1F3A30; color: #fff; padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
 <a href="#Main" style="margin-bottom: 14px; color: #fff"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 40 48" style="flex:none"><rect x="4" y="12" width="5" height="18" rx="2.5" fill="#F4EEE2"/><rect x="12.5" y="6" width="5" height="24" rx="2.5" fill="#F4EEE2"/><rect x="21" y="2" width="5" height="28" rx="2.5" fill="#F4EEE2"/><rect x="29.5" y="0" width="5" height="30" fill="#C1904A"/><path d="M4 24h30.5v4c0 6-5 9.5-10.5 12H15C9 37.5 4 34 4 28z" fill="#F4EEE2"/><rect x="17" y="34" width="6" height="14" rx="3" fill="#F4EEE2"/></svg><span class="h" style="font-weight: 700; font-size: 18px">The Eatery Firm</span></a>
+<a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
+<a href="#Analysis">Benchmarking and Performance Analysis</a>
+<a href="#Legal">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span></a>
 <a href="#Reports">Reports &amp; documents<span class="nbadge" aria-label="2 documents to sign">2</span></a>
 <a class="on" href="#Schedule">Work schedule</a>
-<a href="#Assistant">Ask AI</a>
 <a href="#Assistant--partners">More services</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -1215,10 +1520,12 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 
 <aside class="side" style="flex: 1 1 240px; max-width: 100%; background: #1F3A30; color: #fff; padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
 <a href="#Main" style="margin-bottom: 14px; color: #fff"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 40 48" style="flex:none"><rect x="4" y="12" width="5" height="18" rx="2.5" fill="#F4EEE2"/><rect x="12.5" y="6" width="5" height="24" rx="2.5" fill="#F4EEE2"/><rect x="21" y="2" width="5" height="28" rx="2.5" fill="#F4EEE2"/><rect x="29.5" y="0" width="5" height="30" fill="#C1904A"/><path d="M4 24h30.5v4c0 6-5 9.5-10.5 12H15C9 37.5 4 34 4 28z" fill="#F4EEE2"/><rect x="17" y="34" width="6" height="14" rx="3" fill="#F4EEE2"/></svg><span class="h" style="font-weight: 700; font-size: 18px">The Eatery Firm</span></a>
+<a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
+<a href="#Analysis">Benchmarking and Performance Analysis</a>
+<a href="#Legal">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span></a>
 <a href="#Reports">Reports &amp; documents<span class="nbadge" aria-label="2 documents to sign">2</span></a>
 <a href="#Schedule">Work schedule</a>
-<a class="on" href="#Assistant">Ask AI</a>
 <a href="#partners">More services</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -1269,6 +1576,63 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 class DCLogic{constructor(p){this.props=p||{};this.state={};}setState(p){Object.assign(this.state,p);this._r&&this._r();}forceUpdate(){this._r&&this._r();}}
 const SCREENS={};
 
+// ---- Legal documents register (demo data). Dates are checked against the portal's demo date.
+window.EF_LEGAL = (function () {
+  const TODAY = new Date('2026-10-27T00:00:00');
+  const D = (s) => s ? new Date(s + 'T00:00:00') : null;
+  const days = (d) => Math.round((d - TODAY) / 864e5);
+  const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const fmt = (d) => d.getDate() + ' ' + MON[d.getMonth()] + ' ' + d.getFullYear();
+  const CATS = { lease: 'Leases', emp: 'Employment contracts', sup: 'Supplier agreements', bank: 'Bank loans & guarantees', sh: "Shareholders' agreement", lic: 'Licences & permits' };
+  const docs = [
+    { id: 'footpath', cat: 'lic', name: 'Outdoor dining (footpath) permit', party: '[Council]', file: 'footpath-permit-2025.pdf', end: '2026-09-30', endLabel: 'Permit expired', todoTitle: 'Renew your outdoor dining permit',
+      next: 'Your permit expired on 30 Sep 2026. Apply to council to renew it before you use the footpath tables again.' },
+    { id: 'liquor', cat: 'lic', name: 'Liquor licence (on-premises)', party: '[Liquor regulator]', file: 'liquor-licence.pdf', key: '2026-11-30', keyLabel: 'Annual renewal due', remind: 60, todoTitle: 'Renew your liquor licence',
+      next: 'Pay the annual fee and lodge the renewal by 30 Nov 2026. Renewing late can put your licence at risk.' },
+    { id: 'lease', cat: 'lease', name: 'Retail lease, Shop 3 [Address]', party: '[Landlord] Pty Ltd', file: 'lease-shop3-signed.pdf', start: '2022-05-01', end: '2027-04-30', endLabel: 'Lease ends', key: '2027-01-31', keyLabel: 'Renewal option notice due', remind: 120,
+      todoTitle: 'Decide on your lease renewal option', planTitle: 'Decide on your lease renewal option',
+      next: 'Your 5-year renewal option can be exercised from 31 Oct 2026. Give the landlord written notice by 31 Jan 2027 or the option lapses. Decide alongside the rent gap in your benchmarks.' },
+    { id: 'dairy', cat: 'sup', name: 'Dairy supply agreement', party: '[Dairy supplier]', file: 'dairy-supply-agreement.pdf', end: '2027-01-31', endLabel: 'Term ends', key: '2027-01-01', keyLabel: 'Notice to stop auto-renewal', remind: 90,
+      todoTitle: 'Review your dairy supply agreement', planTitle: 'Re-quote dairy before the agreement renews',
+      next: 'The agreement renews for 12 months unless you give notice by 1 Jan 2027. Prices are up 12% since July, so get a competing quote first.' },
+    { id: 'chef', cat: 'emp', name: 'Head chef employment contract, [Name]', party: '[Name]', file: 'head-chef-contract.pdf', start: '2026-02-16', end: '2027-02-15', endLabel: 'Fixed term ends', remind: 90,
+      next: 'The fixed term ends on 15 Feb 2027. Decide whether to renew or move to an ongoing contract.' },
+    { id: 'casuals', cat: 'emp', name: 'Casual employment agreements (4)', party: 'Front-of-house team', file: 'casual-agreements.zip' },
+    { id: 'loan', cat: 'bank', name: 'Equipment loan and director guarantees', party: '[Bank]', file: 'equipment-loan-and-guarantee.pdf', start: '2024-03-15', end: '2029-03-15', endLabel: 'Loan matures', key: '2027-03-15', keyLabel: 'Annual loan review', remind: 60,
+      next: 'The bank reviews the loan each March and asks for your latest financial statements.' },
+    { id: 'sha', cat: 'sh', name: "Shareholders' agreement", party: '[Shareholders]', file: 'shareholders-agreement-2021.pdf', start: '2021-06-30', key: '2027-06-30', keyLabel: 'Recommended review', remind: 60 },
+    { id: 'foodreg', cat: 'lic', name: 'Food business registration', party: '[Council]', file: 'food-business-registration.pdf', key: '2027-03-31', keyLabel: 'Registration renewal', remind: 60 }
+  ];
+  function view(d) {
+    const end = D(d.end), key = D(d.key), r = d.remind || 90;
+    const dates = [key && { d: key, l: d.keyLabel || 'Key date' }, end && { d: end, l: d.endLabel || 'Expires' }].filter(Boolean).sort((a, b) => a.d - b.d);
+    let c = dates.find(x => days(x.d) >= 0) || dates[dates.length - 1];
+    if (end && days(end) < 0) c = { d: end, l: d.endLabel || 'Expired' };
+    let kind = 'ok', n = null;
+    if (c) { n = days(c.d); kind = n < 0 ? 'expired' : n <= 30 ? 'action' : n <= r ? 'soon' : 'ok'; }
+    if (d.handled) kind = 'done';
+    const S = { expired: ['Expired', '#A4472A', '#F5E3D8', 0], action: ['Action needed', '#A4472A', '#F5E3D8', 1], soon: ['Due soon', '#7A5626', '#F3E6CF', 2], ok: ['Active', '#2E6B4F', '#E4EFE6', 3], done: ['Dealt with', '#2E6B4F', '#E4EFE6', 4] };
+    const route = (kind === 'expired' || kind === 'action' || (kind === 'soon' && n <= 45)) ? 'todo' : kind === 'soon' ? 'plan' : '';
+    const daysText = n == null ? '' : n < 0 ? Math.abs(n) + ' days ago' : n === 0 ? 'today' : 'in ' + n + ' days';
+    return {
+      id: d.id, cat: d.cat, catLabel: CATS[d.cat], name: d.name, party: d.party, file: d.file || '', kind, rank: S[kind][3], days: n == null ? 9999 : n,
+      status: S[kind][0], fg: S[kind][1], bg: S[kind][2], route,
+      dateLabel: c ? c.l + ' ' + fmt(c.d) : 'No expiry date', daysText,
+      next: d.next || (c ? c.l + ' ' + fmt(c.d) + '. Check the document and decide what you need to do.' : 'Stored for reference. No dates to track.'),
+      todoTitle: d.todoTitle || ('Review: ' + d.name), planTitle: d.planTitle || d.todoTitle || ('Review: ' + d.name),
+      routeText: route === 'todo' ? 'Shown in Action needed on your dashboard' : route === 'plan' ? 'Added to your action plan' : ''
+    };
+  }
+  const api = { TODAY, CATS, docs, view, fmt,
+    all: () => docs.map(view),
+    attention: () => docs.map(view).filter(v => v.kind !== 'ok' && v.kind !== 'done'),
+    changed: () => { ['Dashboard', 'Legal'].forEach(k => window.inst && inst[k] && inst[k]._r()); } };
+  return api;
+})();
+window.efAfterRender = function () {
+  const n = window.EF_LEGAL.attention().length;
+  document.querySelectorAll('.lbadge').forEach(e => { e.textContent = n; e.hidden = !n; });
+};
 SCREENS["Main"]=(function(){
 // Pricing model. All prices include GST.
 const PRICING = {
@@ -1476,6 +1840,21 @@ class Component extends DCLogic {
       { label: 'Current ratio', v: '1.1', b: 'Industry 0.9' }
     ];
 
+
+    // ---- Action needed: open tasks plus alerts from Legal
+    const LGV = window.EF_LEGAL.all();
+    const IC = { pen: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M14 6l4 4"/></svg>', chat: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 9h6M9 12h4"/></svg>', upl: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v4h16v-4"/></svg>', doc: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M12 11v4M12 18h.01"/></svg>' };
+    const baseTodos = [
+      { urgent: true, icon: IC.pen, due: 'Sign by Fri 30 Oct · 3 days left', title: 'Sign your FY26 financial statements and company tax return', desc: 'We can’t lodge your tax return until you sign. It takes about 5 minutes in the portal.', btn: 'Review & sign', href: '#Reports--drafts', days: 3 },
+      { urgent: false, icon: IC.chat, due: 'Due Fri 6 Nov', title: 'Answer 2 questions from your accountant', desc: 'We need these to finish your FY26 accounts, for example the $4,200 transfer to J. Nguyen on 14 Sep.', btn: 'Answer now', href: '#Dashboard--queries', days: 10 },
+      { urgent: false, icon: IC.upl, due: 'Due Fri 6 Nov', title: 'Upload the September statement from [Supplier]', desc: 'So we can match 6 unpaid bills before your October close.', btn: 'Upload', href: '#Dashboard--queries', days: 10 }
+    ];
+    const legalTodos = LGV.filter(v => v.route === 'todo').map(v => ({ urgent: v.kind !== 'soon', icon: IC.doc, src: 'Legal', due: v.dateLabel + ' · ' + v.daysText, title: v.todoTitle, desc: v.next, btn: 'Open in Legal', href: '#Legal--doc-' + v.id, days: v.days }));
+    const todos = baseTodos.concat(legalTodos).sort((a, b) => (b.urgent - a.urgent) || (a.days - b.days)).map(t => Object.assign(t, {
+      lab: t.urgent ? 'Urgent' : 'Due soon', c: t.urgent ? '#A4472A' : '#8A5A2E', bg: t.urgent ? '#F5E3D8' : '#F8EEDC',
+      cls: 'todo-row' + (t.urgent ? ' todo-urgent' : ''), btnCls: t.urgent ? 'btn todo-btn-urgent' : 'btn btn-ghost', src: t.src || '' }));
+    const nUrg = todos.filter(t => t.urgent).length, nSoon = todos.length - nUrg;
+    const legalPlan = LGV.filter(v => v.route === 'plan');
     // ---- Ask AI panel (demo answers drawn from this dashboard's figures)
     const AI = {
       track: { label: 'How well am I tracking?', ans: {
@@ -1484,10 +1863,10 @@ class Component extends DCLogic {
         items: [ { b: 'Wages 31.8%', t: 'against your 30% target and the 31.3% average.' }, { b: 'Rent 8.2%', t: 'against a 6.7% average, your biggest gap.' }, { b: 'Cash $64.3k,', t: 'about 5 weeks of costs.' } ],
         src: 'Based on your September books and IBISWorld benchmarks', cta: 'See benchmarks', ctaHref: '#Dashboard--benchmarks' } },
       waiting: { label: 'Is there anything you are waiting from me?', ans: {
-        title: 'Yes, 3 things. One is urgent.',
+        title: 'Yes, ' + todos.length + ' things. ' + (nUrg === 1 ? 'One is urgent.' : nUrg + ' are urgent.'),
         paras: [],
-        items: [ { b: 'Urgent, by Fri 30 Oct:', t: 'sign your FY26 financial statements and company tax return. We can’t lodge until you do.' }, { b: 'By Fri 6 Nov:', t: 'answer 2 questions from your accountant, including the $4,200 transfer to J. Nguyen on 14 Sep.' }, { b: 'By Fri 6 Nov:', t: 'upload the September statement from [Supplier] so we can match 6 unpaid bills.' } ],
-        src: 'From your open tasks', cta: 'Review & sign now', ctaHref: '#Reports--drafts' } },
+        items: todos.map(t => ({ b: (t.urgent ? 'Urgent, ' : '') + t.due.split(' · ')[0] + ':', t: t.title + '.' })),
+        src: 'From your open tasks and legal documents', cta: 'Review & sign now', ctaHref: '#Reports--drafts' } },
       tax: { label: 'What are my upcoming tax lodgements?', ans: {
         title: 'Two lodgements are coming up.',
         paras: ['Setting aside about $3,800 this month keeps you on track for the estimated FY27 company tax.'],
@@ -1612,7 +1991,9 @@ class Component extends DCLogic {
     const wpct = [0.30, 0.31, 0.30, 0.32, 0.31, 0.33, 0.32, 0.31, 0.32, 0.34, 0.31, 0.32];
     const bars = sales.map((s, i) => ({ sales: Math.round(s * 4.4), wages: Math.round(s * 4.4 * wpct[i]) }));
     const seg = (k) => 'seg' + (p === k ? ' seg-on' : '');
+    legalPlan.forEach((v, i) => prios.push({ n: prios.length + 1, t: v.planTitle, d: v.next, k: 'From Legal · ' + v.dateLabel, href: '#Legal--doc-' + v.id }));
     return {
+      todos, todoCount: todos.length, todoSummary: nUrg + ' urgent · ' + nSoon + ' due soon',
       aiChips, aiAns: Object.assign({}, aiAns, { items: aiAns.items && aiAns.items.length ? aiAns.items : null }), aiShow: !!this.state.aiKey, aiThinking: this.state.aiThinking, aiReady: !!this.state.aiKey && !this.state.aiThinking, aiAsked: this.state.aiAsked, aiTyped: this.state.aiTyped,
       aiOnInput: (e) => { this.state.aiTyped = e.target.value; },
       aiSubmit: (e) => { e.preventDefault(); const t = (this.state.aiTyped || '').trim(); if (!t) return; aiAsk(aiMatch(t), t); },
@@ -1636,6 +2017,42 @@ class Component extends DCLogic {
   }
 }
 
+return Component;})();
+SCREENS["Analysis"]=(function(){ return class extends SCREENS["Dashboard"] {}; })();
+SCREENS["Legal"]=(function(){
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { f: 'all', flash: '' }; this.form = { remind: '90' }; }
+  renderVals() {
+    const L = window.EF_LEGAL, st = this.state, all = L.all();
+    const att = all.filter(v => v.kind !== 'ok' && v.kind !== 'done').sort((a, b) => a.rank - b.rank || a.days - b.days)
+      .map(v => Object.assign(v, { done: () => { const d = L.docs.find(x => x.id === v.id); d.handled = true; this.state.flash = ''; L.changed(); } }));
+    const shown = all.filter(v => st.f === 'all' || v.cat === st.f).sort((a, b) => a.rank - b.rank || a.days - b.days);
+    const nxt = all.filter(v => v.days >= 0 && v.days < 9999 && v.kind !== 'done').sort((a, b) => a.days - b.days)[0];
+    const lgChips = [['all', 'All']].concat(Object.entries(L.CATS)).map(([k, l]) => ({ label: l + ' (' + (k === 'all' ? all.length : all.filter(v => v.cat === k).length) + ')', cls: 'lg-chip' + (st.f === k ? ' on' : ''), go: () => this.setState({ f: k }) }));
+    const F = this.form;
+    return {
+      lgCount: all.length, lgBad: all.filter(v => v.kind === 'expired' || v.kind === 'action').length,
+      lgSoon: all.filter(v => v.kind === 'soon').length,
+      lgNext: nxt ? nxt.dateLabel : 'None', lgNextWhat: nxt ? nxt.name + ' · ' + nxt.daysText : '',
+      lgAtt: att, lgNone: att.length === 0, lgShown: shown, lgChips,
+      lgCatOpts: Object.entries(L.CATS).map(([k, l]) => ({ k, l })), lgFlash: st.flash,
+      lgOn: (e) => { F[e.target.id.slice(3)] = e.target.value; },
+      lgOnFile: (e) => { const f = e.target.files && e.target.files[0]; F.file = f ? f.name : ''; const lab = document.getElementById('lg-file-name'); if (lab) lab.textContent = f ? f.name : 'Choose a file';
+        const nm = document.getElementById('lg-name'); if (f && nm && !nm.value) { nm.value = f.name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' '); F.name = nm.value; } },
+      lgSubmit: (e) => {
+        e.preventDefault();
+        const err = !F.file ? 'Choose the document to upload.' : !(F.name || '').trim() ? 'Give the document a name.' : !F.cat ? 'Choose what type of document it is.' : (F.key && !(F.keylabel || '').trim()) ? 'Say what happens on the other key date, for example "Renewal notice due".' : '';
+        const box = document.getElementById('lg-err'); if (err) { if (box) box.textContent = err; return; }
+        const id = 'up' + Date.now();
+        L.docs.push({ id, cat: F.cat, name: F.name.trim(), party: (F.party || '').trim() || '—', file: F.file, end: F.end || null, endLabel: 'Expires', key: F.key || null, keyLabel: (F.keylabel || '').trim(), remind: +(F.remind || 90) });
+        const v = L.view(L.docs[L.docs.length - 1]);
+        this.form = { remind: '90' };
+        this.state.flash = '"' + v.name + '" added. ' + (v.route === 'todo' ? 'It needs attention soon, so it now shows in Action needed on your dashboard.' : v.route === 'plan' ? 'It has been added to your action plan.' : v.dateLabel === 'No expiry date' ? 'No dates to track.' : "We'll remind you " + (F.remind || 90) + ' days before ' + v.dateLabel.toLowerCase() + '.');
+        L.changed();
+      }
+    };
+  }
+}
 return Component;})();
 SCREENS["Reports"]=(function(){
 class Component extends DCLogic {
@@ -1740,7 +2157,7 @@ function render(node,sc,out){
 }
 const inst={};window.inst=inst;
 function mount(n){const host=document.getElementById('scr-'+n);const C=SCREENS[n];const c=new C({});inst[n]=c;
-  c._r=()=>{const tpl=document.getElementById('tpl-'+n);const out=[];const sc=c.renderVals();tpl.content.childNodes.forEach(x=>render(x,sc,out));host.replaceChildren(...out);};c._r();}
+  c._r=()=>{const tpl=document.getElementById('tpl-'+n);const out=[];const sc=c.renderVals();tpl.content.childNodes.forEach(x=>render(x,sc,out));host.replaceChildren(...out);if(window.efAfterRender)efAfterRender();};c._r();}
 let current=null;
 // Prototype login. A hash of email + password is checked in the browser: this keeps casual visitors out of the demo,
 // but it is not secure. Real client accounts need a server-side sign-in service.
@@ -1749,17 +2166,17 @@ window.EF_AUTH={ok:false,next:null};
 try{EF_AUTH.ok=sessionStorage.getItem(EF_KEY)==='1'||localStorage.getItem(EF_KEY)==='1';}catch(e){}
 window.efSetAuth=function(on,remember){EF_AUTH.ok=on;try{sessionStorage.removeItem(EF_KEY);localStorage.removeItem(EF_KEY);if(on)(remember?localStorage:sessionStorage).setItem(EF_KEY,'1');}catch(e){}};
 window.efCheckLogin=async function(email,pw){try{const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(EF_SALT+email.trim().toLowerCase()+':'+pw));const hex=Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');return hex===EF_LOGIN_HASH;}catch(e){return false;}};
-const APP_SCREENS=['Dashboard','Reports','Schedule','Assistant'];
+const APP_SCREENS=['Dashboard','Analysis','Legal','Reports','Schedule','Assistant'];
 function route(){const h=decodeURIComponent(location.hash.slice(1));const [scr,anchor]=h.split(/--|\//);
   if(scr==='Logout'){efSetAuth(false);location.replace('#Login');return;}
   if(APP_SCREENS.includes(scr)&&!EF_AUTH.ok){EF_AUTH.next=h;location.replace('#Login');return;}
   if(scr==='Login'&&EF_AUTH.ok){location.replace('#Dashboard');return;}
-  if(SCREENS[scr]){if(scr!==current){document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!=='scr-'+scr);current=scr;document.body.dataset.app=['Dashboard','Reports','Schedule','Assistant'].includes(scr)?'1':'0';document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===scr));}
-    const t=anchor&&document.querySelector('#scr-'+scr+' #'+CSS.escape(anchor));if(t)t.scrollIntoView();else window.scrollTo(0,0);return;}
+  if(SCREENS[scr]){if(scr!==current){document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!=='scr-'+scr);current=scr;document.body.dataset.app=['Dashboard','Analysis','Legal','Reports','Schedule','Assistant'].includes(scr)?'1':'0';document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===scr));}
+    const t=anchor&&document.querySelector('#scr-'+scr+' #'+CSS.escape(anchor));if(t&&anchor!=='ask')t.scrollIntoView();else window.scrollTo(0,0);if(anchor==='ask'){const q=document.getElementById('ai-q');if(q)setTimeout(()=>q.focus({preventScroll:true}),60);}return;}
   if(!current){location.replace('#Main');return;}
   const t=h&&document.querySelector('#scr-'+current+' #'+CSS.escape(h));if(t)t.scrollIntoView({behavior:'smooth'});}
 Object.keys(SCREENS).forEach(mount);
-try{matchMedia('(max-width: 560px)').addEventListener('change',()=>inst.Dashboard&&inst.Dashboard._r());}catch(e){}
+try{matchMedia('(max-width: 560px)').addEventListener('change',()=>{inst.Dashboard&&inst.Dashboard._r();inst.Analysis&&inst.Analysis._r();});}catch(e){}
 window.addEventListener('hashchange',route);route();
 
 </script>
