@@ -20,10 +20,10 @@ body{padding-bottom:72px}
 #demo-nav a.on{background:#C1904A;color:#1F3A30}
 #tabbar{display:none}
 .grp-toggle .chev{transition:transform .2s;transform:rotate(-90deg)}
-body.g-more-open .grp-toggle[data-group="more"] .chev,body.g-comp-open .grp-toggle[data-group="comp"] .chev,body.g-legal-open .grp-toggle[data-group="legal"] .chev{transform:none}
-.side a.sub-more,.side a.sub-legal,.side a.sub-comp,#more-sheet a.sub-more,#more-sheet a.sub-legal{display:none !important}
-@media (min-width:721px){body.g-more-open .side a.sub-more,body.g-legal-open .side a.sub-legal,body.g-comp-open .side a.sub-comp{display:flex !important}}
-body.g-more-open #more-sheet a.sub-more,body.g-legal-open #more-sheet a.sub-legal{display:flex !important}
+body.g-more-open .grp-toggle[data-group="more"] .chev,body.g-comp-open .grp-toggle[data-group="comp"] .chev,body.g-legal-open .grp-toggle[data-group="legal"] .chev,body.g-tools-open .grp-toggle[data-group="tools"] .chev{transform:none}
+.side a.sub-more,.side a.sub-legal,.side a.sub-comp,.side a.sub-tools,#more-sheet a.sub-more,#more-sheet a.sub-legal,#more-sheet a.sub-tools{display:none !important}
+@media (min-width:721px){body.g-more-open .side a.sub-more,body.g-legal-open .side a.sub-legal,body.g-comp-open .side a.sub-comp,body.g-tools-open .side a.sub-tools{display:flex !important}}
+body.g-more-open #more-sheet a.sub-more,body.g-legal-open #more-sheet a.sub-legal,body.g-tools-open #more-sheet a.sub-tools{display:flex !important}
 .grp-toggle .nbadge{margin-left:auto}
 .grp-toggle .nbadge + .chev{margin-left:8px !important}
 @media (prefers-reduced-motion:reduce){.grp-toggle .chev{transition:none}}
@@ -179,197 +179,229 @@ body.g-more-open #more-sheet a.sub-more,body.g-legal-open #more-sheet a.sub-lega
 #scr-Compliance .ai-panel,
 #scr-Reports .ai-panel,
 #scr-Legal .ai-panel,
-#scr-Analysis .ai-panel{background:#1F3A30;color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.25),transparent 70%)}
+#scr-Analysis .ai-panel,
+#scr-Menu .ai-panel{background:#1F3A30;color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.25),transparent 70%)}
 #scr-Dashboard .sr-only,
 #scr-WhatIf .sr-only,
 #scr-Compliance .sr-only,
 #scr-Reports .sr-only,
 #scr-Legal .sr-only,
-#scr-Analysis .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+#scr-Analysis .sr-only,
+#scr-Menu .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 #scr-Dashboard .ai-form,
 #scr-WhatIf .ai-form,
 #scr-Compliance .ai-form,
 #scr-Reports .ai-form,
 #scr-Legal .ai-form,
-#scr-Analysis .ai-form{display:flex;gap:8px}
+#scr-Analysis .ai-form,
+#scr-Menu .ai-form{display:flex;gap:8px}
 #scr-Dashboard .ai-form input,
 #scr-WhatIf .ai-form input,
 #scr-Compliance .ai-form input,
 #scr-Reports .ai-form input,
 #scr-Legal .ai-form input,
-#scr-Analysis .ai-form input{flex:1;min-width:0;min-height:48px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:15px;padding:0 14px}
+#scr-Analysis .ai-form input,
+#scr-Menu .ai-form input{flex:1;min-width:0;min-height:48px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font:inherit;font-size:15px;padding:0 14px}
 #scr-Dashboard .ai-form input::placeholder,
 #scr-WhatIf .ai-form input::placeholder,
 #scr-Compliance .ai-form input::placeholder,
 #scr-Reports .ai-form input::placeholder,
 #scr-Legal .ai-form input::placeholder,
-#scr-Analysis .ai-form input::placeholder{color:#A5B3AC}
+#scr-Analysis .ai-form input::placeholder,
+#scr-Menu .ai-form input::placeholder{color:#A5B3AC}
 #scr-Dashboard .ai-form input:focus-visible,
 #scr-WhatIf .ai-form input:focus-visible,
 #scr-Compliance .ai-form input:focus-visible,
 #scr-Reports .ai-form input:focus-visible,
 #scr-Legal .ai-form input:focus-visible,
-#scr-Analysis .ai-form input:focus-visible,#scr-Dashboard .ai-chip:focus-visible,#scr-WhatIf .ai-chip:focus-visible,#scr-Compliance .ai-chip:focus-visible,#scr-Reports .ai-chip:focus-visible,#scr-Legal .ai-chip:focus-visible,#scr-Analysis .ai-chip:focus-visible,#scr-Dashboard .ai-send:focus-visible,#scr-WhatIf .ai-send:focus-visible,#scr-Compliance .ai-send:focus-visible,#scr-Reports .ai-send:focus-visible,#scr-Legal .ai-send:focus-visible,#scr-Analysis .ai-send:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
+#scr-Analysis .ai-form input:focus-visible,#scr-Dashboard .ai-chip:focus-visible,#scr-WhatIf .ai-chip:focus-visible,#scr-Compliance .ai-chip:focus-visible,#scr-Reports .ai-chip:focus-visible,#scr-Legal .ai-chip:focus-visible,#scr-Analysis .ai-chip:focus-visible,#scr-Dashboard .ai-send:focus-visible,#scr-WhatIf .ai-send:focus-visible,#scr-Compliance .ai-send:focus-visible,#scr-Reports .ai-send:focus-visible,#scr-Legal .ai-send:focus-visible,#scr-Analysis .ai-send:focus-visible,
+#scr-Menu .ai-form input:focus-visible,#scr-Menu .ai-chip:focus-visible,#scr-Menu .ai-send:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
 #scr-Dashboard .ai-send,
 #scr-WhatIf .ai-send,
 #scr-Compliance .ai-send,
 #scr-Reports .ai-send,
 #scr-Legal .ai-send,
-#scr-Analysis .ai-send{min-height:48px;padding:0 20px;border-radius:12px;border:0;background:#94572A;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+#scr-Analysis .ai-send,
+#scr-Menu .ai-send{min-height:48px;padding:0 20px;border-radius:12px;border:0;background:#94572A;color:#fff;font:inherit;font-weight:700;cursor:pointer}
 #scr-Dashboard .ai-send:hover,
 #scr-WhatIf .ai-send:hover,
 #scr-Compliance .ai-send:hover,
 #scr-Reports .ai-send:hover,
 #scr-Legal .ai-send:hover,
-#scr-Analysis .ai-send:hover{background:#7A4622}
+#scr-Analysis .ai-send:hover,
+#scr-Menu .ai-send:hover{background:#7A4622}
 #scr-Dashboard .ai-chips,
 #scr-WhatIf .ai-chips,
 #scr-Compliance .ai-chips,
 #scr-Reports .ai-chips,
 #scr-Legal .ai-chips,
-#scr-Analysis .ai-chips{display:flex;flex-wrap:wrap;gap:8px}
+#scr-Analysis .ai-chips,
+#scr-Menu .ai-chips{display:flex;flex-wrap:wrap;gap:8px}
 #scr-Dashboard .ai-chip,
 #scr-WhatIf .ai-chip,
 #scr-Compliance .ai-chip,
 #scr-Reports .ai-chip,
 #scr-Legal .ai-chip,
-#scr-Analysis .ai-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#E3E8E4;font:inherit;font-size:14px;font-weight:500;cursor:pointer;text-align:left}
+#scr-Analysis .ai-chip,
+#scr-Menu .ai-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#E3E8E4;font:inherit;font-size:14px;font-weight:500;cursor:pointer;text-align:left}
 #scr-Dashboard .ai-chip:hover,
 #scr-WhatIf .ai-chip:hover,
 #scr-Compliance .ai-chip:hover,
 #scr-Reports .ai-chip:hover,
 #scr-Legal .ai-chip:hover,
-#scr-Analysis .ai-chip:hover{background:rgba(255,255,255,.12);color:#fff}
+#scr-Analysis .ai-chip:hover,
+#scr-Menu .ai-chip:hover{background:rgba(255,255,255,.12);color:#fff}
 #scr-Dashboard .ai-chip.on,
 #scr-WhatIf .ai-chip.on,
 #scr-Compliance .ai-chip.on,
 #scr-Reports .ai-chip.on,
 #scr-Legal .ai-chip.on,
-#scr-Analysis .ai-chip.on{background:#E2A962;border-color:#E2A962;color:#1F3A30;font-weight:600}
+#scr-Analysis .ai-chip.on,
+#scr-Menu .ai-chip.on{background:#E2A962;border-color:#E2A962;color:#1F3A30;font-weight:600}
 #scr-Dashboard .ai-answer,
 #scr-WhatIf .ai-answer,
 #scr-Compliance .ai-answer,
 #scr-Reports .ai-answer,
 #scr-Legal .ai-answer,
-#scr-Analysis .ai-answer{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px}
+#scr-Analysis .ai-answer,
+#scr-Menu .ai-answer{display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 16px}
 #scr-Dashboard .ai-q-bubble,
 #scr-WhatIf .ai-q-bubble,
 #scr-Compliance .ai-q-bubble,
 #scr-Reports .ai-q-bubble,
 #scr-Legal .ai-q-bubble,
-#scr-Analysis .ai-q-bubble{align-self:flex-end;max-width:85%;background:#E2A962;color:#1F3A30;font-weight:600;font-size:14px;padding:8px 12px;border-radius:12px 12px 4px 12px}
+#scr-Analysis .ai-q-bubble,
+#scr-Menu .ai-q-bubble{align-self:flex-end;max-width:85%;background:#E2A962;color:#1F3A30;font-weight:600;font-size:14px;padding:8px 12px;border-radius:12px 12px 4px 12px}
 #scr-Dashboard .ai-thinking,
 #scr-WhatIf .ai-thinking,
 #scr-Compliance .ai-thinking,
 #scr-Reports .ai-thinking,
 #scr-Legal .ai-thinking,
-#scr-Analysis .ai-thinking{display:flex;align-items:center;gap:6px;font-size:13px;color:#C6D1CB}
+#scr-Analysis .ai-thinking,
+#scr-Menu .ai-thinking{display:flex;align-items:center;gap:6px;font-size:13px;color:#C6D1CB}
 #scr-Dashboard .ai-thinking span,
 #scr-WhatIf .ai-thinking span,
 #scr-Compliance .ai-thinking span,
 #scr-Reports .ai-thinking span,
 #scr-Legal .ai-thinking span,
-#scr-Analysis .ai-thinking span{width:6px;height:6px;border-radius:50%;background:#E2A962;animation:aiDot 1s infinite ease-in-out}
+#scr-Analysis .ai-thinking span,
+#scr-Menu .ai-thinking span{width:6px;height:6px;border-radius:50%;background:#E2A962;animation:aiDot 1s infinite ease-in-out}
 #scr-Dashboard .ai-thinking span:nth-child(2),
 #scr-WhatIf .ai-thinking span:nth-child(2),
 #scr-Compliance .ai-thinking span:nth-child(2),
 #scr-Reports .ai-thinking span:nth-child(2),
 #scr-Legal .ai-thinking span:nth-child(2),
-#scr-Analysis .ai-thinking span:nth-child(2){animation-delay:.15s}#scr-Dashboard .ai-thinking span:nth-child(3),#scr-WhatIf .ai-thinking span:nth-child(3),#scr-Compliance .ai-thinking span:nth-child(3),#scr-Reports .ai-thinking span:nth-child(3),#scr-Legal .ai-thinking span:nth-child(3),#scr-Analysis .ai-thinking span:nth-child(3){animation-delay:.3s}
+#scr-Analysis .ai-thinking span:nth-child(2),
+#scr-Menu .ai-thinking span:nth-child(2){animation-delay:.15s}#scr-Dashboard .ai-thinking span:nth-child(3),#scr-WhatIf .ai-thinking span:nth-child(3),#scr-Compliance .ai-thinking span:nth-child(3),#scr-Reports .ai-thinking span:nth-child(3),#scr-Legal .ai-thinking span:nth-child(3),#scr-Analysis .ai-thinking span:nth-child(3),#scr-Menu .ai-thinking span:nth-child(3){animation-delay:.3s}
 @keyframes aiDot{0%,80%,100%{opacity:.3}40%{opacity:1}}
-@media (prefers-reduced-motion:reduce){#scr-Dashboard .ai-thinking span,#scr-WhatIf .ai-thinking span,#scr-Compliance .ai-thinking span,#scr-Reports .ai-thinking span,#scr-Legal .ai-thinking span,#scr-Analysis .ai-thinking span{animation:none}}
+@media (prefers-reduced-motion:reduce){#scr-Dashboard .ai-thinking span,#scr-WhatIf .ai-thinking span,#scr-Compliance .ai-thinking span,#scr-Reports .ai-thinking span,#scr-Legal .ai-thinking span,#scr-Analysis .ai-thinking span,#scr-Menu .ai-thinking span{animation:none}}
 #scr-Dashboard .ai-cta,
 #scr-WhatIf .ai-cta,
 #scr-Compliance .ai-cta,
 #scr-Reports .ai-cta,
 #scr-Legal .ai-cta,
-#scr-Analysis .ai-cta{background:#E2A962;color:#1F3A30;min-height:40px;padding:0 14px;font-size:14px}
+#scr-Analysis .ai-cta,
+#scr-Menu .ai-cta{background:#E2A962;color:#1F3A30;min-height:40px;padding:0 14px;font-size:14px}
 #scr-Dashboard .ai-cta:hover,
 #scr-WhatIf .ai-cta:hover,
 #scr-Compliance .ai-cta:hover,
 #scr-Reports .ai-cta:hover,
 #scr-Legal .ai-cta:hover,
-#scr-Analysis .ai-cta:hover{background:#EBC48A;color:#1F3A30}
+#scr-Analysis .ai-cta:hover,
+#scr-Menu .ai-cta:hover{background:#EBC48A;color:#1F3A30}
 #scr-Dashboard .ai-ghost,
 #scr-WhatIf .ai-ghost,
 #scr-Compliance .ai-ghost,
 #scr-Reports .ai-ghost,
 #scr-Legal .ai-ghost,
-#scr-Analysis .ai-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);min-height:40px;padding:0 14px;font-size:14px}
+#scr-Analysis .ai-ghost,
+#scr-Menu .ai-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);min-height:40px;padding:0 14px;font-size:14px}
 #scr-Dashboard .ai-ghost:hover,
 #scr-WhatIf .ai-ghost:hover,
 #scr-Compliance .ai-ghost:hover,
 #scr-Reports .ai-ghost:hover,
 #scr-Legal .ai-ghost:hover,
-#scr-Analysis .ai-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
-@media (max-width:560px){#scr-Dashboard .ai-chip,#scr-WhatIf .ai-chip,#scr-Compliance .ai-chip,#scr-Reports .ai-chip,#scr-Legal .ai-chip,#scr-Analysis .ai-chip{flex:1 1 100%}}
+#scr-Analysis .ai-ghost:hover,
+#scr-Menu .ai-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
+@media (max-width:560px){#scr-Dashboard .ai-chip,#scr-WhatIf .ai-chip,#scr-Compliance .ai-chip,#scr-Reports .ai-chip,#scr-Legal .ai-chip,#scr-Analysis .ai-chip,#scr-Menu .ai-chip{flex:1 1 100%}}
 #scr-Dashboard .todo,
 #scr-WhatIf .todo,
 #scr-Compliance .todo,
 #scr-Reports .todo,
 #scr-Legal .todo,
-#scr-Analysis .todo{background:#fff;border:2px solid #A4472A;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(164,71,42,0.12)}
+#scr-Analysis .todo,
+#scr-Menu .todo{background:#fff;border:2px solid #A4472A;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(164,71,42,0.12)}
 #scr-Dashboard .todo-head,
 #scr-WhatIf .todo-head,
 #scr-Compliance .todo-head,
 #scr-Reports .todo-head,
 #scr-Legal .todo-head,
-#scr-Analysis .todo-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;background:#A4472A;color:#fff;padding:12px 18px}
+#scr-Analysis .todo-head,
+#scr-Menu .todo-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;background:#A4472A;color:#fff;padding:12px 18px}
 #scr-Dashboard .todo-count,
 #scr-WhatIf .todo-count,
 #scr-Compliance .todo-count,
 #scr-Reports .todo-count,
 #scr-Legal .todo-count,
-#scr-Analysis .todo-count{display:grid;place-items:center;min-width:28px;height:28px;border-radius:999px;background:#fff;color:#A4472A;font-weight:800;font-size:15px}
+#scr-Analysis .todo-count,
+#scr-Menu .todo-count{display:grid;place-items:center;min-width:28px;height:28px;border-radius:999px;background:#fff;color:#A4472A;font-weight:800;font-size:15px}
 #scr-Dashboard .todo-row,
 #scr-WhatIf .todo-row,
 #scr-Compliance .todo-row,
 #scr-Reports .todo-row,
 #scr-Legal .todo-row,
-#scr-Analysis .todo-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 18px;border-top:1px solid #EEE8DC}
+#scr-Analysis .todo-row,
+#scr-Menu .todo-row{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 18px;border-top:1px solid #EEE8DC}
 #scr-Dashboard .todo-row:first-child,
 #scr-WhatIf .todo-row:first-child,
 #scr-Compliance .todo-row:first-child,
 #scr-Reports .todo-row:first-child,
 #scr-Legal .todo-row:first-child,
-#scr-Analysis .todo-row:first-child{border-top:0}
+#scr-Analysis .todo-row:first-child,
+#scr-Menu .todo-row:first-child{border-top:0}
 #scr-Dashboard .todo-urgent,
 #scr-WhatIf .todo-urgent,
 #scr-Compliance .todo-urgent,
 #scr-Reports .todo-urgent,
 #scr-Legal .todo-urgent,
-#scr-Analysis .todo-urgent{background:#FDF6F2}
+#scr-Analysis .todo-urgent,
+#scr-Menu .todo-urgent{background:#FDF6F2}
 #scr-Dashboard .todo-ic,
 #scr-WhatIf .todo-ic,
 #scr-Compliance .todo-ic,
 #scr-Reports .todo-ic,
 #scr-Legal .todo-ic,
-#scr-Analysis .todo-ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center}
+#scr-Analysis .todo-ic,
+#scr-Menu .todo-ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center}
 #scr-Dashboard .todo-pill,
 #scr-WhatIf .todo-pill,
 #scr-Compliance .todo-pill,
 #scr-Reports .todo-pill,
 #scr-Legal .todo-pill,
-#scr-Analysis .todo-pill{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
+#scr-Analysis .todo-pill,
+#scr-Menu .todo-pill{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
 #scr-Dashboard .todo-btn-urgent,
 #scr-WhatIf .todo-btn-urgent,
 #scr-Compliance .todo-btn-urgent,
 #scr-Reports .todo-btn-urgent,
 #scr-Legal .todo-btn-urgent,
-#scr-Analysis .todo-btn-urgent{background:#A4472A;color:#fff;min-height:48px;padding:0 22px;font-size:15px}
+#scr-Analysis .todo-btn-urgent,
+#scr-Menu .todo-btn-urgent{background:#A4472A;color:#fff;min-height:48px;padding:0 22px;font-size:15px}
 #scr-Dashboard .todo-btn-urgent:hover,
 #scr-WhatIf .todo-btn-urgent:hover,
 #scr-Compliance .todo-btn-urgent:hover,
 #scr-Reports .todo-btn-urgent:hover,
 #scr-Legal .todo-btn-urgent:hover,
-#scr-Analysis .todo-btn-urgent:hover{background:#8A3A22;color:#fff}
+#scr-Analysis .todo-btn-urgent:hover,
+#scr-Menu .todo-btn-urgent:hover{background:#8A3A22;color:#fff}
 #scr-Dashboard .todo .btn,
 #scr-WhatIf .todo .btn,
 #scr-Compliance .todo .btn,
 #scr-Reports .todo .btn,
 #scr-Legal .todo .btn,
-#scr-Analysis .todo .btn{white-space:nowrap}
-@media (max-width:640px){#scr-Dashboard .todo-row,#scr-WhatIf .todo-row,#scr-Compliance .todo-row,#scr-Reports .todo-row,#scr-Legal .todo-row,#scr-Analysis .todo-row{grid-template-columns:44px minmax(0,1fr)}#scr-Dashboard .todo-row .btn,#scr-WhatIf .todo-row .btn,#scr-Compliance .todo-row .btn,#scr-Reports .todo-row .btn,#scr-Legal .todo-row .btn,#scr-Analysis .todo-row .btn{grid-column:1 / -1;width:100%}}
+#scr-Analysis .todo .btn,
+#scr-Menu .todo .btn{white-space:nowrap}
+@media (max-width:640px){#scr-Dashboard .todo-row,#scr-WhatIf .todo-row,#scr-Compliance .todo-row,#scr-Reports .todo-row,#scr-Legal .todo-row,#scr-Analysis .todo-row,#scr-Menu .todo-row{grid-template-columns:44px minmax(0,1fr)}#scr-Dashboard .todo-row .btn,#scr-WhatIf .todo-row .btn,#scr-Compliance .todo-row .btn,#scr-Reports .todo-row .btn,#scr-Legal .todo-row .btn,#scr-Analysis .todo-row .btn,#scr-Menu .todo-row .btn{grid-column:1 / -1;width:100%}}
 .nbadge{margin-left:auto;background:#A4472A;color:#fff;border-radius:999px;font-size:12px;font-weight:700;padding:1px 8px;line-height:18px}
 #tabbar a{position:relative}
 #tabbar .tbadge{position:absolute;top:2px;left:calc(50% + 6px);background:#A4472A;color:#fff;border-radius:999px;font-size:10px;font-weight:800;min-width:16px;height:16px;display:grid;place-items:center;padding:0 4px;box-sizing:border-box;border:2px solid #1F3A30}
@@ -378,346 +410,403 @@ body.g-more-open #more-sheet a.sub-more,body.g-legal-open #more-sheet a.sub-lega
 #scr-Compliance,
 #scr-Reports,
 #scr-Legal,
-#scr-Analysis{margin:0;background:#F3ECE0;color:#1F3A30;font-family:Inter,system-ui,sans-serif}
+#scr-Analysis,
+#scr-Menu{margin:0;background:#F3ECE0;color:#1F3A30;font-family:Inter,system-ui,sans-serif}
 #scr-Dashboard a,
 #scr-WhatIf a,
 #scr-Compliance a,
 #scr-Reports a,
 #scr-Legal a,
-#scr-Analysis a{color:#2A5243}
+#scr-Analysis a,
+#scr-Menu a{color:#2A5243}
 #scr-Dashboard a:hover,
 #scr-WhatIf a:hover,
 #scr-Compliance a:hover,
 #scr-Reports a:hover,
 #scr-Legal a:hover,
-#scr-Analysis a:hover{color:#1A332B}
+#scr-Analysis a:hover,
+#scr-Menu a:hover{color:#1A332B}
 #scr-Dashboard .h,
 #scr-WhatIf .h,
 #scr-Compliance .h,
 #scr-Reports .h,
 #scr-Legal .h,
-#scr-Analysis .h{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.005em}
+#scr-Analysis .h,
+#scr-Menu .h{font-family:'Fraunces',Georgia,serif;letter-spacing:-0.005em}
 #scr-Dashboard .btn,
 #scr-WhatIf .btn,
 #scr-Compliance .btn,
 #scr-Reports .btn,
 #scr-Legal .btn,
-#scr-Analysis .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;box-sizing:border-box}
+#scr-Analysis .btn,
+#scr-Menu .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:inherit;box-sizing:border-box}
 #scr-Dashboard .btn-primary,
 #scr-WhatIf .btn-primary,
 #scr-Compliance .btn-primary,
 #scr-Reports .btn-primary,
 #scr-Legal .btn-primary,
-#scr-Analysis .btn-primary{background:#2A5243;color:#fff}
+#scr-Analysis .btn-primary,
+#scr-Menu .btn-primary{background:#2A5243;color:#fff}
 #scr-Dashboard .btn-primary:hover,
 #scr-WhatIf .btn-primary:hover,
 #scr-Compliance .btn-primary:hover,
 #scr-Reports .btn-primary:hover,
 #scr-Legal .btn-primary:hover,
-#scr-Analysis .btn-primary:hover{background:#1F3E33;color:#fff}
+#scr-Analysis .btn-primary:hover,
+#scr-Menu .btn-primary:hover{background:#1F3E33;color:#fff}
 #scr-Dashboard .btn-ghost,
 #scr-WhatIf .btn-ghost,
 #scr-Compliance .btn-ghost,
 #scr-Reports .btn-ghost,
 #scr-Legal .btn-ghost,
-#scr-Analysis .btn-ghost{background:#fff;color:#1F3A30;border-color:#D8D0C0}
+#scr-Analysis .btn-ghost,
+#scr-Menu .btn-ghost{background:#fff;color:#1F3A30;border-color:#D8D0C0}
 #scr-Dashboard .btn-ghost:hover,
 #scr-WhatIf .btn-ghost:hover,
 #scr-Compliance .btn-ghost:hover,
 #scr-Reports .btn-ghost:hover,
 #scr-Legal .btn-ghost:hover,
-#scr-Analysis .btn-ghost:hover{background:#EFE9DD;color:#1F3A30}
+#scr-Analysis .btn-ghost:hover,
+#scr-Menu .btn-ghost:hover{background:#EFE9DD;color:#1F3A30}
 #scr-Dashboard .card,
 #scr-WhatIf .card,
 #scr-Compliance .card,
 #scr-Reports .card,
 #scr-Legal .card,
-#scr-Analysis .card{background:#fff;border:1px solid #E5DED0;border-radius:16px;box-sizing:border-box}
+#scr-Analysis .card,
+#scr-Menu .card{background:#fff;border:1px solid #E5DED0;border-radius:16px;box-sizing:border-box}
 #scr-Dashboard .muted,
 #scr-WhatIf .muted,
 #scr-Compliance .muted,
 #scr-Reports .muted,
 #scr-Legal .muted,
-#scr-Analysis .muted{color:#56635D}
+#scr-Analysis .muted,
+#scr-Menu .muted{color:#56635D}
 #scr-Dashboard .side a,
 #scr-WhatIf .side a,
 #scr-Compliance .side a,
 #scr-Reports .side a,
 #scr-Legal .side a,
-#scr-Analysis .side a{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border-radius:10px;color:#D9E0DB;text-decoration:none;font-weight:500;font-size:14px}
+#scr-Analysis .side a,
+#scr-Menu .side a{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border-radius:10px;color:#D9E0DB;text-decoration:none;font-weight:500;font-size:14px}
 #scr-Dashboard .side a:hover,
 #scr-WhatIf .side a:hover,
 #scr-Compliance .side a:hover,
 #scr-Reports .side a:hover,
 #scr-Legal .side a:hover,
-#scr-Analysis .side a:hover{background:#2C4D41;color:#fff}
+#scr-Analysis .side a:hover,
+#scr-Menu .side a:hover{background:#2C4D41;color:#fff}
 #scr-Dashboard .side a.on,
 #scr-WhatIf .side a.on,
 #scr-Compliance .side a.on,
 #scr-Reports .side a.on,
 #scr-Legal .side a.on,
-#scr-Analysis .side a.on{background:#C1904A;color:#13261F}
+#scr-Analysis .side a.on,
+#scr-Menu .side a.on{background:#C1904A;color:#13261F}
 #scr-Dashboard .pill,
 #scr-WhatIf .pill,
 #scr-Compliance .pill,
 #scr-Reports .pill,
 #scr-Legal .pill,
-#scr-Analysis .pill{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap}
+#scr-Analysis .pill,
+#scr-Menu .pill{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap}
 #scr-Dashboard .seg,
 #scr-WhatIf .seg,
 #scr-Compliance .seg,
 #scr-Reports .seg,
 #scr-Legal .seg,
-#scr-Analysis .seg{min-height:36px;padding:0 14px;border:0;border-radius:8px;font:inherit;font-weight:600;font-size:13px;cursor:pointer;background:transparent;color:#46524C}
+#scr-Analysis .seg,
+#scr-Menu .seg{min-height:36px;padding:0 14px;border:0;border-radius:8px;font:inherit;font-weight:600;font-size:13px;cursor:pointer;background:transparent;color:#46524C}
 #scr-Dashboard .bm-row,
 #scr-WhatIf .bm-row,
 #scr-Compliance .bm-row,
 #scr-Reports .bm-row,
 #scr-Legal .bm-row,
-#scr-Analysis .bm-row{display:grid;grid-template-columns:minmax(120px,1.1fr) minmax(140px,2fr) 128px;gap:8px 18px;align-items:center;padding:12px 0;border-top:1px solid #EEE8DC}
+#scr-Analysis .bm-row,
+#scr-Menu .bm-row{display:grid;grid-template-columns:minmax(120px,1.1fr) minmax(140px,2fr) 128px;gap:8px 18px;align-items:center;padding:12px 0;border-top:1px solid #EEE8DC}
 #scr-Dashboard .bm-track,
 #scr-WhatIf .bm-track,
 #scr-Compliance .bm-track,
 #scr-Reports .bm-track,
 #scr-Legal .bm-track,
-#scr-Analysis .bm-track{position:relative;height:12px;background:#F1EBDF;border-radius:999px}
+#scr-Analysis .bm-track,
+#scr-Menu .bm-track{position:relative;height:12px;background:#F1EBDF;border-radius:999px}
 #scr-Dashboard .bm-bar,
 #scr-WhatIf .bm-bar,
 #scr-Compliance .bm-bar,
 #scr-Reports .bm-bar,
 #scr-Legal .bm-bar,
-#scr-Analysis .bm-bar{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:#2A5243}
+#scr-Analysis .bm-bar,
+#scr-Menu .bm-bar{position:absolute;left:0;top:0;bottom:0;border-radius:999px;background:#2A5243}
 #scr-Dashboard .bm-tick,
 #scr-WhatIf .bm-tick,
 #scr-Compliance .bm-tick,
 #scr-Reports .bm-tick,
 #scr-Legal .bm-tick,
-#scr-Analysis .bm-tick{position:absolute;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#94572A;border-radius:2px;box-shadow:0 0 0 2px #fff}
+#scr-Analysis .bm-tick,
+#scr-Menu .bm-tick{position:absolute;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#94572A;border-radius:2px;box-shadow:0 0 0 2px #fff}
 #scr-Dashboard .bm-st,
 #scr-WhatIf .bm-st,
 #scr-Compliance .bm-st,
 #scr-Reports .bm-st,
 #scr-Legal .bm-st,
-#scr-Analysis .bm-st{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;justify-self:end}
+#scr-Analysis .bm-st,
+#scr-Menu .bm-st{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap;justify-self:end}
 #scr-Dashboard .tag,
 #scr-WhatIf .tag,
 #scr-Compliance .tag,
 #scr-Reports .tag,
 #scr-Legal .tag,
-#scr-Analysis .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;align-self:flex-start}
+#scr-Analysis .tag,
+#scr-Menu .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:6px;align-self:flex-start}
 #scr-Dashboard .mini,
 #scr-WhatIf .mini,
 #scr-Compliance .mini,
 #scr-Reports .mini,
 #scr-Legal .mini,
-#scr-Analysis .mini{background:#F8F3EA;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
-@media (max-width:560px){#scr-Dashboard .bm-row,#scr-WhatIf .bm-row,#scr-Compliance .bm-row,#scr-Reports .bm-row,#scr-Legal .bm-row,#scr-Analysis .bm-row{grid-template-columns:1fr auto}#scr-Dashboard .bm-row .bm-track,#scr-WhatIf .bm-row .bm-track,#scr-Compliance .bm-row .bm-track,#scr-Reports .bm-row .bm-track,#scr-Legal .bm-row .bm-track,#scr-Analysis .bm-row .bm-track{grid-column:1 / -1;grid-row:2}}
+#scr-Analysis .mini,
+#scr-Menu .mini{background:#F8F3EA;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+@media (max-width:560px){#scr-Dashboard .bm-row,#scr-WhatIf .bm-row,#scr-Compliance .bm-row,#scr-Reports .bm-row,#scr-Legal .bm-row,#scr-Analysis .bm-row,#scr-Menu .bm-row{grid-template-columns:1fr auto}#scr-Dashboard .bm-row .bm-track,#scr-WhatIf .bm-row .bm-track,#scr-Compliance .bm-row .bm-track,#scr-Reports .bm-row .bm-track,#scr-Legal .bm-row .bm-track,#scr-Analysis .bm-row .bm-track,#scr-Menu .bm-row .bm-track{grid-column:1 / -1;grid-row:2}}
 #scr-Dashboard .eyebrow,
 #scr-WhatIf .eyebrow,
 #scr-Compliance .eyebrow,
 #scr-Reports .eyebrow,
 #scr-Legal .eyebrow,
-#scr-Analysis .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#94572A}
+#scr-Analysis .eyebrow,
+#scr-Menu .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#94572A}
 #scr-Dashboard .tbl-wrap,
 #scr-WhatIf .tbl-wrap,
 #scr-Compliance .tbl-wrap,
 #scr-Reports .tbl-wrap,
 #scr-Legal .tbl-wrap,
-#scr-Analysis .tbl-wrap{overflow-x:auto;border:1px solid #EEE8DC;border-radius:12px}
+#scr-Analysis .tbl-wrap,
+#scr-Menu .tbl-wrap{overflow-x:auto;border:1px solid #EEE8DC;border-radius:12px}
 #scr-Dashboard table.pl,
 #scr-WhatIf table.pl,
 #scr-Compliance table.pl,
 #scr-Reports table.pl,
 #scr-Legal table.pl,
-#scr-Analysis table.pl{border-collapse:collapse;width:100%;min-width:860px;font-size:14px;font-variant-numeric:tabular-nums}
+#scr-Analysis table.pl,
+#scr-Menu table.pl{border-collapse:collapse;width:100%;min-width:860px;font-size:14px;font-variant-numeric:tabular-nums}
 #scr-Dashboard table.pl th,
 #scr-WhatIf table.pl th,
 #scr-Compliance table.pl th,
 #scr-Reports table.pl th,
 #scr-Legal table.pl th,
-#scr-Analysis table.pl th{font-size:12px;font-weight:600;color:#56635D;text-align:right;padding:10px 12px;background:#F8F3EA;white-space:nowrap}
+#scr-Analysis table.pl th,
+#scr-Menu table.pl th{font-size:12px;font-weight:600;color:#56635D;text-align:right;padding:10px 12px;background:#F8F3EA;white-space:nowrap}
 #scr-Dashboard table.pl th:first-child,
 #scr-WhatIf table.pl th:first-child,
 #scr-Compliance table.pl th:first-child,
 #scr-Reports table.pl th:first-child,
 #scr-Legal table.pl th:first-child,
-#scr-Analysis table.pl th:first-child,#scr-Dashboard table.pl td:first-child,#scr-WhatIf table.pl td:first-child,#scr-Compliance table.pl td:first-child,#scr-Reports table.pl td:first-child,#scr-Legal table.pl td:first-child,#scr-Analysis table.pl td:first-child{text-align:left;position:sticky;left:0;background:inherit}
+#scr-Analysis table.pl th:first-child,#scr-Dashboard table.pl td:first-child,#scr-WhatIf table.pl td:first-child,#scr-Compliance table.pl td:first-child,#scr-Reports table.pl td:first-child,#scr-Legal table.pl td:first-child,#scr-Analysis table.pl td:first-child,
+#scr-Menu table.pl th:first-child,#scr-Menu table.pl td:first-child{text-align:left;position:sticky;left:0;background:inherit}
 #scr-Dashboard table.pl td,
 #scr-WhatIf table.pl td,
 #scr-Compliance table.pl td,
 #scr-Reports table.pl td,
 #scr-Legal table.pl td,
-#scr-Analysis table.pl td{padding:10px 12px;text-align:right;border-top:1px solid #EEE8DC;white-space:nowrap;background:#fff}
+#scr-Analysis table.pl td,
+#scr-Menu table.pl td{padding:10px 12px;text-align:right;border-top:1px solid #EEE8DC;white-space:nowrap;background:#fff}
 #scr-Dashboard table.fc td:first-child,
 #scr-WhatIf table.fc td:first-child,
 #scr-Compliance table.fc td:first-child,
 #scr-Reports table.fc td:first-child,
 #scr-Legal table.fc td:first-child,
-#scr-Analysis table.fc td:first-child,#scr-Dashboard table.fc th:first-child,#scr-WhatIf table.fc th:first-child,#scr-Compliance table.fc th:first-child,#scr-Reports table.fc th:first-child,#scr-Legal table.fc th:first-child,#scr-Analysis table.fc th:first-child{white-space:normal;min-width:120px}
+#scr-Analysis table.fc td:first-child,#scr-Dashboard table.fc th:first-child,#scr-WhatIf table.fc th:first-child,#scr-Compliance table.fc th:first-child,#scr-Reports table.fc th:first-child,#scr-Legal table.fc th:first-child,#scr-Analysis table.fc th:first-child,
+#scr-Menu table.fc td:first-child,#scr-Menu table.fc th:first-child{white-space:normal;min-width:120px}
 #scr-Dashboard table.fc td,
 #scr-WhatIf table.fc td,
 #scr-Compliance table.fc td,
 #scr-Reports table.fc td,
 #scr-Legal table.fc td,
-#scr-Analysis table.fc td,#scr-Dashboard table.fc th,#scr-WhatIf table.fc th,#scr-Compliance table.fc th,#scr-Reports table.fc th,#scr-Legal table.fc th,#scr-Analysis table.fc th{padding:10px 10px}
+#scr-Analysis table.fc td,#scr-Dashboard table.fc th,#scr-WhatIf table.fc th,#scr-Compliance table.fc th,#scr-Reports table.fc th,#scr-Legal table.fc th,#scr-Analysis table.fc th,
+#scr-Menu table.fc td,#scr-Menu table.fc th{padding:10px 10px}
 #scr-Dashboard table.pl tr.tot td,
 #scr-WhatIf table.pl tr.tot td,
 #scr-Compliance table.pl tr.tot td,
 #scr-Reports table.pl tr.tot td,
 #scr-Legal table.pl tr.tot td,
-#scr-Analysis table.pl tr.tot td{font-weight:700;background:#F8F3EA}
+#scr-Analysis table.pl tr.tot td,
+#scr-Menu table.pl tr.tot td{font-weight:700;background:#F8F3EA}
 #scr-Dashboard table.pl tr.cur td,
 #scr-WhatIf table.pl tr.cur td,
 #scr-Compliance table.pl tr.cur td,
 #scr-Reports table.pl tr.cur td,
 #scr-Legal table.pl tr.cur td,
-#scr-Analysis table.pl tr.cur td{background:#FBF3E6}
+#scr-Analysis table.pl tr.cur td,
+#scr-Menu table.pl tr.cur td{background:#FBF3E6}
 #scr-Dashboard .qbar,
 #scr-WhatIf .qbar,
 #scr-Compliance .qbar,
 #scr-Reports .qbar,
 #scr-Legal .qbar,
-#scr-Analysis .qbar{flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;height:100%;min-width:0}
+#scr-Analysis .qbar,
+#scr-Menu .qbar{flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:4px;height:100%;min-width:0}
 #scr-Dashboard .qbar:hover .qb,
 #scr-WhatIf .qbar:hover .qb,
 #scr-Compliance .qbar:hover .qb,
 #scr-Reports .qbar:hover .qb,
 #scr-Legal .qbar:hover .qb,
-#scr-Analysis .qbar:hover .qb{filter:brightness(1.15)}
+#scr-Analysis .qbar:hover .qb,
+#scr-Menu .qbar:hover .qb{filter:brightness(1.15)}
 #scr-Dashboard .prio,
 #scr-WhatIf .prio,
 #scr-Compliance .prio,
 #scr-Reports .prio,
 #scr-Legal .prio,
-#scr-Analysis .prio{display:flex;gap:14px;padding:16px;border:1px solid #EEE8DC;border-radius:14px;background:#fff}
+#scr-Analysis .prio,
+#scr-Menu .prio{display:flex;gap:14px;padding:16px;border:1px solid #EEE8DC;border-radius:14px;background:#fff}
 #scr-Dashboard .prio .num,
 #scr-WhatIf .prio .num,
 #scr-Compliance .prio .num,
 #scr-Reports .prio .num,
 #scr-Legal .prio .num,
-#scr-Analysis .prio .num{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#1F3A30;color:#E2A962;font-weight:700;font-family:'Fraunces',Georgia,serif}
+#scr-Analysis .prio .num,
+#scr-Menu .prio .num{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#1F3A30;color:#E2A962;font-weight:700;font-family:'Fraunces',Georgia,serif}
 #scr-Dashboard details.how summary,
 #scr-WhatIf details.how summary,
 #scr-Compliance details.how summary,
 #scr-Reports details.how summary,
 #scr-Legal details.how summary,
-#scr-Analysis details.how summary{cursor:pointer;font-weight:600;font-size:14px;min-height:32px;display:flex;align-items:center}
+#scr-Analysis details.how summary,
+#scr-Menu details.how summary{cursor:pointer;font-weight:600;font-size:14px;min-height:32px;display:flex;align-items:center}
 #scr-Dashboard svg .pt:hover,
 #scr-WhatIf svg .pt:hover,
 #scr-Compliance svg .pt:hover,
 #scr-Reports svg .pt:hover,
 #scr-Legal svg .pt:hover,
-#scr-Analysis svg .pt:hover{r:7}
+#scr-Analysis svg .pt:hover,
+#scr-Menu svg .pt:hover{r:7}
 #scr-Dashboard .jump,
 #scr-WhatIf .jump,
 #scr-Compliance .jump,
 #scr-Reports .jump,
 #scr-Legal .jump,
-#scr-Analysis .jump{display:none}
+#scr-Analysis .jump,
+#scr-Menu .jump{display:none}
 @media (max-width:720px){
   #scr-Dashboard .jump,
   #scr-WhatIf .jump,
   #scr-Compliance .jump,
   #scr-Reports .jump,
   #scr-Legal .jump,
-  #scr-Analysis .jump{display:flex;position:sticky;top:52px;z-index:15;margin:0 -16px;padding:8px 16px;gap:8px;overflow-x:auto;background:rgba(243,236,224,0.96);backdrop-filter:blur(6px);scrollbar-width:none;border-bottom:1px solid #E5DED0}
+  #scr-Analysis .jump,
+  #scr-Menu .jump{display:flex;position:sticky;top:52px;z-index:15;margin:0 -16px;padding:8px 16px;gap:8px;overflow-x:auto;background:rgba(243,236,224,0.96);backdrop-filter:blur(6px);scrollbar-width:none;border-bottom:1px solid #E5DED0}
   #scr-Dashboard .jump::-webkit-scrollbar,
   #scr-WhatIf .jump::-webkit-scrollbar,
   #scr-Compliance .jump::-webkit-scrollbar,
   #scr-Reports .jump::-webkit-scrollbar,
   #scr-Legal .jump::-webkit-scrollbar,
-  #scr-Analysis .jump::-webkit-scrollbar{display:none}
+  #scr-Analysis .jump::-webkit-scrollbar,
+  #scr-Menu .jump::-webkit-scrollbar{display:none}
   #scr-Dashboard .jump a,
   #scr-WhatIf .jump a,
   #scr-Compliance .jump a,
   #scr-Reports .jump a,
   #scr-Legal .jump a,
-  #scr-Analysis .jump a{flex:none;min-height:36px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #E5DED0;color:#1F3A30;font-size:13px;font-weight:600;text-decoration:none}
+  #scr-Analysis .jump a,
+  #scr-Menu .jump a{flex:none;min-height:36px;display:inline-flex;align-items:center;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #E5DED0;color:#1F3A30;font-size:13px;font-weight:600;text-decoration:none}
   #scr-Dashboard section[id],
   #scr-WhatIf section[id],
   #scr-Compliance section[id],
   #scr-Reports section[id],
   #scr-Legal section[id],
-  #scr-Analysis section[id]{scroll-margin-top:112px}
+  #scr-Analysis section[id],
+  #scr-Menu section[id]{scroll-margin-top:112px}
   #scr-Dashboard h1.h,
   #scr-WhatIf h1.h,
   #scr-Compliance h1.h,
   #scr-Reports h1.h,
   #scr-Legal h1.h,
-  #scr-Analysis h1.h{font-size:28px !important}
+  #scr-Analysis h1.h,
+  #scr-Menu h1.h{font-size:28px !important}
   #scr-Dashboard h2.h,
   #scr-WhatIf h2.h,
   #scr-Compliance h2.h,
   #scr-Reports h2.h,
   #scr-Legal h2.h,
-  #scr-Analysis h2.h{font-size:21px !important}
+  #scr-Analysis h2.h,
+  #scr-Menu h2.h{font-size:21px !important}
   #scr-Dashboard section.card,
   #scr-WhatIf section.card,
   #scr-Compliance section.card,
   #scr-Reports section.card,
   #scr-Legal section.card,
-  #scr-Analysis section.card,#scr-Dashboard section.glow,#scr-WhatIf section.glow,#scr-Compliance section.glow,#scr-Reports section.glow,#scr-Legal section.glow,#scr-Analysis section.glow{padding:18px 16px !important}
+  #scr-Analysis section.card,#scr-Dashboard section.glow,#scr-WhatIf section.glow,#scr-Compliance section.glow,#scr-Reports section.glow,#scr-Legal section.glow,#scr-Analysis section.glow,
+  #scr-Menu section.card,#scr-Menu section.glow{padding:18px 16px !important}
   #scr-Dashboard .kpis,
   #scr-WhatIf .kpis,
   #scr-Compliance .kpis,
   #scr-Reports .kpis,
   #scr-Legal .kpis,
-  #scr-Analysis .kpis{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important}
+  #scr-Analysis .kpis,
+  #scr-Menu .kpis{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important}
   #scr-Dashboard .kpis .card,
   #scr-WhatIf .kpis .card,
   #scr-Compliance .kpis .card,
   #scr-Reports .kpis .card,
   #scr-Legal .kpis .card,
-  #scr-Analysis .kpis .card{padding:12px 14px !important}
+  #scr-Analysis .kpis .card,
+  #scr-Menu .kpis .card{padding:12px 14px !important}
   #scr-Dashboard .kpis .h,
   #scr-WhatIf .kpis .h,
   #scr-Compliance .kpis .h,
   #scr-Reports .kpis .h,
   #scr-Legal .kpis .h,
-  #scr-Analysis .kpis .h{font-size:23px !important}
+  #scr-Analysis .kpis .h,
+  #scr-Menu .kpis .h{font-size:23px !important}
   #scr-Dashboard .dhead > div:last-child,
   #scr-WhatIf .dhead > div:last-child,
   #scr-Compliance .dhead > div:last-child,
   #scr-Reports .dhead > div:last-child,
   #scr-Legal .dhead > div:last-child,
-  #scr-Analysis .dhead > div:last-child{width:100%}
+  #scr-Analysis .dhead > div:last-child,
+  #scr-Menu .dhead > div:last-child{width:100%}
   #scr-Dashboard .dhead select,
   #scr-WhatIf .dhead select,
   #scr-Compliance .dhead select,
   #scr-Reports .dhead select,
   #scr-Legal .dhead select,
-  #scr-Analysis .dhead select{flex:1 1 auto;min-width:0}
+  #scr-Analysis .dhead select,
+  #scr-Menu .dhead select{flex:1 1 auto;min-width:0}
   #scr-Dashboard .dhead label,
   #scr-WhatIf .dhead label,
   #scr-Compliance .dhead label,
   #scr-Reports .dhead label,
   #scr-Legal .dhead label,
-  #scr-Analysis .dhead label{flex:1 1 auto}
+  #scr-Analysis .dhead label,
+  #scr-Menu .dhead label{flex:1 1 auto}
   #scr-Dashboard [role="group"][aria-label="Period"],
   #scr-WhatIf [role="group"][aria-label="Period"],
   #scr-Compliance [role="group"][aria-label="Period"],
   #scr-Reports [role="group"][aria-label="Period"],
   #scr-Legal [role="group"][aria-label="Period"],
-  #scr-Analysis [role="group"][aria-label="Period"],#scr-Dashboard [role="group"][aria-label="Compare against"],#scr-WhatIf [role="group"][aria-label="Compare against"],#scr-Compliance [role="group"][aria-label="Compare against"],#scr-Reports [role="group"][aria-label="Compare against"],#scr-Legal [role="group"][aria-label="Compare against"],#scr-Analysis [role="group"][aria-label="Compare against"]{width:100%;display:flex !important}
+  #scr-Analysis [role="group"][aria-label="Period"],#scr-Dashboard [role="group"][aria-label="Compare against"],#scr-WhatIf [role="group"][aria-label="Compare against"],#scr-Compliance [role="group"][aria-label="Compare against"],#scr-Reports [role="group"][aria-label="Compare against"],#scr-Legal [role="group"][aria-label="Compare against"],#scr-Analysis [role="group"][aria-label="Compare against"],
+  #scr-Menu [role="group"][aria-label="Period"],#scr-Menu [role="group"][aria-label="Compare against"]{width:100%;display:flex !important}
   #scr-Dashboard [role="group"] .seg,
   #scr-WhatIf [role="group"] .seg,
   #scr-Compliance [role="group"] .seg,
   #scr-Reports [role="group"] .seg,
   #scr-Legal [role="group"] .seg,
-  #scr-Analysis [role="group"] .seg{flex:1 1 0;padding:0 6px}
+  #scr-Analysis [role="group"] .seg,
+  #scr-Menu [role="group"] .seg{flex:1 1 0;padding:0 6px}
   #scr-Dashboard details.note-more summary,
   #scr-WhatIf details.note-more summary,
   #scr-Compliance details.note-more summary,
   #scr-Reports details.note-more summary,
   #scr-Legal details.note-more summary,
-  #scr-Analysis details.note-more summary{list-style:none}
+  #scr-Analysis details.note-more summary,
+  #scr-Menu details.note-more summary{list-style:none}
 }
 #scr-Dashboard .seg-on,
 #scr-WhatIf .seg-on,
 #scr-Compliance .seg-on,
 #scr-Reports .seg-on,
 #scr-Legal .seg-on,
-#scr-Analysis .seg-on{background:#fff;color:#1F3A30;box-shadow:0 1px 3px rgba(0,0,0,0.12)}
+#scr-Analysis .seg-on,
+#scr-Menu .seg-on{background:#fff;color:#1F3A30;box-shadow:0 1px 3px rgba(0,0,0,0.12)}
 #scr-Reports{margin:0;background:#F3ECE0;color:#1F3A30;font-family:Inter,system-ui,sans-serif}
 #scr-Reports a{color:#2A5243}
 #scr-Reports a:hover{color:#1A332B}
@@ -775,7 +864,7 @@ body.g-more-open #more-sheet a.sub-more,body.g-legal-open #more-sheet a.sub-lega
 #scr-Legal .lg-tiles,#scr-Compliance .lg-tiles,#scr-Reports .lg-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
 #scr-Legal .lg-tile,#scr-Compliance .lg-tile,#scr-Reports .lg-tile{background:#fff;border:1px solid #E5DED0;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
 #scr-Legal .lg-alert{border:1px solid #EEE8DC;border-left:4px solid #A4472A;border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;background:#fff}
-#scr-Legal .lg-pill,#scr-WhatIf .lg-pill,#scr-Compliance .lg-pill,#scr-Reports .lg-pill{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
+#scr-Legal .lg-pill,#scr-WhatIf .lg-pill,#scr-Compliance .lg-pill,#scr-Reports .lg-pill,#scr-Menu .lg-pill{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;white-space:nowrap}
 #scr-Legal .lg-chips{display:flex;flex-wrap:wrap;gap:8px}
 #scr-Legal .lg-chip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #D8D0C0;background:#fff;font:inherit;font-size:14px;font-weight:600;color:#1F3A30;cursor:pointer}
 #scr-Legal .lg-chip.on{background:#1F3A30;color:#fff;border-color:#1F3A30}
@@ -919,34 +1008,48 @@ body.g-more-open #more-sheet a.sub-more,body.g-legal-open #more-sheet a.sub-lega
   #scr-Reports .cx-panel{position:static}
 }
 #scr-Dashboard .todo,
-#scr-WhatIf .todo{box-shadow:0 6px 18px rgba(164,71,42,0.10);border-width:1.5px}
+#scr-WhatIf .todo,
+#scr-Menu .todo{box-shadow:0 6px 18px rgba(164,71,42,0.10);border-width:1.5px}
 #scr-Dashboard .todo-head,
-#scr-WhatIf .todo-head{padding:8px 14px}
+#scr-WhatIf .todo-head,
+#scr-Menu .todo-head{padding:8px 14px}
 #scr-Dashboard .todo-head h2,
-#scr-WhatIf .todo-head h2{font-size:15px !important}
+#scr-WhatIf .todo-head h2,
+#scr-Menu .todo-head h2{font-size:15px !important}
 #scr-Dashboard .todo-count,
-#scr-WhatIf .todo-count{min-width:22px;height:22px;font-size:13px}
+#scr-WhatIf .todo-count,
+#scr-Menu .todo-count{min-width:22px;height:22px;font-size:13px}
 #scr-Dashboard .todo-row,
-#scr-WhatIf .todo-row{grid-template-columns:30px minmax(0,1fr) auto;gap:10px;padding:8px 14px}
+#scr-WhatIf .todo-row,
+#scr-Menu .todo-row{grid-template-columns:30px minmax(0,1fr) auto;gap:10px;padding:8px 14px}
 #scr-Dashboard .todo-ic,
-#scr-WhatIf .todo-ic{width:30px;height:30px;border-radius:8px}
+#scr-WhatIf .todo-ic,
+#scr-Menu .todo-ic{width:30px;height:30px;border-radius:8px}
 #scr-Dashboard .todo-ic svg,
-#scr-WhatIf .todo-ic svg{width:16px;height:16px}
+#scr-WhatIf .todo-ic svg,
+#scr-Menu .todo-ic svg{width:16px;height:16px}
 #scr-Dashboard .todo-row > div,
-#scr-WhatIf .todo-row > div{gap:1px !important}
+#scr-WhatIf .todo-row > div,
+#scr-Menu .todo-row > div{gap:1px !important}
 #scr-Dashboard .todo-row > div > div,
-#scr-WhatIf .todo-row > div > div{gap:4px 8px !important}
+#scr-WhatIf .todo-row > div > div,
+#scr-Menu .todo-row > div > div{gap:4px 8px !important}
 #scr-Dashboard .todo-row strong,
-#scr-WhatIf .todo-row strong{font-size:14px !important;line-height:1.3 !important}
+#scr-WhatIf .todo-row strong,
+#scr-Menu .todo-row strong{font-size:14px !important;line-height:1.3 !important}
 #scr-Dashboard .todo-row .muted,
-#scr-WhatIf .todo-row .muted{font-size:12.5px !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4 !important}
+#scr-WhatIf .todo-row .muted,
+#scr-Menu .todo-row .muted{font-size:12.5px !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.4 !important}
 #scr-Dashboard .todo-row > div > div > span,
-#scr-WhatIf .todo-row > div > div > span{font-size:12px !important}
+#scr-WhatIf .todo-row > div > div > span,
+#scr-Menu .todo-row > div > div > span{font-size:12px !important}
 #scr-Dashboard .todo-pill,
-#scr-WhatIf .todo-pill{font-size:10px;padding:2px 6px;border-radius:5px}
+#scr-WhatIf .todo-pill,
+#scr-Menu .todo-pill{font-size:10px;padding:2px 6px;border-radius:5px}
 #scr-Dashboard .todo .btn,
-#scr-WhatIf .todo .btn{min-height:34px !important;padding:0 14px !important;font-size:13px !important;border-radius:9px}
-@media (max-width:640px){#scr-Dashboard .todo-row,#scr-WhatIf .todo-row{grid-template-columns:30px minmax(0,1fr) auto}#scr-Dashboard .todo-row .btn,#scr-WhatIf .todo-row .btn{grid-column:auto !important;width:auto !important}#scr-Dashboard .todo-row .muted,#scr-WhatIf .todo-row .muted{display:none}}
+#scr-WhatIf .todo .btn,
+#scr-Menu .todo .btn{min-height:34px !important;padding:0 14px !important;font-size:13px !important;border-radius:9px}
+@media (max-width:640px){#scr-Dashboard .todo-row,#scr-WhatIf .todo-row,#scr-Menu .todo-row{grid-template-columns:30px minmax(0,1fr) auto}#scr-Dashboard .todo-row .btn,#scr-WhatIf .todo-row .btn,#scr-Menu .todo-row .btn{grid-column:auto !important;width:auto !important}#scr-Dashboard .todo-row .muted,#scr-WhatIf .todo-row .muted,#scr-Menu .todo-row .muted{display:none}}
 #scr-Legal .lt{background:#fff;border:1.5px solid #2A5243;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(31,58,48,0.08)}
 #scr-Legal .lt-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 14px;background:#1F3A30;color:#fff;padding:8px 14px}
 #scr-Legal .lt-count{display:grid;place-items:center;min-width:22px;height:22px;border-radius:999px;background:#E2A962;color:#1F3A30;font-weight:800;font-size:13px}
@@ -989,63 +1092,116 @@ body.g-more-open #more-sheet a.sub-more,body.g-legal-open #more-sheet a.sub-lega
 #scr-Compliance .ip-count{display:grid;place-items:center;min-width:22px;height:22px;border-radius:999px;background:#E2A962;color:#1F3A30;font-weight:800;font-size:13px}
 #scr-Compliance .ip table.cx thead th{background:#F8F3EA}
 @media (max-width:720px){#scr-Compliance .ip{scroll-margin-top:76px}}
-#scr-WhatIf .wi-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
-#scr-WhatIf .wi-tab{display:flex;flex-direction:column;gap:2px;text-align:left;padding:12px 16px;border-radius:14px;border:1.5px solid #D8D0C0;background:#fff;font:inherit;color:#1F3A30;cursor:pointer;min-height:60px}
-#scr-WhatIf .wi-tab strong{font-size:15px}
-#scr-WhatIf .wi-tab span{font-size:12.5px;color:#56635D}
-#scr-WhatIf .wi-tab:hover{border-color:#2A5243}
-#scr-WhatIf .wi-tab.on{background:#1F3A30;border-color:#1F3A30;color:#fff}
-#scr-WhatIf .wi-tab.on span{color:#E2A962}
-#scr-WhatIf .wi-tab:focus-visible,#scr-WhatIf input:focus-visible,#scr-WhatIf select:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
-#scr-WhatIf .wi-grid{display:grid;grid-template-columns:minmax(280px,1fr) minmax(0,1.35fr);gap:16px;align-items:start}
-@media (max-width:980px){#scr-WhatIf .wi-grid{grid-template-columns:1fr}}
-#scr-WhatIf .wi-in{padding:18px 20px;display:flex;flex-direction:column;gap:12px}
-#scr-WhatIf .wi-f{display:flex;flex-direction:column;gap:5px;font-size:13.5px;font-weight:600}
-#scr-WhatIf .wi-f small{font-weight:400;font-size:12px;color:#56635D}
-#scr-WhatIf .wi-f select{font:inherit;font-weight:400;font-size:15px;min-height:44px;padding:0 10px;border:1px solid #857D6E;border-radius:10px;background:#fff;color:#1F3A30}
-#scr-WhatIf .wi-num{display:flex;align-items:stretch;border:1px solid #857D6E;border-radius:10px;background:#fff;overflow:hidden}
-#scr-WhatIf .wi-num input{flex:1;min-width:0;border:0;font:inherit;font-weight:400;font-size:15px;min-height:42px;padding:0 10px;color:#1F3A30;background:transparent;font-variant-numeric:tabular-nums}
-#scr-WhatIf .wi-affix{display:grid;place-items:center;padding:0 10px;background:#F8F3EA;color:#56635D;font-weight:600;font-size:13px}
-#scr-WhatIf .wi-res{background:#1F3A30;color:#fff;border-radius:16px;overflow:hidden;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.22),transparent 70%)}
-#scr-WhatIf .wi-res-head{display:flex;flex-direction:column;gap:6px;padding:16px 18px 12px}
-#scr-WhatIf .wi-tbl{width:100%;border-collapse:collapse;background:#fff;color:#1F3A30;font-size:14px;font-variant-numeric:tabular-nums}
-#scr-WhatIf .wi-tbl th{text-align:left;font-weight:500;padding:9px 18px;border-top:1px solid #EEE8DC}
-#scr-WhatIf .wi-tbl td{text-align:right;font-weight:700;padding:9px 18px;border-top:1px solid #EEE8DC;white-space:nowrap}
-#scr-WhatIf .wi-tbl tr:last-child th,#scr-WhatIf .wi-tbl tr:last-child td{background:#F8F3EA;font-weight:800}
-#scr-WhatIf .wi-res > p{background:#1F3A30;padding-top:12px !important}
-#scr-WhatIf .wi-chk{display:grid;grid-template-columns:118px minmax(0,1fr);gap:12px;align-items:start;padding:10px 18px;border-top:1px solid #EEE8DC}
-#scr-WhatIf .wi-chk .lg-pill{justify-self:start;margin-top:1px}
-@media (max-width:560px){#scr-WhatIf .wi-chk{grid-template-columns:1fr;gap:6px}}
-#scr-WhatIf .cx-link{background:none;border:0;padding:4px 0;font:inherit;font-size:13px;font-weight:600;color:#2A5243;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-#scr-WhatIf .cx-link:hover{color:#1A332B;text-decoration-thickness:2px}
-#scr-WhatIf .wi-chk{grid-template-columns:104px minmax(0,1fr)}
-#scr-WhatIf .wi-ask{background:#1F3A30;color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.25),transparent 70%)}
-#scr-WhatIf .wi-ask textarea{font:inherit;font-size:16px;line-height:1.5;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;resize:vertical;min-height:80px;width:100%;box-sizing:border-box}
-#scr-WhatIf .wi-ask textarea::placeholder{color:#A5B3AC}
-#scr-WhatIf .wi-ask textarea:focus-visible,#scr-WhatIf .wi-go:focus-visible,#scr-WhatIf .wi-chip:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
-#scr-WhatIf .wi-go,#scr-WhatIf .wi-stop{min-height:46px;padding:0 22px;border-radius:12px;border:0;font:inherit;font-weight:700;cursor:pointer}
-#scr-WhatIf .wi-go{background:#94572A;color:#fff}
-#scr-WhatIf .wi-go:hover{background:#7A4622}
-#scr-WhatIf .wi-stop{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
-#scr-WhatIf .wi-eg{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-#scr-WhatIf .wi-chip{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#E3E8E4;font:inherit;font-size:13px;cursor:pointer;text-align:left}
-#scr-WhatIf .wi-chip:hover{background:rgba(255,255,255,.12);color:#fff}
-#scr-WhatIf .wi-wait{display:flex;gap:14px;align-items:center;padding:16px 18px}
-#scr-WhatIf .wi-dots{display:flex;gap:5px}
-#scr-WhatIf .wi-dots span{width:8px;height:8px;border-radius:50%;background:#94572A;animation:aiDot 1s infinite ease-in-out}
-#scr-WhatIf .wi-dots span:nth-child(2){animation-delay:.15s}#scr-WhatIf .wi-dots span:nth-child(3){animation-delay:.3s}
-@media (prefers-reduced-motion:reduce){#scr-WhatIf .wi-dots span{animation:none}}
-#scr-WhatIf .wi-tbl thead th{font-size:12px;font-weight:600;color:#56635D;background:#F8F3EA;padding:8px 18px;border-top:0}
-#scr-WhatIf .wi-tbl thead th:last-child{text-align:right}
-#scr-WhatIf .wi-tbl tr.wi-tot th,#scr-WhatIf .wi-tbl tr.wi-tot td{background:#F8F3EA;font-weight:800}
-#scr-WhatIf .wi-tbl tr:last-child th{font-weight:800}
-#scr-WhatIf .wi-ass{padding:14px 18px 16px}
-#scr-WhatIf .wi-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
-@media (max-width:1100px){#scr-WhatIf .wi-grid{grid-template-columns:1fr}}
-#scr-WhatIf .wi-opts{padding:14px 18px 0;display:flex;flex-direction:column;gap:8px}
-#scr-WhatIf .wi-otbl{border-radius:10px;overflow:hidden}
-#scr-WhatIf .wi-otbl tr:last-child th,#scr-WhatIf .wi-otbl tr:last-child td{background:#fff !important;font-weight:700}
-#scr-WhatIf .wi-otbl tr:first-child th,#scr-WhatIf .wi-otbl tr:first-child td{border-top:0}
+#scr-WhatIf .wi-tabs,
+#scr-Menu .wi-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+#scr-WhatIf .wi-tab,
+#scr-Menu .wi-tab{display:flex;flex-direction:column;gap:2px;text-align:left;padding:12px 16px;border-radius:14px;border:1.5px solid #D8D0C0;background:#fff;font:inherit;color:#1F3A30;cursor:pointer;min-height:60px}
+#scr-WhatIf .wi-tab strong,
+#scr-Menu .wi-tab strong{font-size:15px}
+#scr-WhatIf .wi-tab span,
+#scr-Menu .wi-tab span{font-size:12.5px;color:#56635D}
+#scr-WhatIf .wi-tab:hover,
+#scr-Menu .wi-tab:hover{border-color:#2A5243}
+#scr-WhatIf .wi-tab.on,
+#scr-Menu .wi-tab.on{background:#1F3A30;border-color:#1F3A30;color:#fff}
+#scr-WhatIf .wi-tab.on span,
+#scr-Menu .wi-tab.on span{color:#E2A962}
+#scr-WhatIf .wi-tab:focus-visible,#scr-WhatIf input:focus-visible,#scr-WhatIf select:focus-visible,
+#scr-Menu .wi-tab:focus-visible,#scr-Menu input:focus-visible,#scr-Menu select:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
+#scr-WhatIf .wi-grid,
+#scr-Menu .wi-grid{display:grid;grid-template-columns:minmax(280px,1fr) minmax(0,1.35fr);gap:16px;align-items:start}
+@media (max-width:980px){#scr-WhatIf .wi-grid,#scr-Menu .wi-grid{grid-template-columns:1fr}}
+#scr-WhatIf .wi-in,
+#scr-Menu .wi-in{padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+#scr-WhatIf .wi-f,
+#scr-Menu .wi-f{display:flex;flex-direction:column;gap:5px;font-size:13.5px;font-weight:600}
+#scr-WhatIf .wi-f small,
+#scr-Menu .wi-f small{font-weight:400;font-size:12px;color:#56635D}
+#scr-WhatIf .wi-f select,
+#scr-Menu .wi-f select{font:inherit;font-weight:400;font-size:15px;min-height:44px;padding:0 10px;border:1px solid #857D6E;border-radius:10px;background:#fff;color:#1F3A30}
+#scr-WhatIf .wi-num,
+#scr-Menu .wi-num{display:flex;align-items:stretch;border:1px solid #857D6E;border-radius:10px;background:#fff;overflow:hidden}
+#scr-WhatIf .wi-num input,
+#scr-Menu .wi-num input{flex:1;min-width:0;border:0;font:inherit;font-weight:400;font-size:15px;min-height:42px;padding:0 10px;color:#1F3A30;background:transparent;font-variant-numeric:tabular-nums}
+#scr-WhatIf .wi-affix,
+#scr-Menu .wi-affix{display:grid;place-items:center;padding:0 10px;background:#F8F3EA;color:#56635D;font-weight:600;font-size:13px}
+#scr-WhatIf .wi-res,
+#scr-Menu .wi-res{background:#1F3A30;color:#fff;border-radius:16px;overflow:hidden;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.22),transparent 70%)}
+#scr-WhatIf .wi-res-head,
+#scr-Menu .wi-res-head{display:flex;flex-direction:column;gap:6px;padding:16px 18px 12px}
+#scr-WhatIf .wi-tbl,
+#scr-Menu .wi-tbl{width:100%;border-collapse:collapse;background:#fff;color:#1F3A30;font-size:14px;font-variant-numeric:tabular-nums}
+#scr-WhatIf .wi-tbl th,
+#scr-Menu .wi-tbl th{text-align:left;font-weight:500;padding:9px 18px;border-top:1px solid #EEE8DC}
+#scr-WhatIf .wi-tbl td,
+#scr-Menu .wi-tbl td{text-align:right;font-weight:700;padding:9px 18px;border-top:1px solid #EEE8DC;white-space:nowrap}
+#scr-WhatIf .wi-tbl tr:last-child th,#scr-WhatIf .wi-tbl tr:last-child td,
+#scr-Menu .wi-tbl tr:last-child th,#scr-Menu .wi-tbl tr:last-child td{background:#F8F3EA;font-weight:800}
+#scr-WhatIf .wi-res > p,
+#scr-Menu .wi-res > p{background:#1F3A30;padding-top:12px !important}
+#scr-WhatIf .wi-chk,
+#scr-Menu .wi-chk{display:grid;grid-template-columns:118px minmax(0,1fr);gap:12px;align-items:start;padding:10px 18px;border-top:1px solid #EEE8DC}
+#scr-WhatIf .wi-chk .lg-pill,
+#scr-Menu .wi-chk .lg-pill{justify-self:start;margin-top:1px}
+@media (max-width:560px){#scr-WhatIf .wi-chk,#scr-Menu .wi-chk{grid-template-columns:1fr;gap:6px}}
+#scr-WhatIf .cx-link,
+#scr-Menu .cx-link{background:none;border:0;padding:4px 0;font:inherit;font-size:13px;font-weight:600;color:#2A5243;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+#scr-WhatIf .cx-link:hover,
+#scr-Menu .cx-link:hover{color:#1A332B;text-decoration-thickness:2px}
+#scr-WhatIf .wi-chk,
+#scr-Menu .wi-chk{grid-template-columns:104px minmax(0,1fr)}
+#scr-WhatIf .wi-ask,
+#scr-Menu .wi-ask{background:#1F3A30;color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.25),transparent 70%)}
+#scr-WhatIf .wi-ask textarea,
+#scr-Menu .wi-ask textarea{font:inherit;font-size:16px;line-height:1.5;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;resize:vertical;min-height:80px;width:100%;box-sizing:border-box}
+#scr-WhatIf .wi-ask textarea::placeholder,
+#scr-Menu .wi-ask textarea::placeholder{color:#A5B3AC}
+#scr-WhatIf .wi-ask textarea:focus-visible,#scr-WhatIf .wi-go:focus-visible,#scr-WhatIf .wi-chip:focus-visible,
+#scr-Menu .wi-ask textarea:focus-visible,#scr-Menu .wi-go:focus-visible,#scr-Menu .wi-chip:focus-visible{outline:3px solid #E2A962;outline-offset:2px}
+#scr-WhatIf .wi-go,#scr-WhatIf .wi-stop,
+#scr-Menu .wi-go,#scr-Menu .wi-stop{min-height:46px;padding:0 22px;border-radius:12px;border:0;font:inherit;font-weight:700;cursor:pointer}
+#scr-WhatIf .wi-go,
+#scr-Menu .wi-go{background:#94572A;color:#fff}
+#scr-WhatIf .wi-go:hover,
+#scr-Menu .wi-go:hover{background:#7A4622}
+#scr-WhatIf .wi-stop,
+#scr-Menu .wi-stop{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+#scr-WhatIf .wi-eg,
+#scr-Menu .wi-eg{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+#scr-WhatIf .wi-chip,
+#scr-Menu .wi-chip{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#E3E8E4;font:inherit;font-size:13px;cursor:pointer;text-align:left}
+#scr-WhatIf .wi-chip:hover,
+#scr-Menu .wi-chip:hover{background:rgba(255,255,255,.12);color:#fff}
+#scr-WhatIf .wi-wait,
+#scr-Menu .wi-wait{display:flex;gap:14px;align-items:center;padding:16px 18px}
+#scr-WhatIf .wi-dots,
+#scr-Menu .wi-dots{display:flex;gap:5px}
+#scr-WhatIf .wi-dots span,
+#scr-Menu .wi-dots span{width:8px;height:8px;border-radius:50%;background:#94572A;animation:aiDot 1s infinite ease-in-out}
+#scr-WhatIf .wi-dots span:nth-child(2),
+#scr-Menu .wi-dots span:nth-child(2){animation-delay:.15s}#scr-WhatIf .wi-dots span:nth-child(3),#scr-Menu .wi-dots span:nth-child(3){animation-delay:.3s}
+@media (prefers-reduced-motion:reduce){#scr-WhatIf .wi-dots span,#scr-Menu .wi-dots span{animation:none}}
+#scr-WhatIf .wi-tbl thead th,
+#scr-Menu .wi-tbl thead th{font-size:12px;font-weight:600;color:#56635D;background:#F8F3EA;padding:8px 18px;border-top:0}
+#scr-WhatIf .wi-tbl thead th:last-child,
+#scr-Menu .wi-tbl thead th:last-child{text-align:right}
+#scr-WhatIf .wi-tbl tr.wi-tot th,#scr-WhatIf .wi-tbl tr.wi-tot td,
+#scr-Menu .wi-tbl tr.wi-tot th,#scr-Menu .wi-tbl tr.wi-tot td{background:#F8F3EA;font-weight:800}
+#scr-WhatIf .wi-tbl tr:last-child th,
+#scr-Menu .wi-tbl tr:last-child th{font-weight:800}
+#scr-WhatIf .wi-ass,
+#scr-Menu .wi-ass{padding:14px 18px 16px}
+#scr-WhatIf .wi-grid,
+#scr-Menu .wi-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+@media (max-width:1100px){#scr-WhatIf .wi-grid,#scr-Menu .wi-grid{grid-template-columns:1fr}}
+#scr-WhatIf .wi-opts,
+#scr-Menu .wi-opts{padding:14px 18px 0;display:flex;flex-direction:column;gap:8px}
+#scr-WhatIf .wi-otbl,
+#scr-Menu .wi-otbl{border-radius:10px;overflow:hidden}
+#scr-WhatIf .wi-otbl tr:last-child th,#scr-WhatIf .wi-otbl tr:last-child td,
+#scr-Menu .wi-otbl tr:last-child th,#scr-Menu .wi-otbl tr:last-child td{background:#fff !important;font-weight:700}
+#scr-WhatIf .wi-otbl tr:first-child th,#scr-WhatIf .wi-otbl tr:first-child td,
+#scr-Menu .wi-otbl tr:first-child th,#scr-Menu .wi-otbl tr:first-child td{border-top:0}
 #scr-Legal .la{background:#1F3A30;color:#fff;border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;background-image:radial-gradient(320px 140px at 90% -20%,rgba(232,170,92,.22),transparent 70%)}
 #scr-Legal .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 #scr-Legal .la-tag{font-size:11.5px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:999px;background:rgba(226,169,98,.16);border:1px solid rgba(226,169,98,.5);color:#EBC48A}
@@ -1135,10 +1291,147 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 .btn{transition:background-color .15s ease,box-shadow .15s ease,transform .1s ease}
 .btn:active{transform:translateY(1px)}
 @media (prefers-reduced-motion:reduce){.card,.btn,#scr-Dashboard .todo-row{transition:none}.btn:active{transform:none}}
+
+/* ---- Menu Engineering Tool */
+#scr-Menu .me-card{background:#fff;border:1px solid #E5DED0;border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:16px;min-width:0;scroll-margin-top:20px}
+#scr-Menu .me-card h2.h{margin:0;font-size:24px}
+#scr-Menu .me-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 20px}
+#scr-Menu .me-head>div{min-width:0;flex:1 1 420px}
+#scr-Menu .me-sub{margin:6px 0 0;font-size:14px;line-height:1.55;max-width:82ch}
+#scr-Menu .me-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:10px;border:1px solid #1F3A30;background:#1F3A30;color:#fff;font:inherit;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background-color .15s ease}
+#scr-Menu .me-btn:hover{background:#13261F}
+#scr-Menu .me-btn-ghost{background:#fff;color:#1F3A30;border-color:#857D6E}
+#scr-Menu .me-btn-ghost:hover{background:#F4EFE6}
+#scr-Menu .me-file:focus-within{outline:3px solid #E2A962;outline-offset:2px}
+#scr-Menu .me-linkbtn{background:none;border:0;padding:6px 0;min-height:32px;font:inherit;font-size:14px;font-weight:600;color:#2A5243;cursor:pointer;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
+#scr-Menu .me-linkbtn:hover{color:#13261F;text-decoration-thickness:2px}
+#scr-Menu .me-src{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px 20px;background:#fff;border:1px solid #E5DED0;border-radius:16px;padding:16px 20px}
+#scr-Menu .me-src-l{display:flex;gap:12px;align-items:center;min-width:0;flex:1 1 300px}
+#scr-Menu .me-src-ic{flex:none;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#E4EFE6;color:#22513C}
+#scr-Menu .me-src-r{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+#scr-Menu .me-fmt{flex:1 1 100%;font-size:14px;line-height:1.55;background:#F8F4EC;border-radius:12px;padding:14px 16px}
+#scr-Menu .me-fmt ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+#scr-Menu .me-msg,#scr-Menu .me-err{margin:-8px 0 0;font-size:14px;line-height:1.5;padding:10px 14px;border-radius:10px}
+#scr-Menu .me-msg{background:#E4EFE6;color:#22513C}
+#scr-Menu .me-err{background:#F6E3DA;color:#8A3A22}
+#scr-Menu .me-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:12px}
+#scr-Menu .me-kpi{background:#fff;border:1px solid #E5DED0;border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+#scr-Menu .me-kl{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#46524C}
+#scr-Menu .me-kv{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:28px;line-height:1.1;letter-spacing:-.02em;color:#1F3A30;font-variant-numeric:tabular-nums}
+#scr-Menu .me-ks{font-size:13px;color:#46524C}
+#scr-Menu .me-chips{display:flex;flex-wrap:wrap;gap:8px}
+#scr-Menu .me-chip{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid #857D6E;background:#fff;color:#1F3A30;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+#scr-Menu .me-chip:hover{background:#F4EFE6}
+#scr-Menu .me-chip-on{background:#1F3A30;border-color:#1F3A30;color:#fff}
+#scr-Menu .me-chip-on:hover{background:#13261F}
+#scr-Menu .me-mx{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+#scr-Menu .me-chart{flex:2 1 460px;min-width:0}
+#scr-Menu .me-quads{flex:1 1 260px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:10px;min-width:0}
+#scr-Menu .me-q{border:1px solid;border-left-width:4px;border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;background:#fff}
+#scr-Menu .me-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:1px}
+#scr-Menu .me-pill{display:inline-block;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;white-space:nowrap}
+#scr-Menu .me-target{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600}
+#scr-Menu .me-in-wrap{display:inline-flex;align-items:center;gap:6px;border:1px solid #857D6E;border-radius:10px;background:#fff;padding:0 10px;min-height:42px}
+#scr-Menu .me-in-wrap:focus-within{outline:3px solid #E2A962;outline-offset:1px}
+#scr-Menu .me-in-wrap input{border:0 !important;outline:0 !important;box-shadow:none !important;padding:0 !important;min-height:40px;width:5em;font:inherit;font-size:15px;background:transparent;color:#1F3A30;font-variant-numeric:tabular-nums}
+#scr-Menu .me-target .me-in-wrap input{width:3em}
+#scr-Menu .me-tbl{border:1px solid #E5DED0;border-radius:12px;overflow-x:auto;position:relative}
+#scr-Menu .me-file{position:relative}
+#scr-Menu .me-tbl table{width:100%;border-collapse:collapse;font-size:14px;min-width:960px}
+#scr-Menu .me-tbl th,#scr-Menu .me-tbl td{padding:10px 12px;text-align:left;border-top:1px solid #EEE8DC;vertical-align:middle}
+#scr-Menu .me-tbl thead th{background:#F8F4EC;border-top:0;font-size:12px;padding:4px 8px}
+#scr-Menu .me-tbl tbody th{font-weight:400;min-width:200px;max-width:280px}
+#scr-Menu .me-n{text-align:right !important;font-variant-numeric:tabular-nums;white-space:nowrap}
+#scr-Menu .me-sort{background:none;border:0;font:inherit;font-weight:700;color:#1F3A30;cursor:pointer;padding:8px 4px;min-height:36px;display:inline-flex;gap:4px;align-items:center;text-align:inherit;white-space:nowrap}
+#scr-Menu th.me-n .me-sort{justify-content:flex-end;width:100%}
+#scr-Menu .me-sort:hover{text-decoration:underline}
+#scr-Menu .me-arr{display:inline-block;width:.8em}
+#scr-Menu .me-dn{display:block;font-weight:600}
+#scr-Menu .me-dd{display:block;font-size:12px;color:#46524C;margin-top:2px}
+#scr-Menu .me-tag{display:inline-block;margin:2px 0 0;font-size:11px;font-weight:700;color:#6B4A1F;background:#F3E6CF;border-radius:6px;padding:1px 6px}
+#scr-Menu .me-hot{color:#A4472A !important;font-weight:700}
+#scr-Menu .me-ok{color:#22513C !important}
+#scr-Menu .me-plan{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;counter-reset:mp}
+#scr-Menu .me-plan>li{display:flex;flex-direction:column;gap:6px;padding:16px 0 16px 46px;border-top:1px solid #EEE8DC;position:relative;counter-increment:mp}
+#scr-Menu .me-plan>li:first-child{border-top:0}
+#scr-Menu .me-plan>li::before{content:counter(mp);position:absolute;left:0;top:16px;width:30px;height:30px;border-radius:50%;background:#1F3A30;color:#E2A962;display:grid;place-items:center;font-weight:700;font-size:14px}
+#scr-Menu .me-plan-t{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#scr-Menu .me-plan-b{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}
+#scr-Menu .me-val{font-weight:700;color:#22513C;font-variant-numeric:tabular-nums}
+#scr-Menu .me-ds{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+#scr-Menu .me-ds-l{flex:3 1 480px;min-width:0;display:flex;flex-direction:column;gap:16px}
+#scr-Menu .me-ds-r{flex:1 1 280px;min-width:0;background:#F8F4EC;border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:2px}
+#scr-Menu .me-f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;min-width:0}
+#scr-Menu .me-f select,#scr-Menu .me-f>input{min-height:44px;border:1px solid #857D6E;border-radius:10px;padding:0 12px;font:inherit;font-size:15px;background:#fff;color:#1F3A30;max-width:100%}
+#scr-Menu .me-f .me-in-wrap input{width:100%}
+#scr-Menu .me-row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:12px}
+#scr-Menu .me-row4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr));gap:12px}
+#scr-Menu .me-ing{display:flex;flex-direction:column;gap:8px;min-width:0}
+#scr-Menu .me-ing-h,#scr-Menu .me-ing-r{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.3fr) minmax(64px,auto) 36px;gap:8px;align-items:center}
+#scr-Menu .me-ing-h{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#46524C}
+#scr-Menu .me-ing-h span:nth-child(5){text-align:right}
+#scr-Menu .me-ing-r>input{min-height:40px;border:1px solid #857D6E;border-radius:8px;padding:0 10px;font:inherit;font-size:14px;background:#fff;color:#1F3A30;min-width:0;width:100%;box-sizing:border-box}
+#scr-Menu .me-ing-r .me-in-wrap{min-height:40px;border-radius:8px;padding:0 8px;min-width:0}
+#scr-Menu .me-ing-r .me-in-wrap input{width:100%;min-height:38px;font-size:14px}
+#scr-Menu .me-lt{font-size:14px}
+#scr-Menu .me-x{width:36px;height:36px;border-radius:8px;border:1px solid #D8D0C0;background:#fff;color:#46524C;font-size:18px;line-height:1;cursor:pointer}
+#scr-Menu .me-x:hover{background:#F6E3DA;color:#8A3A22;border-color:#A4472A}
+#scr-Menu .me-res{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:7px 0;font-size:14px}
+#scr-Menu .me-res-t{border-bottom:1px solid #DDD3C2;padding-bottom:10px;margin-bottom:4px}
+#scr-Menu .me-res b{font-size:15px}
+#scr-Menu .me-sug{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:1px solid #E5DED0;border-radius:12px;padding:12px 14px;margin:6px 0}
+#scr-Menu .me-sug>div{display:flex;flex-direction:column;gap:2px;min-width:0}
+#scr-Menu .me-ly{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+#scr-Menu .me-menu{flex:3 1 520px;min-width:0;background:#FBF8F2;border:1px solid #E5DED0;border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:22px 30px}
+#scr-Menu .me-sec-h{margin:0 0 10px;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:20px;letter-spacing:-.01em;border-bottom:1px solid #DDD3C2;padding-bottom:6px}
+#scr-Menu .me-sec ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+#scr-Menu .me-li{display:flex;flex-direction:column;gap:3px;padding:8px 10px;border-radius:10px;border:1px solid transparent}
+#scr-Menu .me-box{border:2px solid #1F3A30;background:#fff}
+#scr-Menu .me-dim .me-li-n,#scr-Menu .me-dim .me-li-p{color:#46524C}
+#scr-Menu .me-li-t{display:flex;gap:10px;align-items:baseline}
+#scr-Menu .me-li-n{font-weight:600}
+#scr-Menu .me-li-p{font-variant-numeric:tabular-nums;color:#1F3A30}
+#scr-Menu .me-li-d{font-size:13px;color:#46524C;font-style:italic}
+#scr-Menu .me-li-tip{align-self:flex-start;font-size:11px;margin-top:2px}
+#scr-Menu .me-tips{flex:1 1 260px;min-width:0}
+#scr-Menu .me-tips ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.5}
+@media (max-width:640px){
+  #scr-Menu .me-card{padding:18px 16px}
+  #scr-Menu .me-ing-h{display:none}
+  #scr-Menu .me-ing-r{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) 36px;padding:10px;border:1px solid #EEE8DC;border-radius:10px}
+  #scr-Menu .me-ing-r>input:first-child{grid-column:1 / 4;grid-row:1}
+  #scr-Menu .me-ing-r .me-x{grid-column:4;grid-row:1}
+  #scr-Menu .me-ing-r>input:nth-child(2){grid-column:1;grid-row:2}
+  #scr-Menu .me-ing-r>input:nth-child(3){grid-column:2;grid-row:2}
+  #scr-Menu .me-ing-r .me-pre{grid-column:3 / 5;grid-row:2}
+  #scr-Menu .me-ing-r .me-lt{grid-column:1 / 5;grid-row:3;text-align:left !important;font-size:13px;color:#46524C}
+  #scr-Menu .me-menu{padding:16px}
+  #scr-Menu .me-kv{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){#scr-Menu .me-btn{transition:none}}
+#scr-Menu .me-ph{border:1px solid #E5DED0;border-radius:14px;background:#FBF8F2;padding:18px 20px;display:flex;flex-direction:column;gap:16px}
+#scr-Menu .me-ph-in{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}
+#scr-Menu .me-ph-l{flex:3 1 380px;min-width:0;display:flex;flex-direction:column;gap:12px}
+#scr-Menu .me-ph-h{margin:0;font-size:17px;font-weight:700;display:flex;gap:8px;align-items:center}
+#scr-Menu .me-ph-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+#scr-Menu .me-ph-pic{flex:1 1 200px;max-width:280px;min-width:0;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+#scr-Menu .me-ph-pic img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1px solid #E5DED0;max-width:100%}
+#scr-Menu .me-ph-empty{width:100%;aspect-ratio:4/3;border-radius:12px;border:1px dashed #857D6E;display:grid;place-items:center;color:#46524C;font-size:13px;background:#fff}
+#scr-Menu .me-ph-wait{margin:0;display:flex;gap:10px;align-items:center;font-size:14px;color:#1F3A30}
+#scr-Menu .me-spin{width:16px;height:16px;border-radius:50%;border:2px solid #D8D0C0;border-top-color:#1F3A30;animation:mespin .9s linear infinite;flex:none}
+@keyframes mespin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){#scr-Menu .me-spin{animation:none;border-top-color:#94572A}}
+#scr-Menu .me-ph-res{background:#fff;border:1px solid #E5DED0;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px}
+#scr-Menu .me-ph-rh{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:flex-start}
+#scr-Menu .me-ph-res .me-tbl table{min-width:620px}
+#scr-Menu .me-ph-res .me-tbl tbody th{min-width:160px;font-weight:600}
+#scr-Menu .me-ph-as{margin:0;padding-left:18px;font-size:13px;color:#46524C;display:flex;flex-direction:column;gap:3px}
+#scr-Menu .me-ph-as:empty{display:none}
+
 </style>
 </head>
 <body>
-<a class="skip" href="#" id="skip-link">Skip to main content</a><div id="route-status" class="vh" role="status" aria-live="polite"></div><div class="screen" id="scr-Main" hidden></div><div class="screen" id="scr-Signup" hidden></div><div class="screen" id="scr-Login" hidden></div><div class="screen" id="scr-Dashboard" hidden></div><div class="screen" id="scr-Analysis" hidden></div><div class="screen" id="scr-Legal" hidden></div><div class="screen" id="scr-Compliance" hidden></div><div class="screen" id="scr-WhatIf" hidden></div><div class="screen" id="scr-Reports" hidden></div><div class="screen" id="scr-Schedule" hidden></div><div class="screen" id="scr-Assistant" hidden></div>
+<a class="skip" href="#" id="skip-link">Skip to main content</a><div id="route-status" class="vh" role="status" aria-live="polite"></div><div class="screen" id="scr-Main" hidden></div><div class="screen" id="scr-Signup" hidden></div><div class="screen" id="scr-Login" hidden></div><div class="screen" id="scr-Dashboard" hidden></div><div class="screen" id="scr-Analysis" hidden></div><div class="screen" id="scr-Legal" hidden></div><div class="screen" id="scr-Compliance" hidden></div><div class="screen" id="scr-WhatIf" hidden></div><div class="screen" id="scr-Menu" hidden></div><div class="screen" id="scr-Reports" hidden></div><div class="screen" id="scr-Schedule" hidden></div><div class="screen" id="scr-Assistant" hidden></div>
 
 <nav id="tabbar" aria-label="Client portal">
 <a href="#Dashboard--ask" class="ai-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg><span>Ask AI</span></a>
@@ -1147,7 +1440,9 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <a href="#Compliance" data-nav="Compliance"><span class="tbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l2 2 4-4"/><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg><span>Compliance</span></a>
 <button type="button" class="more-btn" aria-expanded="false" aria-controls="more-sheet"><span class="tbadge lbadge" aria-label="Legal items needing attention">4</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg><span>More</span></button>
 <div class="more-sheet" id="more-sheet" hidden>
-<a href="#WhatIf">What if</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools" href="#WhatIf">What if</a>
+<a class="sub sub-tools" href="#Menu">Menu Engineering Tool</a>
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
@@ -1623,7 +1918,9 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a class="on" href="#Dashboard">Dashboard</a>
 <a href="#Analysis">Performance Analysis</a>
-<a href="#WhatIf">What if</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools" href="#WhatIf">What if</a>
+<a class="sub sub-tools" href="#Menu">Menu Engineering Tool</a>
 <a href="#Compliance" class="grp-toggle" data-group="comp" role="button" aria-expanded="false">Compliance<span class="nbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-comp" href="#Compliance--top">In progress</a>
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
@@ -1769,7 +2066,9 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
 <a class="on" href="#Analysis">Performance Analysis</a>
-<a href="#WhatIf">What if</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools" href="#WhatIf">What if</a>
+<a class="sub sub-tools" href="#Menu">Menu Engineering Tool</a>
 <a href="#Compliance" class="grp-toggle" data-group="comp" role="button" aria-expanded="false">Compliance<span class="nbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-comp" href="#Compliance--top">In progress</a>
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
@@ -1994,7 +2293,9 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
 <a href="#Analysis">Performance Analysis</a>
-<a href="#WhatIf">What if</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools" href="#WhatIf">What if</a>
+<a class="sub sub-tools" href="#Menu">Menu Engineering Tool</a>
 <a href="#Compliance" class="grp-toggle" data-group="comp" role="button" aria-expanded="false">Compliance<span class="nbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-comp" href="#Compliance--top">In progress</a>
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
@@ -2193,7 +2494,9 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
 <a href="#Analysis">Performance Analysis</a>
-<a href="#WhatIf">What if</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools" href="#WhatIf">What if</a>
+<a class="sub sub-tools" href="#Menu">Menu Engineering Tool</a>
 <a href="#Compliance" class="on grp-toggle" data-group="comp" role="button" aria-expanded="false">Compliance<span class="nbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-comp" href="#Compliance--top">In progress</a>
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
@@ -2327,6 +2630,204 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </section>
 </main>
 </div>
+</template><template id="tpl-Menu">
+
+<div style="min-height: 100%; display: flex; flex-wrap: wrap; align-items: stretch">
+
+<aside class="side" style="flex: 1 1 240px; max-width: 100%; background: #1F3A30; color: #fff; padding: 20px 14px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+<a href="#Main" style="gap: 10px; margin-bottom: 14px; color: #fff"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 40 48" style="flex:none"><rect x="4" y="12" width="5" height="18" rx="2.5" fill="#F4EEE2"/><rect x="12.5" y="6" width="5" height="24" rx="2.5" fill="#F4EEE2"/><rect x="21" y="2" width="5" height="28" rx="2.5" fill="#F4EEE2"/><rect x="29.5" y="0" width="5" height="30" fill="#C1904A"/><path d="M4 24h30.5v4c0 6-5 9.5-10.5 12H15C9 37.5 4 34 4 28z" fill="#F4EEE2"/><rect x="17" y="34" width="6" height="14" rx="3" fill="#F4EEE2"/></svg><span class="h" style="font-weight: 700; font-size: 18px">The Eatery Firm</span></a>
+<a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
+<a href="#Dashboard">Dashboard</a>
+<a href="#Analysis">Performance Analysis</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools" href="#WhatIf">What if</a>
+<a class="sub sub-tools on" href="#Menu" aria-current="page">Menu Engineering Tool</a>
+<a href="#Compliance" class="grp-toggle" data-group="comp" role="button" aria-expanded="false">Compliance<span class="nbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-comp" href="#Compliance--top">In progress</a>
+<a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
+<a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
+<a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--docs">All documents</a>
+<a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
+<a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-more" href="#Assistant--svc-consult">Business advisory</a>
+<a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
+<a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
+<a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
+<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
+<a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
+<a href="#billing">Settings &amp; billing</a>
+<a href="#Logout">Log out</a>
+</aside>
+
+<main style="flex: 999 1 640px; min-width: 0; padding: 28px clamp(16px, 3vw, 40px) 48px; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box">
+
+<div style="display: flex; flex-direction: column; gap: 4px; max-width: 780px"><span class="eyebrow">Little Saigon Kitchen (demo)</span><h1 class="h" style="margin: 0; font-size: 34px; line-height: 1.15">Menu Engineering Tool</h1><span class="muted" style="font-size: 15px; line-height: 1.5">See which dishes earn their place on the menu. Each dish is rated on how well it sells and how much it makes after plate cost, then you can test new prices and recipes before you change the menu.</span></div>
+
+<section class="me-src" aria-labelledby="me-src-h">
+<div class="me-src-l">
+<span class="me-src-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>
+<div style="min-width: 0"><h2 id="me-src-h" style="margin: 0; font-size: 15px; font-weight: 700">Sales data: {{ src.title }}</h2><span class="muted" style="font-size: 13px">{{ src.detail }}</span></div>
+</div>
+<div class="me-src-r">
+<button type="button" class="me-btn me-btn-ghost" onClick="{{ sync }}">Sync from POS</button>
+<label class="me-btn me-btn-ghost me-file">Upload CSV<input type="file" id="me-file" accept=".csv,text/csv" class="vh" onChange="{{ file }}"></label>
+<button type="button" class="me-btn me-btn-ghost" onClick="{{ sample }}">Try a sample CSV</button>
+<button type="button" class="me-linkbtn" aria-expanded="{{ fmtX }}" aria-controls="me-fmt" onClick="{{ toggleFmt }}">CSV format</button>
+</div>
+<template data-if="fmt"><div id="me-fmt" class="me-fmt">
+<p style="margin: 0 0 8px">Export item sales from Square, Lightspeed, Kounta or any POS. One row per item, or one row per sale line. Rows for the same item are added together. Column names can vary:</p>
+<ul>
+<li><b>Item</b> (or Dish, Product, Menu item). Required.</li>
+<li><b>Qty</b> (or Quantity, Items sold). Required.</li>
+<li><b>Price</b> inc GST, or <b>Gross sales</b> for the row. One is required.</li>
+<li><b>Category</b> (or Menu group). Optional.</li>
+<li><b>Cost</b> per dish, ex GST. Optional. If it's missing, we use the plate cost from your recipe cards, or estimate 30% of the price.</li>
+</ul></div></template>
+</section>
+<template data-if="msg"><p class="me-msg" role="status">{{ msg }}</p></template>
+<template data-if="err"><p class="me-err" role="alert">{{ err }}</p></template>
+
+<section aria-label="Whole menu at a glance" class="me-kpis">
+<template data-for="kpi" data-as="k"><div class="me-kpi"><span class="me-kl">{{ k.l }}</span><strong class="me-kv">{{ k.v }}</strong><span class="me-ks">{{ k.s }}</span></div></template>
+</section>
+
+<section class="me-card" aria-labelledby="me-mx-h" id="matrix">
+<div class="me-head"><div><h2 class="h" id="me-mx-h">Menu matrix</h2><p class="muted me-sub">Dishes are compared within one category at a time, because a drink and a main shouldn't compete. Above the dashed horizontal line a dish earns more than the {{ catLow }} average of {{ cmT }}. Right of the vertical line it sells at least {{ popT }} of {{ catLow }} (70% of an equal share across {{ nCat }} dishes).</p></div></div>
+<div class="me-chips" role="group" aria-label="Menu category"><template data-for="chips" data-as="c"><button type="button" class="{{ c.cls }}" aria-pressed="{{ c.pressed }}" onClick="{{ c.go }}">{{ c.c }}</button></template></div>
+<div class="me-mx">
+<div class="me-chart" data-html="chart"></div>
+<div class="me-quads"><template data-for="quads" data-as="q"><div class="me-q" style="border-color: {{ q.dot }}">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px"><strong style="color: {{ q.fg }}; font-size: 15px"><span class="me-dot" style="background: {{ q.dot }}" aria-hidden="true"></span>{{ q.name }} · {{ q.count }}</strong><span class="muted" style="font-size: 12px">{{ q.share }} of margin</span></div>
+<span style="font-size: 13px; font-weight: 600">{{ q.what }}</span>
+<span class="muted" style="font-size: 13px; line-height: 1.45">{{ q.names }}</span>
+<span style="font-size: 13px; line-height: 1.45">{{ q.todo }}</span>
+</div></template></div>
+</div>
+</section>
+
+<section class="me-card" aria-labelledby="me-tb-h">
+<div class="me-head"><div><h2 class="h" id="me-tb-h">{{ catName }}: dish by dish</h2><p class="muted me-sub">Margin is the price ex GST less plate cost. Select a column heading to sort. Food costs more than 5 points over your target are shown in red.</p></div>
+<label class="me-target" for="me-target">Target food cost<span class="me-in-wrap"><input id="me-target" type="text" inputmode="decimal" value="{{ target }}" onInput="{{ onTarget }}"><span aria-hidden="true">%</span></span></label></div>
+<div class="tbl-wrap me-tbl" tabindex="0" role="region" aria-label="Dish table. Scroll sideways to see all columns.">
+<table>
+<thead><tr><template data-for="heads" data-as="h"><th scope="col" aria-sort="{{ h.aria }}" class="{{ h.num }}"><button type="button" class="me-sort" onClick="{{ h.go }}">{{ h.lab }}<span aria-hidden="true" class="me-arr">{{ h.arrow }}</span></button></th></template><th scope="col"><span class="vh">Actions</span></th></tr></thead>
+<tbody><template data-for="trows" data-as="r"><tr>
+<th scope="row"><span class="me-dn">{{ r.name }}</span><template data-if="r.tagOn"><span class="me-tag">{{ r.tag }}</span></template><span class="me-dd">{{ r.desc }}</span></th>
+<td class="me-n">{{ r.sold }}</td><td class="me-n">{{ r.mix }}</td><td class="me-n">{{ r.price }}</td><td class="me-n">{{ r.cost }}</td><td class="me-n {{ r.fcCls }}">{{ r.fc }}</td><td class="me-n">{{ r.cm }}</td><td class="me-n"><b>{{ r.tcm }}</b></td>
+<td><span class="me-pill" style="background: {{ r.bg }}; color: {{ r.fg }}">{{ r.cls }}</span></td>
+<td><button type="button" class="me-linkbtn" onClick="{{ r.design }}">Open in designer</button></td>
+</tr></template></tbody>
+</table></div>
+</section>
+
+<section class="me-card" aria-labelledby="me-ap-h" id="plan">
+<div class="me-head"><div><h2 class="h" id="me-ap-h">Action plan</h2><p class="muted me-sub">The changes worth the most each month across the whole menu, largest first. Together they're worth about {{ planTotal }} a month in margin.</p></div>
+<button type="button" class="me-btn" onClick="{{ share }}">Discuss with your accountant</button></div>
+<ol class="me-plan"><template data-for="plan" data-as="p"><li>
+<div class="me-plan-t"><span class="me-pill" style="background: {{ p.bg }}; color: {{ p.fg }}">{{ p.tag }}</span><span class="muted" style="font-size: 13px">{{ p.cat }}</span></div>
+<strong style="font-size: 16px">{{ p.dish }}: {{ p.act }}</strong>
+<span class="muted" style="font-size: 14px; line-height: 1.5">{{ p.why }}</span>
+<div class="me-plan-b"><span class="me-val">{{ p.v }}</span><button type="button" class="me-linkbtn" onClick="{{ p.open }}">Test it in the designer</button></div>
+</li></template></ol>
+</section>
+
+<section class="me-card" aria-labelledby="me-ds-h" id="me-design">
+<div class="me-head"><div><h2 class="h" id="me-ds-h">Dish designer</h2><p class="muted me-sub">Cost a recipe, set the price and see where the dish would land on the matrix before you change the menu.</p></div></div>
+<section class="me-ph" aria-labelledby="me-ph-h">
+<div class="me-ph-in">
+<div class="me-ph-l">
+<h3 id="me-ph-h" class="me-ph-h"><span aria-hidden="true" style="color: #94572A">✦</span> Cost a dish from a photo</h3>
+<p class="muted" style="margin: 0; font-size: 14px; line-height: 1.5">Upload a photo of a plated dish. AI identifies the ingredients, estimates the quantity of each and prices them at Australian wholesale rates, ex GST. Check the estimate, then load it into the designer.</p>
+<div class="me-ph-row">
+<label class="me-btn me-btn-ghost me-file">Choose photo<input type="file" id="me-photo" accept="image/jpeg,image/png,image/webp,image/gif" class="vh" onChange="{{ ph.pick }}"></label>
+<template data-if="ph.idle"><button type="button" class="me-btn" onClick="{{ ph.go }}">Work out ingredients</button></template>
+<template data-if="ph.busy"><button type="button" class="me-btn me-btn-ghost" onClick="{{ ph.stop }}">Stop</button></template>
+<button type="button" class="me-linkbtn" onClick="{{ ph.example }}">See an example</button>
+</div>
+<label class="me-f" for="me-ph-note" style="font-weight: 600">Anything AI can't see? (optional)<input id="me-ph-note" type="text" value="{{ ph.note }}" placeholder="e.g. 180 g wagyu, house-made XO sauce" onInput="{{ ph.onNote }}"></label>
+<template data-if="ph.busy"><p class="me-ph-wait" role="status"><span class="me-spin" aria-hidden="true"></span>Looking at the photo and pricing the ingredients. This can take up to a minute.</p></template>
+<template data-if="ph.err"><p class="me-err" role="alert" style="margin: 0">{{ ph.err }}</p></template>
+</div>
+<div class="me-ph-pic"><template data-if="ph.hasUrl"><img src="{{ ph.url }}" alt="Your dish photo: {{ ph.name }}"><button type="button" class="me-linkbtn" onClick="{{ ph.clear }}">Remove photo</button></template><template data-if="ph.noImg"><div class="me-ph-empty"><span>Example dish</span></div></template></div>
+</div>
+<template data-if="ph.hasRes"><div class="me-ph-res" role="region" aria-label="Ingredients worked out from the photo">
+<div class="me-ph-rh"><div><strong style="font-size: 17px">{{ ph.res.name }}</strong><template data-if="ph.mock"><span class="me-tag" style="margin-left: 8px">Example</span></template><span class="muted" style="display: block; font-size: 13px">{{ ph.res.cat }} · {{ ph.res.portion }}</span></div><span class="me-pill" style="background: {{ ph.confBg }}; color: {{ ph.confFg }}">{{ ph.conf }}</span></div>
+<div class="tbl-wrap me-tbl" tabindex="0" role="region" aria-label="Estimated ingredients. Scroll sideways to see all columns."><table style="min-width: 620px">
+<thead><tr><th scope="col" style="padding: 10px 12px">Ingredient</th><th scope="col" class="me-n" style="padding: 10px 12px">Qty</th><th scope="col" class="me-n" style="padding: 10px 12px">Cost</th><th scope="col" class="me-n" style="padding: 10px 12px">Line</th><th scope="col" style="padding: 10px 12px">How it was estimated</th></tr></thead>
+<tbody><template data-for="ph.lines" data-as="pl"><tr><th scope="row">{{ pl.n }}</th><td class="me-n">{{ pl.q }}</td><td class="me-n">{{ pl.c }}</td><td class="me-n">{{ pl.t }}</td><td class="muted" style="font-size: 13px">{{ pl.basis }}</td></tr></template>
+<tr><th scope="row"><b>Estimated plate cost</b></th><td></td><td></td><td class="me-n"><b>{{ ph.plate }}</b></td><td class="muted" style="font-size: 13px">Suggested price {{ ph.price }} inc GST, with 5% waste</td></tr></tbody>
+</table></div>
+<ul class="me-ph-as"><template data-for="ph.res.assumptions" data-as="as"><li>{{ as }}</li></template></ul>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center"><button type="button" class="me-btn" onClick="{{ ph.asNew }}">Load as a new dish</button><template data-if="ph.canReplace"><button type="button" class="me-btn me-btn-ghost" onClick="{{ ph.replace }}">Replace ingredients for {{ ph.curName }}</button></template></div>
+<p class="muted" style="margin: 0; font-size: 12px">Estimates from a photo are a starting point. Check quantities against your recipe and prices against your latest supplier invoices.</p>
+</div></template>
+</section>
+<div class="me-ds" id="me-ds-grid">
+<div class="me-ds-l">
+<div class="me-row2">
+<label class="me-f" for="me-pick">Dish<select id="me-pick" onChange="{{ d.on.pick }}"><template data-for="d.opts" data-as="o"><option value="{{ o.v }}" data-sel="{{ o.sel }}">{{ o.t }}</option></template></select></label>
+<template data-if="d.isNew"><label class="me-f" for="me-cat">Category<select id="me-cat" onChange="{{ d.on.cat }}"><template data-for="d.catOpts" data-as="o"><option value="{{ o.v }}" data-sel="{{ o.sel }}">{{ o.t }}</option></template></select></label></template>
+</div>
+<template data-if="d.isNew"><label class="me-f" for="me-name">Dish name<input id="me-name" type="text" value="{{ d.name }}" placeholder="e.g. Soft-shell crab banh mi" onInput="{{ d.on.name }}"></label></template>
+<div class="me-ing">
+<div class="me-ing-h" aria-hidden="true"><span>Ingredient</span><span>Qty</span><span>Unit</span><span>Cost per unit</span><span>Line</span><span></span></div>
+<template data-for="d.lines" data-as="l"><div class="me-ing-r">
+<input id="{{ l.idn }}" type="text" aria-label="{{ l.labN }}" value="{{ l.n }}" onInput="{{ l.on.n }}">
+<input id="{{ l.idq }}" type="text" inputmode="decimal" aria-label="{{ l.labQ }}" value="{{ l.q }}" onInput="{{ l.on.q }}">
+<input id="{{ l.idu }}" type="text" aria-label="{{ l.labU }}" value="{{ l.u }}" onInput="{{ l.on.u }}">
+<span class="me-in-wrap me-pre"><span aria-hidden="true">$</span><input id="{{ l.idc }}" type="text" inputmode="decimal" aria-label="{{ l.labC }}" value="{{ l.c }}" onInput="{{ l.on.c }}"></span>
+<span class="me-n me-lt">{{ l.tot }}</span>
+<button type="button" class="me-x" aria-label="{{ l.labX }}" onClick="{{ l.del }}">×</button>
+</div></template>
+<button type="button" class="me-linkbtn" style="align-self: flex-start" onClick="{{ d.add }}">+ Add ingredient</button>
+</div>
+<div class="me-row4">
+<label class="me-f" for="me-waste">Waste and trim<span class="me-in-wrap"><input id="me-waste" type="text" inputmode="decimal" value="{{ d.waste }}" onInput="{{ d.on.waste }}"><span aria-hidden="true">%</span></span></label>
+<label class="me-f" for="me-price">Menu price inc GST<span class="me-in-wrap me-pre"><span aria-hidden="true">$</span><input id="me-price" type="text" inputmode="decimal" value="{{ d.price }}" onInput="{{ d.on.price }}"></span></label>
+<template data-if="d.notNew"><label class="me-f" for="me-chg">Expected change in sales<span class="me-in-wrap"><input id="me-chg" type="text" inputmode="decimal" value="{{ d.chg }}" onInput="{{ d.on.chg }}"><span aria-hidden="true">%</span></span></label></template>
+<template data-if="d.isNew"><label class="me-f" for="me-sold">Expected sales a month<input id="me-sold" type="text" inputmode="numeric" value="{{ d.sold }}" onInput="{{ d.on.sold }}"></label></template>
+</div>
+</div>
+<div class="me-ds-r" aria-live="polite">
+<div class="me-res"><span>Ingredients</span><b class="me-n">{{ d.ingr }}</b></div>
+<div class="me-res"><span>Waste and trim</span><b class="me-n">{{ d.wasteAmt }}</b></div>
+<div class="me-res me-res-t"><span>Plate cost</span><b class="me-n">{{ d.plate }}</b></div>
+<div class="me-res"><span>Price ex GST</span><b class="me-n">{{ d.net }}</b></div>
+<div class="me-res"><span>Food cost</span><b class="me-n {{ d.fcCls }}">{{ d.fc }}</b></div>
+<div class="me-res me-res-t"><span>Margin per dish</span><b class="me-n">{{ d.cm }}</b></div>
+<div class="me-sug"><div><span class="me-kl">Suggested price</span><strong class="me-kv" style="font-size: 26px">{{ d.sug }}</strong><span class="me-ks">{{ d.sugNote }}</span></div><button type="button" class="me-btn me-btn-ghost" onClick="{{ d.useSug }}">Use this price</button></div>
+<div class="me-res"><span>Matrix class</span><span><span class="muted" style="font-size: 13px">{{ d.clsWas }} → </span><span class="me-pill" style="background: {{ d.clsBg }}; color: {{ d.clsFg }}">{{ d.cls }}</span></span></div>
+<div class="me-res"><span>Sales a month</span><b class="me-n">{{ d.soldNew }}</b></div>
+<template data-if="d.notNew"><div class="me-res"><span>Monthly margin</span><b class="me-n">{{ d.mNow }} → {{ d.mNew }}</b></div><div class="me-res me-res-t"><span>Change</span><b class="me-n {{ d.diffCls }}">{{ d.mDiff }}</b></div></template>
+<template data-if="d.isNew"><div class="me-res me-res-t"><span>Monthly margin</span><b class="me-n">{{ d.mNew }}</b></div></template>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px"><button type="button" class="me-btn" onClick="{{ d.apply }}">Apply to analysis</button><button type="button" class="me-btn me-btn-ghost" onClick="{{ d.reset }}">Reset</button></div>
+</div>
+</div>
+</section>
+
+<section class="me-card" aria-labelledby="me-ly-h" id="layout">
+<div class="me-head"><div><h2 class="h" id="me-ly-h">Menu layout</h2><p class="muted me-sub">How each section of the menu should be ordered, based on the matrix. Guests read the first two items of each section most, so they go to your stars and the puzzles you want to sell more of.</p></div></div>
+<div class="me-ly">
+<div class="me-menu"><template data-for="layout" data-as="s"><div class="me-sec"><h3 class="me-sec-h">{{ s.cat }}</h3><ul>
+<template data-for="s.items" data-as="it"><li class="{{ it.boxed }}"><div class="me-li-t"><span class="me-li-n">{{ it.name }}</span><span class="me-li-p">{{ it.price }}</span></div><span class="me-li-d">{{ it.desc }}</span><span class="me-pill me-li-tip" style="background: {{ it.bg }}; color: {{ it.fg }}">{{ it.tip }}</span></li></template>
+</ul></div></template></div>
+<div class="me-tips"><h3 style="margin: 0 0 8px; font-size: 15px">Menu design rules that lift margin</h3><ul>
+<li><b>Prime spots.</b> Put a star or a puzzle first in each section, and put a box around your best star.</li>
+<li><b>Drop the dollar signs.</b> Show "24", not "$24.00". Guests spend more when the price looks less like money.</li>
+<li><b>Don't line prices up.</b> Put the price at the end of the description, not in a column that invites comparison.</li>
+<li><b>Describe it.</b> Name where it's from and how it's cooked. "12-hour broth" sells better than "beef soup".</li>
+<li><b>Keep sections short.</b> Up to seven items each. Long lists slow ordering and push guests to the cheapest dish.</li>
+<li><b>Anchor high.</b> A premium dish near the top makes everything below it look like good value.</li>
+</ul></div>
+</div>
+</section>
+
+<p class="muted" style="font-size: 13px; margin: 0; max-width: 90ch">Method: menu engineering (Kasavana and Smith). Prices include 10% GST, and margins use the price ex GST less plate cost, so they match your profit and loss. Plate costs come from your recipe cards; edit them in the dish designer. Results are a guide to test changes, not a forecast.</p>
+</main>
+
+</div>
 </template><template id="tpl-WhatIf">
 
 <div style="min-height: 100%; display: flex; flex-wrap: wrap; align-items: stretch">
@@ -2336,7 +2837,9 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
 <a href="#Analysis">Performance Analysis</a>
-<a class="on" href="#WhatIf">What if</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools on" href="#WhatIf" aria-current="page">What if</a>
+<a class="sub sub-tools" href="#Menu">Menu Engineering Tool</a>
 <a href="#Compliance" class="grp-toggle" data-group="comp" role="button" aria-expanded="false">Compliance<span class="nbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-comp" href="#Compliance--top">In progress</a>
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
@@ -2433,7 +2936,9 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
 <a href="#Analysis">Performance Analysis</a>
-<a href="#WhatIf">What if</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools" href="#WhatIf">What if</a>
+<a class="sub sub-tools" href="#Menu">Menu Engineering Tool</a>
 <a href="#Compliance" class="grp-toggle" data-group="comp" role="button" aria-expanded="false">Compliance<span class="nbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-comp" href="#Compliance--top">In progress</a>
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
@@ -2510,7 +3015,9 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
 <a href="#Analysis">Performance Analysis</a>
-<a href="#WhatIf">What if</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools" href="#WhatIf">What if</a>
+<a class="sub sub-tools" href="#Menu">Menu Engineering Tool</a>
 <a href="#Compliance" class="grp-toggle" data-group="comp" role="button" aria-expanded="false">Compliance<span class="nbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-comp" href="#Compliance--top">In progress</a>
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
@@ -2585,7 +3092,9 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="ai-nav" href="#Dashboard--ask"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex:none"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z"/><path d="M19 15l.9 2.4 2.4.9-2.4.9L19 21.6l-.9-2.4-2.4-.9 2.4-.9z"/></svg>Ask AI</a>
 <a href="#Dashboard">Dashboard</a>
 <a href="#Analysis">Performance Analysis</a>
-<a href="#WhatIf">What if</a>
+<a href="#WhatIf" class="grp-toggle" data-group="tools" role="button" aria-expanded="false">Toolbox<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
+<a class="sub sub-tools" href="#WhatIf">What if</a>
+<a class="sub sub-tools" href="#Menu">Menu Engineering Tool</a>
 <a href="#Compliance" class="grp-toggle" data-group="comp" role="button" aria-expanded="false">Compliance<span class="nbadge cbadge" aria-label="Compliance items waiting on you">3</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-comp" href="#Compliance--top">In progress</a>
 <a class="sub sub-comp" href="#Compliance--completed">Completed documents</a>
@@ -3590,6 +4099,393 @@ class Component extends DCLogic {
 
 return Component;})();
 
+
+SCREENS["Menu"]=(function(){
+const GST = 1.1;
+const money = (n, d) => (n < 0 ? '−' : '') + '$' + Math.abs(n).toLocaleString('en-AU', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 });
+const m2 = (n) => money(n, 2);
+const pc = (n) => (Math.round(n * 1000) / 10).toFixed(1) + '%';
+const sgn = (n) => (n >= 0 ? '+' : '−') + '$' + Math.abs(Math.round(n)).toLocaleString('en-AU');
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const num = (v, d) => { const n = parseFloat(String(v).replace(/[$,\s%]/g, '')); return isFinite(n) ? n : d; };
+const CL = {
+  star:   { n: 'Star',      bg: '#E4EFE6', fg: '#22513C', dot: '#2E6B4F', what: 'Popular and profitable', todo: 'Protect it. Keep the recipe, portion and price steady and give it the best spot on the menu.' },
+  plow:   { n: 'Plowhorse', bg: '#F3E6CF', fg: '#6B4A1F', dot: '#B07A2A', what: 'Popular, lower margin', todo: 'Lift the margin. A small price rise, a cheaper garnish or a smaller portion usually goes unnoticed.' },
+  puzzle: { n: 'Puzzle',    bg: '#E3EAF3', fg: '#24456B', dot: '#3C6A9E', what: 'Profitable, slow seller', todo: 'Sell more of it. Move it up the menu, describe it better and have staff recommend it.' },
+  dog:    { n: 'Dog',       bg: '#F6E3DA', fg: '#8A3A22', dot: '#A4472A', what: 'Slow and lower margin', todo: 'Rework or remove it. Freeing up the prep time and stock often matters more than the sales.' }
+};
+const ORDER = ['star', 'puzzle', 'plow', 'dog'];
+const L = (n, q, u, c) => ({ n, q: String(q), u, c: String(c) });
+// Recipe cards: quantity is in the costing unit (0.18 kg, 1 each). Plate cost is ex GST.
+const RECIPES = {
+  'Pho bo': [L('Rice noodles', 0.2, 'kg', 4.5), L('Brisket and rare beef', 0.11, 'kg', 24), L('Beef bone broth', 0.6, 'L', 3.2), L('Herbs, sprouts and lime', 1, 'each', 0.9), L('Onion, chilli and sauces', 1, 'each', 0.45)],
+  'Shaking beef': [L('Eye fillet', 0.2, 'kg', 48), L('Jasmine rice', 0.25, 'kg', 3.2), L('Watercress and tomato salad', 1, 'each', 1.6), L('Butter, garlic and sauces', 1, 'each', 0.9), L('Lime and pepper dip', 1, 'each', 0.35)],
+  'Caramelised fish clay pot': [L('Barramundi fillet', 0.25, 'kg', 34), L('Caramel and fish sauce', 1, 'each', 1.2), L('Jasmine rice', 0.25, 'kg', 3.2), L('Stir-fried greens', 1, 'each', 1.4)],
+  'Lemongrass chicken': [L('Chicken thigh', 0.22, 'kg', 13), L('Jasmine rice', 0.25, 'kg', 3.2), L('Salad and pickles', 1, 'each', 1.1), L('Lemongrass marinade', 1, 'each', 0.7), L('Nuoc cham', 1, 'each', 0.35)],
+  'Bun cha': [L('Pork patties', 0.15, 'kg', 14), L('Pork belly', 0.1, 'kg', 19), L('Vermicelli', 0.15, 'kg', 4.5), L('Herbs and lettuce', 1, 'each', 1.5), L('Dipping broth', 1, 'each', 0.6)],
+  'Rice paper rolls': [L('Prawns', 0.08, 'kg', 36), L('Rice paper', 2, 'each', 0.12), L('Vermicelli', 0.05, 'kg', 4.5), L('Herbs and lettuce', 1, 'each', 0.6), L('Peanut sauce', 1, 'each', 0.4)]
+};
+const D = (cat, name, price, cost, sold, desc) => ({ cat, name, price, cost, sold, desc });
+const BASE = [
+  D('Starters', 'Rice paper rolls', 16, 0, 980, 'Prawn, herbs and vermicelli, peanut sauce'),
+  D('Starters', 'Crispy spring rolls', 14, 2.6, 1120, 'Pork and taro, lettuce cups, nuoc cham'),
+  D('Starters', 'Caramel chicken wings', 18, 5.2, 610, 'Fish sauce caramel, fried shallots'),
+  D('Starters', 'Banh xeo pancake', 22, 5.4, 340, 'Turmeric crepe, prawn, pork, sprouts'),
+  D('Mains', 'Pho bo', 24, 0, 1650, 'Brisket and rare beef, 12-hour broth'),
+  D('Mains', 'Bun cha', 26, 0, 720, 'Grilled pork, vermicelli, dipping broth'),
+  D('Mains', 'Shaking beef', 38, 0, 520, 'Wok-tossed eye fillet, watercress, rice'),
+  D('Mains', 'Lemongrass chicken', 28, 0, 1080, 'Chargrilled thigh, broken rice, pickles'),
+  D('Mains', 'Crispy pork belly', 34, 8.1, 460, 'Five-spice crackling, pickled mustard greens'),
+  D('Mains', 'Caramelised fish clay pot', 36, 0, 210, 'Barramundi, caramel, black pepper'),
+  D('Mains', 'Tofu and vegetable curry', 24, 4.3, 290, 'Coconut, lemongrass, sweet potato'),
+  D('Mains', 'Com tam broken rice', 27, 7.9, 890, 'Pork chop, shredded skin, fried egg'),
+  D('Desserts', 'Pandan creme caramel', 12, 2.1, 380, 'Coffee syrup, toasted coconut'),
+  D('Desserts', 'Coconut sago', 11, 2.4, 150, 'Mango, palm sugar'),
+  D('Drinks', 'Vietnamese iced coffee', 8, 1.2, 1420, 'Robusta, condensed milk'),
+  D('Drinks', 'Fresh coconut', 10, 3.9, 300, 'Served in the shell'),
+  D('Drinks', 'Saigon beer', 11, 3.3, 1350, '330 ml bottle'),
+  D('Drinks', 'Lychee soda', 9, 1.1, 260, 'House syrup, lime')
+];
+const lineCost = (ls) => ls.reduce((s, l) => s + num(l.q, 0) * num(l.c, 0), 0);
+function seed() {
+  return BASE.map((d, i) => {
+    const rec = RECIPES[d.name] ? RECIPES[d.name].map((x) => Object.assign({}, x)) : null;
+    return Object.assign({}, d, { id: 'd' + i, rec, cost: rec ? Math.round(lineCost(rec) * 100) / 100 : d.cost, est: false, edited: false });
+  });
+}
+// Kasavana and Smith: popularity line is 70% of an equal share; margin line is the weighted average margin.
+function classify(list) {
+  const sold = list.reduce((s, d) => s + d.sold, 0) || 1;
+  const rows = list.map((d) => { const net = d.price / GST; const cm = net - d.cost; return Object.assign({}, d, { net, cm, fc: net > 0 ? d.cost / net : 0, mix: d.sold / sold, tcm: cm * d.sold, sales: d.price * d.sold }); });
+  const popT = list.length ? 0.7 / list.length : 0;
+  const cmT = rows.reduce((s, r) => s + r.tcm, 0) / sold;
+  rows.forEach((r) => { const pop = r.mix >= popT, pro = r.cm >= cmT; r.k = pop && pro ? 'star' : pop ? 'plow' : pro ? 'puzzle' : 'dog'; });
+  return { rows, popT, cmT, sold };
+}
+function nice(max, n) { const raw = max / n; const p = Math.pow(10, Math.floor(Math.log10(raw))); const f = raw / p; return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p; }
+function chart(an, cat) {
+  const sm = typeof innerWidth === 'number' && innerWidth < 640; const W = sm ? 420 : 680, H = sm ? 360 : 400, l = 60, r = 14, t = 20, b = 52, pw = W - l - r, ph = H - t - b;
+  const rows = an.rows; if (!rows.length) return '';
+  const xs = nice(Math.max(an.popT, ...rows.map((x) => x.mix)) * 1.12, 5), xm = Math.ceil(Math.max(an.popT, ...rows.map((x) => x.mix)) * 1.12 / xs) * xs;
+  const ys = nice(Math.max(an.cmT, ...rows.map((x) => x.cm)) * 1.12, 5), ym = Math.ceil(Math.max(an.cmT, ...rows.map((x) => x.cm)) * 1.12 / ys) * ys;
+  const X = (v) => l + v / xm * pw, Y = (v) => t + ph - Math.max(0, v) / ym * ph;
+  const o = [];
+  o.push('<rect x="' + X(an.popT) + '" y="' + t + '" width="' + (l + pw - X(an.popT)) + '" height="' + (Y(an.cmT) - t) + '" fill="#E4EFE6" opacity=".55"/>');
+  for (let v = 0; v <= xm + 1e-9; v += xs) o.push('<line x1="' + X(v) + '" x2="' + X(v) + '" y1="' + t + '" y2="' + (t + ph) + '" stroke="#E5DED0"/><text x="' + X(v) + '" y="' + (t + ph + 18) + '" text-anchor="middle" font-size="12" fill="#46524C">' + Math.round(v * 1000) / 10 + '%</text>');
+  for (let v = 0; v <= ym + 1e-9; v += ys) o.push('<line x1="' + l + '" x2="' + (l + pw) + '" y1="' + Y(v) + '" y2="' + Y(v) + '" stroke="#E5DED0"/><text x="' + (l - 8) + '" y="' + (Y(v) + 4) + '" text-anchor="end" font-size="12" fill="#46524C">$' + Math.round(v) + '</text>');
+  o.push('<line x1="' + X(an.popT) + '" x2="' + X(an.popT) + '" y1="' + t + '" y2="' + (t + ph) + '" stroke="#1F3A30" stroke-width="1.5" stroke-dasharray="6 4"/>');
+  o.push('<line x1="' + l + '" x2="' + (l + pw) + '" y1="' + Y(an.cmT) + '" y2="' + Y(an.cmT) + '" stroke="#1F3A30" stroke-width="1.5" stroke-dasharray="6 4"/>');
+  const ql = (x, y, a, k) => o.push('<text x="' + x + '" y="' + y + '" text-anchor="' + a + '" font-size="12" font-weight="700" letter-spacing=".08em" fill="' + CL[k].fg + '">' + CL[k].n.toUpperCase() + 'S</text>');
+  ql(l + pw - 8, t + 16, 'end', 'star'); ql(l + 8, t + 16, 'start', 'puzzle'); ql(l + pw - 8, t + ph - 8, 'end', 'plow'); ql(l + 8, t + ph - 8, 'start', 'dog');
+  o.push('<text x="' + (l + pw / 2) + '" y="' + (H - 8) + '" text-anchor="middle" font-size="12" font-weight="600" fill="#1F3A30">Share of ' + esc(cat.toLowerCase()) + ' sold (menu mix)</text>');
+  o.push('<text transform="translate(16 ' + (t + ph / 2) + ') rotate(-90)" text-anchor="middle" font-size="12" font-weight="600" fill="#1F3A30">Margin per dish, ex GST</text>');
+  const placed = [];
+  const hit = (a) => placed.some((p) => a.x < p.x + p.w && a.x + a.w > p.x && a.y < p.y + p.h && a.y + a.h > p.y) || a.x < l + 2 || a.x + a.w > W - 4 || a.y < t || a.y + a.h > t + ph;
+  rows.slice().sort((a, b2) => b2.tcm - a.tcm).forEach((d) => {
+    const cx = X(d.mix), cy = Y(d.cm), c = CL[d.k];
+    o.push('<circle cx="' + cx + '" cy="' + cy + '" r="7" fill="' + c.dot + '" stroke="#fff" stroke-width="2"><title>' + esc(d.name) + ': ' + pc(d.mix) + ' of sales, ' + m2(d.cm) + ' margin</title></circle>');
+    let sn = d.name; if (sn.length > 18) { const ws = sn.split(' '); sn = ''; for (const x of ws) { if ((sn + ' ' + x).trim().length > 17) break; sn = (sn + ' ' + x).trim(); } sn = sn.replace(/\s+(and|&|with|of)$/i, '') || ws[0]; } const w = Math.min(190, sn.length * 6.6 + 4), h = 15;
+    const tries = [[cx + 11, cy - 8], [cx - 11 - w, cy - 8], [cx - w / 2, cy - 26], [cx - w / 2, cy + 10], [cx + 9, cy + 4], [cx + 9, cy - 21], [cx - 9 - w, cy + 4], [cx - 9 - w, cy - 21], [cx - 6, cy - 26], [cx - 6, cy + 10], [cx - 6, cy + 26], [cx - 6, cy - 42]].map(([x, y]) => ({ x, y }));
+    for (const p of tries) { const box = { x: p.x, y: p.y, w, h }; if (!hit(box)) { placed.push(box); o.push('<text x="' + p.x + '" y="' + (p.y + 11.5) + '" font-size="12" fill="#1F3A30">' + esc(sn) + '</text>'); break; } }
+  });
+  const lab = rows.map((d) => d.name + ' ' + CL[d.k].n).join(', ');
+  return '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Menu matrix for ' + esc(cat) + '. Popularity line ' + pc(an.popT) + ', average margin ' + m2(an.cmT) + '. ' + esc(lab) + '." style="width:100%;height:auto;display:block">' + o.join('') + '</svg>';
+}
+// CSV: item summary or line-level POS export. Rows with the same item are added together.
+const AL = {
+  item: ['item', 'item name', 'dish', 'product', 'menu item', 'name', 'product name'],
+  cat: ['category', 'menu category', 'group', 'menu group', 'section', 'department'],
+  qty: ['qty', 'quantity', 'qty sold', 'sold', 'items sold', 'count', 'units', 'units sold'],
+  price: ['price', 'unit price', 'item price', 'menu price', 'price inc gst', 'sell price'],
+  sales: ['gross sales', 'sales', 'total', 'amount', 'revenue', 'net sales', 'line total', 'total inc gst'],
+  cost: ['cost', 'food cost', 'plate cost', 'unit cost', 'cogs', 'cost price']
+};
+function parseCSV(txt) {
+  const out = []; let row = [], f = '', q = false;
+  for (let i = 0; i < txt.length; i++) {
+    const c = txt[i];
+    if (q) { if (c === '"') { if (txt[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true; else if (c === ',') { row.push(f); f = ''; }
+    else if (c === '\n' || c === '\r') { if (c === '\r' && txt[i + 1] === '\n') i++; row.push(f); f = ''; if (row.some((x) => x.trim() !== '')) out.push(row); row = []; }
+    else f += c;
+  }
+  row.push(f); if (row.some((x) => x.trim() !== '')) out.push(row);
+  return out;
+}
+function fromCSV(txt, known) {
+  const rows = parseCSV(txt.replace(/^﻿/, ''));
+  if (rows.length < 2) throw new Error('The file has no data rows. Export item sales from your POS and try again.');
+  const head = rows[0].map((h) => h.trim().toLowerCase().replace(/[_()]/g, ' ').replace(/\s+/g, ' ').trim());
+  const col = (k) => head.findIndex((h) => AL[k].includes(h));
+  const ci = { item: col('item'), cat: col('cat'), qty: col('qty'), price: col('price'), sales: col('sales'), cost: col('cost') };
+  if (ci.item < 0) throw new Error('No item column found. Name one column Item, Dish or Product.');
+  if (ci.qty < 0) throw new Error('No quantity column found. Name one column Qty, Quantity or Items sold.');
+  if (ci.price < 0 && ci.sales < 0) throw new Error('No price or sales column found. Add Price (inc GST) or Gross sales.');
+  const agg = new Map();
+  rows.slice(1).forEach((r) => {
+    const name = (r[ci.item] || '').trim(); if (!name) return;
+    const qty = num(r[ci.qty], 0); if (qty <= 0) return;
+    const key = name.toLowerCase();
+    const a = agg.get(key) || { name, cat: '', qty: 0, sales: 0, cost: null, lines: 0 };
+    a.qty += qty; a.lines++;
+    a.sales += ci.sales >= 0 ? num(r[ci.sales], 0) : num(r[ci.price], 0) * qty;
+    if (ci.cat >= 0 && r[ci.cat] && r[ci.cat].trim()) a.cat = r[ci.cat].trim();
+    if (ci.cost >= 0 && num(r[ci.cost], NaN) >= 0) a.cost = num(r[ci.cost], 0);
+    agg.set(key, a);
+  });
+  if (!agg.size) throw new Error('No rows with an item and a quantity above zero were found.');
+  let matched = 0, estd = 0, i = 0; const lines = rows.length - 1;
+  const list = Array.from(agg.values()).map((a) => {
+    const k = known.find((d) => d.name.toLowerCase() === a.name.toLowerCase());
+    const price = Math.round(a.sales / a.qty * 100) / 100;
+    let cost = a.cost, est = false, rec = null;
+    if (cost == null && k) { cost = k.cost; rec = k.rec ? k.rec.map((x) => Object.assign({}, x)) : null; matched++; }
+    if (cost == null) { cost = Math.round(price / GST * 0.3 * 100) / 100; est = true; estd++; }
+    return { id: 'u' + (i++), name: a.name, cat: a.cat || (k && k.cat) || 'Uncategorised', price, cost, sold: Math.round(a.qty), rec, est, edited: false, desc: k ? k.desc : '' };
+  });
+  return { list, matched, estd, lines };
+}
+function sampleCSV() {
+  const out = ['Date,Item,Category,Qty sold,Gross sales'];
+  for (let day = 1; day <= 31; day++) {
+    const ds = '2026-10-' + String(day).padStart(2, '0'); const wd = new Date(ds + 'T00:00:00').getDay();
+    const wk = wd === 5 || wd === 6 ? 1.35 : wd === 1 ? 0.7 : 0.95;
+    BASE.forEach((d, i) => {
+      const drift = d.name === 'Caramelised fish clay pot' ? 1.5 : d.name === 'Crispy pork belly' ? 0.85 : 1;
+      const q = Math.max(0, Math.round(d.sold / 30 * wk * drift * (0.9 + ((day * 7 + i * 13) % 20) / 100)));
+      if (q) out.push([ds, '"' + d.name + '"', d.cat, q, (q * d.price).toFixed(2)].join(','));
+    });
+  }
+  return out.join('\n');
+}
+function draftFrom(d) {
+  return { id: d.id, isNew: false, name: d.name, cat: d.cat, price: String(d.price), sold: String(d.sold), chg: '0', waste: '0',
+    lines: d.rec ? d.rec.map((x) => Object.assign({}, x)) : [L(d.est ? 'Plate cost (estimated, please update)' : 'Ingredients (from your costing)', 1, 'serve', d.cost)] };
+}
+
+let samplePromise = null;
+function getSample() { if (!samplePromise) samplePromise = (window.claude && window.claude.use) ? window.claude.use('sample').catch(() => null) : Promise.resolve(null); return samplePromise; }
+const PH_ERR = { not_granted: 'AI is switched off for this page. Allow Claude from the page’s permissions menu to cost dishes from photos.', images_unavailable: 'This copy of the portal can’t send photos to AI. Use the Claude-hosted portal, or try the example.', image_rejected: 'That photo couldn’t be read. Use a JPG, PNG or WebP under 10 MB.', rate_limited: 'Too many requests in a short time. Wait a minute, then try again.', sampling_disabled: 'AI isn’t available on this account.' };
+const PH_MOCK = { dish_name: 'Soft-shell crab banh mi', category: 'Mains', description: 'Crisp soft-shell crab, pate, pickles, herbs', confidence: 'medium', portion_note: 'One 20 cm roll with half a crab, as plated.',
+  lines: [ { ingredient: 'Soft-shell crab', qty: 0.09, unit: 'kg', cost_per_unit: 42, basis: 'Frozen soft-shell crab, food service carton' },
+    { ingredient: 'Banh mi roll', qty: 1, unit: 'each', cost_per_unit: 0.9, basis: 'Bakery wholesale' },
+    { ingredient: 'Pickled carrot and daikon', qty: 0.04, unit: 'kg', cost_per_unit: 6, basis: 'Made in-house' },
+    { ingredient: 'Pate and mayonnaise', qty: 1, unit: 'each', cost_per_unit: 0.55, basis: 'About 30 g combined' },
+    { ingredient: 'Coriander, cucumber and chilli', qty: 1, unit: 'each', cost_per_unit: 0.6, basis: 'Garnish as shown' },
+    { ingredient: 'Tempura batter and frying oil', qty: 1, unit: 'each', cost_per_unit: 0.45, basis: 'Batter plus oil absorbed' } ],
+  assumptions: ['Half a medium crab (about 90 g) per roll', 'Wholesale prices in Melbourne, ex GST', 'Pickles and pate made in-house'] };
+function shapePhoto(d, cats) {
+  if (!d || typeof d !== 'object') throw { code: 'bad_answer' };
+  if (d.error) throw { code: 'not_food', message: String(d.error).slice(0, 200) };
+  const lines = (Array.isArray(d.lines) ? d.lines : []).slice(0, 12).map((l) => {
+    const q = Math.max(0, num(l && l.qty, 0)), c = Math.max(0, num(l && l.cost_per_unit, 0));
+    return { n: String((l && l.ingredient) || '').slice(0, 60), q: String(Math.round(q * 1000) / 1000), u: String((l && l.unit) || 'each').slice(0, 10), c: String(Math.round(c * 100) / 100), basis: String((l && l.basis) || '').slice(0, 90) };
+  }).filter((l) => l.n);
+  if (!lines.length) throw { code: 'bad_answer' };
+  const conf = ['high', 'medium', 'low'].includes(String(d.confidence).toLowerCase()) ? String(d.confidence).toLowerCase() : 'low';
+  const cat = cats.find((c) => c.toLowerCase() === String(d.category || '').toLowerCase()) || cats[0];
+  return { name: String(d.dish_name || 'Dish from photo').slice(0, 60), cat, desc: String(d.description || '').slice(0, 80), conf, portion: String(d.portion_note || '').slice(0, 160),
+    lines, assumptions: (Array.isArray(d.assumptions) ? d.assumptions : []).slice(0, 5).map((x) => String(x).slice(0, 140)) };
+}
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const dishes = seed();
+    this.state = { dishes, cat: 'Mains', sort: 'tcm', dir: -1, draft: draftFrom(dishes.find((d) => d.name === 'Pho bo')), target: '30',
+      src: { kind: 'pos', title: 'Square POS', detail: 'Connected · sales for 1–30 Sep 2026 · synced today 6:02am' }, msg: '', err: '', fmt: false,
+      ph: { url: '', name: '', note: '', busy: false, err: '', res: null, mock: false } };
+    this.photo = null; this.phCtl = null; getSample();
+  }
+  setState(p) {
+    const a = document.activeElement, id = a && a.id && a.closest && a.closest('#scr-Menu') ? a.id : null;
+    let s0 = null, s1 = null; try { s0 = a.selectionStart; s1 = a.selectionEnd; } catch (e) {}
+    super.setState(p);
+    if (id) { const e = document.getElementById(id); if (e && e !== document.activeElement) { e.focus({ preventScroll: true }); try { if (s0 != null) e.setSelectionRange(s0, s1); } catch (er) {} } }
+  }
+  onAnchor() {}
+  setPh(p) { this.setState({ ph: Object.assign({}, this.state.ph, p) }); }
+  async analysePhoto() {
+    const ph = this.state.ph;
+    if (!this.photo) { this.setPh({ err: 'Choose a photo of the dish first.' }); return; }
+    const sample = await getSample();
+    if (!sample) { this.setPh({ err: 'Photo costing uses AI, which only works in the Claude-hosted portal. Select See an example to see how it works.' }); return; }
+    const caps = await sample.limits().catch(() => null);
+    if (!caps || !caps.images) { this.setPh({ err: PH_ERR.images_unavailable }); return; }
+    if (caps.images.mediaTypes && this.photo.type && !caps.images.mediaTypes.includes(this.photo.type)) { this.setPh({ err: 'That file type can’t be sent. Use ' + caps.images.mediaTypes.map((t) => t.replace('image/', '').toUpperCase()).join(', ') + '.' }); return; }
+    if (this.photo.size > caps.images.maxInputBytes) { this.setPh({ err: 'That photo is too large. Use one under ' + Math.floor(caps.images.maxInputBytes / 1048576) + ' MB.' }); return; }
+    const cats = Array.from(new Set(this.state.dishes.map((d) => d.cat)));
+    const menu = this.state.dishes.slice(0, 40).map((d) => d.cat + ': ' + d.name + ' $' + d.price).join('; ');
+    const prompt = 'You are a food costing assistant for Little Saigon Kitchen, a Vietnamese restaurant in Melbourne, Australia. The attached image is a photo of one plated dish.\n\n'
+      + 'Identify the dish and list every ingredient in ONE serve as plated, including sauces, garnish, rice or noodles and cooking oil. Estimate the quantity of each from the photo and price it at current Australian food service wholesale prices, in AUD, excluding GST.\n\n'
+      + (ph.note.trim() ? 'Notes from the owner (treat as facts about the dish): ' + ph.note.trim().slice(0, 500) + '\n\n' : '')
+      + 'Menu categories: ' + cats.join(', ') + '. Current menu for context: ' + menu + '\n\n'
+      + 'Rules: quantities use the costing unit. Use kg for solids by weight, L for liquids, and each for counted items or small grouped items such as garnish (qty 1, cost per serve). Give 3 to 10 lines. Keep ingredient names short and plain. If the image is not a plated dish or drink, return {"error": "short reason"}.\n\n'
+      + 'Return ONLY JSON in this shape:\n{"dish_name": "", "category": "one of the menu categories", "description": "menu description under 60 characters", "confidence": "high|medium|low", "portion_note": "one sentence on portion size", "lines": [{"ingredient": "", "qty": 0.0, "unit": "kg|L|each", "cost_per_unit": 0.0, "basis": "short note on the estimate"}], "assumptions": ["up to 4 short assumptions"]}';
+    if (this.phCtl) this.phCtl.abort();
+    const ctl = new AbortController(); this.phCtl = ctl;
+    this.setPh({ busy: true, err: '', res: null, mock: false });
+    try {
+      const d = await sample.json(prompt, { images: [this.photo], signal: ctl.signal });
+      if (this.phCtl !== ctl) return;
+      this.setPh({ busy: false, res: shapePhoto(d, cats), mock: false });
+    } catch (e) {
+      if (this.phCtl !== ctl) return;
+      const code = e && e.code;
+      if (code === 'cancelled') { this.setPh({ busy: false }); return; }
+      this.setPh({ busy: false, err: code === 'not_food' ? 'That doesn’t look like a dish: ' + (e.message || 'try another photo') + '.' : code === 'bad_answer' ? 'AI couldn’t work out the ingredients from that photo. Try a clearer photo taken from above, or add a note about the dish.' : (PH_ERR[code] || 'Something went wrong reaching AI. Select Work out ingredients to try again.') });
+    } finally { if (this.phCtl === ctl) this.phCtl = null; }
+  }
+  usePhoto(asNew) {
+    const r = this.state.ph.res; if (!r) return;
+    const lines = r.lines.map((l) => L(l.n, l.q, l.u, l.c));
+    const target = num(this.state.target, 30) / 100 || 0.3;
+    if (asNew) {
+      const plate = lineCost(lines) * 1.05; const price = Math.ceil(plate / target * GST * 2) / 2;
+      this.setState({ draft: { id: null, isNew: true, name: r.name, cat: r.cat, price: String(price), sold: '300', chg: '0', waste: '5', lines }, msg: 'Loaded ' + r.name + ' from the photo as a new dish. Check the quantities and prices, then select Apply to analysis.', err: '' });
+    } else {
+      this.setState({ draft: Object.assign({}, this.state.draft, { lines }), msg: 'Replaced the ingredients for ' + this.state.draft.name + ' with the photo estimate. Check them, then select Apply to analysis.', err: '' });
+    }
+    setTimeout(() => { const el = document.getElementById('me-ds-grid'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+  }
+  upd(k) { return (e) => { const d = Object.assign({}, this.state.draft, { [k]: e.target.value }); this.setState({ draft: d }); }; }
+  updLine(i, k) { return (e) => { const ls = this.state.draft.lines.map((x, j) => j === i ? Object.assign({}, x, { [k]: e.target.value }) : x); this.setState({ draft: Object.assign({}, this.state.draft, { lines: ls }) }); }; }
+  load(text, label) {
+    try {
+      const r = fromCSV(text, this.state.dishes.concat(seed()));
+      const cats = Array.from(new Set(r.list.map((d) => d.cat)));
+      const cat = cats.includes(this.state.cat) ? this.state.cat : (cats.includes('Mains') ? 'Mains' : cats[0]);
+      const first = r.list.filter((d) => d.cat === cat).sort((a, b) => b.sold - a.sold)[0] || r.list[0];
+      const sold = r.list.reduce((s, d) => s + d.sold, 0);
+      this.setState({ dishes: r.list, cat, draft: draftFrom(first), err: '',
+        src: { kind: 'csv', title: label, detail: 'Uploaded CSV · ' + r.lines.toLocaleString('en-AU') + ' rows · ' + r.list.length + ' items · ' + sold.toLocaleString('en-AU') + ' sold' },
+        msg: 'Loaded ' + r.list.length + ' items from ' + label + '.' + (r.matched ? ' Plate costs matched from your recipe cards for ' + r.matched + '.' : '') + (r.estd ? ' ' + r.estd + ' had no cost, so they use an estimate of 30% of the price. Update them in the dish designer.' : '') });
+    } catch (e) { this.setState({ err: e.message, msg: '' }); }
+  }
+  renderVals() {
+    const S = this.state, dishes = S.dishes;
+    const cats = Array.from(new Set(dishes.map((d) => d.cat)));
+    const byCat = {}; cats.forEach((c) => { byCat[c] = classify(dishes.filter((d) => d.cat === c)); });
+    const all = [].concat(...cats.map((c) => byCat[c].rows));
+    const cur = byCat[S.cat] || byCat[cats[0]] || { rows: [], popT: 0, cmT: 0, sold: 0 };
+    const catName = byCat[S.cat] ? S.cat : cats[0];
+    const totSold = all.reduce((s, d) => s + d.sold, 0), totSales = all.reduce((s, d) => s + d.sales, 0), totNet = totSales / GST;
+    const totCost = all.reduce((s, d) => s + d.cost * d.sold, 0), totCM = totNet - totCost;
+    const target = num(S.target, 30) / 100;
+    // Quadrant cards
+    const quads = ORDER.map((k) => { const rs = cur.rows.filter((d) => d.k === k); const tcm = rs.reduce((s, d) => s + d.tcm, 0); const share = cur.rows.reduce((s, d) => s + d.tcm, 0) || 1;
+      return { name: CL[k].n + 's', what: CL[k].what, todo: CL[k].todo, bg: CL[k].bg, fg: CL[k].fg, dot: CL[k].dot, count: rs.length, share: pc(tcm / share), names: rs.length ? rs.map((d) => d.name).join(', ') : 'None right now' }; });
+    // Table
+    const sk = S.sort, dir = S.dir;
+    const val = (d) => sk === 'cls' ? ORDER.indexOf(d.k) : sk === 'name' ? d.name.toLowerCase() : d[sk];
+    const rows = cur.rows.slice().sort((a, b) => { const x = val(a), y = val(b); return (x < y ? -1 : x > y ? 1 : 0) * dir; });
+    const H = [['name', 'Dish'], ['sold', 'Sold'], ['mix', 'Menu mix'], ['price', 'Price inc GST'], ['cost', 'Plate cost'], ['fc', 'Food cost'], ['cm', 'Margin per dish'], ['tcm', 'Total margin'], ['cls', 'Class']];
+    const heads = H.map(([k, lab]) => ({ lab, aria: sk === k ? (dir > 0 ? 'ascending' : 'descending') : 'none', arrow: sk === k ? (dir > 0 ? '↑' : '↓') : '', num: k !== 'name' && k !== 'cls' ? 'me-n' : '',
+      go: () => this.setState({ sort: k, dir: sk === k ? -dir : (k === 'name' || k === 'cls' ? 1 : -1) }) }));
+    const trows = rows.map((d) => ({ name: d.name, desc: d.desc || '', tag: d.est ? 'Cost estimated' : d.edited ? 'Edited' : '', tagOn: d.est || d.edited, sold: d.sold.toLocaleString('en-AU'), mix: pc(d.mix), price: m2(d.price), cost: m2(d.cost), fc: pc(d.fc),
+      fcCls: d.fc > target + 0.05 ? 'me-hot' : '', cm: m2(d.cm), tcm: money(d.tcm), cls: CL[d.k].n, bg: CL[d.k].bg, fg: CL[d.k].fg,
+      design: () => { this.setState({ draft: draftFrom(dishes.find((x) => x.id === d.id)), msg: '', err: '' }); const el = document.getElementById('me-design'); if (el) el.scrollIntoView({ behavior: 'smooth' }); setTimeout(() => { const n = document.getElementById('me-price'); if (n) n.focus({ preventScroll: true }); }, 350); } }));
+    // Action plan across all categories, ranked by monthly impact
+    const acts = [];
+    cats.forEach((c) => { const an = byCat[c]; const star = an.rows.filter((d) => d.k === 'star').sort((a, b) => b.cm - a.cm)[0];
+      an.rows.forEach((d) => {
+        if (d.k === 'plow') { const up = d.price >= 20 ? 1 : 0.5; const v = d.sold * up / GST; acts.push({ k: d.k, v, dish: d.name, cat: c, act: 'Raise the price by ' + m2(up) + ' to ' + m2(d.price + up), why: 'It sells ' + d.sold.toLocaleString('en-AU') + ' a month but earns ' + m2(d.cm) + ' a dish, below the ' + c.toLowerCase() + ' average of ' + m2(an.cmT) + '. If sales hold, that adds ' + sgn(v) + ' a month. Even if 5% of buyers switch away it still adds ' + sgn(d.sold * 0.95 * (d.cm + up / GST) - d.tcm) + '.' }); }
+        if (d.k === 'puzzle') { const v = d.sold * 0.25 * d.cm; acts.push({ k: d.k, v, dish: d.name, cat: c, act: 'Move it to the top of ' + c.toLowerCase() + ' and have staff recommend it', why: 'It earns ' + m2(d.cm) + ' a dish but only ' + d.sold.toLocaleString('en-AU') + ' sell a month. Selling 25% more adds ' + sgn(v) + ' a month. Try a better description or a photo first.' }); }
+        if (d.k === 'dog') { const sw = star && star.id !== d.id ? 0.6 * d.sold * star.cm - d.tcm : -d.tcm * 0.4; acts.push({ k: d.k, v: Math.max(sw, 0), dish: d.name, cat: c, act: star ? 'Remove it, or rework the recipe and price' : 'Rework the recipe and price',
+          why: 'It sells ' + d.sold.toLocaleString('en-AU') + ' a month at ' + m2(d.cm) + ' a dish.' + (star && sw > 0 ? ' If 6 in 10 of those buyers order ' + star.name + ' instead, margin goes up ' + sgn(sw) + ' a month and you free up its prep and stock.' : ' Removing it frees up prep time and stock.') }); }
+        if (d.fc > target + 0.05) { const v = d.sold; acts.push({ k: 'cost', v, dish: d.name, cat: c, act: 'Cut the plate cost by $1.00', why: 'Food cost is ' + pc(d.fc) + ', above your ' + pc(target) + ' target. Every $1 off the plate cost adds ' + sgn(v) + ' a month at current sales.' }); }
+      }); });
+    const plan = acts.sort((a, b) => b.v - a.v).slice(0, 7).map((a) => ({ act: a.act, why: a.why, dish: a.dish, cat: a.cat, v: a.v > 0 ? sgn(a.v) + ' a month' : 'Frees prep and stock', tag: a.k === 'cost' ? 'Food cost' : CL[a.k].n,
+      bg: a.k === 'cost' ? '#F5E3D8' : CL[a.k].bg, fg: a.k === 'cost' ? '#8A3A22' : CL[a.k].fg,
+      open: () => { const d = dishes.find((x) => x.name === a.dish); if (d) { this.setState({ draft: draftFrom(d), cat: d.cat }); const el = document.getElementById('me-design'); if (el) el.scrollIntoView({ behavior: 'smooth' }); } } }));
+    const planTotal = acts.sort((a, b) => b.v - a.v).slice(0, 7).reduce((s, a) => s + Math.max(0, a.v), 0);
+    // Dish designer
+    const dr = S.draft; const base = dishes.find((x) => x.id === dr.id);
+    const waste = num(dr.waste, 0) / 100;
+    const ingr = lineCost(dr.lines), plate = ingr * (1 + waste), price = num(dr.price, 0), net = price / GST, cm = net - plate, fc = net > 0 ? plate / net : 0;
+    const soldBase = num(dr.sold, 0), soldNew = Math.max(0, soldBase * (1 + num(dr.chg, 0) / 100));
+    const sug = target > 0 ? Math.ceil(plate / target * GST * 2) / 2 : 0;
+    const peers = dishes.filter((x) => x.cat === dr.cat && x.id !== dr.id).concat([{ id: dr.id || 'new', name: dr.name, cat: dr.cat, price, cost: plate, sold: soldNew }]);
+    const after = classify(peers).rows.find((x) => x.id === (dr.id || 'new'));
+    const before = base ? (byCat[base.cat] || { rows: [] }).rows.find((x) => x.id === base.id) : null;
+    const mNow = before ? before.tcm : 0, mNew = cm * soldNew;
+    const optsCat = cats.concat(cats.includes(dr.cat) ? [] : [dr.cat]);
+    const ddOpts = [{ v: '__new', t: 'Design a new dish', sel: dr.isNew }].concat(dishes.slice().sort((a, b) => a.cat.localeCompare(b.cat) || a.name.localeCompare(b.name)).map((d) => ({ v: d.id, t: d.cat + ': ' + d.name, sel: !dr.isNew && d.id === dr.id })));
+    const designer = {
+      opts: ddOpts, isNew: dr.isNew, notNew: !dr.isNew, name: dr.name, catOpts: optsCat.map((c) => ({ v: c, t: c, sel: c === dr.cat })),
+      price: dr.price, sold: dr.sold, chg: dr.chg, waste: dr.waste,
+      lines: dr.lines.map((l, i) => ({ i, idn: 'me-l' + i + '-n', idq: 'me-l' + i + '-q', idu: 'me-l' + i + '-u', idc: 'me-l' + i + '-c', n: l.n, q: l.q, u: l.u, c: l.c, tot: m2(num(l.q, 0) * num(l.c, 0)),
+        labN: 'Ingredient ' + (i + 1), labQ: 'Quantity for ingredient ' + (i + 1), labU: 'Unit for ingredient ' + (i + 1), labC: 'Cost per unit for ingredient ' + (i + 1), labX: 'Remove ' + (l.n || 'ingredient ' + (i + 1)),
+        on: { n: this.updLine(i, 'n'), q: this.updLine(i, 'q'), u: this.updLine(i, 'u'), c: this.updLine(i, 'c') },
+        del: () => { const ls = dr.lines.filter((_, j) => j !== i); this.setState({ draft: Object.assign({}, dr, { lines: ls.length ? ls : [L('', 1, 'each', 0)] }) }); } })),
+      ingr: m2(ingr), wasteAmt: m2(plate - ingr), plate: m2(plate), net: m2(net), cm: m2(cm), fc: pc(fc), fcCls: fc > target + 0.05 ? 'me-hot' : fc <= target ? 'me-ok' : '',
+      sug: m2(sug), sugNote: target > 0 ? 'Price inc GST, rounded up to the next 50c, for a ' + pc(target) + ' food cost' : '',
+      useSug: () => this.setState({ draft: Object.assign({}, dr, { price: String(sug) }) }),
+      cls: after ? CL[after.k].n : '–', clsBg: after ? CL[after.k].bg : '#EEE', clsFg: after ? CL[after.k].fg : '#333',
+      clsWas: before ? CL[before.k].n : 'New dish', mNow: money(mNow), mNew: money(mNew), mDiff: dr.isNew ? '' : Math.abs(mNew - mNow) < 0.5 ? 'No change' : sgn(mNew - mNow) + ' a month', diffCls: Math.abs(mNew - mNow) < 0.5 ? '' : mNew - mNow > 0 ? 'me-ok' : 'me-hot',
+      soldNew: Math.round(soldNew).toLocaleString('en-AU'), canApply: !!dr.name.trim() && price > 0,
+      on: { name: this.upd('name'), price: this.upd('price'), sold: this.upd('sold'), chg: this.upd('chg'), waste: this.upd('waste'), target: (e) => this.setState({ target: e.target.value }),
+        cat: (e) => this.setState({ draft: Object.assign({}, dr, { cat: e.target.value }) }),
+        pick: (e) => { const v = e.target.value; if (v === '__new') this.setState({ draft: { id: null, isNew: true, name: '', cat: catName, price: '26', sold: '300', chg: '0', waste: '5', lines: [L('Main protein', 0.15, 'kg', 20), L('Rice or noodles', 0.2, 'kg', 4), L('Herbs, salad and garnish', 1, 'each', 1), L('Sauce', 1, 'each', 0.5)] }, msg: '' });
+          else { const d = dishes.find((x) => x.id === v); if (d) this.setState({ draft: draftFrom(d), msg: '' }); } } },
+      add: () => this.setState({ draft: Object.assign({}, dr, { lines: dr.lines.concat([L('', 1, 'each', 0)]) }) }),
+      reset: () => { if (dr.isNew) { this.setState({ draft: Object.assign({}, dr) }); return; } const d = dishes.find((x) => x.id === dr.id); if (d) this.setState({ draft: draftFrom(d), msg: '' }); },
+      apply: () => {
+        if (!(dr.name.trim() && price > 0)) { this.setState({ err: 'Give the dish a name and a price above $0 first.' }); return; }
+        const rec = dr.lines.map((x) => Object.assign({}, x));
+        const nd = { name: dr.name.trim(), cat: dr.cat, price, cost: Math.round(plate * 100) / 100, sold: Math.round(soldNew), rec, est: false, edited: true };
+        let list, id = dr.id;
+        if (dr.isNew) { id = 'n' + Date.now(); list = dishes.concat([Object.assign({ id, desc: 'New dish' }, nd)]); }
+        else list = dishes.map((x) => x.id === dr.id ? Object.assign({}, x, nd) : x);
+        const d = list.find((x) => x.id === id);
+        this.setState({ dishes: list, cat: dr.cat, draft: draftFrom(d), err: '', msg: (dr.isNew ? 'Added ' : 'Updated ') + nd.name + '. The matrix, table and action plan now use the new numbers.' });
+      }
+    };
+    // Menu layout preview
+    const layout = cats.map((c) => { const rs = byCat[c].rows.slice().sort((a, b) => ORDER.indexOf(a.k) - ORDER.indexOf(b.k) || b.cm - a.cm);
+      return { cat: c, items: rs.map((d, i) => { const tip = d.k === 'star' && i === 0 ? 'Box it' : d.k === 'puzzle' ? 'Move up, add a photo' : d.k === 'dog' ? 'Rework or remove' : d.k === 'plow' ? 'Keep, review price' : 'Keep';
+        return { name: d.name, desc: d.desc || '', price: (Math.round(d.price * 2) / 2).toFixed(d.price % 1 ? 1 : 0).replace(/\.0$/, ''), boxed: d.k === 'star' && i === 0 ? 'me-li me-box' : d.k === 'dog' ? 'me-li me-dim' : 'me-li', tip, bg: CL[d.k].bg, fg: CL[d.k].fg }; }) }; });
+    return {
+      src: S.src, isPos: S.src.kind === 'pos', msg: S.msg, err: S.err, fmt: S.fmt, fmtX: String(S.fmt),
+      toggleFmt: () => this.setState({ fmt: !S.fmt }),
+      sync: () => this.setState({ dishes: seed(), cat: 'Mains', draft: draftFrom(seed().find((d) => d.name === 'Pho bo')), src: { kind: 'pos', title: 'Square POS', detail: 'Connected · sales for 1–30 Sep 2026 · synced just now' }, msg: 'Synced with Square POS. Showing September 2026 sales.', err: '' }),
+      sample: () => this.load(sampleCSV(), 'october-item-sales.csv'),
+      file: (e) => { const f = e.target.files && e.target.files[0]; if (!f) return; if (f.size > 20 * 1024 * 1024) { this.setState({ err: 'That file is over 20 MB. Export a shorter period or an item summary instead.' }); return; }
+        const rd = new FileReader(); rd.onload = () => this.load(String(rd.result || ''), f.name); rd.onerror = () => this.setState({ err: 'The file could not be read. Check it is a .csv file and try again.' }); rd.readAsText(f); },
+      kpi: [
+        { l: 'Menu items', v: String(all.length), s: cats.length + ' categories' },
+        { l: 'Items sold', v: totSold.toLocaleString('en-AU'), s: S.src.kind === 'pos' ? 'September 2026' : 'In your upload' },
+        { l: 'Menu sales', v: money(totSales), s: 'Inc GST' },
+        { l: 'Food cost', v: pc(totNet ? totCost / totNet : 0), s: 'Target ' + pc(target) },
+        { l: 'Contribution margin', v: money(totCM), s: 'Sales ex GST less plate cost' }
+      ],
+      chips: cats.map((c) => ({ c, cls: 'me-chip' + (c === catName ? ' me-chip-on' : ''), pressed: String(c === catName), go: () => this.setState({ cat: c }) })),
+      catName, catLow: catName.toLowerCase(), popT: pc(cur.popT), cmT: m2(cur.cmT), nCat: cur.rows.length, chart: chart(cur, catName), quads, heads, trows,
+      plan, planTotal: sgn(planTotal), target: S.target, onTarget: (e) => this.setState({ target: e.target.value }),
+      d: designer, layout,
+      ph: (() => { const ph = S.ph, r = ph.res; const CF = { high: ['High confidence', '#E4EFE6', '#22513C'], medium: ['Medium confidence', '#F3E6CF', '#6B4A1F'], low: ['Low confidence', '#F6E3DA', '#8A3A22'] };
+        const plate = r ? r.lines.reduce((s, l) => s + num(l.q, 0) * num(l.c, 0), 0) : 0;
+        return { url: ph.url, hasUrl: !!ph.url, name: ph.name, note: ph.note, busy: ph.busy, idle: !ph.busy, err: ph.err, res: r, hasRes: !!r, mock: ph.mock,
+          noImg: !!r && !ph.url,
+          conf: r ? CF[r.conf][0] : '', confBg: r ? CF[r.conf][1] : '', confFg: r ? CF[r.conf][2] : '',
+          lines: r ? r.lines.map((l) => ({ n: l.n, q: l.q + ' ' + l.u, c: m2(num(l.c, 0)) + ' / ' + l.u, t: m2(num(l.q, 0) * num(l.c, 0)), basis: l.basis })) : [],
+          plate: m2(plate), price: m2(Math.ceil(plate * 1.05 / (num(S.target, 30) / 100 || 0.3) * GST * 2) / 2),
+          canReplace: !!r && !S.draft.isNew, curName: S.draft.name,
+          pick: (e) => { const f = e.target.files && e.target.files[0]; if (!f) return; if (!/^image\//.test(f.type || '')) { this.setPh({ err: 'Choose an image file: JPG, PNG or WebP.' }); return; }
+            if (ph.url) { try { URL.revokeObjectURL(ph.url); } catch (er) {} } this.photo = f; this.setPh({ url: URL.createObjectURL(f), name: f.name, err: '', res: null, mock: false }); },
+          onNote: (e) => { this.state.ph.note = e.target.value; },
+          go: () => this.analysePhoto(),
+          stop: () => { if (this.phCtl) this.phCtl.abort(); this.phCtl = null; this.setPh({ busy: false }); },
+          example: () => { if (this.phCtl) this.phCtl.abort(); this.setPh({ busy: false, err: '', res: shapePhoto(PH_MOCK, cats), mock: true }); },
+          asNew: () => this.usePhoto(true), replace: () => this.usePhoto(false),
+          clear: () => { if (ph.url) { try { URL.revokeObjectURL(ph.url); } catch (er) {} } this.photo = null; this.setPh({ url: '', name: '', note: '', err: '', res: null, mock: false }); } }; })(),
+      share: () => this.setState({ msg: 'Sent to your accountant with this analysis. You will get a reply within 1 business day.', err: '' })
+    };
+  }
+}
+return Component;})();
+
+
 const HOLE=/\{\{\s*([^}]+?)\s*\}\}/g;
 function look(path,sc){path=path.trim();if(path==='true')return true;if(path==='false')return false;if(/^-?\d+(\.\d+)?$/.test(path))return +path;let v=sc;for(const k of path.split('.')){if(v==null)return undefined;v=v[k];}return v;}
 function interp(s,sc){return s.replace(HOLE,(m,p)=>{const v=look(p,sc);return v==null?'':String(v);});}
@@ -3617,8 +4513,8 @@ window.EF_AUTH={ok:false,next:null};
 try{EF_AUTH.ok=sessionStorage.getItem(EF_KEY)==='1'||localStorage.getItem(EF_KEY)==='1';}catch(e){}
 window.efSetAuth=function(on,remember){EF_AUTH.ok=on;try{sessionStorage.removeItem(EF_KEY);localStorage.removeItem(EF_KEY);if(on)(remember?localStorage:sessionStorage).setItem(EF_KEY,'1');}catch(e){}};
 window.efCheckLogin=async function(email,pw){try{const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(EF_SALT+email.trim().toLowerCase()+':'+pw));const hex=Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');return hex===EF_LOGIN_HASH;}catch(e){return false;}};
-const APP_SCREENS=['Dashboard','Analysis','WhatIf','Compliance','Legal','Reports','Schedule','Assistant'];
-const EF_TITLES={"Main": "The Eatery Firm", "Login": "Client log in", "Signup": "Sign up", "Dashboard": "Dashboard", "Analysis": "Performance Analysis", "WhatIf": "What if", "Compliance": "Compliance", "Legal": "Legal", "Assistant": "More services", "Reports": "Completed documents", "Schedule": "Schedule"};
+const APP_SCREENS=['Dashboard','Analysis','WhatIf','Menu','Compliance','Legal','Reports','Schedule','Assistant'];
+const EF_TITLES={"Main": "The Eatery Firm", "Login": "Client log in", "Signup": "Sign up", "Dashboard": "Dashboard", "Analysis": "Performance Analysis", "WhatIf": "What if", "Menu": "Menu Engineering Tool", "Compliance": "Compliance", "Legal": "Legal", "Assistant": "More services", "Reports": "Completed documents", "Schedule": "Schedule"};
 let efFirstRoute=true;
 function efAnnounce(scr,anchor){const n=EF_TITLES[scr]||scr;document.title=n+(scr==='Main'?'':' · The Eatery Firm');if(efFirstRoute){efFirstRoute=false;return;}const st=document.getElementById('route-status');if(st){st.textContent='';setTimeout(()=>{st.textContent=n+' page';},50);}if(anchor)return;const h=document.querySelector('#scr-'+scr+' main h1, #scr-'+scr+' h1');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}}
 function route(){const h=decodeURIComponent(location.hash.slice(1));const [scr,anchor]=h.split(/--|\//);
@@ -3626,12 +4522,13 @@ function route(){const h=decodeURIComponent(location.hash.slice(1));const [scr,a
   if(scr==='Logout'){efSetAuth(false);location.replace('#Login');return;}
   if(APP_SCREENS.includes(scr)&&!EF_AUTH.ok){EF_AUTH.next=h;location.replace('#Login');return;}
   if(scr==='Login'&&EF_AUTH.ok){location.replace('#Dashboard');return;}
-  if(SCREENS[scr]){if(scr!==current){document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!=='scr-'+scr);current=scr;document.body.classList.remove('g-more-open','g-legal-open','g-comp-open');document.querySelectorAll('.grp-toggle').forEach(x=>x.setAttribute('aria-expanded',String(document.body.classList.contains('g-'+x.dataset.group+'-open'))));document.body.dataset.app=['Dashboard','Analysis','WhatIf','Compliance','Legal','Reports','Schedule','Assistant'].includes(scr)?'1':'0';document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===scr));efAnnounce(scr,anchor);}
+  if(SCREENS[scr]){if(scr!==current){document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!=='scr-'+scr);current=scr;document.body.classList.remove('g-more-open','g-legal-open','g-comp-open','g-tools-open');if(scr==='WhatIf'||scr==='Menu')document.body.classList.add('g-tools-open');document.querySelectorAll('.grp-toggle').forEach(x=>x.setAttribute('aria-expanded',String(document.body.classList.contains('g-'+x.dataset.group+'-open'))));document.body.dataset.app=['Dashboard','Analysis','WhatIf','Menu','Compliance','Legal','Reports','Schedule','Assistant'].includes(scr)?'1':'0';document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===scr));efAnnounce(scr,anchor);}
     if(anchor&&inst[scr]&&inst[scr].onAnchor)inst[scr].onAnchor(anchor);
     const t=anchor&&document.querySelector('#scr-'+scr+' #'+CSS.escape(anchor));if(anchor==='top'){window.scrollTo(0,0);return;}if(t&&anchor!=='ask'){t.scrollIntoView();if(/^svc-|^doc-/.test(anchor)){t.classList.add('hl');setTimeout(()=>t.classList.remove('hl'),1800);}}else window.scrollTo(0,0);if(anchor==='ask-legal'){const lq=document.getElementById('la-q');if(lq)setTimeout(()=>lq.focus({preventScroll:true}),60);}if(anchor==='ask'){const q=document.getElementById('ai-q');if(q)setTimeout(()=>q.focus({preventScroll:true}),60);}return;}
   if(!current){location.replace('#Main');return;}
   const t=h&&document.querySelector('#scr-'+current+' #'+CSS.escape(h));if(t)t.scrollIntoView({behavior:'smooth'});}
 Object.keys(SCREENS).forEach(mount);
+try{matchMedia('(max-width: 639px)').addEventListener('change',()=>{inst.Menu&&inst.Menu._r();});}catch(e){}
 try{matchMedia('(max-width: 560px)').addEventListener('change',()=>{inst.Dashboard&&inst.Dashboard._r();inst.Analysis&&inst.Analysis._r();});}catch(e){}
 window.addEventListener('hashchange',route);route();
 document.addEventListener('keydown',function(e){const t=e.target;if((e.key===' '||e.key==='Spacebar')&&t&&t.matches&&t.matches('a[role="button"]')){e.preventDefault();t.click();}});
