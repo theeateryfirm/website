@@ -1625,6 +1625,24 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
   #scr-Main .pk h3,#scr-Main .pk-who{min-height:0}
   #scr-Main .pk-act{margin-top:0;align-self:end}
 }
+
+#scr-Legal .lg-ai{border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:8px}
+#scr-Legal .lg-ai[hidden]{display:none}
+#scr-Legal .lg-ai-busy{flex-direction:row;align-items:center;gap:10px;background:#F3F7F2;color:#1F3A30;flex-wrap:wrap}
+#scr-Legal .lg-ai-note{background:#F8EEDC;color:#5E4420}
+#scr-Legal .lg-ai-done{background:#fff;border:1px solid #CFE0D3;box-shadow:inset 3px 0 0 #2E6B4F}
+#scr-Legal .lg-ai-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;align-items:center}
+#scr-Legal .lg-ai p{margin:0}
+#scr-Legal .lg-ai dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:6px 18px}
+#scr-Legal .lg-ai dt{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#46524C}
+#scr-Legal .lg-ai dd{margin:0;font-size:14px}
+#scr-Legal .lg-ai-fine{font-size:12.5px;color:#46524C}
+#scr-Legal .lg-ai-pill{font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px}
+#scr-Legal .lg-ai-stop{margin-left:auto;background:#fff;border:1px solid #857D6E;border-radius:8px;min-height:36px;padding:0 12px;font:inherit;font-size:13px;font-weight:600;color:#1F3A30;cursor:pointer}
+#scr-Legal .lg-spin{width:16px;height:16px;border-radius:50%;border:2px solid #D8D0C0;border-top-color:#1F3A30;animation:lgspin .9s linear infinite;flex:none}
+@keyframes lgspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){#scr-Legal .lg-spin{animation:none;border-top-color:#94572A}}
+#scr-Legal .lg-auto{background:#F3F7F2 !important;border-color:#2E6B4F !important}
 </style>
 <a class="skip" href="#" id="skip-link">Skip to main content</a><div id="route-status" class="vh" role="status" aria-live="polite"></div><div class="screen" id="scr-Main" hidden></div><div class="screen" id="scr-Signup" hidden></div><div class="screen" id="scr-Login" hidden></div><div class="screen" id="scr-Dashboard" hidden></div><div class="screen" id="scr-Analysis" hidden></div><div class="screen" id="scr-Legal" hidden></div><div class="screen" id="scr-Compliance" hidden></div><div class="screen" id="scr-WhatIf" hidden></div><div class="screen" id="scr-Menu" hidden></div><div class="screen" id="scr-Reports" hidden></div><div class="screen" id="scr-Schedule" hidden></div><div class="screen" id="scr-Assistant" hidden></div>
 
@@ -2287,6 +2305,29 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="btn btn-primary" href="#Dashboard--ask">✦ Ask AI</a>
 </div>
 </div>
+
+<nav class="jump" aria-label="Jump to section"><a href="#Dashboard--todo" style="background: #A4472A; color: #fff; border-color: #A4472A">To do ({{ todoCount }})</a><a href="#Analysis">Benchmarks &amp; analysis →</a><a href="#Dashboard--queries">Questions</a></nav>
+
+<section id="todo" aria-labelledby="todo-h" class="todo">
+<div class="todo-head">
+<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" class="todo-count">{{ todoCount }}</span><h2 id="todo-h" style="margin: 0; font-size: 18px; font-weight: 700; font-family: Inter, system-ui, sans-serif">Action needed from you</h2></div>
+<span style="font-size: 13px; font-weight: 600">{{ todoSummary }}</span>
+</div>
+<ul style="margin: 0; padding: 0; list-style: none">
+<template data-for="todos" data-as="t">
+<li class="{{ t.cls }}">
+<span class="todo-ic" style="background: {{ t.bg }}; color: {{ t.c }}"><span data-html="t.icon" style="display: grid"></span></span>
+<div style="min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center"><span class="todo-pill" style="background: {{ t.c }}; color: #fff">{{ t.lab }}</span><template data-if="t.src"><span class="todo-pill" style="background: #1F3A30; color: #E2A962">{{ t.src }}</span></template><span style="font-size: 13px; font-weight: 600; color: {{ t.c }}">{{ t.due }}</span></div>
+<strong style="font-size: 16px; line-height: 1.35">{{ t.title }}</strong>
+<span class="muted" style="font-size: 14px; line-height: 1.5">{{ t.desc }}</span>
+</div>
+<a class="{{ t.btnCls }}" href="{{ t.href }}">{{ t.btn }}</a>
+</li>
+</template>
+</ul>
+</section>
+
 <section id="ask" class="ai-panel" aria-labelledby="ai-h">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px">
 <h2 id="ai-h" style="margin: 0; font-size: 17px; font-weight: 700; font-family: Inter, system-ui, sans-serif; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="color: #E2A962; font-size: 20px">✦</span>Ask AI about your business</h2>
@@ -2315,27 +2356,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </template>
 </div>
 </template>
-</section>
-<nav class="jump" aria-label="Jump to section"><a href="#Dashboard--todo" style="background: #A4472A; color: #fff; border-color: #A4472A">To do ({{ todoCount }})</a><a href="#Analysis">Benchmarks &amp; analysis →</a><a href="#Dashboard--queries">Questions</a></nav>
-
-<section id="todo" aria-labelledby="todo-h" class="todo">
-<div class="todo-head">
-<div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" class="todo-count">{{ todoCount }}</span><h2 id="todo-h" style="margin: 0; font-size: 18px; font-weight: 700; font-family: Inter, system-ui, sans-serif">Action needed from you</h2></div>
-<span style="font-size: 13px; font-weight: 600">{{ todoSummary }}</span>
-</div>
-<ul style="margin: 0; padding: 0; list-style: none">
-<template data-for="todos" data-as="t">
-<li class="{{ t.cls }}">
-<span class="todo-ic" style="background: {{ t.bg }}; color: {{ t.c }}"><span data-html="t.icon" style="display: grid"></span></span>
-<div style="min-width: 0; display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center"><span class="todo-pill" style="background: {{ t.c }}; color: #fff">{{ t.lab }}</span><template data-if="t.src"><span class="todo-pill" style="background: #1F3A30; color: #E2A962">{{ t.src }}</span></template><span style="font-size: 13px; font-weight: 600; color: {{ t.c }}">{{ t.due }}</span></div>
-<strong style="font-size: 16px; line-height: 1.35">{{ t.title }}</strong>
-<span class="muted" style="font-size: 14px; line-height: 1.5">{{ t.desc }}</span>
-</div>
-<a class="{{ t.btnCls }}" href="{{ t.href }}">{{ t.btn }}</a>
-</li>
-</template>
-</ul>
 </section>
 
 
@@ -2660,13 +2680,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <div style="display: flex; flex-wrap: wrap; gap: 10px"><template data-if="ckMissing"><a class="btn btn-copper" href="#Legal--checklist">Complete setup · {{ ckMissing }} to go</a></template><a class="btn btn-ghost" href="#Legal--templates">Standard templates</a><a class="btn btn-primary" href="#Legal--upload">Upload a document</a></div>
 </div>
 
-<div class="lg-tiles">
-<div class="lg-tile"><span class="muted" style="font-size: 13px">Documents on file</span><span class="h" style="font-size: 28px; font-weight: 700">{{ lgCount }}</span></div>
-<div class="lg-tile" style="border-color: #A4472A"><span style="font-size: 13px; color: #A4472A; font-weight: 600">Expired or overdue</span><span class="h" style="font-size: 28px; font-weight: 700; color: #A4472A">{{ lgBad }}</span></div>
-<div class="lg-tile" style="border-color: #E2C48F"><span style="font-size: 13px; color: #7A5626; font-weight: 600">Due in the next 4 months</span><span class="h" style="font-size: 28px; font-weight: 700; color: #7A5626">{{ lgSoon }}</span></div>
-<div class="lg-tile"><span class="muted" style="font-size: 13px">Next key date</span><strong style="font-size: 15px; line-height: 1.35">{{ lgNext }}</strong><span class="muted" style="font-size: 13px">{{ lgNextWhat }}</span></div>
-</div>
-
 <section id="attention" aria-labelledby="lt-h" class="lt">
 <div class="lt-head">
 <div style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" class="lt-count">{{ lgAttCount }}</span><h2 id="lt-h" style="margin: 0; font-size: 15px; font-weight: 700; font-family: Inter, system-ui, sans-serif">Needs your attention</h2></div>
@@ -2786,10 +2799,11 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </section>
 
 <section id="upload" class="card" style="padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; flex-direction: column; gap: 4px"><h2 class="h" style="margin: 0; font-size: 22px">Upload a document</h2><span class="muted" style="font-size: 14px; line-height: 1.5">Add the key dates and we'll remind you before they arrive. In the live portal, we read the dates from your document and ask you to confirm them.</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 class="h" style="margin: 0; font-size: 22px">Upload a document</h2><span class="muted" style="font-size: 14px; line-height: 1.5">Choose a file and AI reads it, works out the type, the other party and the key dates, and fills in the form for you to check. We'll remind you before each date arrives.</span></div>
 <template data-if="lgFlash"><div role="status" style="background: #E4EFE6; color: #2E6B4F; border-radius: 10px; padding: 10px 12px; font-size: 14px; font-weight: 600">{{ lgFlash }}</div></template>
 <form class="lg-form" novalidate onSubmit="{{ lgSubmit }}">
 <label class="lg-drop" for="lg-file"><input id="lg-file" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onChange="{{ lgOnFile }}"><strong id="lg-file-name">Choose a file</strong><span class="muted" style="font-size: 13px">PDF, Word or a photo of the document</span></label>
+<div id="lg-ai" class="lg-ai" aria-live="polite" hidden></div>
 <div class="lg-grid">
 <label class="lg-f" for="lg-name">Document name<input id="lg-name" type="text" autocomplete="off" placeholder="e.g. Cool room lease" onInput="{{ lgOn }}"></label>
 <label class="lg-f" for="lg-cat">Type<select id="lg-cat" onChange="{{ lgOn }}"><option value="">Choose a type</option><template data-for="lgCatOpts" data-as="o"><option value="{{ o.k }}">{{ o.l }}</option></template></select></label>
@@ -2871,13 +2885,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <div class="dhead" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px">
 <div style="display: flex; flex-direction: column; gap: 4px; max-width: 720px"><span class="eyebrow">Little Saigon Kitchen (demo)</span><h1 class="h" style="margin: 0; font-size: 34px; line-height: 1.15">Compliance</h1><span class="muted" style="font-size: 15px; line-height: 1.5">Lodgements still in progress and documents waiting for your signature. Once something is signed and lodged, it moves to Completed documents at the bottom of this page.</span></div>
 <a class="btn btn-ghost" href="#Compliance--completed">Completed documents ↓</a>
-</div>
-
-<div class="lg-tiles">
-<div class="lg-tile" style="border-color: #A4472A"><span style="font-size: 13px; color: #A4472A; font-weight: 600">Ready to sign</span><span class="h" style="font-size: 28px; font-weight: 700; color: #A4472A">{{ cSign }}</span></div>
-<div class="lg-tile" style="border-color: #E2C48F"><span style="font-size: 13px; color: #7A5626; font-weight: 600">Waiting on your answers</span><span class="h" style="font-size: 28px; font-weight: 700; color: #7A5626">{{ cQ }}</span></div>
-<div class="lg-tile"><span class="muted" style="font-size: 13px">With your accountant or not started</span><span class="h" style="font-size: 28px; font-weight: 700">{{ cOther }}</span></div>
-<div class="lg-tile"><span class="muted" style="font-size: 13px">Next due</span><strong style="font-size: 15px; line-height: 1.35">{{ cNext }}</strong><span class="muted" style="font-size: 13px">{{ cNextWhat }}</span></div>
 </div>
 
 <template data-if="cFlash"><div role="status" style="background: #E4EFE6; color: #2E6B4F; border-radius: 12px; padding: 12px 16px; font-size: 15px; font-weight: 600">{{ cFlash }}</div></template>
@@ -4081,8 +4088,133 @@ function laShape(d, mock) {
     when: String(d.when || 'For advice on your situation, speak to our legal team.'), mock };
 }
 SCREENS["Legal"]=(function(){
+// ---- AI document profiling for Legal uploads
+const LG_PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+const LG_JSZIP = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+const lgLoadJs = (() => { const c = {}; return (u) => c[u] || (c[u] = new Promise((res, rej) => { const s = document.createElement('script'); s.src = u; s.onload = () => res(); s.onerror = () => { delete c[u]; rej({ code: 'reader' }); }; document.head.appendChild(s); })); })();
+const lgTimeout = (p, ms) => Promise.race([p, new Promise((_, rej) => setTimeout(() => rej({ code: 'reader' }), ms))]);
+async function lgPdfLib() {
+  await lgLoadJs(LG_PDFJS + 'pdf.min.js');
+  const lib = window.pdfjsLib; if (!lib) throw { code: 'reader' };
+  if (!lib.GlobalWorkerOptions.workerPort && !lib.GlobalWorkerOptions.workerSrc) {
+    try { const b = new Blob(["importScripts('" + LG_PDFJS + "pdf.worker.min.js');"], { type: 'text/javascript' }); lib.GlobalWorkerOptions.workerPort = new Worker(URL.createObjectURL(b)); }
+    catch (e) { lib.GlobalWorkerOptions.workerSrc = LG_PDFJS + 'pdf.worker.min.js'; }
+  }
+  return lib;
+}
+const lgCanvasBlob = (c) => new Promise((res) => c.toBlob((b) => res(b), 'image/jpeg', 0.82));
+async function lgReadDoc(file, maxImgs) {
+  const name = (file.name || '').toLowerCase(), type = file.type || '';
+  if (/^image\//.test(type)) return { images: [file], how: 'photo' };
+  if (type === 'application/pdf' || /\.pdf$/.test(name)) {
+    const lib = await lgPdfLib();
+    const pdf = await lgTimeout(lib.getDocument({ data: await file.arrayBuffer() }).promise, 25000);
+    let text = '';
+    for (let i = 1; i <= Math.min(pdf.numPages, 12) && text.length < 24000; i++) {
+      const pg = await pdf.getPage(i); const tc = await pg.getTextContent();
+      text += tc.items.map((it) => it.str + (it.hasEOL ? '\n' : ' ')).join('') + '\n\n';
+    }
+    if (text.replace(/\s+/g, '').length > 300) return { text: text.slice(0, 24000), how: 'text', pages: pdf.numPages };
+    if (!maxImgs) throw { code: 'scan_no_images' };
+    const imgs = [];
+    for (let i = 1; i <= Math.min(pdf.numPages, maxImgs, 3); i++) {
+      const pg = await pdf.getPage(i); const vp = pg.getViewport({ scale: 1.6 });
+      const c = document.createElement('canvas'); c.width = Math.ceil(vp.width); c.height = Math.ceil(vp.height);
+      await pg.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+      const b = await lgCanvasBlob(c); if (b) imgs.push(b);
+    }
+    if (!imgs.length) throw { code: 'reader' };
+    return { images: imgs, how: 'scan', pages: pdf.numPages };
+  }
+  if (/\.docx$/.test(name) || type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+    await lgLoadJs(LG_JSZIP); if (!window.JSZip) throw { code: 'reader' };
+    const zip = await window.JSZip.loadAsync(await file.arrayBuffer());
+    const f = zip.file('word/document.xml'); if (!f) throw { code: 'reader' };
+    const xml = await f.async('string');
+    const text = xml.replace(/<w:tab\/>/g, '\t').replace(/<\/w:p>/g, '\n').replace(/<[^>]+>/g, '')
+      .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'");
+    if (text.trim().length < 50) throw { code: 'empty' };
+    return { text: text.slice(0, 24000), how: 'text' };
+  }
+  if (/\.doc$/.test(name)) throw { code: 'old_doc' };
+  throw { code: 'unsupported' };
+}
+const LG_KEYWORDS = [['lease', /lease|tenancy|landlord|premises/], ['lic', /licen[cs]e|permit|registration|liquor|council/], ['emp', /employ|contract of employment|casual|chef|staff/], ['sup', /supply|supplier|purchase|distribut/],
+  ['bank', /loan|facility|guarantee|finance|bank|covenant/], ['sh', /shareholder/], ['fr', /franchis/], ['corp', /constitution|trust deed|company|asic|minutes/], ['ins', /insurance|policy|certificate of currency/]];
+function lgGuessCat(s) { s = (s || '').toLowerCase(); const m = LG_KEYWORDS.find(([, re]) => re.test(s)); return m ? m[0] : ''; }
+function lgPrompt(read, fileName, cats) {
+  const today = new Date().toISOString().slice(0, 10);
+  return 'You are filing a legal document for the owner of an Australian hospitality venue (Little Saigon Kitchen, a Vietnamese restaurant in Melbourne). Profile the document so its type, other party and key dates can be tracked in their portal.\n\n'
+    + 'Today is ' + today + '. The file is called "' + String(fileName).slice(0, 120) + '". '
+    + (read.text ? 'The document text is below.' : 'The attached images are the first pages of the document.') + '\n\n'
+    + 'Document types (use the key): ' + Object.entries(cats).map(([k, l]) => k + ' = ' + l).join('; ') + '.\n\n'
+    + 'Rules: use only dates stated in the document or calculable from it (for example a start date plus a term). Never invent a date or a party; use null or an empty string when unsure. The key date is the next important date before the end date, such as a renewal option notice deadline, a rent review, a covenant test or a licence renewal. This is for filing and reminders only, not legal advice. Plain Australian English.\n\n'
+    + 'Return ONLY JSON in this shape:\n{"is_legal_document": true, "title": "short plain name, e.g. Retail lease, Shop 3", "category": "one key from the list", "other_party": "", "end_date": "YYYY-MM-DD or null", "key_date": "YYYY-MM-DD or null", "key_date_label": "what happens on the key date, under 40 characters", "reminder_days": 90, "summary": "one or two plain sentences on what the document is and does", "key_terms": [{"label": "short label", "detail": "one line"}], "confidence": "high|medium|low"}\n'
+    + 'reminder_days must be 30, 60, 90 or 120, based on how much notice the owner needs. Give up to 5 key_terms, such as term, rent, renewal options, notice periods, guarantees or termination rights.'
+    + (read.text ? '\n\nDOCUMENT TEXT:\n<<<\n' + read.text + '\n>>>' : '');
+}
+const lgDate = (v) => (typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v) && !isNaN(new Date(v + 'T00:00:00'))) ? v : '';
+function lgShape(d, cats) {
+  if (!d || typeof d !== 'object') throw { code: 'bad_answer' };
+  const cat = Object.prototype.hasOwnProperty.call(cats, d.category) ? d.category : '';
+  const rem = [30, 60, 90, 120].includes(+d.reminder_days) ? String(+d.reminder_days) : '90';
+  const conf = ['high', 'medium', 'low'].includes(String(d.confidence).toLowerCase()) ? String(d.confidence).toLowerCase() : 'low';
+  const key = lgDate(d.key_date);
+  return { legal: d.is_legal_document !== false, title: String(d.title || '').slice(0, 80), cat, party: String(d.other_party || '').slice(0, 80), end: lgDate(d.end_date), key, keylabel: key ? String(d.key_date_label || '').slice(0, 60) : '', remind: rem,
+    summary: String(d.summary || '').slice(0, 400), terms: (Array.isArray(d.key_terms) ? d.key_terms : []).slice(0, 5).map((t) => ({ l: String((t && t.label) || '').slice(0, 40), d: String((t && t.detail) || '').slice(0, 160) })).filter((t) => t.l && t.d), conf };
+}
+const lgEsc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const LG_ERR = { not_granted: 'AI is switched off for this page, so fill in the details yourself. To turn it on, allow Claude from the page’s permissions menu.', rate_limited: 'Too many requests in a short time. Wait a minute and choose the file again, or fill in the details yourself.',
+  old_doc: 'Older .doc files can’t be read automatically. Save it as a PDF or .docx and choose it again, or fill in the details yourself.', unsupported: 'That file type can’t be read automatically. Use a PDF, Word (.docx) file or a photo, or fill in the details yourself.',
+  scan_no_images: 'This looks like a scanned PDF, which this copy of the portal can’t send to AI. Fill in the details yourself, or upload a photo of the first page.', reader: 'The document couldn’t be opened for reading. Fill in the details yourself, or try a PDF or photo.',
+  empty: 'The document looks empty. Check it’s the right file.', image_rejected: 'The pages couldn’t be sent to AI. Try a clearer photo or a text-based PDF.', bad_answer: 'AI couldn’t work out the details from this document. Fill them in yourself.' };
+
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { f: 'all', flash: '', open: null, dflash: '', derr: '', tpflash: '', laBusy: false, laErr: '', la: null, advFlash: '', advErr: '' }; this.laQ = ''; this.laCtl = null; laSample(); this.form = { remind: '90' }; }
+  constructor(props) { super(props); this.state = { f: 'all', flash: '', open: null, dflash: '', derr: '', tpflash: '', laBusy: false, laErr: '', la: null, advFlash: '', advErr: '' }; this.laQ = ''; this.laCtl = null; laSample(); this.form = { remind: '90' }; this.lgCtl = null; }
+  lgAiBox(html, cls) { const b = document.getElementById('lg-ai'); if (!b) return; b.className = 'lg-ai' + (cls ? ' ' + cls : ''); b.innerHTML = html; b.hidden = !html; }
+  lgFill(p) {
+    const F = this.form; F._auto = F._auto || {};
+    const set = (k, v, force) => { if (!v) return; const el = document.getElementById('lg-' + k); if (!el) return;
+      if (!force && el.value && !F._auto[k]) return; el.value = v; F[k] = v; F._auto[k] = true; el.classList.add('lg-auto'); };
+    set('name', p.title, !!F._auto.name || !F.name || F._fromFile); F._fromFile = false;
+    set('cat', p.cat, !F.cat || F._auto.cat); set('party', p.party); set('end', p.end); set('key', p.key); set('keylabel', p.keylabel); set('remind', p.remind, true);
+  }
+  async lgProfile(file) {
+    if (this.lgCtl) this.lgCtl.abort();
+    const ctl = new AbortController(); this.lgCtl = ctl;
+    const cats = window.EF_LEGAL.CATS;
+    this.lgAiBox('<span class="lg-spin" aria-hidden="true"></span><span>Reading <b>' + lgEsc(file.name) + '</b> and filling in the details. This can take up to a minute.</span><button type="button" class="lg-ai-stop">Stop</button>', 'lg-ai-busy');
+    const stop = document.querySelector('#lg-ai .lg-ai-stop'); if (stop) stop.addEventListener('click', () => { ctl.abort(); this.lgCtl = null; this.lgAiBox('AI reading stopped. Fill in the details yourself.', 'lg-ai-note'); });
+    const sample = await laSample();
+    if (ctl.signal.aborted) return;
+    if (!sample) {
+      const g = lgGuessCat(file.name); if (g) this.lgFill({ cat: g });
+      this.lgAiBox('AI profiling only works in the Claude-hosted portal.' + (g ? ' We’ve guessed the type from the file name.' : '') + ' Fill in the rest of the details below.', 'lg-ai-note'); return;
+    }
+    try {
+      const caps = await sample.limits().catch(() => null);
+      const maxImgs = caps && caps.images ? caps.images.maxCount : 0;
+      const read = await lgReadDoc(file, maxImgs);
+      if (ctl.signal.aborted) return;
+      if (read.images && !maxImgs) throw { code: 'images_unavailable' };
+      const d = await sample.json(lgPrompt(read, file.name, cats), Object.assign({ signal: ctl.signal }, read.images ? { images: read.images } : {}));
+      if (this.lgCtl !== ctl) return;
+      const p = lgShape(d, cats);
+      if (!p.legal) { this.lgAiBox('This doesn’t look like a legal document. Check it’s the right file, or fill in the details yourself.', 'lg-ai-note'); return; }
+      this.lgFill(p);
+      const CF = { high: ['High confidence', '#E4EFE6', '#22513C'], medium: ['Medium confidence', '#F3E6CF', '#6B4A1F'], low: ['Low confidence', '#F6E3DA', '#8A3A22'] }[p.conf];
+      this.lgAiBox('<div class="lg-ai-h"><strong><span aria-hidden="true" style="color:#94572A">✦</span> AI filled in the details below</strong><span class="lg-ai-pill" style="background:' + CF[1] + ';color:' + CF[2] + '">' + CF[0] + '</span></div>'
+        + (p.summary ? '<p>' + lgEsc(p.summary) + '</p>' : '')
+        + (p.terms.length ? '<dl>' + p.terms.map((t) => '<div><dt>' + lgEsc(t.l) + '</dt><dd>' + lgEsc(t.d) + '</dd></div>').join('') + '</dl>' : '')
+        + '<p class="lg-ai-fine">Check each highlighted field before you add the document. This summary is for filing and reminders, not legal advice.</p>', 'lg-ai-done');
+      this.form.summary = p.summary;
+    } catch (e) {
+      if (this.lgCtl !== ctl && !(e && e.code === 'cancelled')) return;
+      const code = e && e.code; if (code === 'cancelled') return;
+      const g = lgGuessCat(file.name); if (g) this.lgFill({ cat: g });
+      this.lgAiBox((LG_ERR[code] || 'Something went wrong reading the document. Fill in the details yourself.'), 'lg-ai-note');
+    } finally { if (this.lgCtl === ctl) this.lgCtl = null; }
+  }
   async laAsk() {
     const q = (this.laQ || '').trim();
     if (!q) { this.setState({ laErr: 'Type a question first, for example “What is a make-good clause?”', la: null }); return; }
@@ -4157,18 +4289,20 @@ class Component extends DCLogic {
       lgAtt: att, lgNone: att.length === 0, lgAttCount: att.length,
       lgAttSummary: [[att.filter(v => v.kind !== 'soon').length, 'need action now'], [att.filter(v => v.kind === 'soon').length, 'due soon']].filter(x => x[0]).map(x => x[0] + ' ' + x[1]).join(' · '), lgShown: shown, lgChips,
       lgCatOpts: Object.entries(L.CATS).map(([k, l]) => ({ k, l })), lgFlash: st.flash,
-      lgOn: (e) => { F[e.target.id.slice(3)] = e.target.value; },
+      lgOn: (e) => { const k = e.target.id.slice(3); F[k] = e.target.value; if (F._auto && F._auto[k]) { F._auto[k] = false; e.target.classList.remove('lg-auto'); } if (k === 'name') F._fromFile = false; },
       lgOnFile: (e) => { const f = e.target.files && e.target.files[0]; F.file = f ? f.name : ''; const lab = document.getElementById('lg-file-name'); if (lab) lab.textContent = f ? f.name : 'Choose a file';
-        const nm = document.getElementById('lg-name'); if (f && nm && !nm.value) { nm.value = f.name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' '); F.name = nm.value; } },
+        const nm = document.getElementById('lg-name'); if (f && nm && !nm.value) { nm.value = f.name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' '); F.name = nm.value; F._fromFile = true; }
+        if (f) this.lgProfile(f); },
       lgSubmit: (e) => {
         e.preventDefault();
         const err = !F.file ? 'Choose the document to upload.' : !(F.name || '').trim() ? 'Give the document a name.' : !F.cat ? 'Choose what type of document it is.' : (F.key && !(F.keylabel || '').trim()) ? 'Say what happens on the other key date, for example "Renewal notice due".' : '';
         const box = document.getElementById('lg-err'); if (err) { if (box) box.textContent = err; return; }
         const id = 'up' + Date.now();
-        L.docs.push({ id, check: F.check || null, cat: F.cat, name: F.name.trim(), party: (F.party || '').trim() || '—', file: F.file, end: F.end || null, endLabel: 'Expires', key: F.key || null, keyLabel: (F.keylabel || '').trim(), remind: +(F.remind || 90) });
+        if (this.lgCtl) { this.lgCtl.abort(); this.lgCtl = null; }
+        L.docs.push({ id, check: F.check || null, cat: F.cat, name: F.name.trim(), party: (F.party || '').trim() || '—', file: F.file, summary: F.summary || '', end: F.end || null, endLabel: 'Expires', key: F.key || null, keyLabel: (F.keylabel || '').trim(), remind: +(F.remind || 90) });
         const v = L.view(L.docs[L.docs.length - 1]);
         this.form = { remind: '90' };
-        this.state.flash = '"' + v.name + '" added. ' + (v.route === 'todo' ? 'It needs attention soon, so it now shows in Action needed on your dashboard.' : v.route === 'plan' ? 'It has been added to your action plan.' : v.dateLabel === 'No expiry date' ? 'No dates to track.' : "We'll remind you " + (F.remind || 90) + ' days before ' + v.dateLabel.toLowerCase() + '.');
+        this.state.flash = '"' + v.name + '" added. ' + (v.route === 'todo' ? 'It needs attention soon, so it now shows in Action needed on your dashboard.' : v.route === 'plan' ? 'It has been added to your action plan.' : v.dateLabel === 'No expiry date' ? 'No dates to track.' : "We'll remind you " + (F.remind || 90) + ' days before: ' + v.dateLabel + '.');
         L.changed();
       }
     };
