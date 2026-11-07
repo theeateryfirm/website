@@ -1619,6 +1619,12 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 #scr-Signup .pl-sub{margin:0;padding:0 18px 14px;font-size:13px;color:#46524C}
 #scr-Signup .pl-diy{margin:0;font-size:14px;line-height:1.5;background:#F8F4EC;border-radius:10px;padding:10px 14px}
 
+
+@supports (grid-template-rows: subgrid){
+  #scr-Main .pk{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:12px}
+  #scr-Main .pk h3,#scr-Main .pk-who{min-height:0}
+  #scr-Main .pk-act{margin-top:0;align-self:end}
+}
 </style>
 <a class="skip" href="#" id="skip-link">Skip to main content</a><div id="route-status" class="vh" role="status" aria-live="polite"></div><div class="screen" id="scr-Main" hidden></div><div class="screen" id="scr-Signup" hidden></div><div class="screen" id="scr-Login" hidden></div><div class="screen" id="scr-Dashboard" hidden></div><div class="screen" id="scr-Analysis" hidden></div><div class="screen" id="scr-Legal" hidden></div><div class="screen" id="scr-Compliance" hidden></div><div class="screen" id="scr-WhatIf" hidden></div><div class="screen" id="scr-Menu" hidden></div><div class="screen" id="scr-Reports" hidden></div><div class="screen" id="scr-Schedule" hidden></div><div class="screen" id="scr-Assistant" hidden></div>
 
@@ -1679,7 +1685,7 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
 <h1 class="h" style="margin: 0; font-size: clamp(32px, 3.5vw, 50px); line-height: 1.06; font-weight: 700">Your venue’s accounting, tax and legal companion.</h1>
 <p style="margin: 0; font-size: 17px; line-height: 1.55; max-width: 520px; color: #CBD3CC">Swap the once-a-year accountant and needs-only-basis lawyer for a full suite team and a portal that keep your venue on track every month.</p>
-<ul class="hero-trust" aria-label="Why you can trust us"><li>Registered tax agent</li><li>Registered legal practitioner</li><li>Your data stays in Australia</li><li>No lock-in</li></ul>
+<ul class="hero-trust" aria-label="Why you can trust us"><li>Registered tax agent</li><li>Incorporated legal practice</li><li>Your data stays in Australia</li><li>No lock-in</li></ul>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <a class="btn btn-copper" href="#Signup" style="min-height: 48px; font-size: 16px; padding: 0 24px">Start your free month</a>
 <a class="btn btn-outline-light" href="#pricing" style="min-height: 48px; font-size: 16px">See pricing</a>
@@ -1699,7 +1705,7 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <div class="hs-tile">
 <span class="hs-k">Legal</span>
 <b class="hs-t"><span class="hs-tag hs-gold">Clause triggered</span></b>
-<span class="hs-line hs-wrap">Lease clause 4.2: give notice to renew by 31 Jan 2027</span>
+<span class="hs-line hs-wrap">Lease clause 4.2: renewal notice due in 60 days</span>
 </div>
 <div class="hs-tile">
 <span class="hs-k">Performance</span>
@@ -1740,8 +1746,8 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <thead><tr><th scope="col"><span class="vh">What you get</span></th><th scope="col" class="muted">Traditional firm</th><th scope="col" class="lp-us">The Eatery Firm</th></tr></thead>
 <tbody>
 <tr><th scope="row">Accountant and lawyer</th><td class="muted" data-label="Traditional firm">Two separate firms that rarely talk</td><td data-label="The Eatery Firm">One team, working from the same records</td></tr>
-<tr><th scope="row">What it costs</th><td class="muted" data-label="Traditional firm">Hourly rates for routine work done by hand</td><td data-label="The Eatery Firm">Technology handles the routine work, which keeps our prices down and fixed</td></tr>
-<tr><th scope="row">How you're billed</th><td class="muted" data-label="Traditional firm">Hourly, invoiced after the work, so the bill is a surprise</td><td data-label="The Eatery Firm">A fixed monthly price, agreed up front. If a job takes us longer, that's on us</td></tr>
+<tr><th scope="row">Industry knowledge</th><td class="muted" data-label="Traditional firm">Generalists who don't specialise in your industry</td><td data-label="The Eatery Firm">We know your business and the hospitality industry</td></tr>
+<tr><th scope="row">What it costs</th><td class="muted" data-label="Traditional firm">Hourly rates for routine work done by hand, invoiced afterwards, so the bill is a surprise</td><td data-label="The Eatery Firm">Technology handles the routine work, which keeps our prices down and fixed. If a job takes us longer, that's on us</td></tr>
 <tr><th scope="row">When you see your numbers</th><td class="muted" data-label="Traditional firm">Once a year, months after 30 June</td><td data-label="The Eatery Firm">Every month, by the 12th</td></tr>
 <tr><th scope="row">Hospitality metrics</th><td class="muted" data-label="Traditional firm">A generic profit and loss</td><td data-label="The Eatery Firm">Wage %, food and beverage cost, prime cost and industry benchmarks</td></tr>
 <tr><th scope="row">Deadlines</th><td class="muted" data-label="Traditional firm">You find out when a letter arrives</td><td data-label="The Eatery Firm">Alerts in your portal before anything is due</td></tr>
@@ -1793,7 +1799,7 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <li><b>Lease and licence management.</b> Rent reviews, renewal options, liquor licences and council permits tracked against their dates.</li>
 <li><b>Commercial agreements.</b> Supplier, franchise, finance and shareholder agreements read and monitored for obligations.</li>
 <li><b>Standard templates.</b> Employment contracts, supplier terms and other everyday documents.</li>
-<li><b>Advice when you need it.</b> Lease negotiations, disputes and contract reviews by our own legal team.</li>
+<li><b>Advice when you need it.</b> Lease negotiations, disputes and contract reviews by our in-house lawyers.</li>
 </ul>
 </details>
 </article>
@@ -1810,16 +1816,16 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <div class="pf-grid pf-grid-feat">
 <article class="pf-card pf-feat">
 <div class="pf-prev" aria-hidden="true">
-<div class="pf-alert"><span class="pf-tag pf-red">Urgent</span><span class="pf-tag pf-dark">Legal</span><b>Renew your outdoor dining permit</b><small>Expired 30 Sep · Open in Legal</small></div>
-<div class="pf-alert"><span class="pf-tag pf-red">Urgent</span><b>Sign your FY2026 compliance pack</b><small>Sign by Fri 30 Oct · Approve</small></div>
-<div class="pf-alert"><span class="pf-tag pf-gold">Due soon</span><span class="pf-tag pf-dark">Legal</span><b>Renew your liquor licence</b><small>Due 30 Nov · in 34 days</small></div>
+<div class="pf-alert"><span class="pf-tag pf-red">Urgent</span><span class="pf-tag pf-dark">Legal</span><b>Renew your outdoor dining permit</b><small>Expired last month · Open in Legal</small></div>
+<div class="pf-alert"><span class="pf-tag pf-red">Urgent</span><b>Sign your FY2026 compliance pack</b><small>Sign by Friday · Approve</small></div>
+<div class="pf-alert"><span class="pf-tag pf-gold">Due soon</span><span class="pf-tag pf-dark">Legal</span><b>Renew your liquor licence</b><small>Due in 3 weeks</small></div>
 </div>
 <h3 class="h">A dashboard that tells you what needs you</h3>
 <p class="muted">Compliance deadlines and commercial legal matters in one list, ranked by urgency. Approve a BAS, sign your tax return or answer your accountant's question from your phone.</p>
 </article>
 <article class="pf-card pf-feat">
 <div class="pf-prev" aria-hidden="true">
-<div class="pf-doc"><span class="pf-tag pf-gold">Clause triggered</span><b>Retail lease, Shop 3 · Clause 4.2</b><small>Option to renew: give notice by 31 Jan 2027. The option lapses if you miss it.</small></div>
+<div class="pf-doc"><span class="pf-tag pf-gold">Clause triggered</span><b>Retail lease, Shop 3 · Clause 4.2</b><small>Option to renew: give notice within 60 days. The option lapses if you miss it.</small></div>
 <div class="pf-doc"><span class="pf-tag pf-dark">Watching</span><b>Equipment loan · Covenant 9.1</b><small>Interest cover 2.6x against a 2.0x minimum.</small></div>
 </div>
 <h3 class="h">Live legal documents</h3>
@@ -1857,8 +1863,8 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 </article>
 <article class="pf-card">
 <div class="pf-prev pf-ai" aria-hidden="true">
-<div class="pf-qb">Why did wages jump in September?</div>
-<div class="pf-ab">Sunday penalty rates drove 38% of the overspend. Moving two Sunday shifts to Saturday would save about $1,150 a month.</div>
+<div class="pf-qb">What does my lease say about rent reviews?</div>
+<div class="pf-ab">Clause 6.1 allows one review each March, capped at CPI plus 2%. Your next review is in March, and it's already in your cash forecast.</div>
 </div>
 <h3 class="h">Ask AI, any time</h3>
 <p class="muted">Ask about your numbers, what's due or what your lease says, and get an answer from your own books, reports and documents. Anything that needs professional advice goes straight to your accountant or our legal team.</p>
@@ -1955,7 +1961,7 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <details class="fq-i"><summary>Will I still have a real accountant?</summary><p>Yes. A qualified accountant looks after your venue, prepares your work and replies to your questions within one business day. AI helps you find answers faster, but it doesn't replace your accountant.</p></details>
 <details class="fq-i"><summary>What happens to my current accountant?</summary><p>With your permission, we contact them, request your files and records, and take over your lodgements. Any fees you owe them for work already done are still payable to them.</p></details>
 <details class="fq-i"><summary>Is my data safe?</summary><p>Your data is stored in Australia, encrypted, and protected by multi-factor sign-in. We never sell your data, and our partners only see your numbers if you ask us to share them.</p></details>
-<details class="fq-i"><summary>What if I need legal advice?</summary><p>The portal tracks your leases, licences and agreements and can explain what a clause means in general terms. Advice on your situation comes from our own legal team, who quote before they start.</p></details>
+<details class="fq-i"><summary>What if I need legal advice?</summary><p>The portal tracks your leases, licences and agreements and can explain what a clause means in general terms. Advice on your situation comes from our lawyers. We're an incorporated legal practice, so they're part of the same firm, and you get a costs disclosure before any work starts.</p></details>
 <details class="fq-i"><summary>What's included in the $99?</summary><p>Portal access, with your dashboard and alerts, monthly performance reporting with industry benchmarks, the toolbox (including the Menu Engineering Tool), your legal companion and Ask AI. Bookkeeping, BAS and your tax return are added on top if you want us to do them.</p></details>
 <details class="fq-i"><summary>Can I cancel?</summary><p>Yes. Plans are month to month, and you can cancel with 30 days' notice. Your documents stay available to download, and we hand your file over to your new accountant.</p></details>
 </div>
@@ -2120,7 +2126,7 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <label class="f">Venue type<select><option>Café</option><option>Restaurant</option><option>Bar / pub</option><option>Bakery</option><option>Food truck</option><option>Catering</option></select></label>
 <label class="f">Cuisine<select><option>Vietnamese</option><option>Italian</option><option>Modern Australian</option><option>Chinese</option><option>Japanese</option><option>Thai</option><option>Indian</option><option>Middle Eastern</option><option>Other</option></select></label>
 <label class="f">Number of employees<select><option>1–5</option><option>6–15</option><option>16–30</option><option>31–60</option><option>60+</option></select></label>
-<label class="f">Estimated annual turnover<select><option>Under $500k</option><option>$500k – $1m</option><option>$1m – $2m</option><option>$2m – $5m</option><option>Over $5m</option></select></label>
+<label class="f">Estimated annual turnover<select><template data-for="suTiers" data-as="o"><option data-sel="{{ o.sel }}">{{ o.t }}</option></template></select><span class="hint">From your quote. Change it in Your plan if it's not right.</span></label>
 <label class="f">Point of sale<select><option>Square</option><option>Lightspeed</option><option>Abacus</option><option>H&amp;L</option><option>Other / none</option></select></label>
 <label class="f">Delivery platforms<select><option>Uber Eats + DoorDash</option><option>Uber Eats only</option><option>DoorDash only</option><option>None</option></select></label>
 </div>
@@ -2133,7 +2139,7 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">Engagement &amp; agreements</h1><p class="muted" style="margin: 0">Please read and sign. A PDF copy is saved to your Documents.</p></div>
 <div style="border: 1px solid #E5DED0; border-radius: 12px; padding: 18px 20px; max-height: 220px; overflow: auto; font-size: 14px; line-height: 1.6; background: #F3ECE0" tabindex="0" aria-label="Engagement letter">
 <strong>Letter of engagement</strong><br>
-Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month including GST, billed monthly in advance; first month free. Out-of-scope work is quoted before it starts. Your responsibilities: provide complete records, respond to queries within 10 business days, keep your accounting file access active. Term: month to month, 30 days' notice. Professional standards: APES 305 Terms of Engagement; Tax Agent Services Act 2009 Code of Professional Conduct. [Full legal text to be supplied by Trebly]
+Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month including GST, billed monthly in advance; first month free. Out-of-scope work is quoted before it starts. Your responsibilities: provide complete records, respond to queries within 10 business days, keep your accounting file access active. Term: month to month, 30 days' notice. Legal services: your legal companion (document tracking, alerts and general legal information) is included. Legal advice on your situation is provided by our incorporated legal practice under a separate engagement, with a costs disclosure before any work starts. Professional standards: APES 305 Terms of Engagement; Tax Agent Services Act 2009 Code of Professional Conduct. [Full legal text to be supplied by Trebly]
 </div>
 <label class="chk"><input type="checkbox"><span>I have read and accept the <a href="#e">letter of engagement</a> and <a href="#e">terms of service</a>.</span></label>
 <label class="chk"><input type="checkbox"><span>I consent to the collection and use of my information under the <a href="#e">privacy policy</a>, including my TFN for tax-agent services.</span></label>
@@ -2188,7 +2194,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 
 <template data-if="s5">
 <div style="display: flex; flex-direction: column; gap: 20px">
-<div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">Payment method</h1><p class="muted" style="margin: 0">Nothing is charged today. Your first payment is on 27 November 2026.</p></div>
+<div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">Payment method</h1><p class="muted" style="margin: 0">Nothing is charged today. Your first payment is on {{ firstPay }}.</p></div>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; background: #1F3A30; color: #fff; border-radius: 14px; padding: 20px 22px">
 <div><div style="font-size: 13px; color: #C6D1CB">Your plan</div><strong class="h" style="font-size: 22px">{{ planLine }}</strong></div>
 <div style="text-align: right"><div style="font-size: 13px; color: #C6D1CB">Today</div><strong class="h" style="font-size: 22px; color: #E2A962">$0.00</strong></div>
@@ -2225,7 +2231,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <ul style="margin: 0; padding-left: 20px; line-height: 1.9">
 <li>Engagement letter signed and saved to Documents</li>
 <li>Xero connected · first data sync running</li>
-<li>Onboarding call: book a time on your Schedule</li>
+<li>Onboarding call: your accountant will be in touch to book a time</li>
 </ul>
 <a class="btn btn-primary" href="#Dashboard">Go to my dashboard</a>
 </div>
@@ -2707,12 +2713,12 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </section>
 
 <section id="advice" class="card adv" aria-labelledby="adv-h">
-<div style="display: flex; flex-direction: column; gap: 6px"><h2 class="h" id="adv-h" style="margin: 0; font-size: 22px">Legal advice from our team</h2><p class="muted" style="margin: 0; font-size: 15px; line-height: 1.55; max-width: 72ch">When you need advice on your own situation, our legal team can help. They can already see your documents in this portal, and they quote before any work starts.</p></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><h2 class="h" id="adv-h" style="margin: 0; font-size: 22px">Legal advice from our team</h2><p class="muted" style="margin: 0; font-size: 15px; line-height: 1.55; max-width: 72ch">When you need advice on your own situation, our legal team can help. They're part of our incorporated legal practice, can already see your documents in this portal, and give you a costs disclosure before any work starts.</p></div>
 <ul class="adv-list"><li>Commercial lease reviews and negotiations</li><li>Liquor licence applications and variations</li><li>Supplier, franchise and finance agreements</li><li>Staff contracts and workplace disputes</li></ul>
 <div class="adv-form">
 <label class="adv-f" for="adv-topic">What do you need help with?<select id="adv-topic"><option>A lease</option><option>A licence or permit</option><option>A contract or agreement</option><option>An employment matter</option><option>A dispute</option><option>Something else</option></select></label>
 <label class="adv-f" for="adv-detail">Tell us a little more<textarea id="adv-detail" rows="3" placeholder="e.g. Our rent review is due in March and the landlord wants 8%."></textarea></label>
-<div style="display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center"><button type="button" class="btn btn-primary" onClick="{{ advSend }}">Request advice</button><span class="muted" style="font-size: 13px">Our legal team replies within 1 business day with a quote.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center"><button type="button" class="btn btn-primary" onClick="{{ advSend }}">Request advice</button><span class="muted" style="font-size: 13px">Our legal team replies within 1 business day with a costs estimate.</span></div>
 </div>
 <template data-if="advFlash"><div role="status" class="adv-ok">{{ advFlash }}</div></template>
 <template data-if="advErr"><div role="alert" class="adv-err">{{ advErr }}</div></template>
@@ -2756,7 +2762,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <div style="display: flex; flex-direction: column; gap: 4px; max-width: 720px"><h2 class="h" style="margin: 0; font-size: 22px">Standard legal templates</h2><span class="muted" style="font-size: 14px; line-height: 1.5">Templates for the agreements venues use most often. Download one as a starting point, then tailor it to your situation.</span></div>
 <div role="note" class="tp-note">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex: none; margin-top: 1px"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>
-<div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 14px">Have these reviewed before you sign or issue them</strong><span style="font-size: 13.5px; line-height: 1.5">These templates are general and may not suit your circumstances, award or state. A legal practitioner should review any document before it is executed.</span><a href="#Legal--advice" style="font-size: 13.5px; font-weight: 700; color: #7A5626">Get a review from our legal team →</a></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 14px">Have these reviewed before you sign or issue them</strong><span style="font-size: 13.5px; line-height: 1.5">These templates are general and may not suit your circumstances, award or state. Have one of our lawyers review any document before it is executed.</span><a href="#Legal--advice" style="font-size: 13.5px; font-weight: 700; color: #7A5626">Get a review from our legal team →</a></div>
 </div>
 <template data-if="tpFlash"><div role="status" style="background: #E4EFE6; color: #2E6B4F; border-radius: 12px; padding: 12px 16px; font-size: 15px; font-weight: 600">{{ tpFlash }}</div></template>
 <div class="card" style="padding: 0; overflow: hidden">
@@ -3768,6 +3774,8 @@ class Component extends DCLogic {
       steps, stepNo: st + 1, stepLabel: labels[st], stepPct: Math.round((st + 1) / 7 * 100),
       s0: st === 0, s1: st === 1, s2: st === 2, s3: st === 3, s4: st === 4, s5: st === 5, s6: st === 6,
       showNav: st < 6, nextLabel: nextLabels[st],
+      suTiers: ['Up to $1m', '$1m – $2m', '$2m – $3m', 'Over $3m (we\'ll quote)'].map((t, i) => ({ t, sel: String(['t1', 't2', 't3'][i] === (window.EF_QUOTE || {}).tier) })),
+      firstPay: (() => { const d = new Date(); d.setMonth(d.getMonth() + 1); return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' }); })(),
       planTier: qq.t.label, planLines: qq.lines.map(l => ({ name: l.name, amt: '$' + l.amt })), planAnnual: (qq.total * 12).toLocaleString('en-AU'), planGst: (qq.total / 11).toFixed(2),
       planDiy: (() => { const q = window.EF_QUOTE || {}, d = []; if (!q.bk) d.push('bookkeeping'); else if (!q.ap) d.push('paying suppliers'); if (q.bas === 'n') d.push('BAS'); if (!q.tax) d.push('financial statements and tax return'); return d.length ? d.join(', ').replace(/^./, c => c.toUpperCase()).replace(/, ([^,]*)$/, ' and $1') + '.' : ''; })(),
       next: () => { this.setState({ step: Math.min(6, st + 1) }); window.scrollTo(0, 0); },
@@ -4070,7 +4078,7 @@ function laShape(d, mock) {
   const info = A(d.info, 4).map(String), pts = A(d.points, 6).map(String), qs = A(d.questions || d.qs, 5).map(String);
   const docs = A(d.docs, 5).map(x => ({ doc: String(x.doc || ''), note: String(x.note || '') }));
   return { topic: String(d.topic || 'General legal information'), info, pts, ptsOn: pts.length > 0, docs, docsOn: docs.length > 0, qs, qsOn: qs.length > 0,
-    when: String(d.when || 'For advice on your situation, speak to a legal practitioner.'), mock };
+    when: String(d.when || 'For advice on your situation, speak to our legal team.'), mock };
 }
 SCREENS["Legal"]=(function(){
 class Component extends DCLogic {
@@ -4113,7 +4121,7 @@ class Component extends DCLogic {
       advSend: () => { const t = document.getElementById('adv-topic'), d = document.getElementById('adv-detail');
         if (!d || !d.value.trim()) { this.setState({ advErr: 'Tell us a little about what you need help with first.', advFlash: '' }); if (d) d.focus(); return; }
         const topic = t ? t.value.toLowerCase() : 'your matter';
-        this.setState({ advErr: '', advFlash: 'Sent to our legal team about ' + topic + '. They will contact you within 1 business day and quote before any work starts.' }); },
+        this.setState({ advErr: '', advFlash: 'Sent to our legal team about ' + topic + '. They will contact you within 1 business day and give you a costs disclosure before any work starts.' }); },
       laQ: this.laQ, laOnQ: (e) => { this.laQ = e.target.value; },
       laIdle: !st.laBusy, laBusy: st.laBusy, laErr: st.laErr, laHas: !!st.la && !st.laBusy, la: st.la || {}, laMock: !!(st.la && st.la.mock),
       laStop: () => { if (this.laCtl) this.laCtl.abort(); },
@@ -4131,7 +4139,7 @@ class Component extends DCLogic {
         ['tp-function', 'Function and event booking terms', 'Deposits, minimum spends, cancellations and guest numbers for private events.', 'Customer terms', 'Word', 'Mar 2026'],
         ['tp-lease-notice', 'Notice to exercise a lease option', 'Letter to your landlord exercising a renewal option before the deadline.', 'Leases', 'Word', 'Mar 2026']
       ].map(([id, name, desc, type, format, updated]) => ({ id, name, desc, type, format, updated,
-        dl: () => this.setState({ tpflash: name + ': in the live portal the Word template downloads here. Have it reviewed by a legal practitioner before you sign or issue it.' }) })),
+        dl: () => this.setState({ tpflash: name + ': in the live portal the Word template downloads here. Have it reviewed by one of our lawyers before you sign or issue it.' }) })),
       ...(() => {
         const ck = L.checklist(), rel = ck.filter(c => c.state !== 'na'), on = rel.filter(c => c.state === 'on').length;
         const prefill = (c) => { Object.keys(this.form).forEach(k => delete this.form[k]); Object.assign(this.form, { remind: '90', cat: c.cat, name: c.name, check: c.id }); location.hash = '#Legal--upload';
