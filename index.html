@@ -1503,6 +1503,121 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 @media (max-width:480px){#scr-Main .hs{margin-left:0 !important}#scr-Main .hs-grid{gap:6px}#scr-Main .hs-tile{padding:8px 9px}}
 #scr-Main .hs-demo{white-space:nowrap}
 @media (max-width:400px){#scr-Main .hs-grid{grid-template-columns:minmax(0,1fr)}#scr-Main .hs-dots{display:none}}
+/* ---- Landing page v2 */
+#scr-Main .lp-head{display:flex;flex-direction:column;gap:12px;max-width:760px}
+#scr-Main .lp-head h2{margin:0;font-size:44px;line-height:1.05}
+#scr-Main .lp-head p{margin:0;font-size:18px;line-height:1.55}
+#scr-Main .lp-sec{max-width:1240px;margin:0 auto;padding:80px 24px;display:flex;flex-direction:column;gap:32px;scroll-margin-top:72px}
+#scr-Main .lp-in{max-width:1240px;margin:0 auto;padding:80px 24px;display:flex;flex-direction:column;gap:32px}
+#scr-Main .lp-why{background:#fff;border-bottom:1px solid #E5DED0;scroll-margin-top:72px}
+#scr-Main .lp-tbl{overflow-x:auto;border:1px solid #E5DED0;border-radius:16px;position:relative}
+#scr-Main .lp-tbl table{width:100%;border-collapse:collapse;min-width:640px;font-size:16px}
+#scr-Main .lp-tbl th,#scr-Main .lp-tbl td{padding:15px 20px;text-align:left;vertical-align:top;border-top:1px solid #E5DED0;line-height:1.45}
+#scr-Main .lp-tbl thead th{background:#F3ECE0;border-top:0;font-size:15px}
+#scr-Main .lp-tbl tbody td:last-child{font-weight:600}
+#scr-Main .lp-tbl .lp-us{color:#2A5243}
+#scr-Main .lp-tbl tbody th{width:26%}
+#scr-Main .hero-trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;font-weight:600;color:#DCE3DD}
+#scr-Main .hero-trust li{display:flex;align-items:center;gap:7px}
+#scr-Main .hero-trust li::before{content:"";width:14px;height:14px;flex:none;background:no-repeat center/14px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E2A962' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E")}
+#scr-Main .sv-more{margin-top:auto;border-top:1px solid #EEE8DC;padding-top:10px}
+#scr-Main .sv-more summary{cursor:pointer;font-weight:600;color:#2A5243;min-height:32px;display:flex;align-items:center;list-style:none}
+#scr-Main .sv-more summary::-webkit-details-marker{display:none}
+#scr-Main .sv-more summary::after{content:"+";margin-left:8px;font-size:18px;line-height:1}
+#scr-Main .sv-more[open] summary::after{content:"\2212"}
+#scr-Main .sv-more summary:hover{text-decoration:underline}
+#scr-Main .sv-more ul{margin-top:10px !important}
+#scr-Main .pf-grid-feat{grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr))}
+#scr-Main .pf-grid-rest{grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr))}
+#scr-Main .pf-feat .pf-prev{min-height:200px}
+#scr-Main .pf-feat h3{font-size:24px}
+#scr-Main .pf-feat>p{font-size:16px}
+#scr-Main .pf-grid-rest .pf-card h3{font-size:19px}
+#scr-Main .pf-grid-rest .pf-card>p{font-size:14px}
+#scr-Main .pk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:18px}
+#scr-Main .pk{background:#fff;border:1px solid #E5DED0;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px}
+#scr-Main .pk h3{margin:0;font-size:24px;line-height:1.2;min-height:2.4em;text-wrap:balance}
+@media (max-width:640px){#scr-Main .pk h3{min-height:0}}
+#scr-Main .pk-who{margin:0;font-size:15px;line-height:1.5;min-height:3em}
+#scr-Main .pk-price{display:flex;align-items:baseline;gap:6px;color:#46524C;font-size:14px}
+#scr-Main .pk-price .h{font-size:44px;font-weight:700;color:#1F3A30;line-height:1}
+#scr-Main .pk ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.45;border-top:1px solid #EEE8DC;padding-top:14px}
+#scr-Main .pk li{padding-left:22px;position:relative}
+#scr-Main .pk li::before{content:"";position:absolute;left:0;top:2px;width:14px;height:14px;background:no-repeat center/14px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E6B4F' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E")}
+#scr-Main .pk-act{margin-top:auto;display:flex;flex-direction:column;gap:6px;padding-top:6px}
+#scr-Main .pk-link{background:none;border:0;font:inherit;font-size:14px;font-weight:600;color:#2A5243;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:36px}
+#scr-Main .pk-link:hover{color:#13261F}
+#scr-Main .pk-more{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;font-size:14px}
+#scr-Main .pk-builder{display:flex;flex-direction:column;gap:24px;scroll-margin-top:80px}
+#scr-Main .hw{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px}
+#scr-Main .hw li{padding:24px;display:flex;flex-direction:column;gap:8px}
+#scr-Main .hw li strong{font-size:18px}
+#scr-Main .hw li span.muted{line-height:1.5}
+#scr-Main .hw-n{font-size:40px;font-weight:700;color:#2A5243;line-height:1}
+#scr-Main .lp-faq{padding-top:40px}
+#scr-Main .fq{display:flex;flex-direction:column;border-top:1px solid #DDD3C2;max-width:900px}
+#scr-Main .fq-i{border-bottom:1px solid #DDD3C2}
+#scr-Main .fq-i summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:18px 4px;font-size:18px;font-weight:600;min-height:44px;box-sizing:border-box}
+#scr-Main .fq-i summary::-webkit-details-marker{display:none}
+#scr-Main .fq-i summary::after{content:"+";font-size:24px;font-weight:400;color:#94572A;flex:none}
+#scr-Main .fq-i[open] summary::after{content:"\2212"}
+#scr-Main .fq-i summary:hover{color:#2A5243}
+#scr-Main .fq-i p{margin:0 4px 20px;font-size:16px;line-height:1.6;color:#46524C;max-width:72ch}
+#scr-Main .lp-cta-wrap{max-width:1240px;margin:0 auto 56px;padding:0 24px}
+#scr-Main .lp-cta{background:radial-gradient(420px 240px at 90% 0%, rgba(240,176,96,.35), transparent 70%),repeating-linear-gradient(180deg, rgba(255,255,255,.05) 0 2px, transparent 2px 22px),linear-gradient(135deg,#7E4F2A,#5E3B22 60%,#4A2F1D);color:#fff;border-radius:24px;padding:56px 40px;box-shadow:0 30px 60px rgba(74,47,29,.25);display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+#scr-Main .lp-cta h2{margin:0;font-size:40px;line-height:1.08}
+#scr-Main .lp-cta p{margin:0;font-size:18px;color:#E9DFC9}
+#scr-Main .lp-cta-btn{background:#F4EEE2;color:#4A2F1D;min-height:56px;font-size:17px;padding:0 30px}
+#scr-Main .lp-partners{max-width:1240px;margin:0 auto;padding:0 24px 40px}
+#scr-Main .pf-grid-rest .pf-row{flex-wrap:wrap}
+#scr-Main .pf-grid-rest .pf-row b{white-space:normal;overflow:visible}
+#scr-Main .lp-partners p{margin:0;font-size:14px;line-height:1.6;color:#46524C;max-width:90ch}
+@media (max-width:640px){
+  #scr-Main .lp-head h2{font-size:32px}
+  #scr-Main .lp-head p{font-size:16px}
+  #scr-Main .lp-sec,#scr-Main .lp-in{padding:56px 16px}
+  #scr-Main .lp-cta{padding:36px 22px}
+  #scr-Main .lp-cta h2{font-size:30px}
+  #scr-Main .fq-i summary{font-size:16px}
+  #scr-Main .lp-cta-wrap{padding:0 16px}
+  #scr-Main .lp-partners{padding:0 16px 32px}
+}
+
+@media (max-width:640px){
+  #scr-Main .lp-tbl{overflow:visible;border:0;border-radius:0}
+  #scr-Main .lp-tbl table{min-width:0;display:block;font-size:15px}
+  #scr-Main .lp-tbl thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  #scr-Main .lp-tbl tbody{display:flex;flex-direction:column;gap:10px}
+  #scr-Main .lp-tbl tr{display:flex;flex-direction:column;background:#fff;border:1px solid #E5DED0;border-radius:14px;padding:14px 16px;gap:8px}
+  #scr-Main .lp-tbl tbody th,#scr-Main .lp-tbl td{border:0;padding:0;width:auto}
+  #scr-Main .lp-tbl tbody th{font-size:16px}
+  #scr-Main .lp-tbl td::before{content:attr(data-label);display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#46524C;margin-bottom:2px}
+  #scr-Main .lp-tbl td:last-child::before{color:#94572A}
+  #scr-Main .lp-why{background:#F8F3EA}
+}
+
+#scr-Legal .adv{padding:20px 22px;display:flex;flex-direction:column;gap:14px;scroll-margin-top:24px}
+#scr-Legal .adv-list{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:8px 18px;font-size:14px}
+#scr-Legal .adv-list li{padding-left:20px;position:relative;line-height:1.45}
+#scr-Legal .adv-list li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:#C1904A}
+#scr-Legal .adv-form{display:flex;flex-direction:column;gap:12px;background:#F8F4EC;border-radius:12px;padding:14px 16px}
+#scr-Legal .adv-f{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+#scr-Legal .adv-f select,#scr-Legal .adv-f textarea{font:inherit;font-weight:400;font-size:15px;border:1px solid #857D6E;border-radius:10px;background:#fff;color:#1F3A30;max-width:100%;box-sizing:border-box}
+#scr-Legal .adv-f select{min-height:44px;padding:0 10px;max-width:360px}
+#scr-Legal .adv-f textarea{padding:10px 12px;min-height:84px;resize:vertical}
+#scr-Legal .adv-ok{background:#E4EFE6;color:#22513C;border-radius:10px;padding:10px 14px;font-size:14px}
+#scr-Legal .adv-err{background:#F6E3DA;color:#8A3A22;border-radius:10px;padding:10px 14px;font-size:14px}
+
+#scr-Signup .pl-box{border:1px solid #E5DED0;border-radius:14px;overflow:hidden}
+#scr-Signup .pl-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;padding:14px 18px;background:#F8F4EC;font-size:15px}
+#scr-Signup .pl-chg{font-weight:600;color:#2A5243;text-underline-offset:3px;min-height:32px;display:inline-flex;align-items:center}
+#scr-Signup .pl-tbl{width:100%;border-collapse:collapse;font-size:15px}
+#scr-Signup .pl-tbl th,#scr-Signup .pl-tbl td{padding:12px 18px;text-align:left;border-top:1px solid #EEE8DC;font-weight:400}
+#scr-Signup .pl-tbl thead th{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#46524C;border-top:0;padding-top:12px;padding-bottom:8px}
+#scr-Signup .pl-tbl .pl-n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+#scr-Signup .pl-tbl tfoot th,#scr-Signup .pl-tbl tfoot td{font-weight:700;font-size:17px;border-top:2px solid #1F3A30}
+#scr-Signup .pl-sub{margin:0;padding:0 18px 14px;font-size:13px;color:#46524C}
+#scr-Signup .pl-diy{margin:0;font-size:14px;line-height:1.5;background:#F8F4EC;border-radius:10px;padding:10px 14px}
 </style>
 <a class="skip" href="#" id="skip-link">Skip to main content</a><div id="route-status" class="vh" role="status" aria-live="polite"></div><div class="screen" id="scr-Main" hidden></div><div class="screen" id="scr-Signup" hidden></div><div class="screen" id="scr-Login" hidden></div><div class="screen" id="scr-Dashboard" hidden></div><div class="screen" id="scr-Analysis" hidden></div><div class="screen" id="scr-Legal" hidden></div><div class="screen" id="scr-Compliance" hidden></div><div class="screen" id="scr-WhatIf" hidden></div><div class="screen" id="scr-Menu" hidden></div><div class="screen" id="scr-Reports" hidden></div><div class="screen" id="scr-Schedule" hidden></div><div class="screen" id="scr-Assistant" hidden></div>
 
@@ -1519,6 +1634,7 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -1526,7 +1642,6 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -1544,33 +1659,28 @@ a.card:hover,#scr-Main section .card:hover{box-shadow:0 12px 30px rgba(31,58,48,
 <span class="h" style="font-weight: 700; font-size: 19px">The Eatery Firm</span>
 </a>
 <nav class="hnav" aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 24px; flex: 1 1 auto">
-<a class="navlink" href="#services">Services</a>
+<a class="navlink" href="#why">Why switch</a>
+<a class="navlink" href="#services">What you get</a>
 <a class="navlink" href="#portal">The portal</a>
 <a class="navlink" href="#pricing">Pricing</a>
-<a class="navlink" href="#how">How it works</a>
-<a class="navlink" href="#partners">More services</a>
+<a class="navlink" href="#faq">FAQ</a>
 <a class="navlink m-only" href="#Login" style="color: #94572A">Client log in</a>
 </nav>
 <div class="hact" style="display: flex; gap: 10px; flex-wrap: wrap">
 <a class="btn btn-ghost" href="#Login">Client log in</a>
-<a class="btn btn-primary" href="#Signup">Start free month</a>
+<a class="btn btn-primary" href="#Signup">Start your free month</a>
 </div>
 </div>
 </header>
 
-<div style="background: #1F3A30; color: #fff; text-align: center; font-size: 14px; padding: 10px 16px; font-weight: 500">
-Switching accountants? First month free + we handle the handover from your old firm. <a href="#Signup" style="color: #E2A962; font-weight: 700">Claim it →</a>
-</div>
-
 <div style="background: radial-gradient(520px 320px at 78% -60px, rgba(240,176,96,.30), transparent 70%), radial-gradient(420px 260px at 30% -80px, rgba(240,176,96,.18), transparent 70%), linear-gradient(180deg,#1C342B,#14261F); color: #F4EEE2">
 <section id="top" style="max-width: 1180px; margin: 0 auto; padding: 44px 24px 52px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center">
 <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<span style="align-self: flex-start; background: rgba(232,170,92,.14); border: 1px solid rgba(232,170,92,.45); color: #EBC48A; font-weight: 600; font-size: 13px; padding: 6px 12px; border-radius: 999px">Professional service technology built for hospitality.</span>
 <h1 class="h" style="margin: 0; font-size: clamp(32px, 3.5vw, 50px); line-height: 1.06; font-weight: 700">Your venue’s accounting, tax and legal companion.</h1>
-<p style="margin: 0; font-size: 17px; line-height: 1.55; max-width: 520px; color: #CBD3CC">Using technology to make high quality professional services more accessible to the hospitality industry.</p>
-<nav class="hero-pillars" aria-label="What we do" style="margin: 0; display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; font-weight: 600"><a href="#services">Accounting</a><a href="#services">Tax</a><a href="#services">Legal</a><a href="#portal">Client portal</a></nav>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; max-width: 520px; color: #CBD3CC">Swap the once-a-year accountant and needs-only-basis lawyer for a full suite team and a portal that keep your venue on track every month.</p>
+<ul class="hero-trust" aria-label="Why you can trust us"><li>Registered tax agent</li><li>Registered legal practitioner</li><li>Your data stays in Australia</li><li>No lock-in</li></ul>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a class="btn btn-copper" href="#Signup" style="min-height: 48px; font-size: 16px; padding: 0 24px">Get my first month free</a>
+<a class="btn btn-copper" href="#Signup" style="min-height: 48px; font-size: 16px; padding: 0 24px">Start your free month</a>
 <a class="btn btn-outline-light" href="#pricing" style="min-height: 48px; font-size: 16px">See pricing</a>
 </div>
 </div>
@@ -1617,56 +1727,85 @@ Switching accountants? First month free + we handle the handover from your old f
 </div>
 </section>
 
-<section id="services" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px 40px; display: flex; flex-direction: column; gap: 36px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
-<span class="eyebrow">Professional services for hospitality</span>
-<h2 class="h" style="margin: 0; font-size: 44px; line-height: 1.05">Accounting, tax and legal. Built for hospo.</h2>
-<p class="muted" style="margin: 0; font-size: 18px; line-height: 1.55">One professional services team that knows how venues run, and one portal where your numbers, lodgements and legal documents come together. No hourly billing, no surprise invoice at tax time.</p>
+<section id="why" class="lp-why" aria-labelledby="why-h">
+<div class="lp-in">
+<div class="lp-head">
+<span class="eyebrow">Why switch</span>
+<h2 class="h" id="why-h">Your accountant and legal team, accessible every day.</h2>
+<p class="muted">Here's the difference.</p>
+</div>
+<div class="lp-tbl" tabindex="0" role="region" aria-label="Comparison table. Scroll sideways to see all columns.">
+<table>
+<thead><tr><th scope="col"><span class="vh">What you get</span></th><th scope="col" class="muted">Traditional firm</th><th scope="col" class="lp-us">The Eatery Firm</th></tr></thead>
+<tbody>
+<tr><th scope="row">How you're billed</th><td class="muted" data-label="Traditional firm">Hourly, invoiced after the work</td><td data-label="The Eatery Firm">A fixed monthly price, agreed up front</td></tr>
+<tr><th scope="row">When you see your numbers</th><td class="muted" data-label="Traditional firm">Once a year, months after 30 June</td><td data-label="The Eatery Firm">Every month, by the 12th</td></tr>
+<tr><th scope="row">Hospitality metrics</th><td class="muted" data-label="Traditional firm">A generic profit and loss</td><td data-label="The Eatery Firm">Wage %, food and beverage cost, prime cost and industry benchmarks</td></tr>
+<tr><th scope="row">Deadlines</th><td class="muted" data-label="Traditional firm">You find out when a letter arrives</td><td data-label="The Eatery Firm">Alerts in your portal before anything is due</td></tr>
+<tr><th scope="row">Leases, licences and contracts</th><td class="muted" data-label="Traditional firm">In a drawer until something goes wrong</td><td data-label="The Eatery Firm">Tracked, with a prompt when a clause is triggered</td></tr>
+<tr><th scope="row">Questions at 11pm</th><td class="muted" data-label="Traditional firm">Send an email and wait</td><td data-label="The Eatery Firm">Ask AI about your own records, and your accountant follows up</td></tr>
+<tr><th scope="row">Documents</th><td class="muted" data-label="Traditional firm">Lost in email threads</td><td data-label="The Eatery Firm">Every report, return and agreement in one place, kept for 7 years</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section id="services" class="lp-sec" aria-labelledby="sv-h">
+<div class="lp-head">
+<span class="eyebrow">What you get</span>
+<h2 class="h" id="sv-h">Your team does the work</h2>
+<p class="muted">Accounting, tax and legal from one professional services team that knows how venues run.</p>
 </div>
 <div class="sv-grid">
 <article class="sv-col">
 <div class="sv-top"><span class="sv-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><h3 class="h">Accounting</h3></div>
 <p class="muted">Books kept weekly, so the numbers you run the venue on are never more than a few days old.</p>
+<details class="sv-more"><summary>See what's included</summary>
 <ul>
 <li><b>Bookkeeping.</b> POS and delivery-app takings (Square, Lightspeed, Uber Eats, DoorDash) matched to the bank. Supplier bills coded by food, beverage and packaging.</li>
 <li><b>Accounts payable.</b> Supplier bills processed and payment runs prepared for you to approve.</li>
 <li><b>Financial statements.</b> Year-end accounts, stock counts, fit-out depreciation and loan schedules, ready for your bank.</li>
 <li><b>Monthly performance reporting.</b> In-depth analysis and industry benchmarks by the 12th of every month.</li>
 </ul>
+</details>
 </article>
 <article class="sv-col">
 <div class="sv-top"><span class="sv-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><h3 class="h">Tax</h3></div>
 <p class="muted">Every lodgement tracked, prepared on time and lodged through our tax agent lodgement program.</p>
+<details class="sv-more"><summary>See what's included</summary>
 <ul>
 <li><b>Income tax.</b> Company, trust and owner tax returns, with tax planning before 30 June.</li>
 <li><b>BAS and IAS.</b> GST, PAYG withholding and instalments, quarterly or monthly.</li>
 <li><b>Employer obligations.</b> Payroll tax, WorkCover declarations and FBT on staff meals and vehicles.</li>
 <li><b>ATO matters.</b> Correspondence, payment plans and reviews handled for you.</li>
 </ul>
+</details>
 </article>
 <article class="sv-col">
 <div class="sv-top"><span class="sv-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 21h14M6 7h12M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/></svg></span><h3 class="h">Legal</h3></div>
-<p class="muted">The commercial agreements that can make or break a venue, tracked and kept in one place.</p>
+<p class="muted">Your leases, licences and commercial agreements tracked, with advice from our own legal team when you need it.</p>
+<details class="sv-more"><summary>See what's included</summary>
 <ul>
 <li><b>Lease and licence management.</b> Rent reviews, renewal options, liquor licences and council permits tracked against their dates.</li>
 <li><b>Commercial agreements.</b> Supplier, franchise, finance and shareholder agreements read and monitored for obligations.</li>
 <li><b>Standard templates.</b> Employment contracts, supplier terms and other everyday documents.</li>
-<li><b>Advice when you need it.</b> Lease negotiations, disputes and contract reviews through our partner lawyers.</li>
+<li><b>Advice when you need it.</b> Lease negotiations, disputes and contract reviews by our own legal team.</li>
 </ul>
+</details>
 </article>
 </div>
 </section>
 
 <section id="portal" class="pf" aria-labelledby="pf-h">
 <div class="pf-in">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<div class="lp-head">
 <span class="eyebrow">Your client portal</span>
-<h2 class="h" id="pf-h" style="margin: 0; font-size: 44px; line-height: 1.05">What you'll see when you log in</h2>
-<p class="muted" style="margin: 0; font-size: 18px; line-height: 1.55">Let us help you keep on top of things. The portal shows you where things stand, tells you what needs you, and gives you the tools to make better decisions about your venue.</p>
+<h2 class="h" id="pf-h">What you'll see when you log in</h2>
+<p class="muted">Let us help you keep on top of things. The portal shows you where things stand, tells you what needs you, and gives you the tools to make better decisions about your venue.</p>
 </div>
-<div class="pf-grid">
-
-<article class="pf-card">
+<div class="pf-grid pf-grid-feat">
+<article class="pf-card pf-feat">
 <div class="pf-prev" aria-hidden="true">
 <div class="pf-alert"><span class="pf-tag pf-red">Urgent</span><span class="pf-tag pf-dark">Legal</span><b>Renew your outdoor dining permit</b><small>Expired 30 Sep · Open in Legal</small></div>
 <div class="pf-alert"><span class="pf-tag pf-red">Urgent</span><b>Sign your FY2026 compliance pack</b><small>Sign by Fri 30 Oct · Approve</small></div>
@@ -1675,7 +1814,16 @@ Switching accountants? First month free + we handle the handover from your old f
 <h3 class="h">A dashboard that tells you what needs you</h3>
 <p class="muted">Compliance deadlines and commercial legal matters in one list, ranked by urgency. Approve a BAS, sign your tax return or answer your accountant's question from your phone.</p>
 </article>
-
+<article class="pf-card pf-feat">
+<div class="pf-prev" aria-hidden="true">
+<div class="pf-doc"><span class="pf-tag pf-gold">Clause triggered</span><b>Retail lease, Shop 3 · Clause 4.2</b><small>Option to renew: give notice by 31 Jan 2027. The option lapses if you miss it.</small></div>
+<div class="pf-doc"><span class="pf-tag pf-dark">Watching</span><b>Equipment loan · Covenant 9.1</b><small>Interest cover 2.6x against a 2.0x minimum.</small></div>
+</div>
+<h3 class="h">Live legal documents</h3>
+<p class="muted">Upload a lease, loan, supplier or shareholder agreement and the key clauses are tracked for you. When a date approaches or a condition is met, such as a rent review, a renewal option or a bank covenant, you're prompted with what to do and by when.</p>
+</article>
+</div>
+<div class="pf-grid pf-grid-rest">
 <article class="pf-card">
 <div class="pf-prev" aria-hidden="true">
 <div class="pf-bm"><span>Wages % of sales</span><div class="pf-track"><i style="width: 64%"></i><em style="left: 60%"></em></div><b>31.8%</b></div>
@@ -1686,16 +1834,6 @@ Switching accountants? First month free + we handle the handover from your old f
 <h3 class="h">In-depth monthly performance reporting</h3>
 <p class="muted">An executive summary, your venue benchmarked against the industry, sales and cost trends, a cash forecast and a prioritised action plan. Listen to a two-minute audio summary on the way to work.</p>
 </article>
-
-<article class="pf-card">
-<div class="pf-prev" aria-hidden="true">
-<div class="pf-doc"><span class="pf-tag pf-gold">Clause triggered</span><b>Retail lease, Shop 3 · Clause 4.2</b><small>Option to renew: give notice by 31 Jan 2027. The option lapses if you miss it.</small></div>
-<div class="pf-doc"><span class="pf-tag pf-dark">Watching</span><b>Equipment loan · Covenant 9.1</b><small>Interest cover 2.6x against a 2.0x minimum.</small></div>
-</div>
-<h3 class="h">Live legal documents</h3>
-<p class="muted">Upload a lease, loan, supplier or shareholder agreement and the key clauses are tracked for you. When a date approaches or a condition is met, such as a rent review, a renewal option or a bank covenant, you're prompted with what to do and by when.</p>
-</article>
-
 <article class="pf-card">
 <div class="pf-prev" aria-hidden="true">
 <div class="pf-row"><b>Activity statement (BAS)</b><span class="pf-tag pf-gold">Waiting on you</span></div>
@@ -1706,7 +1844,6 @@ Switching accountants? First month free + we handle the handover from your old f
 <h3 class="h">Every lodgement in one place</h3>
 <p class="muted">BAS, tax returns, payroll tax, WorkCover and FBT, each with its status and due date. Completed documents are kept for seven years, ready for your bank, broker or buyer.</p>
 </article>
-
 <article class="pf-card">
 <div class="pf-prev" aria-hidden="true">
 <div class="pf-mx"><span class="pf-q">Puzzles</span><span class="pf-q pf-qs">Stars</span><span class="pf-q">Dogs</span><span class="pf-q">Plowhorses</span>
@@ -1715,37 +1852,40 @@ Switching accountants? First month free + we handle the handover from your old f
 <h3 class="h">Tools to run a better venue</h3>
 <p class="muted">The Menu Engineering Tool rates every dish on popularity and margin from your POS sales, costs recipes, and can even estimate a dish's ingredients from a photo. What if models a decision, such as hiring a manager or opening later, with its financial impact and the award and lease issues to check.</p>
 </article>
-
 <article class="pf-card">
 <div class="pf-prev pf-ai" aria-hidden="true">
 <div class="pf-qb">Why did wages jump in September?</div>
 <div class="pf-ab">Sunday penalty rates drove 38% of the overspend. Moving two Sunday shifts to Saturday would save about $1,150 a month.</div>
 </div>
 <h3 class="h">Ask AI, any time</h3>
-<p class="muted">Ask about your numbers, what's due or what your lease says, and get an answer from your own books, reports and documents. Anything that needs professional advice goes straight to your accountant or our partner lawyers.</p>
+<p class="muted">Ask about your numbers, what's due or what your lease says, and get an answer from your own books, reports and documents. Anything that needs professional advice goes straight to your accountant or our legal team.</p>
 </article>
-
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
-<a class="btn btn-primary" href="#Signup" style="min-height: 48px; padding: 0 24px">Start your free month</a>
-<a class="btn btn-ghost" href="#Login" style="min-height: 48px">Client log in</a>
 </div>
 </div>
 </section>
 
-<section id="pricing" style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 32px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 680px">
-<h2 class="h" style="margin: 0; font-size: 44px; line-height: 1.05">Build your quote. Pay only for what we do.</h2>
-<p class="muted" style="margin: 0; font-size: 18px">Pick your turnover and choose what we handle. Do your own bookkeeping, BAS or tax return and the price drops. Show us a cheaper written quote for the same work and we'll match it.</p>
+<section id="pricing" class="lp-sec" aria-labelledby="pr-h">
+<div class="lp-head">
+<span class="eyebrow">Pricing</span>
+<h2 class="h" id="pr-h">Simple monthly pricing, from $99</h2>
+<p class="muted">Every plan includes portal access, with performance reporting, the toolbox and your legal companion. Add the services you want us to handle. Prices include GST, and you can cancel with 30 days' notice.</p>
 </div>
-
+<div class="pk-grid">
+<template data-for="qPacks" data-as="p"><article class="pk">
+<h3 class="h">{{ p.name }}</h3>
+<p class="muted pk-who">{{ p.who }}</p>
+<div class="pk-price"><span class="h">${{ p.price }}</span><span>/month inc. GST</span></div>
+<ul><li>Portal access, performance, toolbox and legal companion</li><template data-for="p.lines" data-as="ln"><li>{{ ln }}</li></template></ul>
+<div class="pk-act"><a class="btn btn-primary" href="#Signup" onClick="{{ p.start }}">Start your free month</a><button type="button" class="pk-link" onClick="{{ p.custom }}">Change what's included</button></div>
+</article></template>
 </div>
+<div class="pk-more"><button type="button" class="btn btn-ghost" aria-expanded="{{ qOpenX }}" aria-controls="quote" onClick="{{ qToggle }}">{{ qToggleLabel }}</button><span class="muted">Catch-up work for prior years, ATO debt negotiation, new-venue setup and turnover over $3m are quoted separately.</span></div>
+<template data-if="qOpen"><div id="quote" class="pk-builder">
 <div class="q-wrap">
 <div class="q-opts">
 
 <div class="q-card">
-<div class="q-head"><span class="q-step">1 · Your venue</span><a href="#Schedule" style="font-size: 13px; font-weight: 600">Over $3m or several venues? Talk to us</a></div>
+<div class="q-head"><span class="q-step">1 · Your venue</span></div>
 <h3 class="h" style="margin: 0; font-size: 20px">Annual turnover</h3>
 <div class="q-choices" role="group" aria-label="Annual turnover">
 <template data-for="qTiers" data-as="o"><button type="button" class="{{ o.cls }}" aria-pressed="{{ o.on }}" onClick="{{ o.go }}">{{ o.label }}<small>{{ o.sub }}</small></button></template>
@@ -1773,7 +1913,7 @@ Switching accountants? First month free + we handle the handover from your old f
 <template data-for="qLines" data-as="l"><div class="q-line"><span>{{ l.name }}</span><strong>{{ l.amt }}</strong></div></template>
 <template data-if="qMinApplied"><div class="q-line"><span style="color: #EBC48A">Minimum monthly fee applied</span><strong style="color: #EBC48A">+${{ qTopUp }}</strong></div></template>
 </div>
-<template data-if="qHasDiy"><p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D9E0DB; background: rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 12px">Doing all the work yourself? The minimum fee is $35 a month. It covers your client portal, reporting and access to your accountant.</p></template>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D9E0DB; background: rgba(255,255,255,0.08); border-radius: 10px; padding: 10px 12px">Every plan includes portal access, with performance reporting, the toolbox and your legal companion, for $99 a month. The services you choose are added on top.</p>
 <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px">
 <strong style="font-size: 13px; color: #E2A962">Always included</strong>
 <span>✓ Client portal &amp; document vault</span>
@@ -1781,72 +1921,52 @@ Switching accountants? First month free + we handle the handover from your old f
 <span>✓ Ask AI about your numbers</span>
 <span>✓ Replies from your accountant within 1 business day</span>
 </div>
-<a class="btn btn-copper" href="#Signup" onClick="{{ qStart }}" style="min-height: 52px; font-size: 16px">Start with this quote</a>
+<a class="btn btn-copper" href="#Signup" onClick="{{ qStart }}" style="min-height: 52px; font-size: 16px">Start your free month</a>
 <span style="font-size: 12px; color: #A5B3AC">All prices include GST. Month to month, cancel with 30 days' notice.</span>
 </aside>
 </div>
 <div class="q-mbar"><div><div style="font-size: 12px; color: #C6D1CB">Your quote</div><strong class="h" style="font-size: 22px">${{ qTotal }}<span style="font-size: 13px; font-weight: 500; color: #C6D1CB"> /month inc. GST</span></strong></div><a class="btn btn-copper" href="#Signup" onClick="{{ qStart }}">Start</a></div>
-<p class="muted" style="margin: 0; font-size: 14px">Catch-up work for prior years, ATO debt negotiation, new-venue setup and turnover over $3m are quoted separately.</p>
+</div></template>
 </section>
 
-<section aria-label="Comparison" style="background: #fff; border-top: 1px solid #E5DED0; border-bottom: 1px solid #E5DED0">
-<div style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 28px">
-<h2 class="h" style="margin: 0; font-size: 40px">Why venues switch to us</h2>
-<div tabindex="0" role="region" aria-label="Comparison table. Scroll sideways to see all columns." style="overflow-x: auto; border: 1px solid #E5DED0; border-radius: 16px">
-<table style="width: 100%; border-collapse: collapse; min-width: 640px; font-size: 16px">
-<thead><tr style="background: #F3ECE0; text-align: left"><th scope="col" style="padding: 16px 20px"></th><th scope="col" style="padding: 16px 20px" class="muted">Typical suburban firm</th><th scope="col" style="padding: 16px 20px; color: #2A5243">The Eatery Firm</th></tr></thead>
-<tbody>
-<tr style="border-top: 1px solid #E5DED0"><th scope="row" style="padding: 16px 20px; text-align: left">How you're billed</th><td style="padding: 16px 20px" class="muted">Hourly, invoiced after the work</td><td style="padding: 16px 20px; font-weight: 600">Flat monthly fee, agreed up front</td></tr>
-<tr style="border-top: 1px solid #E5DED0"><th scope="row" style="padding: 16px 20px; text-align: left">When you see your numbers</th><td style="padding: 16px 20px" class="muted">Once a year, months after 30 June</td><td style="padding: 16px 20px; font-weight: 600">Every month, by the 12th</td></tr>
-<tr style="border-top: 1px solid #E5DED0"><th scope="row" style="padding: 16px 20px; text-align: left">Hospitality metrics</th><td style="padding: 16px 20px" class="muted">Generic P&amp;L</td><td style="padding: 16px 20px; font-weight: 600">Wage %, food &amp; bev cost, prime cost, sales per labour hour</td></tr>
-<tr style="border-top: 1px solid #E5DED0"><th scope="row" style="padding: 16px 20px; text-align: left">Questions at 11pm</th><td style="padding: 16px 20px" class="muted">Email and wait</td><td style="padding: 16px 20px; font-weight: 600">Ask AI on your own books, accountant follows up</td></tr>
-<tr style="border-top: 1px solid #E5DED0"><th scope="row" style="padding: 16px 20px; text-align: left">Documents</th><td style="padding: 16px 20px" class="muted">Lost in email threads</td><td style="padding: 16px 20px; font-weight: 600">Every report and return in one portal, kept for 7 years</td></tr>
-</tbody>
-</table>
+<section id="how" class="lp-sec" aria-labelledby="how-h">
+<div class="lp-head">
+<span class="eyebrow">How it works</span>
+<h2 class="h" id="how-h">Switching takes about a week</h2>
+<p class="muted">We handle the handover from your old accountant, so you don't have to chase files or deadlines.</p>
 </div>
-</div>
-</section>
-
-<section id="how" style="max-width: 1240px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 32px">
-<h2 class="h" style="margin: 0; font-size: 44px">Up and running this week</h2>
-<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px">
-<li class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 8px"><span class="h" style="font-size: 40px; font-weight: 700; color: #2A5243">1</span><strong style="font-size: 18px">Sign up in 10 minutes</strong><span class="muted" style="line-height: 1.5">Tell us about your venue, sign the engagement online.</span></li>
-<li class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 8px"><span class="h" style="font-size: 40px; font-weight: 700; color: #2A5243">2</span><strong style="font-size: 18px">Invite us to Xero or MYOB</strong><span class="muted" style="line-height: 1.5">One click or one invite email. No software yet? We set up Xero for you.</span></li>
-<li class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 8px"><span class="h" style="font-size: 40px; font-weight: 700; color: #2A5243">3</span><strong style="font-size: 18px">We take over</strong><span class="muted" style="line-height: 1.5">We contact your old accountant, tidy the file and confirm your due dates.</span></li>
-<li class="card" style="padding: 24px; display: flex; flex-direction: column; gap: 8px"><span class="h" style="font-size: 40px; font-weight: 700; color: #2A5243">4</span><strong style="font-size: 18px">Reports land monthly</strong><span class="muted" style="line-height: 1.5">Your dashboard updates as we close each month. Lodgements tracked for you.</span></li>
+<ol class="hw">
+<li class="card"><span class="h hw-n">1</span><strong>Sign up in 10 minutes</strong><span class="muted">Tell us about your venue and sign the engagement online.</span></li>
+<li class="card"><span class="h hw-n">2</span><strong>We contact your old accountant</strong><span class="muted">With your permission, we request your files, tidy them up and confirm every due date.</span></li>
+<li class="card"><span class="h hw-n">3</span><strong>Connect Xero or MYOB</strong><span class="muted">One invite email. No software yet? We set up Xero for you.</span></li>
+<li class="card"><span class="h hw-n">4</span><strong>Your portal goes live</strong><span class="muted">Alerts, documents and your first monthly report, all in one place.</span></li>
 </ol>
 </section>
 
-<section id="partners" style="background: #24543F; color: #fff">
-<div style="max-width: 1240px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
-<h2 class="h" style="margin: 0; font-size: 44px; line-height: 1.05">Everything else a venue owner needs</h2>
-<p style="margin: 0; font-size: 18px; color: #D6E6DA; line-height: 1.55">Vetted partners who already get your numbers from us (with your permission), so you never fill in the same form twice.</p>
+<section id="faq" class="lp-sec lp-faq" aria-labelledby="faq-h">
+<div class="lp-head">
+<span class="eyebrow">Questions</span>
+<h2 class="h" id="faq-h">Before you switch</h2>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px">
-<div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Mortgage &amp; business finance</strong><span style="color: #D6E6DA; line-height: 1.5">Home loans, commercial property and working-capital facilities.</span></div>
-<div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Equipment &amp; fit-out finance</strong><span style="color: #D6E6DA; line-height: 1.5">Coffee machines, kitchens, refits. Tax treatment handled by us.</span></div>
-<div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Business insurance</strong><span style="color: #D6E6DA; line-height: 1.5">Public liability, workers comp, business interruption.</span></div>
-<div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Buying or selling a venue</strong><span style="color: #D6E6DA; line-height: 1.5">Valuations, due diligence and sale preparation.</span></div>
-<div style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Wealth &amp; super</strong><span style="color: #D6E6DA; line-height: 1.5">Planning for owners, including SMSF administration.</span></div>
-</div>
-</div>
-</section>
-
-<section aria-label="At a glance" class="ef-stats">
-<div class="ef-stats-in">
-<div><strong>12th</strong><span>Your performance report lands by the 12th of every month</span></div>
-<div><strong>1 day</strong><span>Replies from your accountant within one business day</span></div>
-<div><strong>Flat fee</strong><span>Agreed up front. No hourly billing, no surprise invoice</span></div>
-<div><strong>7 years</strong><span>Every report and return kept safely in your portal</span></div>
+<div class="fq">
+<details class="fq-i"><summary>Will I still have a real accountant?</summary><p>Yes. A qualified accountant looks after your venue, prepares your work and replies to your questions within one business day. AI helps you find answers faster, but it doesn't replace your accountant.</p></details>
+<details class="fq-i"><summary>What happens to my current accountant?</summary><p>With your permission, we contact them, request your files and records, and take over your lodgements. Any fees you owe them for work already done are still payable to them.</p></details>
+<details class="fq-i"><summary>Is my data safe?</summary><p>Your data is stored in Australia, encrypted, and protected by multi-factor sign-in. We never sell your data, and our partners only see your numbers if you ask us to share them.</p></details>
+<details class="fq-i"><summary>What if I need legal advice?</summary><p>The portal tracks your leases, licences and agreements and can explain what a clause means in general terms. Advice on your situation comes from our own legal team, who quote before they start.</p></details>
+<details class="fq-i"><summary>What's included in the $99?</summary><p>Portal access, with your dashboard and alerts, monthly performance reporting with industry benchmarks, the toolbox (including the Menu Engineering Tool), your legal companion and Ask AI. Bookkeeping, BAS and your tax return are added on top if you want us to do them.</p></details>
+<details class="fq-i"><summary>Can I cancel?</summary><p>Yes. Plans are month to month, and you can cancel with 30 days' notice. Your documents stay available to download, and we hand your file over to your new accountant.</p></details>
 </div>
 </section>
 
-<section style="max-width: 1240px; margin: 0 auto 80px; padding: 0 24px">
-<div style="background: radial-gradient(420px 240px at 90% 0%, rgba(240,176,96,.35), transparent 70%), repeating-linear-gradient(180deg, rgba(255,255,255,.05) 0 2px, transparent 2px 22px), linear-gradient(135deg,#7E4F2A,#5E3B22 60%,#4A2F1D); color: #fff; border-radius: 24px; padding: 56px 40px; box-shadow: 0 30px 60px rgba(74,47,29,.25); display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between">
-<div style="display: flex; flex-direction: column; gap: 10px; max-width: 640px"><h2 class="h" style="margin: 0; font-size: 42px; line-height: 1.05">Stop guessing your wage %.</h2><p style="margin: 0; font-size: 18px; color: #E9DFC9">First month free. No lock-in. Handover from your old accountant done for you.</p></div>
-<a class="btn" href="#Signup" style="background: #F4EEE2; color: #4A2F1D; min-height: 56px; font-size: 17px; padding: 0 30px">Sign up in 10 minutes</a>
+<section class="lp-cta-wrap" aria-labelledby="cta-h">
+<div class="lp-cta">
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 660px"><h2 class="h" id="cta-h">Keep your venue on top of its numbers, tax and legal.</h2><p>First month free. No lock-in. Handover from your old accountant done for you.</p></div>
+<a class="btn lp-cta-btn" href="#Signup">Start your free month</a>
 </div>
+</section>
+
+<section id="partners" class="lp-partners" aria-label="Partner services">
+<p><strong>Also available through vetted partners:</strong> business and equipment finance, insurance, buying or selling a venue, and wealth and super. With your permission, they get your numbers from us, so you never fill in the same form twice.</p>
 </section>
 
 <footer style="border-top: 1px solid #E5DED0; background: #fff">
@@ -1944,12 +2064,30 @@ Switching accountants? First month free + we handle the handover from your old f
 
 <main style="flex: 999 1 560px; min-width: 0">
 <div class="m-only" style="margin-bottom: 16px">
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 14px"><strong>Step {{ stepNo }} of 6</strong><span class="muted">{{ stepLabel }}</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 14px"><strong>Step {{ stepNo }} of 7</strong><span class="muted">{{ stepLabel }}</span></div>
 <div style="height: 6px; background: #E5DED0; border-radius: 999px; margin-top: 8px; overflow: hidden"><div style="height: 100%; width: {{ stepPct }}%; background: #2A5243; border-radius: 999px"></div></div>
 </div>
 <div class="card" style="padding: 36px; display: flex; flex-direction: column; gap: 24px">
 
 <template data-if="s0">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">Confirm your services and price</h1><p class="muted" style="margin: 0">Check what's included before you set up your account. You can change your services now, or any time later.</p></div>
+<div class="pl-box">
+<div class="pl-head"><span><strong>{{ planTier }}</strong> turnover</span><a class="pl-chg" href="#Main--quote">Change services</a></div>
+<table class="pl-tbl"><caption class="vh">Your services and monthly price</caption>
+<thead><tr><th scope="col">Service</th><th scope="col" class="pl-n">Per month</th></tr></thead>
+<tbody><template data-for="planLines" data-as="l"><tr><th scope="row">{{ l.name }}</th><td class="pl-n">{{ l.amt }}</td></tr></template></tbody>
+<tfoot><tr><th scope="row">Total per month, inc. GST</th><td class="pl-n">${{ quoteTotal }}</td></tr></tfoot>
+</table>
+<p class="pl-sub">${{ planAnnual }} a year · includes ${{ planGst }} GST a month</p>
+</div>
+<template data-if="planDiy"><p class="pl-diy"><strong>You'll handle yourself:</strong> {{ planDiy }}</p></template>
+<div class="chk" style="background: #F3F7F2; border-color: #D0E2D4"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2E6B4F" stroke-width="2" style="flex: none; margin-top: 2px"><path d="M5 12l5 5 9-10"></path></svg><span>Your first month is free. Nothing is charged today, and you can cancel with 30 days' notice.</span></div>
+<p class="muted" style="margin: 0; font-size: 14px">Catch-up work for prior years, ATO debt negotiation, new-venue setup and turnover over $3m are quoted separately, before any work starts.</p>
+</div>
+</template>
+
+<template data-if="s1">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">Create your secure account</h1><p class="muted" style="margin: 0">This is how you'll log in to see reports and talk to your accountant.</p></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
@@ -1966,7 +2104,7 @@ Switching accountants? First month free + we handle the handover from your old f
 </div>
 </template>
 
-<template data-if="s1">
+<template data-if="s2">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">About your venue</h1><p class="muted" style="margin: 0">Helps us price accurately and set up your reports.</p></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
@@ -1987,7 +2125,7 @@ Switching accountants? First month free + we handle the handover from your old f
 </div>
 </template>
 
-<template data-if="s2">
+<template data-if="s3">
 <div style="display: flex; flex-direction: column; gap: 18px">
 <div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">Engagement &amp; agreements</h1><p class="muted" style="margin: 0">Please read and sign. A PDF copy is saved to your Documents.</p></div>
 <div style="border: 1px solid #E5DED0; border-radius: 12px; padding: 18px 20px; max-height: 220px; overflow: auto; font-size: 14px; line-height: 1.6; background: #F3ECE0" tabindex="0" aria-label="Engagement letter">
@@ -2005,7 +2143,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </div>
 </template>
 
-<template data-if="s3">
+<template data-if="s4">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">Give us access to your books</h1><p class="muted" style="margin: 0">Pick your software. You stay the owner of your file and can remove us at any time.</p></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
@@ -2045,7 +2183,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </div>
 </template>
 
-<template data-if="s4">
+<template data-if="s5">
 <div style="display: flex; flex-direction: column; gap: 20px">
 <div><h1 class="h" style="margin: 0 0 6px; font-size: 32px">Payment method</h1><p class="muted" style="margin: 0">Nothing is charged today. Your first payment is on 27 November 2026.</p></div>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; background: #1F3A30; color: #fff; border-radius: 14px; padding: 20px 22px">
@@ -2076,7 +2214,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 </div>
 </template>
 
-<template data-if="s5">
+<template data-if="s6">
 <div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start">
 <span aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; background: #2E6B4F; color: #fff; display: grid; place-items: center; font-size: 28px">✓</span>
 <h1 class="h" style="margin: 0; font-size: 34px">You're in. Welcome to The Eatery Firm.</h1>
@@ -2118,6 +2256,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -2125,7 +2264,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -2266,6 +2404,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -2273,7 +2412,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -2493,6 +2631,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a href="#Legal" class="on grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -2500,7 +2639,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -2552,17 +2690,29 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <template data-if="laErr"><div class="la-ans" role="alert"><span style="font-size: 14px; color: #EBC48A">{{ laErr }}</span></div></template>
 <template data-if="laHas">
 <div class="la-ans">
-<div class="la-warn" role="note"><strong>This is general legal information, not legal advice.</strong> It doesn't take into account all of your circumstances and you shouldn't rely on it to make a decision. For advice on your situation, speak to a legal practitioner through <a href="#Assistant--svc-legal">Legal advisory</a>.</div>
+<div class="la-warn" role="note"><strong>This is general legal information, not legal advice.</strong> It doesn't take into account all of your circumstances and you shouldn't rely on it to make a decision. For advice on your situation, speak to <a href="#Legal--advice">our legal team</a>.</div>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px"><strong style="font-size: 16px; color: #fff">{{ la.topic }}</strong><template data-if="laMock"><span class="lg-pill" style="background: #F3E6CF; color: #7A5626">Example answer</span></template></div>
 <template data-for="la.info" data-as="t"><p style="margin: 0; font-size: 14px; line-height: 1.65; color: #E3E8E4">{{ t }}</p></template>
 <template data-if="la.ptsOn"><div><strong class="la-h4">Key points of the law</strong><ul class="la-ul"><template data-for="la.pts" data-as="t"><li>{{ t }}</li></template></ul></div></template>
 <template data-if="la.docsOn"><div><strong class="la-h4">Where this touches your documents</strong><ul class="la-ul"><template data-for="la.docs" data-as="d"><li><strong style="color: #fff">{{ d.doc }}:</strong> {{ d.note }}</li></template></ul></div></template>
 <template data-if="la.qsOn"><div><strong class="la-h4">Questions you could ask a lawyer</strong><ul class="la-ul"><template data-for="la.qs" data-as="t"><li>{{ t }}</li></template></ul></div></template>
-<div class="la-cta"><span style="font-size: 13.5px; line-height: 1.5; color: #fff">{{ la.when }}</span><a class="btn la-btn" href="#Assistant--svc-legal">Get advice from Legal advisory</a></div>
+<div class="la-cta"><span style="font-size: 13.5px; line-height: 1.5; color: #fff">{{ la.when }}</span><a class="btn la-btn" href="#Legal--advice">Get advice from our legal team</a></div>
 <template data-if="laMock"><span style="font-size: 12px; color: #A5B3AC">Prepared example using the demo venue’s documents. <button type="button" class="la-live" onClick="{{ laLive }}">Ask AI live instead</button></span></template>
 </div>
 </template>
 <span style="font-size: 11.5px; line-height: 1.5; color: #A5B3AC">AI-generated general information about Australian law, using the documents in your portal. It is not legal advice, does not create a lawyer–client relationship, and may not reflect the law in your state or recent changes.</span>
+</section>
+
+<section id="advice" class="card adv" aria-labelledby="adv-h">
+<div style="display: flex; flex-direction: column; gap: 6px"><h2 class="h" id="adv-h" style="margin: 0; font-size: 22px">Legal advice from our team</h2><p class="muted" style="margin: 0; font-size: 15px; line-height: 1.55; max-width: 72ch">When you need advice on your own situation, our legal team can help. They can already see your documents in this portal, and they quote before any work starts.</p></div>
+<ul class="adv-list"><li>Commercial lease reviews and negotiations</li><li>Liquor licence applications and variations</li><li>Supplier, franchise and finance agreements</li><li>Staff contracts and workplace disputes</li></ul>
+<div class="adv-form">
+<label class="adv-f" for="adv-topic">What do you need help with?<select id="adv-topic"><option>A lease</option><option>A licence or permit</option><option>A contract or agreement</option><option>An employment matter</option><option>A dispute</option><option>Something else</option></select></label>
+<label class="adv-f" for="adv-detail">Tell us a little more<textarea id="adv-detail" rows="3" placeholder="e.g. Our rent review is due in March and the landlord wants 8%."></textarea></label>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center"><button type="button" class="btn btn-primary" onClick="{{ advSend }}">Request advice</button><span class="muted" style="font-size: 13px">Our legal team replies within 1 business day with a quote.</span></div>
+</div>
+<template data-if="advFlash"><div role="status" class="adv-ok">{{ advFlash }}</div></template>
+<template data-if="advErr"><div role="alert" class="adv-err">{{ advErr }}</div></template>
 </section>
 
 <section id="docs" style="display: flex; flex-direction: column; gap: 14px">
@@ -2588,7 +2738,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <label for="lq-{{ v.id }}" style="font-size: 15px; font-weight: 600">Ask a query about {{ v.name }}</label>
 <textarea id="lq-{{ v.id }}" rows="3" placeholder="e.g. What do I need to do before the renewal date?" style="font: inherit; font-size: 15px; padding: 10px 12px; border: 1px solid #857D6E; border-radius: 10px; width: 100%; box-sizing: border-box; resize: vertical"></textarea>
 <template data-if="lgDErr"><span class="lg-err" role="alert">{{ lgDErr }}</span></template>
-<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center"><button type="button" class="btn btn-primary" onClick="{{ v.send }}">Send query</button><span class="muted" style="font-size: 13px">Your accountant replies within 1 business day, or refers you to Legal advisory.</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center"><button type="button" class="btn btn-primary" onClick="{{ v.send }}">Send query</button><span class="muted" style="font-size: 13px">Your accountant replies within 1 business day, or refers you to our legal team.</span></div>
 </div>
 </td></tr>
 </template>
@@ -2603,7 +2753,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <div style="display: flex; flex-direction: column; gap: 4px; max-width: 720px"><h2 class="h" style="margin: 0; font-size: 22px">Standard legal templates</h2><span class="muted" style="font-size: 14px; line-height: 1.5">Templates for the agreements venues use most often. Download one as a starting point, then tailor it to your situation.</span></div>
 <div role="note" class="tp-note">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex: none; margin-top: 1px"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>
-<div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 14px">Have these reviewed before you sign or issue them</strong><span style="font-size: 13.5px; line-height: 1.5">These templates are general and may not suit your circumstances, award or state. A legal practitioner should review any document before it is executed.</span><a href="#Assistant--svc-legal" style="font-size: 13.5px; font-weight: 700; color: #7A5626">Get a review from Legal advisory →</a></div>
+<div style="display: flex; flex-direction: column; gap: 4px"><strong style="font-size: 14px">Have these reviewed before you sign or issue them</strong><span style="font-size: 13.5px; line-height: 1.5">These templates are general and may not suit your circumstances, award or state. A legal practitioner should review any document before it is executed.</span><a href="#Legal--advice" style="font-size: 13.5px; font-weight: 700; color: #7A5626">Get a review from our legal team →</a></div>
 </div>
 <template data-if="tpFlash"><div role="status" style="background: #E4EFE6; color: #2E6B4F; border-radius: 12px; padding: 12px 16px; font-size: 15px; font-weight: 600">{{ tpFlash }}</div></template>
 <div class="card" style="padding: 0; overflow: hidden">
@@ -2617,7 +2767,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <td data-label="Type">{{ t.type }}</td>
 <td data-label="Format"><span class="lg-pill" style="background: #EFE9DD; color: #46524C">{{ t.format }}</span></td>
 <td data-label="Last updated">{{ t.updated }}</td>
-<td data-label="Action"><div class="cx-acts"><button type="button" class="cx-link" onClick="{{ t.dl }}">Download template</button><a class="cx-link" href="#Assistant--svc-legal">Request legal review</a></div></td>
+<td data-label="Action"><div class="cx-acts"><button type="button" class="cx-link" onClick="{{ t.dl }}">Download template</button><a class="cx-link" href="#Legal--advice">Request legal review</a></div></td>
 </tr>
 </template>
 </tbody>
@@ -2694,6 +2844,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -2701,7 +2852,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -2839,6 +2989,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -2846,7 +2997,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -3037,6 +3187,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -3044,7 +3195,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -3111,8 +3261,8 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <p style="margin: 0; font-size: 15px; line-height: 1.6">{{ r.rec }}</p>
 <template data-if="r.stepsOn"><strong style="font-size: 14px">Next steps</strong><ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.55"><template data-for="r.steps" data-as="n"><li>{{ n }}</li></template></ol></template>
 <template data-if="wiFlash"><div role="status" style="background: #E4EFE6; color: #2E6B4F; border-radius: 10px; padding: 10px 14px; font-size: 14px; font-weight: 600">{{ wiFlash }}</div></template>
-<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px"><button type="button" class="btn btn-primary" onClick="{{ wiSend }}">Send to my accountant to review</button><a class="btn btn-ghost" href="#Assistant--svc-legal">Get legal advice</a></div>
-<span class="muted" style="font-size: 12px; line-height: 1.5">AI-generated estimate based on your records in this portal. It is not financial or legal advice. Check lease clauses and award obligations with your accountant or Legal advisory before you act.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px"><button type="button" class="btn btn-primary" onClick="{{ wiSend }}">Send to my accountant to review</button><a class="btn btn-ghost" href="#Legal--advice">Get legal advice</a></div>
+<span class="muted" style="font-size: 12px; line-height: 1.5">AI-generated estimate based on your records in this portal. It is not financial or legal advice. Check lease clauses and award obligations with your accountant or our legal team before you act.</span>
 </section>
 </template>
 
@@ -3136,6 +3286,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -3143,7 +3294,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -3215,6 +3365,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -3222,7 +3373,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -3292,6 +3442,7 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a href="#Legal" class="grp-toggle" data-group="legal" role="button" aria-expanded="false">Legal<span class="nbadge lbadge" aria-label="Legal items needing attention">4</span><svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
 <a class="sub sub-legal" href="#Legal--top">Needs your attention</a>
 <a class="sub sub-legal" href="#Legal--ask-legal">Ask a legal question</a>
+<a class="sub sub-legal" href="#Legal--advice">Legal advice</a>
 <a class="sub sub-legal" href="#Legal--docs">All documents</a>
 <a class="sub sub-legal" href="#Legal--templates">Standard legal templates</a>
 <a href="#Assistant--partners" class="grp-toggle" data-group="more" role="button" aria-expanded="false">More services<svg class="chev" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:auto;flex:none"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -3299,7 +3450,6 @@ Scope: {{ scopeText }}, as listed in Schedule A. Fees: ${{ quoteTotal }}/month i
 <a class="sub sub-more" href="#Assistant--svc-broker">Business broker</a>
 <a class="sub sub-more" href="#Assistant--svc-finance">Finance</a>
 <a class="sub sub-more" href="#Assistant--svc-insurance">Insurance</a>
-<a class="sub sub-more" href="#Assistant--svc-legal">Legal advisory</a>
 <a class="sub sub-more" href="#Assistant--svc-wealth">Wealth</a>
 <a href="#billing">Settings &amp; billing</a>
 <a href="#Logout">Log out</a>
@@ -3473,7 +3623,7 @@ const PRICING = {
     { key: 't2', label: '$1m – $2m', bk: 120, ap: 100, tax: 780, taxM: 65, basM: 90, basQ: 120 },
     { key: 't3', label: '$2m – $3m', bk: 160, ap: 150, tax: 900, taxM: 75, basM: 90, basQ: 120 }
   ],
-  minimum: 35                // monthly fee when we prepare none of the services (portal, reporting and accountant access only)
+  minimum: 99                // base monthly fee on every plan (portal, reporting and accountant access); services are added on top
 };
 const up = (x) => Math.ceil(x / 10 - 1e-9) * 10;  // round up to the nearest $10
 function quote(q) {
@@ -3487,15 +3637,23 @@ function quote(q) {
   if (q.bas === 'q') lines.push({ name: 'GST activity statements (quarterly)', amt: basQ, scope: 'quarterly GST activity statements' });
   if (q.bas === 'm') lines.push({ name: 'GST activity statements (monthly)', amt: basM, scope: 'monthly GST activity statements' });
   if (q.tax) lines.push({ name: 'Financial statements & tax return', amt: tax, scope: 'annual financial statements and income tax return' });
-  const sub = lines.reduce((a, l) => a + l.amt, 0);
   const diy = lines.length === 0;
-  const total = diy ? PRICING.minimum : sub;
+  lines.unshift({ name: 'Portal access, inc performance, toolbox and legal companion', amt: PRICING.minimum, scope: '' });
+  const sub = lines.reduce((a, l) => a + l.amt, 0);
+  const total = sub;
   return { t, bk, ap, basQ, basM, tax, lines, sub, diy, total, topUp: 0 };
 }
 window.EF_QUOTE = window.EF_QUOTE || { tier: 't1', bk: true, ap: false, bas: 'q', tax: true };
+const PACKS = [
+  { name: 'I am only interested in the portal', who: 'Any size venue. Your books, BAS and tax return stay with you or your current accountant.', q: { tier: 't1', bk: false, ap: false, bas: 'n', tax: false } },
+  { name: 'I’m fairly independent with my books', who: 'Up to $1m turnover. You keep your own books, and we do your BAS and tax return.', q: { tier: 't1', bk: false, ap: false, bas: 'q', tax: true } },
+  { name: 'I need a bit of help with my books', who: '$1m to $2m turnover. We keep your books and lodge your BAS and tax return.', q: { tier: 't2', bk: true, ap: false, bas: 'q', tax: true } },
+  { name: 'I need a full team to run my books', who: '$2m to $3m turnover. Bookkeeping, supplier payments, monthly BAS and your tax return.', q: { tier: 't3', bk: true, ap: true, bas: 'm', tax: true } }
+];
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = Object.assign({}, window.EF_QUOTE); }
   set(patch) { if (patch.bk === false) patch.ap = false; this.setState(patch); window.EF_QUOTE = Object.assign({}, this.state); if (window.inst && inst.Signup) inst.Signup._r(); }
+  onAnchor(a) { if (a === 'quote' && !this.qOpen) { this.qOpen = true; this.forceUpdate(); } }
   renderVals() {
     const q = this.state, r = quote(q);
     const btn = (on, diy) => 'q-btn' + (diy ? ' diy' : '') + (on ? ' on' : '');
@@ -3520,11 +3678,16 @@ class Component extends DCLogic {
         opts: [ { label: 'We prepare it', sub: '$' + r.tax + ' a month', on: String(q.tax), cls: btn(q.tax), go: () => this.set({ tax: true }) },
                 { label: "I'll do my own", sub: 'You or another agent lodges', on: String(!q.tax), cls: btn(!q.tax, true), go: () => this.set({ tax: false }) } ] }
     ];
-    const qLines = r.lines.length ? r.lines.map(l => ({ name: l.name, amt: '$' + l.amt })) : [{ name: 'Portal, reporting & accountant access', amt: '$' + PRICING.minimum }];
+    const qLines = r.lines.map(l => ({ name: l.name, amt: '$' + l.amt }));
+    const openQ = () => { this.qOpen = true; this.forceUpdate(); setTimeout(() => { const e = document.getElementById('quote'); if (e) e.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60); };
+    const qPacks = PACKS.map(pk => { const r2 = quote(pk.q); return { name: pk.name, who: pk.who, price: r2.total, lines: r2.lines.slice(1).map(l => l.name),
+      start: () => { this.set(Object.assign({}, pk.q)); if (window.inst && inst.Signup) inst.Signup.setState({ step: 0 }); }, custom: () => { this.set(Object.assign({}, pk.q)); openQ(); } }; });
     return {
+      qPacks, qOpen: !!this.qOpen, qOpenX: String(!!this.qOpen), qToggleLabel: this.qOpen ? 'Hide the quote builder' : 'Build your exact quote',
+      qToggle: () => { if (this.qOpen) { this.qOpen = false; this.forceUpdate(); } else openQ(); },
       qTiers, qSvc, qLines, qTotal: r.total, qGst: (r.total / 11).toFixed(2), qAnnual: (r.total * 12).toLocaleString('en-AU'), qTierLabel: r.t.label,
       qMinApplied: r.topUp > 0, qTopUp: r.topUp, qHasDiy: r.diy,
-      qStart: () => { window.EF_QUOTE = Object.assign({}, this.state); if (window.inst && inst.Signup) inst.Signup._r(); }
+      qStart: () => { window.EF_QUOTE = Object.assign({}, this.state); if (window.inst && inst.Signup) inst.Signup.setState({ step: 0 }); }
     };
   }
 }
@@ -3587,7 +3750,7 @@ class Component extends DCLogic {
   renderVals() {
     const st = this.state.step;
     const qq = window.EF_QUOTE_CALC(window.EF_QUOTE);
-    const labels = ['Your account', 'Your venue', 'Engagement & privacy', 'Connect Xero / MYOB', 'Payment', 'Done'];
+    const labels = ['Your plan', 'Your account', 'Your venue', 'Engagement & privacy', 'Connect Xero / MYOB', 'Payment', 'Done'];
     const steps = labels.map((label, i) => ({
       label, n: i < st ? '✓' : String(i + 1),
       cls: 'step' + (i === st ? ' step-on' : i < st ? ' step-done' : ''),
@@ -3595,15 +3758,17 @@ class Component extends DCLogic {
       go: () => this.setState({ step: i })
     }));
     const soft = this.state.soft, pay = this.state.pay;
-    const nextLabels = ['Continue', 'Continue', 'Sign and continue', 'Continue', 'Start my free month', ''];
+    const nextLabels = ['Confirm and continue', 'Continue', 'Continue', 'Sign and continue', 'Continue', 'Start my free month', ''];
     return {
       planLine: 'Your quote · $' + qq.total + '/month inc. GST', quoteTotal: qq.total,
-      scopeText: (qq.lines.map(l => l.scope).concat(['client portal', 'monthly performance dashboard'])).join(', ').replace(/, ([^,]*)$/, ' and $1'),
-      steps, stepNo: st + 1, stepLabel: labels[st], stepPct: Math.round((st + 1) / 6 * 100),
-      s0: st === 0, s1: st === 1, s2: st === 2, s3: st === 3, s4: st === 4, s5: st === 5,
-      showNav: st < 5, nextLabel: nextLabels[st],
-      next: () => this.setState({ step: Math.min(5, st + 1) }),
-      back: () => this.setState({ step: Math.max(0, st - 1) }),
+      scopeText: (qq.lines.filter(l => l.scope).map(l => l.scope).concat(['client portal', 'monthly performance dashboard'])).join(', ').replace(/, ([^,]*)$/, ' and $1'),
+      steps, stepNo: st + 1, stepLabel: labels[st], stepPct: Math.round((st + 1) / 7 * 100),
+      s0: st === 0, s1: st === 1, s2: st === 2, s3: st === 3, s4: st === 4, s5: st === 5, s6: st === 6,
+      showNav: st < 6, nextLabel: nextLabels[st],
+      planTier: qq.t.label, planLines: qq.lines.map(l => ({ name: l.name, amt: '$' + l.amt })), planAnnual: (qq.total * 12).toLocaleString('en-AU'), planGst: (qq.total / 11).toFixed(2),
+      planDiy: (() => { const q = window.EF_QUOTE || {}, d = []; if (!q.bk) d.push('bookkeeping'); else if (!q.ap) d.push('paying suppliers'); if (q.bas === 'n') d.push('BAS'); if (!q.tax) d.push('financial statements and tax return'); return d.length ? d.join(', ').replace(/^./, c => c.toUpperCase()).replace(/, ([^,]*)$/, ' and $1') + '.' : ''; })(),
+      next: () => { this.setState({ step: Math.min(6, st + 1) }); window.scrollTo(0, 0); },
+      back: () => { if (st === 0) { location.hash = 'Main--pricing'; return; } this.setState({ step: st - 1 }); },
       isXero: soft === 'xero', isMyob: soft === 'myob', isNone: soft === 'none',
       xeroCls: 'opt' + (soft === 'xero' ? ' opt-sel' : ''), myobCls: 'opt' + (soft === 'myob' ? ' opt-sel' : ''), noneCls: 'opt' + (soft === 'none' ? ' opt-sel' : ''),
       pickXero: () => this.setState({ soft: 'xero' }), pickMyob: () => this.setState({ soft: 'myob' }), pickNone: () => this.setState({ soft: 'none' }),
@@ -3883,7 +4048,7 @@ STRICT RULES:
 - Do NOT tell the user what they should do, whether they should sign, exercise, terminate, sue, refuse or accept anything, or what outcome they will get. Do not use "you should", "I recommend" or "my advice is". Frame everything as how the law generally operates.
 - You may point out where their documents touch the topic, as facts from the summaries below, without interpreting what they must do.
 - Note when the answer depends on the state, the exact wording of a document, or recent changes in the law.
-- If the question asks for advice, still give general information only and say a legal practitioner through Legal advisory can advise on their situation.
+- If the question asks for advice, still give general information only and say our legal team (in the Legal section of this portal) can advise on their situation.
 - Plain Australian English, short sentences.
 
 QUESTION: ${q}
@@ -3906,7 +4071,7 @@ function laShape(d, mock) {
 }
 SCREENS["Legal"]=(function(){
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { f: 'all', flash: '', open: null, dflash: '', derr: '', tpflash: '', laBusy: false, laErr: '', la: null }; this.laQ = ''; this.laCtl = null; laSample(); this.form = { remind: '90' }; }
+  constructor(props) { super(props); this.state = { f: 'all', flash: '', open: null, dflash: '', derr: '', tpflash: '', laBusy: false, laErr: '', la: null, advFlash: '', advErr: '' }; this.laQ = ''; this.laCtl = null; laSample(); this.form = { remind: '90' }; }
   async laAsk() {
     const q = (this.laQ || '').trim();
     if (!q) { this.setState({ laErr: 'Type a question first, for example “What is a make-good clause?”', la: null }); return; }
@@ -3916,7 +4081,7 @@ class Component extends DCLogic {
     this.setState({ laBusy: true, laErr: '', la: null });
     try { const d = await sample.json(laPrompt(q), { signal: this.laCtl.signal, modelTier: 'default' }); this.setState({ laBusy: false, la: laShape(d, false) }); }
     catch (e) { const c = e && e.code; if (c === 'cancelled') { this.setState({ laBusy: false }); return; }
-      const M = { not_granted: 'AI answers are switched off for this page. Allow Claude from the page’s permissions menu to use this.', rate_limited: 'Too many questions in a short time. Wait a minute, then try again.', refused: 'AI couldn’t answer that. Try asking about how the law generally works, or speak to Legal advisory.', invalid_json: 'The answer came back in the wrong format. Select Ask to try again.' };
+      const M = { not_granted: 'AI answers are switched off for this page. Allow Claude from the page’s permissions menu to use this.', rate_limited: 'Too many questions in a short time. Wait a minute, then try again.', refused: 'AI couldn’t answer that. Try asking about how the law generally works, or speak to our legal team.', invalid_json: 'The answer came back in the wrong format. Select Ask to try again.' };
       this.setState({ laBusy: false, laErr: M[c] || 'Something went wrong reaching AI. Select Ask to try again.' }); }
   }
   renderVals() {
@@ -3941,6 +4106,11 @@ class Component extends DCLogic {
       lgCount: all.length, lgBad: all.filter(v => v.kind === 'expired' || v.kind === 'action').length,
       lgSoon: all.filter(v => v.kind === 'soon').length,
       lgNext: nxt ? nxt.dateLabel : 'None', lgNextWhat: nxt ? nxt.name + ' · ' + nxt.daysText : '',
+      advFlash: this.state.advFlash, advErr: this.state.advErr,
+      advSend: () => { const t = document.getElementById('adv-topic'), d = document.getElementById('adv-detail');
+        if (!d || !d.value.trim()) { this.setState({ advErr: 'Tell us a little about what you need help with first.', advFlash: '' }); if (d) d.focus(); return; }
+        const topic = t ? t.value.toLowerCase() : 'your matter';
+        this.setState({ advErr: '', advFlash: 'Sent to our legal team about ' + topic + '. They will contact you within 1 business day and quote before any work starts.' }); },
       laQ: this.laQ, laOnQ: (e) => { this.laQ = e.target.value; },
       laIdle: !st.laBusy, laBusy: st.laBusy, laErr: st.laErr, laHas: !!st.la && !st.laBusy, la: st.la || {}, laMock: !!(st.la && st.la.mock),
       laStop: () => { if (this.laCtl) this.laCtl.abort(); },
@@ -4281,7 +4451,6 @@ class Component extends DCLogic {
         { id: 'svc-finance', name: 'Finance: business & equipment', desc: 'Fit-outs, coffee machines, vehicles and working-capital lines, reviewed using the financials we already hold.', cta: 'Get a review' },
         { id: 'svc-finance-home', name: 'Finance: home loans', desc: 'Owner home loans and refinancing. Your tax returns and financials are shared with your OK.', cta: 'Request a call' },
         { id: 'svc-insurance', name: 'Insurance', desc: 'Public liability, workers comp and business interruption, quoted on your real numbers.', cta: 'Get quotes' },
-        { id: 'svc-legal', name: 'Legal advisory', desc: 'Commercial lease reviews and negotiations, liquor licence applications, supplier agreements and staff contracts. Your documents are kept in Legal.', cta: 'Book a lawyer' },
         { id: 'svc-wealth', name: 'Wealth', desc: 'Planning for owners, including super, investments and SMSF setup and administration.', cta: 'Learn more' }
       ]
     };
